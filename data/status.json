@@ -1,24 +1,224 @@
 {
   "schema": 1,
-  "state": "unavailable",
-  "attemptedAt": null,
-  "generatedAt": null,
-  "dataThrough": null,
-  "expectedThrough": null,
+  "state": "partial",
+  "attemptedAt": "2026-10-30T03:12:11.520Z",
+  "generatedAt": "2026-10-30T03:12:27.411Z",
+  "dataThrough": "2026-10-29",
+  "expectedThrough": "2026-10-29",
+  "codeSourceCommit": "48035646ea8930923fcd6ee5b6227b53f2a3bf0f",
   "coverage": {
     "targetRequested": 1200,
-    "poolSize": null,
-    "requested": 0,
-    "returned": 0,
-    "usable": 0,
+    "poolSize": 1200,
+    "requested": 1200,
+    "returned": 1200,
+    "usable": 1168,
     "failed": 0,
     "stale": 0,
-    "insufficient": 0,
-    "observations": 0,
+    "insufficient": 32,
+    "observations": 5,
     "qualified": null,
-    "poolSource": "not_fetched",
-    "fallback": false
+    "poolSource": "sina_current_amount_rank_filtered",
+    "fallback": false,
+    "notRequested": 0
   },
-  "failures": [],
-  "message": "真实数据尚未生成，无法完成判断。"
+  "failures": [
+    {
+      "symbol": "688836.SS",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "至少需要60根连续完整日线"
+    },
+    {
+      "symbol": "001309.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "观察窗口含拆合股，成交量口径尚未核验"
+    },
+    {
+      "symbol": "300803.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "观察窗口含拆合股，成交量口径尚未核验"
+    },
+    {
+      "symbol": "688808.SS",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "观察窗口含拆合股，成交量口径尚未核验"
+    },
+    {
+      "symbol": "301660.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "至少需要60根连续完整日线"
+    },
+    {
+      "symbol": "601995.SS",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "成交量为零，停牌或交易状态待核验，暂停量能判断"
+    },
+    {
+      "symbol": "601091.SS",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "至少需要60根连续完整日线"
+    },
+    {
+      "symbol": "688110.SS",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "观察窗口含拆合股，成交量口径尚未核验"
+    },
+    {
+      "symbol": "301569.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "复权因子缺失，不能统一到判断日原始价格尺度；至少需要60根连续完整日线"
+    },
+    {
+      "symbol": "688432.SS",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "成交量为零，停牌或交易状态待核验，暂停量能判断"
+    },
+    {
+      "symbol": "600293.SS",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "成交量为零，停牌或交易状态待核验，暂停量能判断"
+    },
+    {
+      "symbol": "688300.SS",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "观察窗口含拆合股，成交量口径尚未核验"
+    },
+    {
+      "symbol": "301717.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "至少需要60根连续完整日线"
+    },
+    {
+      "symbol": "688801.SS",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "至少需要60根连续完整日线"
+    },
+    {
+      "symbol": "300980.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "观察窗口含拆合股，成交量口径尚未核验"
+    },
+    {
+      "symbol": "301716.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "至少需要60根连续完整日线"
+    },
+    {
+      "symbol": "301699.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "至少需要60根连续完整日线"
+    },
+    {
+      "symbol": "302132.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "成交量为零，停牌或交易状态待核验，暂停量能判断"
+    },
+    {
+      "symbol": "001232.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "至少需要60根连续完整日线"
+    },
+    {
+      "symbol": "002155.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "成交量为零，停牌或交易状态待核验，暂停量能判断"
+    },
+    {
+      "symbol": "300862.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "成交量为零，停牌或交易状态待核验，暂停量能判断"
+    },
+    {
+      "symbol": "301718.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "至少需要60根连续完整日线"
+    },
+    {
+      "symbol": "605577.SS",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "成交量为零，停牌或交易状态待核验，暂停量能判断"
+    },
+    {
+      "symbol": "600621.SS",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "成交量为零，停牌或交易状态待核验，暂停量能判断"
+    },
+    {
+      "symbol": "300773.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "成交量为零，停牌或交易状态待核验，暂停量能判断"
+    },
+    {
+      "symbol": "688826.SS",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "至少需要60根连续完整日线"
+    },
+    {
+      "symbol": "001246.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "至少需要60根连续完整日线"
+    },
+    {
+      "symbol": "301689.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "至少需要60根连续完整日线"
+    },
+    {
+      "symbol": "301468.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "成交量为零，停牌或交易状态待核验，暂停量能判断"
+    },
+    {
+      "symbol": "002388.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "成交量为零，停牌或交易状态待核验，暂停量能判断"
+    },
+    {
+      "symbol": "301314.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "成交量为零，停牌或交易状态待核验，暂停量能判断"
+    },
+    {
+      "symbol": "301686.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "至少需要60根连续完整日线"
+    }
+  ],
+  "sourceFailures": [],
+  "poolPages": {
+    "requested": 16,
+    "returned": 16
+  },
+  "message": "部分范围或来源有限，只对当前完整数据研究；其余范围未知"
 }
