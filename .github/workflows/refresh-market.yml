@@ -1,0 +1,71 @@
+name: Refresh public market files
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '10 7 * * 1-5'
+permissions:
+  contents: write
+  pages: write
+concurrency:
+  group: public-market-main
+  cancel-in-progress: false
+jobs:
+  refresh:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    env:
+      DATABASE_URL: ''
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+          persist-credentials: true
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+      - name: Refresh files with explicit failure status
+        id: market
+        continue-on-error: true
+        run: |
+          set -euo pipefail
+          mkdir -p test-logs
+          node scripts/refresh-market.mjs 2>&1 | tee test-logs/market.log
+      - name: Commit public files only
+        id: commit
+        run: |
+          set -euo pipefail
+          branch_tip="$(git ls-remote origin refs/heads/main | cut -f1)"
+          test "$branch_tip" = "$GITHUB_SHA"
+          git diff --exit-code -- . ':!data'
+          git add -- data
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m "Refresh public market status and data"
+          git push origin HEAD:refs/heads/main
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+      - name: Explicitly request Pages build
+        if: steps.commit.outputs.changed == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const result = await github.rest.repos.requestPagesBuild(context.repo);
+            core.info('Pages build requested: HTTP '+result.status+'. Publication is pending.');
+      - name: Report acquisition failure
+        if: steps.market.outcome != 'success'
+        run: |
+          echo "Acquisition failed; old data is not a new signal."
+          exit 1
+      - name: Retain source and failure evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: public-market-refresh-evidence
+          path: |
+            test-logs/
+            data/status.json
+          retention-days: 7

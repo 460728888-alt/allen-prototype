@@ -1,0 +1,23 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {assessData,stockQuality,isObservation,stageOf,explain,selectFocus} from './personal-domain.js';
+const calendar={source:'synthetic',validFrom:'2026-10-01',validThrough:'2026-12-31',sessions:['2026-10-26','2026-10-27','2026-10-28','2026-10-29','2026-10-30']},now=new Date('2026-10-29T16:00:00+08:00'),day='2026-10-29';
+const stock=()=>({symbol:'600036.SS',price:11,dataThrough:day,data:{state:'ok',complete:true,historyStart:'2026-01-01',corporateActions:[]},levels:{state:'ok',stop:10,invalidation:10,breakout:12},structure:{stage:'横盘蓄势',volume:{current:100,average20:150,ratio:.67},evidence:{compression:true},range:{widthPct:8}},profile:{usefulPullback:true,volumeDriedUp:true,priceTight:true,lowsStoppedFalling:true,volumeDryRatio:.8,pullbackPct:-10}});
+const status={state:'ok',coverage:{requested:1,usable:1,failed:0,stale:0,insufficient:0}},assess=(s=status,list=[stock()],c=calendar,t=now)=>assessData(s,{stocks:list,dataThrough:list[0]?.dataThrough},c,t);
+const record=()=>({status:'observing',original:{dataThrough:'2026-10-28',levels:{stop:10,invalidation:10,breakout:12}}});
+test('all failures never mean no opportunity',()=>{const a=assess({state:'failed',message:'HTTP 429',coverage:{failed:2}},[]);assert.equal(a.title,'无法完成判断');assert.equal(a.canJudge,false);assert.match(a.message,/429/)});
+test('partial coverage preserves known counts',()=>{const a=assess({...status,state:'partial',coverage:{requested:2,failed:1,usable:1}});assert.equal(a.state,'partial');assert.equal(a.canJudge,true);assert.equal(a.coverage.failed,1)});
+test('close boundary and weekends follow official sessions',()=>{
+ assert.equal(assess(status,[{...stock(),dataThrough:'2026-10-28'}],calendar,new Date('2026-10-29T15:04:59+08:00')).expectedThrough,'2026-10-28');
+ assert.equal(assess(status,[stock()],calendar,new Date('2026-10-29T15:05:00+08:00')).canJudge,true);
+ assert.equal(assess(status,[{...stock(),dataThrough:'2026-10-30'}],calendar,new Date('2026-10-31T10:00:00+08:00')).expectedThrough,'2026-10-30');
+});
+test('missing expired or malformed calendars pause judgment',()=>{for(const c of [null,{...calendar,validThrough:'2026-10-28'},{...calendar,sessions:[day,day]}]){const a=assess(status,[stock()],c);assert.equal(a.state,'unverified');assert.equal(a.canJudge,false)}});
+test('stale future and malformed data dates are not fresh',()=>{for(const [date,state]of [['2026-10-28','stale'],['2026-10-30','unverified'],['2026-99-99','unverified']]){const a=assess(status,[{...stock(),dataThrough:date}]);assert.equal(a.state,state);assert.equal(a.canJudge,false)}});
+test('unknown volume and nonboolean flags cannot create observations',()=>{const s=stock();s.structure.volume.current=null;assert.equal(isObservation(s),false);s.structure.volume.current=100;s.profile.volumeDriedUp='true';assert.equal(isObservation(s),false)});
+test('unfinished bars are not observations',()=>{const s=stock();s.data.complete=false;assert.equal(isObservation(s),false);assert.equal(stockQuality(s,assess()).canJudge,false)});
+test('breakout trigger remains pending confirmation',()=>{const s=stock();s.structure.stage='向上突破待确认';const p=stageOf(s,assess());assert.equal(p.id,'trigger');assert.match(p.label,/待确认/)});
+test('original stop invalidates without volume or new rolling levels',()=>{const s=stock();s.price=10;s.levels={state:'unavailable',stop:8};s.structure.volume.current=null;assert.equal(stageOf(s,assess(),record()).id,'invalid');assert.match(explain(s,assess(),record()).invalidation,/10.00/)});
+test('missing data or incomparable corporate actions pause old-price judgment',()=>{const s=stock();s.price=9;s.data.state='stale';assert.equal(stageOf(s,assess(),record()).id,'paused');s.data.state='ok';s.data.corporateActions=[{date:day,type:'splits'}];assert.equal(stageOf(s,assess(),record()).id,'paused');s.data.corporateActions=[];delete s.data.historyStart;assert.equal(stageOf(s,assess(),record()).id,'paused')});
+test('recorded invalidation remains visible without current data',()=>assert.equal(stageOf(null,{canJudge:false},{status:'invalidated'}).id,'invalid'));
+test('order is stable and probability remains unavailable',()=>{const a=stock(),b={...stock(),symbol:'000001.SZ'},q=assess();assert.deepEqual(selectFocus([a,b],q).map(s=>s.symbol),selectFocus([b,a],q).map(s=>s.symbol));assert.equal(explain(a,q).probability,null);assert.equal(selectFocus([a],q,0).length,0);assert.deepEqual(selectFocus([a],{canJudge:false}),[])});

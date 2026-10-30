@@ -1,0 +1,75 @@
+name: Personal Pages checks
+on:
+  push:
+    branches: [upgrade/personal-pages-v1]
+    paths: ['**/*.js', '**/*.mjs', '**/*.html', '**/*.css', 'lib/**', 'package.json', '.github/workflows/personal-check.yml']
+  pull_request:
+permissions:
+  contents: read
+concurrency:
+  group: personal-check-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    env:
+      DATABASE_URL: ''
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+      - name: Syntax and unit tests
+        run: |
+          set -euo pipefail
+          mkdir -p test-logs
+          node --check personal-app.js
+          node --test *.test.js 2>&1 | tee test-logs/unit.log
+      - name: Fetch public market data
+        id: market
+        continue-on-error: true
+        run: |
+          set -euo pipefail
+          node scripts/refresh-market.mjs 2>&1 | tee test-logs/market.log
+      - name: Install browser
+        run: |
+          npm install --no-save --ignore-scripts --no-audit --no-fund playwright@1.64.0
+          npx playwright install --with-deps chromium
+          sudo apt-get install -y fonts-noto-cjk
+      - name: Browser checks
+        run: |
+          set -euo pipefail
+          node scripts/browser-check.mjs 2>&1 | tee test-logs/browser.log
+      - name: Require usable real data
+        if: steps.market.outcome != 'success'
+        run: |
+          echo "Public data refresh failed; inspect status and logs."
+          exit 1
+      - name: Preserve verified public data on isolated branch
+        if: github.event_name == 'push' && github.ref == 'refs/heads/upgrade/personal-pages-v1'
+        run: |
+          set -euo pipefail
+          branch_tip="$(git ls-remote origin "refs/heads/$GITHUB_REF_NAME" | cut -f1)"
+          test "$branch_tip" = "$GITHUB_SHA"
+          git diff --exit-code -- . ':!data'
+          git add -- data
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m "Refresh verified public market data"
+          git push origin "HEAD:refs/heads/$GITHUB_REF_NAME"
+      - name: Retain evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: personal-pages-evidence
+          path: |
+            test-logs/
+            test-results/
+            data/
+          retention-days: 7
