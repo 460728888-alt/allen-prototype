@@ -1,21 +1,21 @@
 {
   "schema": 1,
   "state": "partial",
-  "attemptedAt": "2026-10-30T03:12:11.520Z",
-  "generatedAt": "2026-10-30T03:12:27.411Z",
-  "dataThrough": "2026-10-29",
-  "expectedThrough": "2026-10-29",
-  "codeSourceCommit": "48035646ea8930923fcd6ee5b6227b53f2a3bf0f",
+  "attemptedAt": "2026-10-30T14:05:06.247Z",
+  "generatedAt": "2026-10-30T14:05:31.400Z",
+  "dataThrough": "2026-10-30",
+  "expectedThrough": "2026-10-30",
+  "codeSourceCommit": "8de47a08ba453296ad65fd4f0d5edda34bf4f1f0",
   "coverage": {
     "targetRequested": 1200,
     "poolSize": 1200,
     "requested": 1200,
     "returned": 1200,
-    "usable": 1168,
+    "usable": 705,
     "failed": 0,
     "stale": 0,
-    "insufficient": 32,
-    "observations": 5,
+    "insufficient": 495,
+    "observations": 4,
     "qualified": null,
     "poolSource": "sina_current_amount_rank_filtered",
     "fallback": false,
@@ -23,22 +23,316 @@
   },
   "failures": [
     {
+      "symbol": "300750.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300502.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300476.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002384.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300223.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300394.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002463.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002371.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002428.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002475.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300408.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
       "symbol": "688836.SS",
       "state": "insufficient",
       "code": "insufficient",
       "message": "至少需要60根连续完整日线"
     },
     {
+      "symbol": "300136.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
       "symbol": "001309.SZ",
       "state": "insufficient",
       "code": "insufficient",
-      "message": "观察窗口含拆合股，成交量口径尚未核验"
+      "message": "观察窗口含拆合股，成交量口径尚未核验；日线价格关系异常"
     },
     {
-      "symbol": "300803.SZ",
+      "symbol": "000725.SZ",
       "state": "insufficient",
       "code": "insufficient",
-      "message": "观察窗口含拆合股，成交量口径尚未核验"
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002149.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300604.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000333.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002708.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300857.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300757.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000678.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002436.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002281.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002747.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000568.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300274.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002354.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002851.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300489.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300006.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000823.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002008.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300570.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300033.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000636.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301308.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000988.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002916.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300115.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002156.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301080.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000938.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300548.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002242.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300475.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300760.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300620.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000559.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300450.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002865.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300759.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
     },
     {
       "symbol": "688808.SS",
@@ -47,22 +341,334 @@
       "message": "观察窗口含拆合股，成交量口径尚未核验"
     },
     {
+      "symbol": "000001.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000530.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000651.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002938.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300124.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002050.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300803.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "观察窗口含拆合股，成交量口径尚未核验；日线价格关系异常"
+    },
+    {
+      "symbol": "300418.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300613.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002249.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002164.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300903.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300285.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300014.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002594.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002724.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300209.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300806.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002142.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000657.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300296.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002929.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000100.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002415.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301526.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002565.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002361.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002241.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301550.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301313.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000063.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002472.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301047.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300503.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300413.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301205.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002714.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002536.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002580.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002837.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "001389.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002815.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002812.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301511.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002080.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
       "symbol": "301660.SZ",
       "state": "insufficient",
       "code": "insufficient",
       "message": "至少需要60根连续完整日线"
     },
     {
-      "symbol": "601995.SS",
+      "symbol": "301536.SZ",
       "state": "insufficient",
       "code": "insufficient",
-      "message": "成交量为零，停牌或交易状态待核验，暂停量能判断"
+      "message": "日线价格关系异常"
     },
     {
-      "symbol": "601091.SS",
+      "symbol": "300017.SZ",
       "state": "insufficient",
       "code": "insufficient",
-      "message": "至少需要60根连续完整日线"
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002009.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002352.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002913.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300015.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002172.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301217.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301079.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
     },
     {
       "symbol": "688110.SS",
@@ -71,10 +677,400 @@
       "message": "观察窗口含拆合股，成交量口径尚未核验"
     },
     {
-      "symbol": "301569.SZ",
+      "symbol": "000021.SZ",
       "state": "insufficient",
       "code": "insufficient",
-      "message": "复权因子缺失，不能统一到判断日原始价格尺度；至少需要60根连续完整日线"
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002031.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301005.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301232.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301218.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300751.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002129.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300821.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300207.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301413.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000700.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002491.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002086.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002558.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "601995.SS",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "成交量为零，停牌或交易状态待核验，暂停量能判断"
+    },
+    {
+      "symbol": "000592.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002409.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002131.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002484.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002979.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002792.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000426.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002432.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "003021.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002696.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002027.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000807.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002600.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300395.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "003816.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000811.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002555.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300672.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300432.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300442.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002222.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000596.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301396.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300567.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000975.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301358.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002343.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002460.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002396.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002273.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301171.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300307.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002230.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301529.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "001219.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300179.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300031.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301015.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301428.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301377.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002173.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002943.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002531.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300953.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300342.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002179.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002297.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301486.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300199.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002245.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301183.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
     },
     {
       "symbol": "688432.SS",
@@ -83,10 +1079,124 @@
       "message": "成交量为零，停牌或交易状态待核验，暂停量能判断"
     },
     {
-      "symbol": "600293.SS",
+      "symbol": "300131.SZ",
       "state": "insufficient",
       "code": "insufficient",
-      "message": "成交量为零，停牌或交易状态待核验，暂停量能判断"
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300085.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002552.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "001317.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002376.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300852.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300762.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300829.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "601091.SS",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "至少需要60根连续完整日线"
+    },
+    {
+      "symbol": "300133.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301052.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002602.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301196.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002465.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300458.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "001400.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301132.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300346.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300007.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301569.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "复权因子缺失，不能统一到判断日原始价格尺度；至少需要60根连续完整日线"
     },
     {
       "symbol": "688300.SS",
@@ -95,7 +1205,97 @@
       "message": "观察窗口含拆合股，成交量口径尚未核验"
     },
     {
-      "symbol": "301717.SZ",
+      "symbol": "300319.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002317.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002049.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002945.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "001318.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000792.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301261.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300740.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000783.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002434.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300900.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301282.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002430.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300782.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300461.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301716.SZ",
       "state": "insufficient",
       "code": "insufficient",
       "message": "至少需要60根连续完整日线"
@@ -107,34 +1307,28 @@
       "message": "至少需要60根连续完整日线"
     },
     {
-      "symbol": "300980.SZ",
+      "symbol": "002579.SZ",
       "state": "insufficient",
       "code": "insufficient",
-      "message": "观察窗口含拆合股，成交量口径尚未核验"
+      "message": "日线价格关系异常"
     },
     {
-      "symbol": "301716.SZ",
+      "symbol": "002265.SZ",
       "state": "insufficient",
       "code": "insufficient",
-      "message": "至少需要60根连续完整日线"
+      "message": "日线价格关系异常"
     },
     {
-      "symbol": "301699.SZ",
+      "symbol": "001979.SZ",
       "state": "insufficient",
       "code": "insufficient",
-      "message": "至少需要60根连续完整日线"
+      "message": "日线价格关系异常"
     },
     {
-      "symbol": "302132.SZ",
+      "symbol": "002980.SZ",
       "state": "insufficient",
       "code": "insufficient",
-      "message": "成交量为零，停牌或交易状态待核验，暂停量能判断"
-    },
-    {
-      "symbol": "001232.SZ",
-      "state": "insufficient",
-      "code": "insufficient",
-      "message": "至少需要60根连续完整日线"
+      "message": "日线价格关系异常"
     },
     {
       "symbol": "002155.SZ",
@@ -143,10 +1337,568 @@
       "message": "成交量为零，停牌或交易状态待核验，暂停量能判断"
     },
     {
+      "symbol": "301306.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300149.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300363.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300438.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002195.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301626.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002741.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300718.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002456.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300671.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301717.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "至少需要60根连续完整日线"
+    },
+    {
+      "symbol": "000701.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300607.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300339.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301682.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000995.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300390.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300170.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000960.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300142.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002422.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300122.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002931.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300765.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002439.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002624.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000415.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300291.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002532.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300870.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000933.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "600293.SS",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "成交量为零，停牌或交易状态待核验，暂停量能判断"
+    },
+    {
+      "symbol": "002046.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300456.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002655.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002167.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002958.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300373.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002342.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301251.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301018.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300496.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "001287.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300177.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002028.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300747.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002300.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002716.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002048.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002074.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002212.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002736.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002966.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002582.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "001232.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "至少需要60根连续完整日线"
+    },
+    {
+      "symbol": "300260.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300990.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002311.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000703.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300473.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301699.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "至少需要60根连续完整日线"
+    },
+    {
+      "symbol": "002683.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000400.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300474.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300164.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002347.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300976.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
       "symbol": "300862.SZ",
       "state": "insufficient",
       "code": "insufficient",
       "message": "成交量为零，停牌或交易状态待核验，暂停量能判断"
+    },
+    {
+      "symbol": "002517.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000603.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "001216.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301293.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000962.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "302132.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "成交量为零，停牌或交易状态待核验，暂停量能判断"
+    },
+    {
+      "symbol": "002850.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002001.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300980.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "观察窗口含拆合股，成交量口径尚未核验"
+    },
+    {
+      "symbol": "301165.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300850.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300251.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "001330.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002859.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300224.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002271.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301236.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300037.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002842.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300139.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000676.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300657.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300832.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002896.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000070.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301366.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
     },
     {
       "symbol": "301718.SZ",
@@ -155,16 +1907,136 @@
       "message": "至少需要60根连续完整日线"
     },
     {
-      "symbol": "605577.SS",
+      "symbol": "002368.SZ",
       "state": "insufficient",
       "code": "insufficient",
-      "message": "成交量为零，停牌或交易状态待核验，暂停量能判断"
+      "message": "日线价格关系异常"
     },
     {
-      "symbol": "600621.SS",
+      "symbol": "003031.SZ",
       "state": "insufficient",
       "code": "insufficient",
-      "message": "成交量为零，停牌或交易状态待核验，暂停量能判断"
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300763.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300539.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002585.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301190.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000810.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300042.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002526.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300776.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300724.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002120.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002779.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301510.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002648.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002119.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002400.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000002.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300253.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301086.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300498.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002029.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
     },
     {
       "symbol": "300773.SZ",
@@ -173,10 +2045,268 @@
       "message": "成交量为零，停牌或交易状态待核验，暂停量能判断"
     },
     {
-      "symbol": "688826.SS",
+      "symbol": "301502.SZ",
       "state": "insufficient",
       "code": "insufficient",
-      "message": "至少需要60根连续完整日线"
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300561.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002192.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002078.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300602.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300358.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300911.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000513.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300624.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300623.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300236.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002085.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002889.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300077.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300738.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300428.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301606.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301216.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000510.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301210.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300192.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002011.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000983.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002520.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000681.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002414.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300835.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000993.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300827.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "001267.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300488.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300302.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002756.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300012.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000032.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000981.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301029.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301200.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002948.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300073.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000949.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002402.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002471.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002990.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
     },
     {
       "symbol": "001246.SZ",
@@ -185,16 +2315,568 @@
       "message": "至少需要60根连续完整日线"
     },
     {
+      "symbol": "002379.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002151.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300780.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301297.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000506.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300785.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301076.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300383.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300843.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "605577.SS",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "成交量为零，停牌或交易状态待核验，暂停量能判断"
+    },
+    {
+      "symbol": "002290.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301373.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301219.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000661.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300820.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000837.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000901.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "003009.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002174.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301345.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
       "symbol": "301689.SZ",
       "state": "insufficient",
       "code": "insufficient",
       "message": "至少需要60根连续完整日线"
     },
     {
-      "symbol": "301468.SZ",
+      "symbol": "000408.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300229.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300770.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002920.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "688826.SS",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "至少需要60根连续完整日线"
+    },
+    {
+      "symbol": "301150.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300695.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002134.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002277.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300184.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002315.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301611.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000039.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000737.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002364.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300024.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "600621.SS",
       "state": "insufficient",
       "code": "insufficient",
       "message": "成交量为零，停牌或交易状态待核验，暂停量能判断"
+    },
+    {
+      "symbol": "002077.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002015.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300088.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300276.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000830.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300638.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "001280.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002429.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "688809.SS",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "观察窗口含拆合股，成交量口径尚未核验"
+    },
+    {
+      "symbol": "300243.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "001208.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300166.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002506.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301225.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300952.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000625.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002631.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002617.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301607.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300504.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000683.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300964.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300748.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000729.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002097.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "688835.SS",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "至少需要60根连续完整日线"
+    },
+    {
+      "symbol": "301008.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000420.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002291.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000759.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "001696.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300629.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301319.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300001.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301591.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300589.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002115.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000712.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301488.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000711.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "成交量为零，停牌或交易状态待核验，暂停量能判断"
+    },
+    {
+      "symbol": "300720.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000967.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301128.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002275.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300043.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300593.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002340.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300508.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300191.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002335.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000620.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002493.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300972.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002093.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301311.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300061.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
     },
     {
       "symbol": "002388.SZ",
@@ -203,16 +2885,112 @@
       "message": "成交量为零，停牌或交易状态待核验，暂停量能判断"
     },
     {
-      "symbol": "301314.SZ",
+      "symbol": "300189.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300468.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300323.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000878.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002128.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300779.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301357.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002957.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002294.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "000815.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300005.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002653.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002545.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300969.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002152.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "002223.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "300421.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "日线价格关系异常"
+    },
+    {
+      "symbol": "301468.SZ",
       "state": "insufficient",
       "code": "insufficient",
       "message": "成交量为零，停牌或交易状态待核验，暂停量能判断"
-    },
-    {
-      "symbol": "301686.SZ",
-      "state": "insufficient",
-      "code": "insufficient",
-      "message": "至少需要60根连续完整日线"
     }
   ],
   "sourceFailures": [],

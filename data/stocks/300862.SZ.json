@@ -2,59 +2,53 @@
   "symbol": "300862.SZ",
   "code": "300862",
   "name": "蓝盾光电",
-  "price": 31.219999313354492,
-  "changePct": -7.523694118665336,
+  "price": 28.969999313354492,
+  "changePct": -7.206918800403539,
   "currency": "CNY",
   "exchange": "SHZ",
   "industry": null,
-  "dataThrough": "2026-10-29",
+  "dataThrough": "2026-10-30",
   "data": {
     "version": "daily-contract-1",
     "state": "insufficient",
     "reasons": [
       "成交量为零，停牌或交易状态待核验，暂停量能判断"
     ],
-    "dataThrough": "2026-10-29",
-    "fetchedAt": "2026-10-30T03:12:22.722Z",
-    "expectedThrough": "2026-10-29",
+    "dataThrough": "2026-10-30",
+    "fetchedAt": "2026-10-30T14:05:22.809Z",
+    "expectedThrough": "2026-10-30",
     "corporateActions": [
       {
         "type": "dividends",
         "date": "2026-07-10"
       }
     ],
-    "historyStart": "2026-03-03",
+    "historyStart": "2026-03-04",
     "unfinishedBars": 0,
     "calendarSource": "SSE/SZSE official annual holiday notices, 2024-2026",
     "calendarVersion": "cn-equities-2024-2026-v1",
     "calendarValidThrough": "2026-12-31",
-    "sessionState": "not_completed",
+    "sessionState": "completed",
     "priceBasis": "judgment_day_raw",
     "anchorFactor": 1,
     "volumeBasis": "source_volume",
-    "judgmentAsOf": "2026-10-30T03:12:11.520Z",
+    "judgmentAsOf": "2026-10-30T14:05:06.247Z",
     "complete": false
   },
   "levels": {
     "version": "range20-1",
-    "state": "ok",
-    "reason": null,
+    "state": "unavailable",
+    "reason": "日线价格关系异常",
     "planType": "breakout",
     "priceBasis": "judgment_day_raw",
     "tick": 0.01,
-    "dataThrough": "2026-10-29",
-    "entry": 61.8,
-    "stop": 31.71,
-    "target1": 91.41,
-    "target2": 121.21,
-    "rr1": 0.984047856430708,
-    "rr2": 1.9744101030242607,
-    "upper": 61.61000061035156,
-    "lower": 31.809999465942383,
-    "width": 29.80000114440918,
-    "breakout": 61.8,
-    "invalidation": 31.71,
-    "rounding": "入场向上；止损及目标向下；仅展示时四舍五入比值"
+    "dataThrough": "2026-10-30",
+    "entry": null,
+    "stop": null,
+    "target1": null,
+    "target2": null,
+    "rr1": null,
+    "rr2": null
   },
   "structure": null,
   "profile": null,
@@ -73,13 +67,6 @@
   "probability": null,
   "detailPath": "data/stocks/300862.SZ.json",
   "miniHistory": [
-    {
-      "date": "2026-09-24",
-      "close": 56.22999954223633,
-      "volume": 27841621,
-      "complete": true,
-      "missingSession": false
-    },
     {
       "date": "2026-09-28",
       "close": 47.47999954223633,
@@ -212,28 +199,23 @@
       "volume": 15372336,
       "complete": true,
       "missingSession": false
+    },
+    {
+      "date": "2026-10-30",
+      "close": 28.969999313354492,
+      "volume": 18953999,
+      "complete": true,
+      "missingSession": false
     }
   ],
   "source": {
     "provider": "Yahoo Finance / query1.finance.yahoo.com",
-    "fetchedAt": "2026-10-30T03:12:22.722Z",
+    "fetchedAt": "2026-10-30T14:05:22.809Z",
     "quoteBasis": "provider_daily_quote_anchored_at_judgment_day",
     "historicalQuoteScaleVerified": false,
     "note": "提供方可能修订历史报价；严格历史报价尺度未独立核验"
   },
   "history": [
-    {
-      "time": 1778031000,
-      "date": "2026-05-06",
-      "complete": true,
-      "open": 24.073537337005746,
-      "high": 24.37345606031689,
-      "low": 23.873590250240493,
-      "close": 23.993558883666992,
-      "volume": 4606732,
-      "adjustmentFactor": 0.9997316201527914,
-      "scaleFactor": 0.9997316201527914
-    },
     {
       "time": 1778117400,
       "date": "2026-05-07",
@@ -1661,6 +1643,18 @@
       "volume": 15372336,
       "adjustmentFactor": 1,
       "scaleFactor": 1
+    },
+    {
+      "time": 1793323800,
+      "date": "2026-10-30",
+      "complete": true,
+      "open": 35,
+      "high": 31.299999237060547,
+      "low": 28.5,
+      "close": 28.969999313354492,
+      "volume": 18953999,
+      "adjustmentFactor": 1,
+      "scaleFactor": 1
     }
   ],
   "company": {
@@ -1677,5 +1671,5 @@
     "items": [],
     "message": "尚未自动采集公告正文；事件不等于价格确认"
   },
-  "generatedAt": "2026-10-30T03:12:27.411Z"
+  "generatedAt": "2026-10-30T14:05:31.400Z"
 }

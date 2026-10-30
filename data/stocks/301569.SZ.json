@@ -2,12 +2,12 @@
   "symbol": "301569.SZ",
   "code": "301569",
   "name": "联亚药业",
-  "price": null,
+  "price": 18.219999313354492,
   "changePct": null,
   "currency": "CNY",
   "exchange": "SHZ",
   "industry": null,
-  "dataThrough": "2026-10-29",
+  "dataThrough": "2026-10-30",
   "data": {
     "version": "daily-contract-1",
     "state": "insufficient",
@@ -15,20 +15,20 @@
       "复权因子缺失，不能统一到判断日原始价格尺度",
       "至少需要60根连续完整日线"
     ],
-    "dataThrough": "2026-10-29",
-    "fetchedAt": "2026-10-30T03:12:20.001Z",
-    "expectedThrough": "2026-10-29",
+    "dataThrough": "2026-10-30",
+    "fetchedAt": "2026-10-30T14:05:19.163Z",
+    "expectedThrough": "2026-10-30",
     "corporateActions": [],
     "historyStart": "2026-10-15",
     "unfinishedBars": 0,
     "calendarSource": "SSE/SZSE official annual holiday notices, 2024-2026",
     "calendarVersion": "cn-equities-2024-2026-v1",
     "calendarValidThrough": "2026-12-31",
-    "sessionState": "not_completed",
+    "sessionState": "completed",
     "priceBasis": "judgment_day_raw",
-    "anchorFactor": null,
+    "anchorFactor": 1,
     "volumeBasis": "source_volume",
-    "judgmentAsOf": "2026-10-30T03:12:11.520Z",
+    "judgmentAsOf": "2026-10-30T14:05:06.247Z",
     "complete": false
   },
   "levels": {
@@ -38,7 +38,7 @@
     "planType": "breakout",
     "priceBasis": "judgment_day_raw",
     "tick": 0.01,
-    "dataThrough": "2026-10-29",
+    "dataThrough": "2026-10-30",
     "entry": null,
     "stop": null,
     "target1": null,
@@ -65,7 +65,7 @@
   "miniHistory": [
     {
       "date": "2026-10-15",
-      "close": null,
+      "close": 35.119998931884766,
       "volume": 93252798,
       "complete": true,
       "missingSession": false
@@ -136,14 +136,21 @@
     {
       "date": "2026-10-29",
       "close": null,
-      "volume": 30448603,
+      "volume": null,
+      "complete": true,
+      "missingSession": false
+    },
+    {
+      "date": "2026-10-30",
+      "close": 18.219999313354492,
+      "volume": 43387140,
       "complete": true,
       "missingSession": false
     }
   ],
   "source": {
     "provider": "Yahoo Finance / query1.finance.yahoo.com",
-    "fetchedAt": "2026-10-30T03:12:20.001Z",
+    "fetchedAt": "2026-10-30T14:05:19.163Z",
     "quoteBasis": "provider_daily_quote_anchored_at_judgment_day",
     "historicalQuoteScaleVerified": false,
     "note": "提供方可能修订历史报价；严格历史报价尺度未独立核验"
@@ -153,13 +160,13 @@
       "time": 1792027800,
       "date": "2026-10-15",
       "complete": true,
-      "open": null,
-      "high": null,
-      "low": null,
-      "close": null,
+      "open": 27,
+      "high": 42.150001525878906,
+      "low": 27,
+      "close": 35.119998931884766,
       "volume": 93252798,
       "adjustmentFactor": 1,
-      "scaleFactor": null
+      "scaleFactor": 1
     },
     {
       "time": 1792114200,
@@ -277,9 +284,21 @@
       "high": null,
       "low": null,
       "close": null,
-      "volume": 30448603,
+      "volume": null,
       "adjustmentFactor": null,
       "scaleFactor": null
+    },
+    {
+      "time": 1793323800,
+      "date": "2026-10-30",
+      "complete": true,
+      "open": 16.979999542236328,
+      "high": 19.450000762939453,
+      "low": 17.479999542236328,
+      "close": 18.219999313354492,
+      "volume": 43387140,
+      "adjustmentFactor": 1,
+      "scaleFactor": 1
     }
   ],
   "company": {
@@ -296,5 +315,5 @@
     "items": [],
     "message": "尚未自动采集公告正文；事件不等于价格确认"
   },
-  "generatedAt": "2026-10-30T03:12:27.411Z"
+  "generatedAt": "2026-10-30T14:05:31.400Z"
 }

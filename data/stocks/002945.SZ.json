@@ -2,172 +2,56 @@
   "symbol": "002945.SZ",
   "code": "002945",
   "name": "华林证券",
-  "price": 14.630000114440918,
-  "changePct": 0.8965525133856511,
+  "price": 14.329999923706055,
+  "changePct": -2.05058228563334,
   "currency": "CNY",
   "exchange": "SHZ",
   "industry": null,
-  "dataThrough": "2026-10-29",
+  "dataThrough": "2026-10-30",
   "data": {
     "version": "daily-contract-1",
-    "state": "ok",
-    "reasons": [],
-    "dataThrough": "2026-10-29",
-    "fetchedAt": "2026-10-30T03:12:20.540Z",
-    "expectedThrough": "2026-10-29",
+    "state": "insufficient",
+    "reasons": [
+      "日线价格关系异常"
+    ],
+    "dataThrough": "2026-10-30",
+    "fetchedAt": "2026-10-30T14:05:19.399Z",
+    "expectedThrough": "2026-10-30",
     "corporateActions": [
       {
         "type": "dividends",
         "date": "2026-07-17"
       }
     ],
-    "historyStart": "2026-03-03",
+    "historyStart": "2026-03-04",
     "unfinishedBars": 0,
     "calendarSource": "SSE/SZSE official annual holiday notices, 2024-2026",
     "calendarVersion": "cn-equities-2024-2026-v1",
     "calendarValidThrough": "2026-12-31",
-    "sessionState": "not_completed",
+    "sessionState": "completed",
     "priceBasis": "judgment_day_raw",
     "anchorFactor": 1,
     "volumeBasis": "source_volume",
-    "judgmentAsOf": "2026-10-30T03:12:11.520Z",
-    "complete": true
+    "judgmentAsOf": "2026-10-30T14:05:06.247Z",
+    "complete": false
   },
   "levels": {
     "version": "range20-1",
-    "state": "ok",
-    "reason": null,
+    "state": "unavailable",
+    "reason": "日线价格关系异常",
     "planType": "breakout",
     "priceBasis": "judgment_day_raw",
     "tick": 0.01,
-    "dataThrough": "2026-10-29",
-    "entry": 16.03,
-    "stop": 13.47,
-    "target1": 18.43,
-    "target2": 20.89,
-    "rr1": 0.9374999999999992,
-    "rr2": 1.8984374999999993,
-    "upper": 15.979999542236328,
-    "lower": 13.520000457763672,
-    "width": 2.4599990844726562,
-    "breakout": 16.03,
-    "invalidation": 13.47,
-    "rounding": "入场向上；止损及目标向下；仅展示时四舍五入比值"
+    "dataThrough": "2026-10-30",
+    "entry": null,
+    "stop": null,
+    "target1": null,
+    "target2": null,
+    "rr1": null,
+    "rr2": null
   },
-  "structure": {
-    "stage": "区间震荡",
-    "tone": "yellow",
-    "action": "继续等待",
-    "summary": "价格仍在结构区间内，当前没有足够量能证明方向。",
-    "levels": {
-      "version": "range20-1",
-      "state": "ok",
-      "reason": null,
-      "planType": "breakout",
-      "priceBasis": "judgment_day_raw",
-      "tick": 0.01,
-      "dataThrough": "2026-10-29",
-      "entry": 16.03,
-      "stop": 13.47,
-      "target1": 18.43,
-      "target2": 20.89,
-      "rr1": 0.9374999999999992,
-      "rr2": 1.8984374999999993,
-      "upper": 15.979999542236328,
-      "lower": 13.520000457763672,
-      "width": 2.4599990844726562,
-      "breakout": 16.03,
-      "invalidation": 13.47,
-      "rounding": "入场向上；止损及目标向下；仅展示时四舍五入比值"
-    },
-    "strategy": {
-      "version": "range20-t1-review-1",
-      "target": "T1",
-      "threshold": 1.5,
-      "state": "incompatible",
-      "qualified": null,
-      "t2Enabled": false,
-      "reason": "风险收益筛选配置不兼容：T1与1.5门槛冲突；正式策略待定，合格候选未判定"
-    },
-    "currentPrice": 14.63,
-    "windowDays": 20,
-    "range": {
-      "lower": 13.52,
-      "upper": 15.98,
-      "midpoint": 14.75,
-      "widthPct": 16.7
-    },
-    "prices": {
-      "confirm": 16.03,
-      "invalidation": 13.47,
-      "target1": 18.43,
-      "target2": 20.89
-    },
-    "volume": {
-      "current": 46069211,
-      "average20": 28139954,
-      "ratio": 1.64,
-      "recentRatio": 1.66,
-      "label": "明显放量"
-    },
-    "evidence": {
-      "compression": false,
-      "lowsRising": true,
-      "highsTightening": false,
-      "nearUpper": false,
-      "nearLower": false,
-      "aboveMa20": true,
-      "ma5": 14.9,
-      "ma20": 14.45,
-      "position": "区间下半部"
-    },
-    "riskReward": 0.9374999999999992,
-    "riskReward2": 1.8984374999999993,
-    "confirmation": "收盘不低于 16.03，且当日成交量达到20日均量的1.5倍以上",
-    "invalidation": "收盘不高于 13.47，不等待放量；实际成交可能受跳空、跌停或停牌影响",
-    "note": "结构判断只使用已完成的日线和成交量；盘中突破、单日脉冲或无量上涨不视为确认。"
-  },
-  "profile": {
-    "levels": {
-      "version": "range20-1",
-      "state": "ok",
-      "reason": null,
-      "planType": "breakout",
-      "priceBasis": "judgment_day_raw",
-      "tick": 0.01,
-      "dataThrough": "2026-10-29",
-      "entry": 16.03,
-      "stop": 13.47,
-      "target1": 18.43,
-      "target2": 20.89,
-      "rr1": 0.9374999999999992,
-      "rr2": 1.8984374999999993,
-      "upper": 15.979999542236328,
-      "lower": 13.520000457763672,
-      "width": 2.4599990844726562,
-      "breakout": 16.03,
-      "invalidation": 13.47,
-      "rounding": "入场向上；止损及目标向下；仅展示时四舍五入比值"
-    },
-    "strategy": {
-      "version": "range20-t1-review-1",
-      "target": "T1",
-      "threshold": 1.5,
-      "state": "incompatible",
-      "qualified": null,
-      "t2Enabled": false,
-      "reason": "风险收益筛选配置不兼容：T1与1.5门槛冲突；正式策略待定，合格候选未判定"
-    },
-    "priorHigh": 16.04,
-    "pullbackPct": -15.7,
-    "usefulPullback": true,
-    "volumeDryRatio": 2.09,
-    "volumeDriedUp": false,
-    "priceTight": false,
-    "lowsStoppedFalling": true,
-    "riskReward": 0.9374999999999992,
-    "riskReward2": 1.8984374999999993
-  },
+  "structure": null,
+  "profile": null,
   "strategy": {
     "version": "range20-t1-review-1",
     "target": "T1",
@@ -177,19 +61,12 @@
     "t2Enabled": false,
     "reason": "风险收益筛选配置不兼容：T1与1.5门槛冲突；正式策略待定，合格候选未判定"
   },
-  "stage": "区间震荡",
+  "stage": "暂停核验",
   "observation": false,
   "qualified": null,
   "probability": null,
   "detailPath": "data/stocks/002945.SZ.json",
   "miniHistory": [
-    {
-      "date": "2026-09-24",
-      "close": 14.479999542236328,
-      "volume": 9939100,
-      "complete": true,
-      "missingSession": false
-    },
     {
       "date": "2026-09-28",
       "close": 14.069999694824219,
@@ -322,28 +199,23 @@
       "volume": 46069211,
       "complete": true,
       "missingSession": false
+    },
+    {
+      "date": "2026-10-30",
+      "close": 14.329999923706055,
+      "volume": 53235549,
+      "complete": true,
+      "missingSession": false
     }
   ],
   "source": {
     "provider": "Yahoo Finance / query1.finance.yahoo.com",
-    "fetchedAt": "2026-10-30T03:12:20.540Z",
+    "fetchedAt": "2026-10-30T14:05:19.399Z",
     "quoteBasis": "provider_daily_quote_anchored_at_judgment_day",
     "historicalQuoteScaleVerified": false,
     "note": "提供方可能修订历史报价；严格历史报价尺度未独立核验"
   },
   "history": [
-    {
-      "time": 1778031000,
-      "date": "2026-05-06",
-      "complete": true,
-      "open": 15.5312299711577,
-      "high": 16.31774637968192,
-      "low": 15.521273826880133,
-      "close": 15.929466247558594,
-      "volume": 24117350,
-      "adjustmentFactor": 0.9955916404724121,
-      "scaleFactor": 0.9955916404724121
-    },
     {
       "time": 1778117400,
       "date": "2026-05-07",
@@ -1771,6 +1643,18 @@
       "volume": 46069211,
       "adjustmentFactor": 1,
       "scaleFactor": 1
+    },
+    {
+      "time": 1793323800,
+      "date": "2026-10-30",
+      "complete": true,
+      "open": 13.800000190734863,
+      "high": 15.300000190734863,
+      "low": 13.899999618530273,
+      "close": 14.329999923706055,
+      "volume": 53235549,
+      "adjustmentFactor": 1,
+      "scaleFactor": 1
     }
   ],
   "company": {
@@ -1787,5 +1671,5 @@
     "items": [],
     "message": "尚未自动采集公告正文；事件不等于价格确认"
   },
-  "generatedAt": "2026-10-30T03:12:27.411Z"
+  "generatedAt": "2026-10-30T14:05:31.400Z"
 }

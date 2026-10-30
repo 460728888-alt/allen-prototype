@@ -2,54 +2,48 @@
   "symbol": "301689.SZ",
   "code": "301689",
   "name": "电科思仪",
-  "price": 47.52000045776367,
-  "changePct": -11.277073862323196,
+  "price": 44.90999984741211,
+  "changePct": -5.492425473925156,
   "currency": "CNY",
   "exchange": "SHZ",
   "industry": null,
-  "dataThrough": "2026-10-29",
+  "dataThrough": "2026-10-30",
   "data": {
     "version": "daily-contract-1",
     "state": "insufficient",
     "reasons": [
       "至少需要60根连续完整日线"
     ],
-    "dataThrough": "2026-10-29",
-    "fetchedAt": "2026-10-30T03:12:25.211Z",
-    "expectedThrough": "2026-10-29",
+    "dataThrough": "2026-10-30",
+    "fetchedAt": "2026-10-30T14:05:27.378Z",
+    "expectedThrough": "2026-10-30",
     "corporateActions": [],
     "historyStart": "2026-09-10",
     "unfinishedBars": 0,
     "calendarSource": "SSE/SZSE official annual holiday notices, 2024-2026",
     "calendarVersion": "cn-equities-2024-2026-v1",
     "calendarValidThrough": "2026-12-31",
-    "sessionState": "not_completed",
+    "sessionState": "completed",
     "priceBasis": "judgment_day_raw",
     "anchorFactor": 1,
     "volumeBasis": "source_volume",
-    "judgmentAsOf": "2026-10-30T03:12:11.520Z",
+    "judgmentAsOf": "2026-10-30T14:05:06.247Z",
     "complete": false
   },
   "levels": {
     "version": "range20-1",
-    "state": "ok",
-    "reason": null,
+    "state": "unavailable",
+    "reason": "日线价格关系异常",
     "planType": "breakout",
     "priceBasis": "judgment_day_raw",
     "tick": 0.01,
-    "dataThrough": "2026-10-29",
-    "entry": 90.26,
-    "stop": 50.72,
-    "target1": 129.09,
-    "target2": 168.2,
-    "rr1": 0.9820435002529082,
-    "rr2": 1.971168437025796,
-    "upper": 89.98999786376953,
-    "lower": 50.880001068115234,
-    "width": 39.1099967956543,
-    "breakout": 90.26,
-    "invalidation": 50.72,
-    "rounding": "入场向上；止损及目标向下；仅展示时四舍五入比值"
+    "dataThrough": "2026-10-30",
+    "entry": null,
+    "stop": null,
+    "target1": null,
+    "target2": null,
+    "rr1": null,
+    "rr2": null
   },
   "structure": null,
   "profile": null,
@@ -68,13 +62,6 @@
   "probability": null,
   "detailPath": "data/stocks/301689.SZ.json",
   "miniHistory": [
-    {
-      "date": "2026-09-24",
-      "close": 83.87999725341797,
-      "volume": 32641789,
-      "complete": true,
-      "missingSession": false
-    },
     {
       "date": "2026-09-28",
       "close": 85.0999984741211,
@@ -207,11 +194,18 @@
       "volume": 10843942,
       "complete": true,
       "missingSession": false
+    },
+    {
+      "date": "2026-10-30",
+      "close": 44.90999984741211,
+      "volume": 8568167,
+      "complete": true,
+      "missingSession": false
     }
   ],
   "source": {
     "provider": "Yahoo Finance / query1.finance.yahoo.com",
-    "fetchedAt": "2026-10-30T03:12:25.211Z",
+    "fetchedAt": "2026-10-30T14:05:27.378Z",
     "quoteBasis": "provider_daily_quote_anchored_at_judgment_day",
     "historicalQuoteScaleVerified": false,
     "note": "提供方可能修订历史报价；严格历史报价尺度未独立核验"
@@ -576,6 +570,18 @@
       "volume": 10843942,
       "adjustmentFactor": 1,
       "scaleFactor": 1
+    },
+    {
+      "time": 1793323800,
+      "date": "2026-10-30",
+      "complete": true,
+      "open": 52,
+      "high": 48.470001220703125,
+      "low": 44.900001525878906,
+      "close": 44.90999984741211,
+      "volume": 8568167,
+      "adjustmentFactor": 1,
+      "scaleFactor": 1
     }
   ],
   "company": {
@@ -592,5 +598,5 @@
     "items": [],
     "message": "尚未自动采集公告正文；事件不等于价格确认"
   },
-  "generatedAt": "2026-10-30T03:12:27.411Z"
+  "generatedAt": "2026-10-30T14:05:31.400Z"
 }
