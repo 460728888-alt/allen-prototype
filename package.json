@@ -1,0 +1,15 @@
+{
+  "name": "allen-personal-pages",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "check": "node --check personal-app.js",
+    "test": "node --test *.test.js",
+    "test:browser": "node scripts/browser-check.mjs",
+    "refresh:market": "node scripts/refresh-market.mjs"
+  }
+}
