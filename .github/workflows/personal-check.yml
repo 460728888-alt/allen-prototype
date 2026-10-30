@@ -3,7 +3,7 @@ on:
   push:
     branches: [upgrade/personal-pages-v1]
     paths: ['**/*.js', '**/*.mjs', '**/*.html', '**/*.css', 'lib/**', 'package.json', '.github/workflows/personal-check.yml']
-  pull_request:
+  workflow_dispatch:
 permissions:
   contents: read
 concurrency:
