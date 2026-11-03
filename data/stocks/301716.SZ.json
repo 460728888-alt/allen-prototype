@@ -2,21 +2,21 @@
   "symbol": "301716.SZ",
   "code": "301716",
   "name": "鸿富诚",
-  "price": 430.8599853515625,
-  "changePct": 2.553966711266664,
+  "price": 400.04998779296875,
+  "changePct": -9.49300265731663,
   "currency": "CNY",
   "exchange": "SHZ",
   "industry": null,
-  "dataThrough": "2026-10-30",
+  "dataThrough": "2026-11-03",
   "data": {
     "version": "daily-contract-1",
     "state": "insufficient",
     "reasons": [
       "至少需要60根连续完整日线"
     ],
-    "dataThrough": "2026-10-30",
-    "fetchedAt": "2026-10-30T14:05:19.710Z",
-    "expectedThrough": "2026-10-30",
+    "dataThrough": "2026-11-03",
+    "fetchedAt": "2026-11-03T15:04:16.886Z",
+    "expectedThrough": "2026-11-03",
     "corporateActions": [],
     "historyStart": "2026-09-29",
     "unfinishedBars": 0,
@@ -27,23 +27,29 @@
     "priceBasis": "judgment_day_raw",
     "anchorFactor": 1,
     "volumeBasis": "source_volume",
-    "judgmentAsOf": "2026-10-30T14:05:06.247Z",
+    "judgmentAsOf": "2026-11-03T15:04:06.806Z",
     "complete": false
   },
   "levels": {
     "version": "range20-1",
-    "state": "unavailable",
-    "reason": "至少需要21根连续完整日线",
+    "state": "ok",
+    "reason": null,
     "planType": "breakout",
     "priceBasis": "judgment_day_raw",
     "tick": 0.01,
-    "dataThrough": "2026-10-30",
-    "entry": null,
-    "stop": null,
-    "target1": null,
-    "target2": null,
-    "rr1": null,
-    "rr2": null
+    "dataThrough": "2026-11-03",
+    "entry": 632.78,
+    "stop": 403.79,
+    "target1": 856.75,
+    "target2": 1082.61,
+    "rr1": 0.9780776453120227,
+    "rr2": 1.9644089261539806,
+    "upper": 630.8800048828125,
+    "lower": 405.010009765625,
+    "width": 225.8699951171875,
+    "breakout": 632.78,
+    "invalidation": 403.79,
+    "rounding": "入场向上；止损及目标向下；仅展示时四舍五入比值"
   },
   "structure": null,
   "profile": null,
@@ -62,13 +68,6 @@
   "probability": null,
   "detailPath": "data/stocks/301716.SZ.json",
   "miniHistory": [
-    {
-      "date": "2026-09-29",
-      "close": 578.8800048828125,
-      "volume": 10528330,
-      "complete": true,
-      "missingSession": false
-    },
     {
       "date": "2026-09-30",
       "close": 586.5999755859375,
@@ -194,11 +193,25 @@
       "volume": 1751366,
       "complete": true,
       "missingSession": false
+    },
+    {
+      "date": "2026-11-02",
+      "close": 442.010009765625,
+      "volume": 1932169,
+      "complete": true,
+      "missingSession": false
+    },
+    {
+      "date": "2026-11-03",
+      "close": 400.04998779296875,
+      "volume": 1937256,
+      "complete": true,
+      "missingSession": false
     }
   ],
   "source": {
     "provider": "Yahoo Finance / query1.finance.yahoo.com",
-    "fetchedAt": "2026-10-30T14:05:19.710Z",
+    "fetchedAt": "2026-11-03T15:04:16.886Z",
     "quoteBasis": "provider_daily_quote_anchored_at_judgment_day",
     "historicalQuoteScaleVerified": false,
     "note": "提供方可能修订历史报价；严格历史报价尺度未独立核验"
@@ -424,11 +437,35 @@
       "time": 1793323800,
       "date": "2026-10-30",
       "complete": true,
-      "open": 480.2099914550781,
+      "open": 405.0199890136719,
       "high": 458.75,
       "low": 405.010009765625,
       "close": 430.8599853515625,
       "volume": 1751366,
+      "adjustmentFactor": 1,
+      "scaleFactor": 1
+    },
+    {
+      "time": 1793583000,
+      "date": "2026-11-02",
+      "complete": true,
+      "open": 445.79998779296875,
+      "high": 455,
+      "low": 416,
+      "close": 442.010009765625,
+      "volume": 1932169,
+      "adjustmentFactor": 1,
+      "scaleFactor": 1
+    },
+    {
+      "time": 1793669400,
+      "date": "2026-11-03",
+      "complete": true,
+      "open": 405.0199890136719,
+      "high": 439,
+      "low": 394,
+      "close": 400.04998779296875,
+      "volume": 1937256,
       "adjustmentFactor": 1,
       "scaleFactor": 1
     }
@@ -447,5 +484,5 @@
     "items": [],
     "message": "尚未自动采集公告正文；事件不等于价格确认"
   },
-  "generatedAt": "2026-10-30T14:05:31.400Z"
+  "generatedAt": "2026-11-03T15:04:27.353Z"
 }
