@@ -1,7 +1,9 @@
 name: Verify published personal Pages
 on:
+  push:
+    branches: [main]
   workflow_run:
-    workflows: ['pages build and deployment']
+    workflows: ['pages build and deployment', 'Refresh public market files']
     types: [completed]
     branches: [main]
   workflow_dispatch:
@@ -9,7 +11,7 @@ permissions:
   contents: read
 jobs:
   verify:
-    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-24.04
     timeout-minutes: 6
     steps:
