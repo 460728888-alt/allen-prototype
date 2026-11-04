@@ -16,13 +16,19 @@ assert.equal(dates.length,120);
 function stock(symbol,name,flat=false){
  const history=dates.map((date,i)=>{const close=flat?100:i<100?100+i*.2:107.5;return {date,open:close,high:close+.2,low:close-.2,close,volume:i>=115?500:1000,complete:true}});
  const structure=analyzeVolumeStructure(history),profile=buildVolumeScreenProfile(history,structure);
- return {symbol,code:symbol.slice(0,6),name,price:history.at(-1).close,changePct:0,currency:'CNY',exchange:symbol.endsWith('.SS')?'SHH':'SHZ',dataThrough:through,data:{state:'ok',dataThrough:through,complete:true,lastBarComplete:true,historyStart:dates[0],corporateActions:[],reasons:[]},levels:structure.levels,structure,profile,history,miniHistory:history.slice(-20),detailPath:'data/stocks/'+symbol+'.json',source:{provider:'synthetic-browser-test'},company:{name},financial:{state:'unavailable'},news:{state:'unavailable',items:[]}};
+ return {symbol,code:symbol.slice(0,6),name,price:history.at(-1).close,changePct:0,currency:'CNY',exchange:symbol.endsWith('.SS')?'SHH':'SHZ',dataThrough:through,data:{state:'ok',dataThrough:through,complete:true,lastBarComplete:true,historyStart:dates[0],corporateActions:[],reasons:[]},levels:structure.levels,structure,profile,history,miniHistory:history.slice(-20),detailPath:'data/stocks/'+symbol+'.json',source:{provider:'synthetic-browser-test',attempts:[{host:'synthetic-primary',requested:true,checkedAt:generatedAt,state:'insufficient',dataThrough:through,reasons:['合成日线价格关系异常']},{host:'synthetic-secondary',requested:true,checkedAt:generatedAt,state:'ok',dataThrough:through,reasons:[]}],usedSecondary:true,independentConfirmation:false},company:{name},financial:{state:'unavailable'},news:{state:'unavailable',items:[]}};
 }
 function fixture(mode='active'){
  const list=[stock('600036.SS','合成样本甲',mode==='empty'),stock('000001.SZ','合成样本乙',mode==='empty')],coverage={targetRequested:2,poolSize:2,requested:2,returned:2,usable:2,failed:0,stale:0,insufficient:0,observations:mode==='empty'?0:2,qualified:null,poolSource:'synthetic-test-only',fallback:false,notRequested:0};
  const status={schema:1,state:'ok',attemptedAt:generatedAt,generatedAt,dataThrough:through,expectedThrough:through,coverage,failures:[],sourceFailures:[],message:'合成浏览器验收数据，不是实盘行情'};
  if(mode==='failed'){status.state='failed';Object.assign(coverage,{returned:0,usable:0,failed:2});status.failures=[{symbol:'SYNTHETIC',code:'timeout',message:'合成请求全部失败'}]}
  if(mode==='partial'){status.state='partial';Object.assign(coverage,{returned:1,usable:1,failed:1,observations:1});status.failures=[{symbol:'SYNTHETIC',code:'timeout',message:'合成请求超时'}];list.pop()}
+ if(mode==='quality'){
+  status.state='partial';Object.assign(coverage,{targetRequested:32,poolSize:32,requested:32,returned:2,usable:1,failed:30,insufficient:1,observations:1});
+  Object.assign(list[0].data,{state:'insufficient',complete:false,reasons:['合成日线价格关系异常']});Object.assign(list[0].source.attempts[1],{state:'insufficient',reasons:['合成备用日线仍异常']});
+  status.failures=[{symbol:list[0].symbol,state:'insufficient',code:'invalid_ohlc',message:'合成日线价格关系异常'},...Array.from({length:30},(_,i)=>({symbol:String(600100+i)+'.SS',state:'request_failed',code:'timeout',message:'合成请求超时 <img src=x onerror=alert(1)>'}))];
+  status.acquisition={httpRequests:64,secondaryRequests:32,recovered:0,skippedRetries:0};
+ }
  if(mode==='stale'){const previous=dates.at(-2);status.dataThrough=previous;coverage.stale=2;coverage.usable=0;for(const item of list){item.dataThrough=previous;item.data.dataThrough=previous;item.data.state='stale';item.history.pop();item.price=item.history.at(-1).close}}
  return {status,market:{schema:1,dataKind:'synthetic',generatedAt,dataThrough:status.dataThrough,expectedThrough:through,stocks:list},list};
 }
@@ -65,7 +71,7 @@ try{
    if(mode==='partial'){assert.match(text,/部分|失败|覆盖/);await page.locator('summary').filter({hasText:/失败原因/}).first().click();assert.match(await page.locator('#app').innerText(),/合成请求超时/)}
    await geometry(page);await screenshot(page,'home-'+mode+'-'+width);
    if(mode==='active'){
-    await navigate(page,'map');await geometry(page);await screenshot(page,'map-'+width);await navigate(page,'home');await choose(page);await page.locator('svg.price-chart').waitFor();
+    await navigate(page,'map');await geometry(page);await screenshot(page,'map-'+width);await navigate(page,'home');await choose(page);await page.locator('svg.price-chart').waitFor();await page.locator('.source-audit summary').click();assert.match(await page.locator('.source-audit').innerText(),/synthetic-primary/);assert.match(await page.locator('.source-audit').innerText(),/不是第二份独立证实/);
     for(const marker of ['pullback','compression','breakout']){await page.locator('button[data-marker="'+marker+'"]').click();const d=page.locator('#evidenceDialog');await d.waitFor({state:'visible'});const text=await d.innerText();assert.match(text,/支持证据/);assert.match(text,/疑点/);assert.match(text,/日期|截止/);assert.match(text,/计算|公式/);await page.keyboard.press('Escape')}
     await page.locator('[data-save-research]').click();await page.locator('#notice').filter({hasText:/已保存/}).waitFor();
     const before=await page.evaluate(()=>JSON.parse(localStorage.getItem('allen.personal.v1')));assert.equal(before.research.length,1);
@@ -77,11 +83,25 @@ try{
     const restored=await page.evaluate(()=>JSON.parse(localStorage.getItem('allen.personal.v1')));assert.deepEqual(restored.research.map(r=>r.id),twice.research.map(r=>r.id));
     const downloading=page.waitForEvent('download');await page.locator('#exportBackup').click();const dl=await downloading,exportFile=path.join(output,'synthetic-backup-'+width+'.json');await dl.saveAs(exportFile);assert.equal(JSON.parse(fs.readFileSync(exportFile,'utf8')).research.length,2);
     await page.locator('#importBackup').setInputFiles(exportFile);await page.locator('#notice').filter({hasText:/已合并/}).waitFor();assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('allen.personal.v1')).research.length),2);
+    await navigate(page,'home');assert.equal(await page.locator('.review-item').count(),2);assert.match(await page.locator('.review-panel').innerText(),/待设置/);await page.locator('.review-item [data-research-id]').first().click();await page.locator('#researchArchive').waitFor();
     await navigate(page,'validation');await geometry(page);assert.match(await page.locator('#app').innerText(),/事后重建|未验证|未证明/);await screenshot(page,'validation-'+width);
    }
    assert.deepEqual(errors,[]);assert.deepEqual(remote,[]);results.push({width,height,mode,passed:true});
   }finally{await context.close()}
  }
+
+ for(const [width,height]of [[1194,834],[390,844],[1440,900]]){
+  const sample=await open(width,height,'quality'),{context,page,errors,remote}=sample;
+  try{
+   await page.locator('[data-tool="health"]').first().click();await page.locator('#dataHealth').waitFor();assert.equal(await page.locator('.health-item').count(),25);
+   await page.locator('[data-health-page="2"]').click();assert.equal(await page.locator('.health-item').count(),6);
+   await page.locator('#healthReason').selectOption('合成日线价格关系异常');assert.equal(await page.locator('.health-item').count(),1);assert.match(await page.locator('#healthResults').innerText(),/600036.SS/);
+   await page.locator('#healthReason').selectOption('');await page.locator('#healthSearch').fill('600100');assert.equal(await page.locator('.health-item').count(),1);assert.equal(await page.locator('.health-item [data-stock]').count(),0);assert.equal(await page.locator('#dataHealth img').count(),0);assert.match(await page.locator('.health-item').innerText(),/不能打开虚构档案/);
+   await page.locator('#healthSearch').fill('合成样本甲');assert.equal(await page.locator('.health-item').count(),1);await page.locator('.health-item [data-stock]').click();await page.locator('#researchArchive').waitFor();assert.equal(await page.locator('[data-save-research]').isDisabled(),true);
+   await page.locator('.source-audit summary').click();assert.match(await page.locator('.source-audit').innerText(),/获取过程|原数据校验|合成/);await geometry(page);await screenshot(page,'data-health-'+width);assert.deepEqual(errors,[]);assert.deepEqual(remote,[]);results.push({case:'data-health',width,height,passed:true});
+  }finally{await context.close()}
+ }
+
  const broken=await open(1194,834);try{
   const before=await broken.page.evaluate(()=>localStorage.getItem('allen.personal.v1'));await broken.page.evaluate(()=>{Storage.prototype.setItem=function(){throw Error('synthetic quota failure')}});
   await choose(broken.page);await broken.page.locator('[data-save-research]').click();await broken.page.locator('#notice').filter({hasText:/保存失败|未保存|无法保存/}).waitFor();assert.equal(await broken.page.evaluate(()=>localStorage.getItem('allen.personal.v1')),before);assert.deepEqual(broken.errors,[]);results.push({case:'storage-failure',passed:true});
