@@ -2,19 +2,19 @@
   "symbol": "688777.SS",
   "code": "688777",
   "name": "中控技术",
-  "price": 70.19999694824219,
-  "changePct": -4.502795662900539,
+  "price": 73.9000015258789,
+  "changePct": 5.2706620206332655,
   "currency": "CNY",
   "exchange": "SHH",
   "industry": null,
-  "dataThrough": "2026-11-03",
+  "dataThrough": "2026-11-04",
   "data": {
     "version": "daily-contract-1",
     "state": "ok",
     "reasons": [],
-    "dataThrough": "2026-11-03",
-    "fetchedAt": "2026-11-03T15:04:14.022Z",
-    "expectedThrough": "2026-11-03",
+    "dataThrough": "2026-11-04",
+    "fetchedAt": "2026-11-04T15:23:34.101Z",
+    "expectedThrough": "2026-11-04",
     "corporateActions": [
       {
         "type": "dividends",
@@ -30,7 +30,7 @@
     "priceBasis": "judgment_day_raw",
     "anchorFactor": 1,
     "volumeBasis": "source_volume",
-    "judgmentAsOf": "2026-11-03T15:04:06.806Z",
+    "judgmentAsOf": "2026-11-04T15:23:24.864Z",
     "complete": true
   },
   "levels": {
@@ -40,7 +40,7 @@
     "planType": "breakout",
     "priceBasis": "judgment_day_raw",
     "tick": 0.01,
-    "dataThrough": "2026-11-03",
+    "dataThrough": "2026-11-04",
     "entry": 86.11,
     "stop": 64.68,
     "target1": 106.81,
@@ -55,10 +55,10 @@
     "rounding": "入场向上；止损及目标向下；仅展示时四舍五入比值"
   },
   "structure": {
-    "stage": "区间震荡",
-    "tone": "yellow",
-    "action": "继续等待",
-    "summary": "价格仍在结构区间内，当前没有足够量能证明方向。",
+    "stage": "回调观察",
+    "tone": "orange",
+    "action": "等待止跌",
+    "summary": "价格处于结构下部或短期均价仍弱，尚未形成向上确认。",
     "levels": {
       "version": "range20-1",
       "state": "ok",
@@ -66,7 +66,7 @@
       "planType": "breakout",
       "priceBasis": "judgment_day_raw",
       "tick": 0.01,
-      "dataThrough": "2026-11-03",
+      "dataThrough": "2026-11-04",
       "entry": 86.11,
       "stop": 64.68,
       "target1": 106.81,
@@ -89,7 +89,7 @@
       "t2Enabled": false,
       "reason": "风险收益筛选配置不兼容：T1与1.5门槛冲突；正式策略待定，合格候选未判定"
     },
-    "currentPrice": 70.2,
+    "currentPrice": 73.9,
     "windowDays": 20,
     "range": {
       "lower": 64.88,
@@ -104,11 +104,11 @@
       "target2": 127.79
     },
     "volume": {
-      "current": 19048139,
-      "average20": 17970931,
-      "ratio": 1.06,
-      "recentRatio": 1.3,
-      "label": "量能平稳"
+      "current": 23650015,
+      "average20": 18499056,
+      "ratio": 1.28,
+      "recentRatio": 1.21,
+      "label": "温和放量"
     },
     "evidence": {
       "compression": false,
@@ -117,8 +117,8 @@
       "nearUpper": false,
       "nearLower": false,
       "aboveMa20": false,
-      "ma5": 74.8,
-      "ma20": 74.36,
+      "ma5": 73.38,
+      "ma20": 74.05,
       "position": "区间下半部"
     },
     "riskReward": 0.9659356042930476,
@@ -135,7 +135,7 @@
       "planType": "breakout",
       "priceBasis": "judgment_day_raw",
       "tick": 0.01,
-      "dataThrough": "2026-11-03",
+      "dataThrough": "2026-11-04",
       "entry": 86.11,
       "stop": 64.68,
       "target1": 106.81,
@@ -161,7 +161,7 @@
     "priorHigh": 111.85,
     "pullbackPct": -42,
     "usefulPullback": false,
-    "volumeDryRatio": 1.53,
+    "volumeDryRatio": 1.41,
     "volumeDriedUp": false,
     "priceTight": false,
     "lowsStoppedFalling": true,
@@ -177,19 +177,12 @@
     "t2Enabled": false,
     "reason": "风险收益筛选配置不兼容：T1与1.5门槛冲突；正式策略待定，合格候选未判定"
   },
-  "stage": "区间震荡",
+  "stage": "回调观察",
   "observation": false,
   "qualified": null,
   "probability": null,
   "detailPath": "data/stocks/688777.SS.json",
   "miniHistory": [
-    {
-      "date": "2026-09-30",
-      "close": 80.05000305175781,
-      "volume": 9196795,
-      "complete": true,
-      "missingSession": false
-    },
     {
       "date": "2026-10-08",
       "close": 77.08000183105469,
@@ -322,28 +315,23 @@
       "volume": 19048139,
       "complete": true,
       "missingSession": false
+    },
+    {
+      "date": "2026-11-04",
+      "close": 73.9000015258789,
+      "volume": 23650015,
+      "complete": true,
+      "missingSession": false
     }
   ],
   "source": {
     "provider": "Yahoo Finance / query1.finance.yahoo.com",
-    "fetchedAt": "2026-11-03T15:04:14.022Z",
+    "fetchedAt": "2026-11-04T15:23:34.101Z",
     "quoteBasis": "provider_daily_quote_anchored_at_judgment_day",
     "historicalQuoteScaleVerified": false,
     "note": "提供方可能修订历史报价；严格历史报价尺度未独立核验"
   },
   "history": [
-    {
-      "time": 1778463000,
-      "date": "2026-05-11",
-      "complete": true,
-      "open": 81.13219360180665,
-      "high": 84.34317885839846,
-      "low": 80.10507880651858,
-      "close": 81.77040100097656,
-      "volume": 25089592,
-      "adjustmentFactor": 0.9972000122070312,
-      "scaleFactor": 0.9972000122070312
-    },
     {
       "time": 1778549400,
       "date": "2026-05-12",
@@ -1771,6 +1759,18 @@
       "volume": 19048139,
       "adjustmentFactor": 1,
       "scaleFactor": 1
+    },
+    {
+      "time": 1793755800,
+      "date": "2026-11-04",
+      "complete": true,
+      "open": 71.25,
+      "high": 74.5,
+      "low": 68.30999755859375,
+      "close": 73.9000015258789,
+      "volume": 23650015,
+      "adjustmentFactor": 1,
+      "scaleFactor": 1
     }
   ],
   "company": {
@@ -1787,5 +1787,5 @@
     "items": [],
     "message": "尚未自动采集公告正文；事件不等于价格确认"
   },
-  "generatedAt": "2026-11-03T15:04:27.353Z"
+  "generatedAt": "2026-11-04T15:23:47.118Z"
 }

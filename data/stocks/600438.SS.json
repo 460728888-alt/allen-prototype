@@ -2,19 +2,19 @@
   "symbol": "600438.SS",
   "code": "600438",
   "name": "通威股份",
-  "price": 11.479999542236328,
-  "changePct": 0.8787295851474974,
+  "price": 11.800000190734863,
+  "changePct": 2.787462206084701,
   "currency": "CNY",
   "exchange": "SHH",
   "industry": null,
-  "dataThrough": "2026-11-03",
+  "dataThrough": "2026-11-04",
   "data": {
     "version": "daily-contract-1",
     "state": "ok",
     "reasons": [],
-    "dataThrough": "2026-11-03",
-    "fetchedAt": "2026-11-03T15:04:19.950Z",
-    "expectedThrough": "2026-11-03",
+    "dataThrough": "2026-11-04",
+    "fetchedAt": "2026-11-04T15:23:40.454Z",
+    "expectedThrough": "2026-11-04",
     "corporateActions": [],
     "historyStart": "2026-03-09",
     "unfinishedBars": 0,
@@ -25,7 +25,7 @@
     "priceBasis": "judgment_day_raw",
     "anchorFactor": 1,
     "volumeBasis": "source_volume",
-    "judgmentAsOf": "2026-11-03T15:04:06.806Z",
+    "judgmentAsOf": "2026-11-04T15:23:24.864Z",
     "complete": true
   },
   "levels": {
@@ -35,7 +35,7 @@
     "planType": "breakout",
     "priceBasis": "judgment_day_raw",
     "tick": 0.01,
-    "dataThrough": "2026-11-03",
+    "dataThrough": "2026-11-04",
     "entry": 12.03,
     "stop": 10.53,
     "target1": 13.4,
@@ -50,10 +50,10 @@
     "rounding": "入场向上；止损及目标向下；仅展示时四舍五入比值"
   },
   "structure": {
-    "stage": "回调观察",
-    "tone": "orange",
-    "action": "等待止跌",
-    "summary": "价格处于结构下部或短期均价仍弱，尚未形成向上确认。",
+    "stage": "区间震荡",
+    "tone": "yellow",
+    "action": "继续等待",
+    "summary": "价格仍在结构区间内，当前没有足够量能证明方向。",
     "levels": {
       "version": "range20-1",
       "state": "ok",
@@ -61,7 +61,7 @@
       "planType": "breakout",
       "priceBasis": "judgment_day_raw",
       "tick": 0.01,
-      "dataThrough": "2026-11-03",
+      "dataThrough": "2026-11-04",
       "entry": 12.03,
       "stop": 10.53,
       "target1": 13.4,
@@ -84,7 +84,7 @@
       "t2Enabled": false,
       "reason": "风险收益筛选配置不兼容：T1与1.5门槛冲突；正式策略待定，合格候选未判定"
     },
-    "currentPrice": 11.48,
+    "currentPrice": 11.8,
     "windowDays": 20,
     "range": {
       "lower": 10.57,
@@ -99,11 +99,11 @@
       "target2": 14.82
     },
     "volume": {
-      "current": 48408162,
-      "average20": 42152013,
-      "ratio": 1.15,
-      "recentRatio": 1,
-      "label": "量能平稳"
+      "current": 55621703,
+      "average20": 43292184,
+      "ratio": 1.28,
+      "recentRatio": 1.09,
+      "label": "温和放量"
     },
     "evidence": {
       "compression": false,
@@ -112,8 +112,8 @@
       "nearUpper": false,
       "nearLower": false,
       "aboveMa20": true,
-      "ma5": 11.33,
-      "ma20": 11.39,
+      "ma5": 11.42,
+      "ma20": 11.4,
       "position": "区间上半部"
     },
     "riskReward": 0.913333333333334,
@@ -130,7 +130,7 @@
       "planType": "breakout",
       "priceBasis": "judgment_day_raw",
       "tick": 0.01,
-      "dataThrough": "2026-11-03",
+      "dataThrough": "2026-11-04",
       "entry": 12.03,
       "stop": 10.53,
       "target1": 13.4,
@@ -156,7 +156,7 @@
     "priorHigh": 13.65,
     "pullbackPct": -22.6,
     "usefulPullback": true,
-    "volumeDryRatio": 1.06,
+    "volumeDryRatio": 1.19,
     "volumeDriedUp": false,
     "priceTight": false,
     "lowsStoppedFalling": false,
@@ -172,19 +172,12 @@
     "t2Enabled": false,
     "reason": "风险收益筛选配置不兼容：T1与1.5门槛冲突；正式策略待定，合格候选未判定"
   },
-  "stage": "回调观察",
+  "stage": "区间震荡",
   "observation": false,
   "qualified": null,
   "probability": null,
   "detailPath": "data/stocks/600438.SS.json",
   "miniHistory": [
-    {
-      "date": "2026-09-30",
-      "close": 11.520000457763672,
-      "volume": 55769412,
-      "complete": true,
-      "missingSession": false
-    },
     {
       "date": "2026-10-08",
       "close": 11.4399995803833,
@@ -317,28 +310,23 @@
       "volume": 48408162,
       "complete": true,
       "missingSession": false
+    },
+    {
+      "date": "2026-11-04",
+      "close": 11.800000190734863,
+      "volume": 55621703,
+      "complete": true,
+      "missingSession": false
     }
   ],
   "source": {
     "provider": "Yahoo Finance / query1.finance.yahoo.com",
-    "fetchedAt": "2026-11-03T15:04:19.950Z",
+    "fetchedAt": "2026-11-04T15:23:40.454Z",
     "quoteBasis": "provider_daily_quote_anchored_at_judgment_day",
     "historicalQuoteScaleVerified": false,
     "note": "提供方可能修订历史报价；严格历史报价尺度未独立核验"
   },
   "history": [
-    {
-      "time": 1778463000,
-      "date": "2026-05-11",
-      "complete": true,
-      "open": 17.1200008392334,
-      "high": 17.450000762939453,
-      "low": 17.110000610351562,
-      "close": 17.219999313354492,
-      "volume": 63156535,
-      "adjustmentFactor": 1,
-      "scaleFactor": 1
-    },
     {
       "time": 1778549400,
       "date": "2026-05-12",
@@ -1766,6 +1754,18 @@
       "volume": 48408162,
       "adjustmentFactor": 1,
       "scaleFactor": 1
+    },
+    {
+      "time": 1793755800,
+      "date": "2026-11-04",
+      "complete": true,
+      "open": 11.479999542236328,
+      "high": 11.829999923706055,
+      "low": 11.369999885559082,
+      "close": 11.800000190734863,
+      "volume": 55621703,
+      "adjustmentFactor": 1,
+      "scaleFactor": 1
     }
   ],
   "company": {
@@ -1782,5 +1782,5 @@
     "items": [],
     "message": "尚未自动采集公告正文；事件不等于价格确认"
   },
-  "generatedAt": "2026-11-03T15:04:27.353Z"
+  "generatedAt": "2026-11-04T15:23:47.118Z"
 }
