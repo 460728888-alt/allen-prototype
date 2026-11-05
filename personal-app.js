@@ -26,7 +26,7 @@ function researchCoverage(newsOnly=false){
  if(!c)return '<p class="muted">本次公司与公告覆盖统计未取得，不能据此判断没有资料。</p>';
  const company=c.company||{},f=c.financial||{},a=c.announcements||{},groups=new Map();
  for(const v of Array.isArray(status.failures)?status.failures:[]){const key=(v.source||'资料')+' · '+(v.code||'未核验')+' · '+(v.message||'原因未保存');groups.set(key,(groups.get(key)||0)+1)}
- return '<details class="research-coverage"><summary>本批资料覆盖范围与失败原因</summary><p class="muted">生成 '+esc(status.generatedAt||status.fetchedAt||'未知')+'；资料池 '+n(c.poolSize)+' 只，不代表全市场。</p>'+
+ return '<details class="research-coverage"><summary>本批资料覆盖范围与失败原因</summary><p class="muted">生成 '+esc(status.generatedAt||status.fetchedAt||'未知')+'；资料池 '+n(c.poolSize)+' 只，不代表全市场。公司请求优先原网站已有公开样本，属于资料获取顺序，不是机会排名。</p>'+
  (!newsOnly?'<p class="muted">公司：新取得 '+n(company.ok)+' · 7日内缓存 '+n(company.cached)+' · 获取或校验失败 '+n(company.failed)+' · 不足 '+n(company.insufficient)+' · 过期 '+n(company.stale)+' · 未请求 '+n(company.notRequested)+'</p><p class="muted">财报：至少一期 '+n(f.withReports)+' 只 · 未取得 '+n(f.withoutReports)+' 只；读取 '+n(f.returnedPages)+' / 请求 '+n(f.requestedPages)+' 页，每报告期最多16页。</p>':'')+
  '<p class="muted">公告：'+esc(a.beginDate||'范围未知')+' 至 '+esc(a.endDate||'范围未知')+' · 已读 '+n(a.returnedPages)+' / 来源总页数 '+n(a.totalPages)+'，上限20页；'+esc(a.complete===true?'来源返回范围已读，仍未核验正文。':'范围未完整覆盖，未匹配不代表没有公告。')+'本批列表最多展示60条匹配记录。</p>'+
  [...groups].slice(0,15).map(([text,count])=>'<p class="muted">'+esc(text)+' · '+n(count)+' 条诊断记录</p>').join('')+'</details>';
@@ -51,7 +51,7 @@ function eventRadar(limit=5){
  const age=Date.now()-Date.parse(index?.generatedAt||'');
  const unavailable=!index||!Number.isFinite(age)||age<0||age>7*86400000||!status||!['ok','partial'].includes(status.state);
  return '<section class="card event-radar"><div class="eyebrow">INDEPENDENT CHANNEL / ANNOUNCEMENT INDEX</div><h2>公告线索 · 先核验正文</h2><p class="muted">按公告日期展示，不是利好排名。事件不等于价格确认，标题不代替正文。</p>'+
- (unavailable?'<p class="warning">本次公告资料未能完成获取，不能解释为没有公告。行情研究独立保留。</p>':items.length?items.map(i=>{const s=bySymbol(i.symbol);return '<article class="event"><span class="pill">公告待核验</span><h3>'+esc(s?.name||i.symbol)+'</h3><p>'+esc(i.title)+'</p><small>公告日期 '+esc(i.noticeDate)+' · '+esc(i.category||'分类未提供')+'<br>价格阶段独立核查：'+esc(stageOf(s,state.assessment).label)+'</small><div class="row">'+button('连到价格与公司档案','data-stock="'+esc(i.symbol)+'"','link')+'<a href="'+esc(safeResearchUrl(i.url,i.symbol))+'" target="_blank" rel="noopener noreferrer">核对公告来源 ↗</a></div></article>'}).join(''):'<p class="muted">已读取范围暂未匹配可展示的公告，不表示这些公司没有公告。</p>')+
+ (unavailable?'<p class="warning">本次公告资料未能完成获取，不能解释为没有公告。行情研究独立保留。</p>':items.length?items.map(i=>{const s=bySymbol(i.symbol);return '<article class="event"><span class="pill">公告待核验</span><h3>'+esc(s?.name||i.symbol)+'</h3><p>'+esc(i.title)+'</p><small>公告日期 '+esc(i.noticeDate)+' · '+esc(i.category||'分类未提供')+'<br>价格阶段独立核查：'+esc(stageOf(s,state.assessment).label)+'</small><div class="row">'+button('连到价格与公司档案','data-stock="'+esc(i.symbol)+'"','link')+'<a href="'+esc(safeResearchUrl(i.url||i.link,i.symbol))+'" target="_blank" rel="noopener noreferrer">核对公告来源 ↗</a></div></article>'}).join(''):'<p class="muted">已读取范围暂未匹配可展示的公告，不表示这些公司没有公告。</p>')+
  '<p class="muted">本批生成 '+esc(index?.generatedAt||'未取得')+'，不是实时公告服务。只覆盖当前公开价格名单及本次有限分页范围；来源和抓取时间见个股资料。公告正文未自动解读。</p>'+button(limit<20?'查看本批公告线索列表':'查看全部研究工具','data-tool="'+(limit<20?'events':'all')+'"','link')+researchCoverage(true)+'</section>';
 }
 function renderKeepingNote(){

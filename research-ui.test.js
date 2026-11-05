@@ -16,6 +16,6 @@ test('old records without research data do not claim current financials were kno
 });
 test('only an eligible later-view snapshot exposes append action and a finance view does not mix announcement content',()=>{
  const view={bundle:bundle(),state:'partial',label:'当前未留档',canAttach:true};
- assert.match(renderResearchPanel(view,{symbol,recordId:'r'}),/data-attach-research/);assert.ok(!renderResearchPanel({...view,canAttach:false},{symbol,recordId:'r'}).includes('data-attach-research'));
+ assert.match(renderResearchPanel(view,{symbol,recordId:'r'}),/data-attach-research/);assert.ok(!renderResearchPanel({...view,sourceKind:'current_saved'},{symbol,recordId:'r'}).includes('data-attach-research'));assert.ok(!renderResearchPanel({...view,canAttach:false},{symbol,recordId:'r'}).includes('data-attach-research'));
  const finance=renderResearchPanel(view,{symbol,mode:'financial'});assert.ok(!finance.includes('announcement-item'));assert.match(finance,/年初至报告期末累计/);
 });

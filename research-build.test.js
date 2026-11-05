@@ -69,3 +69,10 @@ test('identity-only company and completely missing financial metrics are insuffi
  const r=rawFinance();for(const key of ['TOTAL_OPERATE_INCOME','PARENT_NETPROFIT','YSTZ','SJLTZ','WEIGHTAVG_ROE','XSMLL','BASIC_EPS','BPS','MGJYXJJE'])r[key]=null;
  assert.throws(()=>normalizeFinancialRow(r,{period,today,observedAt:at,symbol:'600036.SS'}),/均缺失/);
 });
+
+test('company collection prioritizes the existing public sample without shrinking the price universe',async()=>{
+ const trace=[],universe={...market,stocks:[{symbol:'000002.SZ',name:'非优先合成公司'},...market.stocks]},before=JSON.stringify(universe);
+ const r=await run({market:universe,fetchImpl:fetchFixture({trace})});
+ assert.deepEqual(trace.filter(u=>u.hostname==='emweb.securities.eastmoney.com').map(u=>u.searchParams.get('code')),['SZ000001','SH600036','SZ000002']);
+ assert.equal(r.status.coverage.poolSize,3);assert.equal(Object.keys(r.bundles).length,3);assert.equal(JSON.stringify(universe),before);
+});

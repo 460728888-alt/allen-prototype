@@ -42,6 +42,6 @@ export function renderResearchPanel(view,{symbol,loading=false,error=null,mode='
   '<p class="muted">公告范围 '+esc(ann.scope?.from||ann.scope?.beginDate||'起点未保存')+' 至 '+esc(ann.scope?.through||ann.scope?.endDate||'终点未保存')+'；'+esc(ann.scope?.complete===true?'来源返回范围已读取，仍不代表独立核验。':'本次范围有限，未匹配部分仍未知。')+'</p></section>';
  }
  if(view.excluded&&Object.values(view.excluded).some(v=>finite(v)&&v>0))html+='<p class="warning">有资料因日期、获取时刻或链接未通过核验而未展示，未据此生成判断。</p>';
- if(recordId&&view.canAttach)html+='<button class="primary" data-attach-research>把当前资料追加到这条研究</button><small>新增一条带行情与资料快照的笔记，原始判断不覆盖。</small>';
+ if(recordId&&view.canAttach&&view.sourceKind!=='current_saved')html+='<button class="primary" data-attach-research>把当前资料追加到这条研究</button><small>新增一条带行情与资料快照的笔记，原始判断不覆盖。</small>';
  return html+'</article>';
 }

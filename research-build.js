@@ -1,3 +1,4 @@
+import {FALLBACK} from './market-build.js';
 const validSymbol=v=>typeof v==='string'&&/^\d{6}\.(SS|SZ)$/.test(v);
 const stamp=v=>typeof v==='string'&&Number.isFinite(Date.parse(v));
 const iso=v=>new Date(v).toISOString();
@@ -8,7 +9,7 @@ const num=v=>{if(typeof v==='number')return Number.isFinite(v)?v:null;if(typeof 
 const clone=v=>JSON.parse(JSON.stringify(v));
 const cnDate=v=>iso(v+8*3600000).slice(0,10);
 const shiftDay=(d,n)=>iso(Date.parse(d+'T00:00:00Z')+n*86400000).slice(0,10);
-const errorInfo=e=>({code:e?.code||(['TimeoutError','AbortError'].includes(e?.name)?'timeout':'request_error'),message:text(e?.message||'公开数据获取失败',240)});
+const errorInfo=e=>{const timeout=['TimeoutError','AbortError'].includes(e?.name)||/timeout|timed out|aborted due to timeout/i.test(e?.message||'');return {code:timeout?'timeout':typeof e?.code==='string'?e.code:'request_error',message:timeout?'请求超时':text(e?.message||'公开数据获取失败',240)}};
 function quarters(today){const years=[Number(today.slice(0,4))-1,Number(today.slice(0,4))];return years.flatMap(y=>['03-31','06-30','09-30','12-31'].map(md=>y+'-'+md)).filter(d=>d<today).sort().reverse().slice(0,2)}
 function query(base,params){return base+'?'+new URLSearchParams(params)}
 const metrics={revenue:'TOTAL_OPERATE_INCOME',netProfit:'PARENT_NETPROFIT',revenueGrowth:'YSTZ',profitGrowth:'SJLTZ',roe:'WEIGHTAVG_ROE',grossMargin:'XSMLL',eps:'BASIC_EPS',bps:'BPS',operatingCashPerShare:'MGJYXJJE'};
@@ -104,9 +105,11 @@ export async function buildResearch({market,now=new Date(),fetchImpl=globalThis.
   }
  }
  async function companies(){
+  // Request priority only: the public original sample is not an opportunity ranking.
+  const ranks=new Map(FALLBACK.map((s,i)=>[s.symbol,i])),order=stocks.slice().sort((a,b)=>(ranks.get(a.symbol)??FALLBACK.length)-(ranks.get(b.symbol)??FALLBACK.length)||a.symbol.localeCompare(b.symbol));
   let next=0;
-  async function worker(){while(next<stocks.length){
-   const item=stocks[next++],symbol=item.symbol,oldBundle=previousBundles?.[symbol],old=oldBundle?.symbol===symbol?oldBundle.company:null,oldTime=stamp(old?.fetchedAt)?Date.parse(old.fetchedAt):null;
+  async function worker(){while(next<order.length){
+   const item=order[next++],symbol=item.symbol,oldBundle=previousBundles?.[symbol],old=oldBundle?.symbol===symbol?oldBundle.company:null,oldTime=stamp(old?.fetchedAt)?Date.parse(old.fetchedAt):null;
    if(old&&['ok','cached'].includes(old.state)&&old.symbol===symbol&&oldTime!==null&&clock()>=oldTime&&clock()-oldTime<=7*86400000){
     bundles[symbol].company={...clone(old),state:'ok',cacheHit:true,source:{...clone(old.source||{}),fetchedAt:old.fetchedAt},observedAt:stamp(old.observedAt)&&Date.parse(old.observedAt)<=oldTime?old.observedAt:old.fetchedAt,message:'复用7日内公开资料，原获取与观察时间保留。'};continue;
    }
@@ -161,7 +164,7 @@ export async function buildResearch({market,now=new Date(),fetchImpl=globalThis.
   eventItems.push(...b.announcements.items.map(item=>({...item,bundleId:b.bundleId})));
  }
  eventItems.sort((a,b)=>b.noticeDate.localeCompare(a.noticeDate)||b.id.localeCompare(a.id)||a.symbol.localeCompare(b.symbol));
- const coverage={poolSize:stocks.length,company:{...companyMeta,usable:companyMeta.ok+companyMeta.cached},financial:{withReports:Object.values(bundles).filter(b=>b.financial.reports.length).length,withoutReports:Object.values(bundles).filter(b=>!b.financial.reports.length).length,...financeMeta},announcements:{withItems:Object.values(bundles).filter(b=>b.announcements.items.length).length,withoutItems:Object.values(bundles).filter(b=>!b.announcements.items.length).length,...newsMeta}};
+ const coverage={poolSize:stocks.length,company:{...companyMeta,usable:companyMeta.ok+companyMeta.cached,priority:'original_public_sample_then_symbol_not_recommendation'},financial:{withReports:Object.values(bundles).filter(b=>b.financial.reports.length).length,withoutReports:Object.values(bundles).filter(b=>!b.financial.reports.length).length,...financeMeta},announcements:{withItems:Object.values(bundles).filter(b=>b.announcements.items.length).length,withoutItems:Object.values(bundles).filter(b=>!b.announcements.items.length).length,...newsMeta}};
  const partial=!financeMeta.complete||!newsMeta.complete||companyMeta.ok+companyMeta.cached!==stocks.length||Object.values(bundles).some(b=>b.financial.state!=='ok');
  const usable=companyMeta.ok+companyMeta.cached>0||coverage.financial.withReports>0||newsMeta.returnedPages>0;
  const state=!stocks.length?'unavailable':!usable?'failed':partial?'partial':'ok',source={financial:'东方财富公开业绩报表',company:'东方财富公司资料',announcements:'东方财富公告索引',notice:'公开来源可能修订或缺失；首次观察时间来自本次实际获取，不回溯为披露日。'};
