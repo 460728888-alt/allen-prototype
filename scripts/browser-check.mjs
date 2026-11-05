@@ -83,7 +83,11 @@ try{
     const restored=await page.evaluate(()=>JSON.parse(localStorage.getItem('allen.personal.v1')));assert.deepEqual(restored.research.map(r=>r.id),twice.research.map(r=>r.id));
     const downloading=page.waitForEvent('download');await page.locator('#exportBackup').click();const dl=await downloading,exportFile=path.join(output,'synthetic-backup-'+width+'.json');await dl.saveAs(exportFile);assert.equal(JSON.parse(fs.readFileSync(exportFile,'utf8')).research.length,2);
     await page.locator('#importBackup').setInputFiles(exportFile);await page.locator('#notice').filter({hasText:/已合并/}).waitFor();assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('allen.personal.v1')).research.length),2);
-    await navigate(page,'home');assert.equal(await page.locator('.review-item').count(),2);assert.match(await page.locator('.review-panel').innerText(),/待设置/);await page.locator('.review-item [data-research-id]').first().click();await page.locator('#researchArchive').waitFor();
+    const changed=sample.f.list.find(s=>s.symbol==='600036.SS'),rolling={...changed.levels,stop:changed.price+5,invalidation:changed.price+5};
+    changed.levels=rolling;changed.structure={...changed.structure,stage:'结构失效',levels:rolling};changed.profile={...changed.profile,levels:rolling};
+    await navigate(page,'home');await page.locator('[data-refresh]').first().click();await page.locator('#notice').filter({hasText:/已读取/}).waitFor();assert.equal(await page.locator('.review-item').count(),2);assert.match(await page.locator('.review-panel').innerText(),/待设置/);
+    const reviewed=await page.evaluate(()=>JSON.parse(localStorage.getItem('allen.personal.v1')));assert.deepEqual(reviewed.research.map(r=>r.original),twice.research.map(r=>r.original));assert.ok(reviewed.research.every(r=>r.status==='observing'));
+    await page.locator('.review-item [data-research-id]').first().click();await page.locator('#researchArchive').waitFor();await page.locator('[data-time="later"]').click();assert.match(await page.locator('#researchArchive .archive-grid > section > article:first-child > .pill').innerText(),/原结构继续跟踪/);
     await navigate(page,'validation');await geometry(page);assert.match(await page.locator('#app').innerText(),/事后重建|未验证|未证明/);await screenshot(page,'validation-'+width);
    }
    assert.deepEqual(errors,[]);assert.deepEqual(remote,[]);results.push({width,height,mode,passed:true});
@@ -98,7 +102,11 @@ try{
    await page.locator('#healthReason').selectOption('合成日线价格关系异常');assert.equal(await page.locator('.health-item').count(),1);assert.match(await page.locator('#healthResults').innerText(),/600036.SS/);
    await page.locator('#healthReason').selectOption('');await page.locator('#healthSearch').fill('600100');assert.equal(await page.locator('.health-item').count(),1);assert.equal(await page.locator('.health-item [data-stock]').count(),0);assert.equal(await page.locator('#dataHealth img').count(),0);assert.match(await page.locator('.health-item').innerText(),/不能打开虚构档案/);
    await page.locator('#healthSearch').fill('合成样本甲');assert.equal(await page.locator('.health-item').count(),1);await page.locator('.health-item [data-stock]').click();await page.locator('#researchArchive').waitFor();assert.equal(await page.locator('[data-save-research]').isDisabled(),true);
-   await page.locator('.source-audit summary').click();assert.match(await page.locator('.source-audit').innerText(),/获取过程|原数据校验|合成/);await geometry(page);await screenshot(page,'data-health-'+width);assert.deepEqual(errors,[]);assert.deepEqual(remote,[]);results.push({case:'data-health',width,height,passed:true});
+   await page.locator('.source-audit summary').click();assert.match(await page.locator('.source-audit').innerText(),/获取过程|原数据校验|合成/);await geometry(page);await screenshot(page,'data-health-'+width);
+   await navigate(page,'home');await page.locator('[data-tool="health"]').first().click();await page.locator('#healthSearch').fill('');await page.locator('#healthReason').selectOption('合成日线价格关系异常');
+   sample.f.status.failures=sample.f.status.failures.filter(f=>f.symbol!=='600036.SS');Object.assign(sample.f.list[0].data,{state:'ok',complete:true,reasons:[]});Object.assign(sample.f.status.coverage,{usable:2,insufficient:0});
+   await navigate(page,'home');await page.locator('[data-refresh]').first().click();await page.locator('#notice').filter({hasText:/已读取/}).waitFor();await page.locator('[data-tool="health"]').first().click();assert.equal(await page.locator('#healthReason').inputValue(),'');assert.equal(await page.locator('.health-item').count(),25);
+   assert.deepEqual(errors,[]);assert.deepEqual(remote,[]);results.push({case:'data-health',width,height,passed:true});
   }finally{await context.close()}
  }
 

@@ -21,7 +21,7 @@ test('missing volume remains unknown and cannot become shrinking volume',()=>{
 });
 test('mismatched provider symbol is rejected',()=>assert.throws(()=>normalizeStock(pool.rows[0],chart('000001.SZ'),{calendar,now}),/代码与请求不一致/));
 test('all failures explicitly prevent judgment',async()=>{
- const r=await run({fetchImpl:async()=>({ok:false,status:503})});assert.equal(r.status.state,'failed');assert.equal(r.status.coverage.requested,2);assert.equal(r.status.coverage.returned,0);assert.equal(r.status.coverage.failed,2);assert.equal(r.status.coverage.usable,0);assert.match(r.status.message,/无法完成判断/);assert.equal(r.status.failures.length,2);
+ const r=await run({fetchImpl:async()=>({ok:false,status:503})});assert.equal(r.status.state,'failed');assert.equal(r.status.coverage.requested,2);assert.equal(r.status.coverage.returned,0);assert.equal(r.status.coverage.failed,2);assert.equal(r.status.coverage.usable,0);assert.match(r.status.message,/无法完成判断/);assert.equal(r.status.failures.length,2);assert.ok(r.status.failures.every(f=>f.attempts.length===2));
 });
 test('partial counts distinguish usable response and request failure',async()=>{
  const r=await run({fetchImpl:async url=>url.includes('000001.SZ')?{ok:false,status:429}:fakeFetch(url)});
@@ -61,7 +61,7 @@ test('quality failure retries the secondary host without changing canonical pric
 test('two contradictory responses remain insufficient and never become an opportunity',async()=>{
  const r=await run({pool:singlePool,fetchImpl:async()=>envelope(badOHLC())});
  assert.equal(r.status.coverage.returned,1);assert.equal(r.status.coverage.insufficient,1);assert.equal(r.status.coverage.usable,0);assert.equal(r.status.coverage.failed,0);
- const s=r.market.stocks[0];assert.equal(s.source.selectedHost,'query1.finance.yahoo.com');assert.equal(s.source.attempts.length,2);assert.equal(s.observation,false);assert.equal(s.probability,null);
+ const s=r.market.stocks[0];assert.equal(s.source.selectedHost,'query1.finance.yahoo.com');assert.equal(s.source.attempts.length,2);assert.deepEqual(r.status.failures[0].attempts,s.source.attempts);assert.equal(s.observation,false);assert.equal(s.probability,null);
  assert.ok(r.details[s.symbol].history.at(-1).open>r.details[s.symbol].history.at(-1).high,'do not clamp invalid prices');
 });
 test('older secondary data cannot hide a current invalid response',async()=>{

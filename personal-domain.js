@@ -43,6 +43,12 @@ export function stageOf(s,a,record=null){
  const o=record?.original,stop=o?.levels?.invalidation??o?.levels?.stop;
  if(o&&!comparable(o,s))return stage('paused','原价尺度待核验','公司行动或覆盖不足，暂停原价比较。');
  if(o&&positive(stop)&&s.price<=stop)return stage('invalid','原结构条件已触发失效','有效完整收盘触及原失效价，不等待放量。');
+ if(o){
+  const breakout=o.levels?.breakout;
+  if(!positive(stop)||!positive(breakout))return stage('paused','原始价位待核验','已留档价位缺失，不使用当前滚动窗口替换。');
+  if(s.price>=breakout)return stage('trigger','价格触及原突破参考','仅表示原价格条件触及，原量能及随后守位仍待核验，不代表买点。');
+  return stage('follow','原结构继续跟踪','完整收盘仍高于原失效参考，等待原确认条件；当前滚动窗口不替换旧判断。');
+ }
  const raw=s.structure?.stage||'';
  if(raw==='结构失效')return stage('invalid','结构破位','仅描述当前窗口；未保存的旧判断不能事后冒认。');
  if(raw==='向上突破待确认')return stage('trigger','价格量能触发·待确认','触发不等于买点，仍需随后守住原突破位。');

@@ -88,7 +88,7 @@ export async function buildMarket({calendar,fetchImpl=globalThis.fetch,now=new D
  async function worker(){while(next<universe.length&&clock()<deadline){const item=universe[next++];coverage.requested++;try{
   const parsed=await history(item,{fetchImpl,clock,deadline,now,expected:expectation.expected,calendar,acquisition});coverage.returned++;
   if(parsed.stock.data.state==='ok'){coverage.usable++;if(parsed.stock.observation)coverage.observations++}
-  else {if(parsed.stock.data.state==='stale')coverage.stale++;else coverage.insufficient++;failures.push({symbol:item.symbol,state:parsed.stock.data.state,code:parsed.stock.data.state,message:parsed.stock.data.reasons.join('；').slice(0,240)})}
+  else {if(parsed.stock.data.state==='stale')coverage.stale++;else coverage.insufficient++;failures.push({symbol:item.symbol,state:parsed.stock.data.state,code:parsed.stock.data.state,message:parsed.stock.data.reasons.join('；').slice(0,240),attempts:parsed.stock.source.attempts,retrySkipped:parsed.stock.source.retrySkipped})}
   stocks.push(parsed.stock);details[item.symbol]=parsed.detail;
  }catch(error){coverage.failed++;failures.push({symbol:item.symbol,...failureOf(error),attempts:error.attempts||[]})}}}
  await Promise.all(Array.from({length:Math.min(6,universe.length)},worker));coverage.notRequested=universe.length-coverage.requested;stocks.sort((a,b)=>a.symbol.localeCompare(b.symbol));

@@ -25,7 +25,7 @@ test('unavailable stock details do not hide failures or invent navigation',()=>{
 });
 test('failure attempts take precedence, stock attempts are fallback and duplicates merge once',()=>{
  const one={host:'query1',state:'insufficient',reasons:['价格关系异常']},two={host:'query2',state:'request_failed',code:'http_503'};
- const status={failures:[{symbol:'000001.SZ',code:'bad',attempts:[one]},{symbol:'600036.SS',code:'bad'},{symbol:'600036.SS',code:'bad',attempts:[one]},{symbol:'300750.SZ',code:'bad',attempts:[]}]},stocks=['000001.SZ','600036.SS','300750.SZ'].map(symbol=>({symbol,source:{attempts:[one,two]}})),r=buildDataHealth(status,stocks),bySymbol=new Map(r.rows.map(x=>[x.symbol,x]));
+ const status={generatedAt:'2026-11-04T16:00:00Z',failures:[{symbol:'000001.SZ',code:'bad',attempts:[one]},{symbol:'600036.SS',code:'bad'},{symbol:'600036.SS',code:'bad',attempts:[one]},{symbol:'300750.SZ',code:'bad',attempts:[]}]},stocks=['000001.SZ','600036.SS','300750.SZ'].map(symbol=>({symbol,generatedAt:status.generatedAt,source:{attempts:[one,two]}})),r=buildDataHealth(status,stocks),bySymbol=new Map(r.rows.map(x=>[x.symbol,x]));
  assert.deepEqual(bySymbol.get('000001.SZ').attempts,[one]);assert.deepEqual(bySymbol.get('600036.SS').attempts,[one,two]);assert.deepEqual(bySymbol.get('300750.SZ').attempts,[]);
 });
 test('source and unattributed failures stay separate from per-stock counts',()=>{
@@ -39,4 +39,11 @@ test('frozen inputs remain unchanged and returned audit objects are independent 
 });
 test('missing collections produce an empty list without manufactured stock rows',()=>{
  const r=buildDataHealth(undefined,undefined);assert.equal(r.total,0);assert.equal(r.filtered,0);assert.deepEqual(r.rows,[]);assert.deepEqual(r.groups,[]);assert.deepEqual(r.sourceFailures,[]);assert.deepEqual(r.unattributedFailures,[]);
+});
+
+test('old retained market files cannot supply this attempts audit',()=>{
+ const stocks=[{symbol:'600036.SS',generatedAt:'2026-11-03T16:00:00Z',source:{attempts:[{host:'old',state:'ok'}]}}];
+ const status={generatedAt:'2026-11-04T16:00:00Z',failures:[{symbol:'600036.SS',code:'invalid_ohlc',message:'当前异常'}]};
+ assert.deepEqual(buildDataHealth(status,stocks).rows[0].attempts,[]);
+ status.failures[0].attempts=[{host:'current',state:'insufficient'}];assert.equal(buildDataHealth(status,stocks).rows[0].attempts[0].host,'current');
 });

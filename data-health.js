@@ -16,7 +16,7 @@ export function buildDataHealth(status,stocks,{query='',reason='',page=1,pageSiz
   item.state=item.state||text(failure?.state)||null;item.code=item.code||text(failure?.code)||null;
   if(text(failure?.code))item.codes.add(text(failure.code));
   for(const value of reasonsOf(failure))item.reasons.add(value);
-  const attempts=Array.isArray(failure?.attempts)?failure.attempts:Array.isArray(stock?.source?.attempts)?stock.source.attempts:[];
+  const attempts=Array.isArray(failure?.attempts)?failure.attempts:typeof status?.generatedAt==='string'&&status.generatedAt===stock?.generatedAt&&Array.isArray(stock?.source?.attempts)?stock.source.attempts:[];
   for(const attempt of attempts){const key=JSON.stringify(attempt);if(!item.attemptKeys.has(key)){item.attemptKeys.add(key);item.attempts.push(clone(attempt))}}
  }
  const all=[...bySymbol.values()].sort((a,b)=>compare(a.symbol,b.symbol)),counts=new Map();

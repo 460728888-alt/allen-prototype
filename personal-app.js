@@ -20,7 +20,7 @@ async function readJSON(path){const url=new URL(path,document.baseURI);if(url.or
 
 function fetchAudit(s){
  const audit=typeof s?.source==='object'&&s.source?s.source:{},attempts=Array.isArray(audit.attempts)?audit.attempts.filter(a=>a&&typeof a==='object'):[];
- return '<details class="source-audit"><summary>查看本次行情获取过程</summary><p class="muted">备用通道仍来自同一提供方，不是第二份独立证实；只接受通过原校验的完整日线，不拼接或修正矛盾价格。</p>'+
+ return '<details class="source-audit"><summary>查看本次行情获取过程</summary><p class="muted">备用通道仍来自同一提供方，不是第二份独立证实；只有通过原校验的完整日线才参与判断，不拼接或修正矛盾价格。</p>'+
  (attempts.length?attempts.map((a,i)=>'<div class="event"><b>'+esc((i+1)+' · '+a.host)+'</b> <span class="pill">'+esc(a.state==='ok'?'通过原数据校验':a.state==='stale'?'数据过期':a.state==='insufficient'?'数据不足或异常':'获取失败')+'</span><p>'+esc(a.checkedAt||'获取时间未保存')+' · 截止 '+esc(a.dataThrough||'未取得')+'</p><p>'+esc((Array.isArray(a.reasons)?a.reasons:[]).join('；')||a.message||(a.state==='ok'?'可供结构研究，不代表机会成立。':'原因未保存'))+'</p>'+(a.requested===false?'<small>预算限制，未实际发出请求。</small>':'')+'</div>').join(''):'<p class="muted">此快照未保存逐次获取过程，不事后补造。</p>')+
  (audit.retrySkipped?'<p class="warning">本次预算用尽，未发出后续备用请求。</p>':'')+'</details>';
 }
@@ -35,16 +35,17 @@ function healthRows(){
  const h=buildDataHealth(state.status,state.market.stocks,{query:state.healthQuery,reason:state.healthReason,page:state.healthPage,pageSize:25});
  state.healthPage=h.page;
  return '<p role="status">异常股票 '+n(h.total)+' · 当前筛选 '+n(h.filtered)+' · 第 '+n(h.page)+' / '+n(h.pages)+' 页</p>'+
- (h.rows.length?h.rows.map(r=>'<article class="event health-item"><div class="row"><h3>'+esc(r.name||r.symbol)+'</h3><span class="pill paused">'+esc(r.state||'待核验')+'</span></div><p>'+esc(r.symbol)+' · '+esc(r.message||r.code||'未保存具体原因')+'</p>'+
+ (h.rows.length?h.rows.map(r=>'<article class="event health-item"><div class="row"><h3>'+esc(r.name||r.symbol)+'</h3><span class="pill paused">'+esc(({insufficient:'数据不足或异常',stale:'数据过期',request_failed:'请求失败',failed:'获取失败'})[r.state]||'待核验')+'</span></div><p>'+esc(r.symbol)+' · '+esc(r.message||r.code||'未保存具体原因')+'</p>'+
  (r.attempts?.length?'<small>'+r.attempts.filter(a=>a&&typeof a==='object').map(a=>esc(a.host)+'：'+esc(a.state)+(a.message?' · '+esc(a.message):'')).join('<br>')+'</small>':'')+
  (r.canOpen?button('查看原数据与来源 ↗','data-stock="'+esc(r.symbol)+'"','link'):'<small>本次未返回个股文件，不能打开虚构档案。</small>')+'</article>').join(''):empty(h.total?'当前筛选没有匹配记录':'本次未记录逐股票异常','这不代表未覆盖的股票都正常，也不代表没有市场机会。'))+
  '<div class="row">'+button('上一页','data-health-page="'+(h.page-1)+'" '+(h.page<=1?'disabled':''))+button('下一页','data-health-page="'+(h.page+1)+'" '+(h.page>=h.pages?'disabled':''))+'</div>';
 }
 function healthPanel(){
  const h=buildDataHealth(state.status,state.market.stocks),a=state.status?.acquisition||{};
+ if(state.healthReason&&!h.groups.some(g=>g.key===state.healthReason)){state.healthReason='';state.healthPage=1}
  return '<section class="card" id="dataHealth"><div class="eyebrow">DATA HEALTH / NO SILENT FAILURE</div><h2>哪些股票暂时不能判断</h2><p class="muted">股票覆盖数与HTTP请求次数分开。数据异常、过期或请求失败不等于没有机会；备用通道成功也不证明策略有效。</p>'+
  '<p>日线HTTP请求 '+n(a.httpRequests)+' · 其中备用请求 '+n(a.secondaryRequests)+' · 备用后通过原校验 '+n(a.recovered)+' 只 · 预算限制未重试 '+n(a.skippedRetries)+' 只</p>'+
- '<div class="fields"><label for="healthSearch">查名称、代码或原因<input id="healthSearch" type="search" value="'+esc(state.healthQuery)+'" placeholder="例如：开盘、成交量或股票代码"></label><label for="healthReason">按失败原因筛选<select id="healthReason"><option value="">全部原因</option>'+h.groups.map(g=>'<option value="'+esc(g.key)+'" '+(state.healthReason===g.key?'selected':'')+'>'+esc(g.label)+' · '+n(g.count)+'只</option>').join('')+'</select></label></div>'+
+ '<div class="fields"><label for="healthSearch">查名称、代码或原因<input id="healthSearch" type="search" value="'+esc(state.healthQuery)+'" placeholder="例如：价格关系、成交量或代码"></label><label for="healthReason">按失败原因筛选<select id="healthReason"><option value="">全部原因</option>'+h.groups.map(g=>'<option value="'+esc(g.key)+'" '+(state.healthReason===g.key?'selected':'')+'>'+esc(g.label)+' · '+n(g.count)+'只</option>').join('')+'</select></label></div>'+
  '<div id="healthResults">'+healthRows()+'</div>'+
  '<details><summary>股票池来源与全局获取问题</summary>'+(h.sourceFailures.length?h.sourceFailures.map(f=>'<p>'+esc(f.source||'数据源')+' · '+esc(f.message||f.code||'原因未保存')+'</p>').join(''):'<p class="muted">本次未记录股票池来源问题。</p>')+
  (h.unattributedFailures||[]).map(f=>'<p>'+esc(f.message||f.code||'全局失败原因未保存')+'</p>').join('')+'</details></section>';
