@@ -2,9 +2,11 @@ import {createPersonalStore} from './personal-store.js';
 import {assessData,stockQuality,isObservation,stageOf,explain,selectFocus} from './personal-domain.js';
 import {buildReviewQueue} from './research-review.js';
 import {buildDataHealth} from './data-health.js';
+import {selectResearchView,safeResearchUrl} from './research-domain.js';
+import {renderResearchPanel} from './research-ui.js';
 const $=s=>document.querySelector(s),esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const finite=x=>typeof x==='number'&&Number.isFinite(x),fmt=x=>finite(x)?x.toFixed(2):'未核验',pct=x=>finite(x)?(x*100).toFixed(2)+'%':'未核验',n=x=>Number.isInteger(x)?String(x):'未核验';
-const state={page:'home',stock:null,recordId:null,later:false,detail:null,cache:new Map(),market:{stocks:[]},status:null,calendar:null,assessment:null,study:null,search:'',healthQuery:'',healthReason:'',healthPage:1,tool:'all',epoch:0,selection:0,saved:{watchlist:[],research:[],notes:[],portfolio:[],riskBudget:null},storeError:null};
+const state={page:'home',stock:null,recordId:null,later:false,detail:null,cache:new Map(),researchCache:new Map(),researchCurrent:null,researchIndex:null,researchStatus:null,researchLoading:false,researchError:null,market:{stocks:[]},status:null,calendar:null,assessment:null,study:null,search:'',healthQuery:'',healthReason:'',healthPage:1,tool:'all',epoch:0,selection:0,saved:{watchlist:[],research:[],notes:[],portfolio:[],riskBudget:null},storeError:null};
 let local;
 const button=(text,attrs='',cls='')=>'<button class="'+cls+'" '+attrs+'>'+esc(text)+'</button>';
 const bySymbol=symbol=>state.market.stocks.find(s=>s.symbol===symbol)||null;
@@ -17,6 +19,59 @@ const source=s=>typeof s?.source==='string'?s.source:s?.source?.provider||'公�
 function notice(text,error=false){$('#notice').textContent=text;$('#notice').hidden=false;$('#notice').classList.toggle('error',error)}
 function saved(){try{state.saved=local.read();state.storeError=null}catch(error){state.storeError=error.message}}
 async function readJSON(path){const url=new URL(path,document.baseURI);if(url.origin!==location.origin)throw Error('只读取本站已发布文件');const response=await fetch(url,{cache:'no-cache',signal:AbortSignal.timeout(20000)});if(!response.ok)throw Error(path+' HTTP '+response.status);return response.json()}
+
+
+function researchCoverage(newsOnly=false){
+ const status=state.researchStatus,c=status?.coverage;
+ if(!c)return '<p class="muted">本次公司与公告覆盖统计未取得，不能据此判断没有资料。</p>';
+ const company=c.company||{},f=c.financial||{},a=c.announcements||{},groups=new Map();
+ for(const v of Array.isArray(status.failures)?status.failures:[]){const key=(v.source||'资料')+' · '+(v.code||'未核验')+' · '+(v.message||'原因未保存');groups.set(key,(groups.get(key)||0)+1)}
+ return '<details class="research-coverage"><summary>本批资料覆盖范围与失败原因</summary><p class="muted">生成 '+esc(status.generatedAt||status.fetchedAt||'未知')+'；资料池 '+n(c.poolSize)+' 只，不代表全市场。</p>'+
+ (!newsOnly?'<p class="muted">公司：新取得 '+n(company.ok)+' · 7日内缓存 '+n(company.cached)+' · 获取或校验失败 '+n(company.failed)+' · 不足 '+n(company.insufficient)+' · 过期 '+n(company.stale)+' · 未请求 '+n(company.notRequested)+'</p><p class="muted">财报：至少一期 '+n(f.withReports)+' 只 · 未取得 '+n(f.withoutReports)+' 只；读取 '+n(f.returnedPages)+' / 请求 '+n(f.requestedPages)+' 页，每报告期最多16页。</p>':'')+
+ '<p class="muted">公告：'+esc(a.beginDate||'范围未知')+' 至 '+esc(a.endDate||'范围未知')+' · 已读 '+n(a.returnedPages)+' / 来源总页数 '+n(a.totalPages)+'，上限20页；'+esc(a.complete===true?'来源返回范围已读，仍未核验正文。':'范围未完整覆盖，未匹配不代表没有公告。')+'本批列表最多展示60条匹配记录。</p>'+
+ [...groups].slice(0,15).map(([text,count])=>'<p class="muted">'+esc(text)+' · '+n(count)+' 条诊断记录</p>').join('')+'</details>';
+}
+
+function currentResearch(){
+ const b=state.researchCurrent;
+ if(!b||state.researchError||state.researchStatus?.preservedPrevious===true||!state.researchStatus||!['ok','partial'].includes(state.researchStatus.state))return null;
+ const age=Date.now()-Date.parse(b.fetchedAt);
+ return Number.isFinite(age)&&age>=0&&age<=7*86400000?b:null;
+}
+function researchView(){
+ return selectResearchView({record:record(),latest:currentResearch(),later:state.later,now:new Date(),symbol:state.stock});
+}
+function companyPanel(mode='all'){
+ const r=record(),view=researchView(),historical=!!r&&!state.later;
+ return renderResearchPanel(view,{symbol:state.stock,loading:!historical&&state.researchLoading,error:historical?null:state.researchError,mode,recordId:r?.id||null})+(historical?'':researchCoverage());
+}
+function eventRadar(limit=5){
+ const index=state.researchIndex,status=state.researchStatus,today=new Date(Date.now()+8*3600000).toISOString().slice(0,10);
+ const items=(Array.isArray(index?.eventItems)?index.eventItems:[]).filter(i=>bySymbol(i.symbol)&&typeof i.noticeDate==='string'&&i.noticeDate<=today&&Number.isFinite(Date.parse(i.observedAt))&&Date.parse(i.observedAt)<=Date.now()&&safeResearchUrl(i.url||i.link,i.symbol)).slice(0,limit);
+ const age=Date.now()-Date.parse(index?.generatedAt||'');
+ const unavailable=!index||!Number.isFinite(age)||age<0||age>7*86400000||!status||!['ok','partial'].includes(status.state);
+ return '<section class="card event-radar"><div class="eyebrow">INDEPENDENT CHANNEL / ANNOUNCEMENT INDEX</div><h2>公告线索 · 先核验正文</h2><p class="muted">按公告日期展示，不是利好排名。事件不等于价格确认，标题不代替正文。</p>'+
+ (unavailable?'<p class="warning">本次公告资料未能完成获取，不能解释为没有公告。行情研究独立保留。</p>':items.length?items.map(i=>{const s=bySymbol(i.symbol);return '<article class="event"><span class="pill">公告待核验</span><h3>'+esc(s?.name||i.symbol)+'</h3><p>'+esc(i.title)+'</p><small>公告日期 '+esc(i.noticeDate)+' · '+esc(i.category||'分类未提供')+'<br>价格阶段独立核查：'+esc(stageOf(s,state.assessment).label)+'</small><div class="row">'+button('连到价格与公司档案','data-stock="'+esc(i.symbol)+'"','link')+'<a href="'+esc(safeResearchUrl(i.url,i.symbol))+'" target="_blank" rel="noopener noreferrer">核对公告来源 ↗</a></div></article>'}).join(''):'<p class="muted">已读取范围暂未匹配可展示的公告，不表示这些公司没有公告。</p>')+
+ '<p class="muted">本批生成 '+esc(index?.generatedAt||'未取得')+'，不是实时公告服务。只覆盖当前公开价格名单及本次有限分页范围；来源和抓取时间见个股资料。公告正文未自动解读。</p>'+button(limit<20?'查看本批公告线索列表':'查看全部研究工具','data-tool="'+(limit<20?'events':'all')+'"','link')+researchCoverage(true)+'</section>';
+}
+function renderKeepingNote(){
+ const draft=$('#noteText')?.value;
+ render();
+ if(typeof draft==='string'&&$('#noteText'))$('#noteText').value=draft;
+}
+async function researchDetail(s){
+ const entry=state.researchIndex?.symbols?.[s.symbol];
+ if(!entry)throw Error('本次资料未覆盖这只股票；价格研究仍可用。');
+ const expected='data/research/'+s.symbol+'.json';
+ if(entry.path!==expected||typeof entry.bundleId!=='string')throw Error('资料索引路径或版本未核验。');
+ const key=s.symbol+'|'+entry.bundleId;
+ if(state.researchCache.has(key))return state.researchCache.get(key);
+ const data=await readJSON(expected);
+ if(data?.schema!==1||data.symbol!==s.symbol||data.bundleId!==entry.bundleId)throw Error('公司资料与索引版本不一致，暂停混用。');
+ const verified=selectResearchView({latest:data,symbol:s.symbol,now:new Date()});
+ if(!verified.bundle)throw Error(verified.label||'资料时间或证券代码未核验。');
+ state.researchCache.set(key,data);return data;
+}
 
 function fetchAudit(s){
  const audit=typeof s?.source==='object'&&s.source?s.source:{},attempts=Array.isArray(audit.attempts)?audit.attempts.filter(a=>a&&typeof a==='object'):[];
@@ -64,7 +119,7 @@ function searchResults(){if(!state.search.trim())return '';const q=state.search.
 function search(){return '<div class="search"><label for="searchInput">搜索已发布股票</label><input id="searchInput" type="search" placeholder="名称或6位代码" value="'+esc(state.search)+'"><small class="muted">仅本次覆盖范围</small></div><div class="search-results" id="searchResults">'+searchResults()+'</div>'}
 function home(){
  const focus=selectFocus(state.market.stocks,state.assessment,3),first=focus[0],e=first?explain(first,state.assessment):null;
- return '<section class="hero"><div><div class="eyebrow">TODAY / DISCOVER · WAIT · REVIEW</div><h1>'+esc(first?'先研究 '+first.name+'，等条件走出来。':'先核对条件，再等待机会。')+'</h1><p>'+esc(e?.reason||'不强行每天推荐股票。先看为什么、还差什么，以及什么时候放弃。')+'</p><div class="row">'+(first?button('进入重点研究 ↗','data-stock="'+esc(first.symbol)+'"','primary'):button('查看机会演化','data-page="map"','primary'))+button('读取最新数据','data-refresh')+'</div></div><div class="conditions"><p><b>现在还差什么</b><br>'+esc(e?.confirmation||'完整日线、可靠量能、清楚的趋势与阶段先后关系；数据不足时等待。')+'</p><p><b>什么情况下放弃</b><br>'+esc(e?.invalidation||'保存原始条件后，以有效完整收盘复核原失效价。缺失数据不能判定失效。')+'</p></div></section>'+banner()+'<div class="grid main"><section>'+title('FOCUS / OBSERVATIONS','优先研究清单','最多3条 · 不是确定买点')+(focus.length?'<div class="focus-cards">'+focus.map(card).join('')+'</div>':empty(state.assessment?.canJudge?'暂无符合结构观察的股票':'无法完成判断',state.assessment?.canJudge?'本次已核验范围没有符合原观察条件的候选，可以继续等待。':'失败、过期或数据缺口不能解释为没有机会。'))+search()+'</section><aside>'+reviewPanel(4)+'<section class="card compact"><h3>事件线索是独立渠道</h3><p class="muted">利好公告不等于价格确认。自动公告雷达尚未接入，不编造新闻。</p>'+button('打开事件研究','data-tool="events"','link')+'</section><section class="card"><h3>收益优势尚未证明</h3><p class="muted">历史上涨比例不是当前概率；规则分不等于胜率。</p>'+button('查看真实研究与限制','data-page="validation"','link')+'</section></aside></div>';
+ return '<section class="hero"><div><div class="eyebrow">TODAY / DISCOVER · WAIT · REVIEW</div><h1>'+esc(first?'先研究 '+first.name+'，等条件走出来。':'先核对条件，再等待机会。')+'</h1><p>'+esc(e?.reason||'不强行每天推荐股票。先看为什么、还差什么，以及什么时候放弃。')+'</p><div class="row">'+(first?button('进入重点研究 ↗','data-stock="'+esc(first.symbol)+'"','primary'):button('查看机会演化','data-page="map"','primary'))+button('读取最新数据','data-refresh')+'</div></div><div class="conditions"><p><b>现在还差什么</b><br>'+esc(e?.confirmation||'完整日线、可靠量能、清楚的趋势与阶段先后关系；数据不足时等待。')+'</p><p><b>什么情况下放弃</b><br>'+esc(e?.invalidation||'保存原始条件后，以有效完整收盘复核原失效价。缺失数据不能判定失效。')+'</p></div></section>'+banner()+'<div class="grid main"><section>'+title('FOCUS / OBSERVATIONS','优先研究清单','最多3条 · 不是确定买点')+(focus.length?'<div class="focus-cards">'+focus.map(card).join('')+'</div>':empty(state.assessment?.canJudge?'暂无符合结构观察的股票':'无法完成判断',state.assessment?.canJudge?'本次已核验范围没有符合原观察条件的候选，可以继续等待。':'失败、过期或数据缺口不能解释为没有机会。'))+search()+eventRadar(4)+'</section><aside>'+reviewPanel(4)+'<section class="card compact"><h3>事件线索是独立渠道</h3><p class="muted">已接入公开公告索引。正文仍需核对，事件不直接成为价格确认。</p>'+button('打开事件研究','data-tool="events"','link')+'</section><section class="card"><h3>收益优势尚未证明</h3><p class="muted">历史上涨比例不是当前概率；规则分不等于胜率。</p>'+button('查看真实研究与限制','data-page="validation"','link')+'</section></aside></div>';
 }
 function map(){
  const lanes=[['trend','上涨趋势'],['pullback','缩量回调'],['compression','收窄整理'],['trigger','突破触发·待确认'],['follow','后续验证']];
@@ -93,8 +148,8 @@ function archiveView(){
 }
 function dossier(){
  const {r,current,view:s,later,visible,a,e}=archiveView();if(!s)return title('DOSSIER / LINK EVIDENCE','先选择一只股票')+search()+empty('尚未选择研究对象','从机会卡或搜索进入研究档案。');
- const stage=stageOf(s,a,visible),l=r?.original?.levels||s.levels||{},canSave=quality(current).canJudge;
- return '<section id="researchArchive"><div class="archive-head"><div><div class="eyebrow">'+(r?'SAVED / 原始判断不可覆盖':'PUBLISHED / 尚未建立个人研究')+'</div><h1>'+esc(s.name||s.symbol)+' <small class="stock-code">'+esc(s.symbol)+'</small></h1><p>'+esc(r?'研究编号 '+r.id:'当前发布快照')+' · 数据截止 '+esc(s.dataThrough||'未知')+'</p>'+(r?'<p>实际保存时间 '+esc(r.createdAt)+'，不是事后重建的预测。</p>':'')+'</div>'+(r?'<div class="timebar">'+button('当时判断','data-time="original" aria-pressed="'+!later+'"')+button('后来结果','data-time="later" aria-pressed="'+!!later+'"')+'</div>':button(state.saved.watchlist.includes(s.symbol)?'已在股票池':'加入股票池','data-watch="'+esc(s.symbol)+'"'))+'</div><div class="archive-grid"><section><article class="card compact"><span class="pill '+esc(stage.id)+'">'+esc(stage.label)+'</span><h2>价格、成交量与研究标记</h2>'+chart({...s,levels:l})+'<div class="chartkeys">'+button('① 回调依据','data-marker="pullback"')+button('② 收窄依据','data-marker="compression"')+button('③ 突破为何待确认','data-marker="breakout"')+'</div><small>来源 '+esc(source(s))+' · 此快照内的提供方历史日线，未保存的判断不事后补成预测。</small>'+fetchAudit(s)+'</article><article class="card compact"><h2>支持证据与疑点</h2><div class="facts">'+e.support.map(f=>'<div class="fact"><h3>'+esc(f.title)+'</h3><p>'+esc(f.text)+'</p><small>'+esc(f.date)+' · '+esc(f.formula)+'</small></div>').join('')+'</div><p class="warning">最重要的疑点：'+esc(e.doubt)+'</p></article><article class="card compact"><h2>'+esc(later?'后来追加的记录与结果':'当时保留的判断')+'</h2><p>'+esc(e.reason)+'</p>'+(r?(later?(r.events.length?r.events.map(v=>'<div class="event"><time>'+esc(v.at||v.createdAt)+' · '+esc(v.type)+'</time><p>'+esc(v.note||v.reason||v.message||'追加了一次真实观察')+'</p></div>').join(''):'<p class="muted">尚无后来记录，不推断成功或失败。</p>'):'<p class="muted">只展示最初快照，不混入后来笔记。当前记录状态请在后来结果查看。</p>'):'<p class="muted">保存后才创建独立编号，今天看到的历史图不能冒充当时预测。</p>')+'<form id="noteForm" class="note-form"><label for="noteText">追加证据、疑点或投资逻辑</label><textarea id="noteText" maxlength="4000" placeholder="记录来源、日期、支持与反面证据；只保存在此浏览器。"></textarea><button class="primary" data-save-note type="submit">追加笔记</button></form></article><article class="card"><h3>公司、财务、行业与事件</h3><p class="muted">'+esc(current?.company?.name||s.name)+' · '+esc(current?.exchange||current?.company?.exchange||'交易所未提供')+' · '+esc(s.currency||'币种未提供')+'</p><p class="muted">完整财报、行业比较、自动公告与AI服务尚未接通。缺失值不当成0，也不生成假分析。</p>'+button('查看全部研究工具','data-page="tools"','link')+'</article></section><aside><article class="card compact"><div class="eyebrow">CONDITIONAL / STRUCTURAL REFERENCE</div><h2>等待什么，何时放弃</h2><p class="muted">'+esc(e.confirmation)+'</p><p class="warning">'+esc(e.invalidation)+'</p><dl class="levels">'+[['入场参考',l.entry],['突破参考',l.breakout],['原始失效参考',l.invalidation??l.stop],['止损条件参考',l.stop],['T1结构参考',l.target1],['T1风险收益比',l.rr1],['T2参考（未启用）',l.target2]].map(([k,v])=>'<dt>'+k+'</dt><dd>'+fmt(v)+'</dd>').join('')+'</dl><small>此前20根完整日线不含判断日。T1＋1.5配置不兼容，合格候选未判定，T2未启用；目标价不是收益承诺。</small>'+button(r?'另建一条独立研究':'保存原始研究','data-save-research '+(!canSave?'disabled':''),'primary')+'<small>'+esc(canSave?'新机会新编号，旧条件不覆盖。':'当前数据不可判断，暂停新建；旧记录保留。')+'</small></article><article class="card compact"><h3>风险预算：待设置</h3><p class="muted">暂不生成个人仓位建议。止损参考不能保证退出价格；跳空、跌停、停牌、T+1与流动性可能增加损失。</p><p class="muted">当前概率未验证，不显示。价格变化、模拟结果与真实交易收益分别保留。</p></article><article class="card"><h3>设备留档与备份</h3><p class="muted">本地记录不上传，不自动跨设备同步。保存失败会明确提示。</p>'+button('打开备份与跟踪','data-page="library"','link')+'</article></aside></div></section>';
+ const stage=stageOf(s,a,visible),l=r?.original?.levels||s.levels||{},canSave=quality(current).canJudge&&Array.isArray(state.detail?.history)&&state.detail.history.length>=60;
+ return '<section id="researchArchive"><div class="archive-head"><div><div class="eyebrow">'+(r?'SAVED / 原始判断不可覆盖':'PUBLISHED / 尚未建立个人研究')+'</div><h1>'+esc(s.name||s.symbol)+' <small class="stock-code">'+esc(s.symbol)+'</small></h1><p>'+esc(r?'研究编号 '+r.id:'当前发布快照')+' · 数据截止 '+esc(s.dataThrough||'未知')+'</p>'+(r?'<p>实际保存时间 '+esc(r.createdAt)+'，不是事后重建的预测。</p>':'')+'</div>'+(r?'<div class="timebar">'+button('当时判断','data-time="original" aria-pressed="'+!later+'"')+button('后来结果','data-time="later" aria-pressed="'+!!later+'"')+'</div>':button(state.saved.watchlist.includes(s.symbol)?'已在股票池':'加入股票池','data-watch="'+esc(s.symbol)+'"'))+'</div><div class="archive-grid"><section><article class="card compact"><span class="pill '+esc(stage.id)+'">'+esc(stage.label)+'</span><h2>价格、成交量与研究标记</h2>'+chart({...s,levels:l})+'<div class="chartkeys">'+button('① 回调依据','data-marker="pullback"')+button('② 收窄依据','data-marker="compression"')+button('③ 突破为何待确认','data-marker="breakout"')+'</div><small>来源 '+esc(source(s))+' · 此快照内的提供方历史日线，未保存的判断不事后补成预测。</small>'+fetchAudit(s)+'</article><article class="card compact"><h2>支持证据与疑点</h2><div class="facts">'+e.support.map(f=>'<div class="fact"><h3>'+esc(f.title)+'</h3><p>'+esc(f.text)+'</p><small>'+esc(f.date)+' · '+esc(f.formula)+'</small></div>').join('')+'</div><p class="warning">最重要的疑点：'+esc(e.doubt)+'</p></article><article class="card compact"><h2>'+esc(later?'后来追加的记录与结果':'当时保留的判断')+'</h2><p>'+esc(e.reason)+'</p>'+(r?(later?(r.events.length?r.events.map(v=>'<div class="event"><time>'+esc(v.at||v.createdAt)+' · '+esc(v.type)+'</time><p>'+esc(v.note||v.reason||v.message||'追加了一次真实观察')+'</p></div>').join(''):'<p class="muted">尚无后来记录，不推断成功或失败。</p>'):'<p class="muted">只展示最初快照，不混入后来笔记。当前记录状态请在后来结果查看。</p>'):'<p class="muted">保存后才创建独立编号，今天看到的历史图不能冒充当时预测。</p>')+'<form id="noteForm" class="note-form"><label for="noteText">追加证据、疑点或投资逻辑</label><textarea id="noteText" maxlength="4000" placeholder="记录来源、日期、支持与反面证据；只保存在此浏览器。"></textarea><button class="primary" data-save-note type="submit">追加笔记</button></form></article>'+companyPanel()+'</section><aside><article class="card compact"><div class="eyebrow">CONDITIONAL / STRUCTURAL REFERENCE</div><h2>等待什么，何时放弃</h2><p class="muted">'+esc(e.confirmation)+'</p><p class="warning">'+esc(e.invalidation)+'</p><dl class="levels">'+[['入场参考',l.entry],['突破参考',l.breakout],['原始失效参考',l.invalidation??l.stop],['止损条件参考',l.stop],['T1结构参考',l.target1],['T1风险收益比',l.rr1],['T2参考（未启用）',l.target2]].map(([k,v])=>'<dt>'+k+'</dt><dd>'+fmt(v)+'</dd>').join('')+'</dl><small>此前20根完整日线不含判断日。T1＋1.5配置不兼容，合格候选未判定，T2未启用；目标价不是收益承诺。</small>'+button(r?'另建一条独立研究':'保存原始研究','data-save-research '+(!canSave?'disabled':''),'primary')+'<small>'+esc(canSave?'新机会新编号，旧条件不覆盖。':'当前数据不可判断，暂停新建；旧记录保留。')+'</small></article><article class="card compact"><h3>风险预算：待设置</h3><p class="muted">暂不生成个人仓位建议。止损参考不能保证退出价格；跳空、跌停、停牌、T+1与流动性可能增加损失。</p><p class="muted">当前概率未验证，不显示。价格变化、模拟结果与真实交易收益分别保留。</p></article><article class="card"><h3>设备留档与备份</h3><p class="muted">本地记录不上传，不自动跨设备同步。保存失败会明确提示。</p>'+button('打开备份与跟踪','data-page="library"','link')+'</article></aside></div></section>';
 }
 function library(){
  if(state.storeError)return empty('本地记录暂不可读',state.storeError+'。原数据未清空，请保留网站数据。');
@@ -105,7 +160,7 @@ function validation(){
  return '<section class="hero"><div><div class="eyebrow">VALIDATION / EVIDENCE FIRST</div><h1>先证明有用，再谈短期概率。</h1><p>上涨、跑赢基准、先止盈后止损是不同目标；当前不启用未经验证的概率。</p></div><div class="conditions"><p>模型优劣看时间外、扣费后表现、回撤与稳定性，不以最高胜率为唯一目标。</p></div></section>'+
  (r?.approved===false&&r.provenance==='reconstructed'&&Array.isArray(r.groups)?'<article class="card" style="margin-top:20px"><h2>2025年五交易日研究 · 收益优势未证明</h2><p class="muted">固定32只当前名单A股：2024暖机，2025事后重建，2026未请求。下一交易日开盘至第5日收盘的价格变化，不是当时预测、当前概率或可执行回测。</p><p class="warning">当前名单有幸存者偏差，历史报价可能因后来拆股修订，严格当时价格口径未核验。不能把高上涨比例当作可靠交易收益。</p><div class="table-wrap" tabindex="0" role="region" aria-label="历史研究比较，可横向滚动"><table class="table"><thead><tr><th>固定研究组</th><th>有效标签</th><th>不同日期</th><th>历史上涨比例</th><th>日期等权价格变化</th><th>假设往返0.30%后</th></tr></thead><tbody>'+r.groups.filter(g=>g&&Array.isArray(g.hypotheticalCostScenarios)).map(g=>'<tr><td>'+esc(names[g.id]||g.id)+'</td><td>'+n(g.labelledStockDays)+'</td><td>'+n(g.distinctDates)+'</td><td>'+pct(g.grossPositivePriceFraction)+'</td><td>'+pct(g.dailyEqualWeightMeanPriceReturn)+'</td><td>'+pct(g.hypotheticalCostScenarios.find(x=>x?.roundTripBps===30)?.dailyEqualWeightMeanAssumedReturn)+'</td></tr>').join('')+'</tbody></table></div><p class="muted">有效标签 '+n(r.coverage?.validPriceLabels)+' / '+n(r.coverage?.eligibleStockDays)+'（'+pct(r.coverage?.priceLabelCoverage)+'）。重复股票日不等于独立交易；费用是假设可成交的比例情景，不含最低佣金、实际滑点、停牌和涨跌停。</p><details><summary>原报告、复核与来源</summary><p class="muted">原报告保留，复算只统一成本统计权重，未改变信号、证据、标签或原毛价格统计。各非基线组相对同日固定样本的探索性区间均跨零，暂不能确认稳定优势。原放量突破组还含量比1.5，不能证明量能单独贡献。</p><p class="muted">计算版本 '+esc(r.sourceCommit)+'<br>数据摘要 '+esc(r.datasetSha256)+'<br>真实重建时间 '+esc(r.reconstructedAt)+'</p><a href="https://github.com/460728888-alt/AllenPt1/blob/16f24479b6198cb7397646ed99980f6087f3f904/research/results/FIVE-SESSION-2025.md" target="_blank" rel="noopener noreferrer">查看冻结研究报告 ↗</a></details></article>':empty('历史研究报告暂不可读取','不显示虚构成绩，不据此推断没有机会。'))+banner();
 }
-const toolsList=[['health','数据复核','原因、覆盖与备用过程'],['company','公司研究','基础字段可读'],['financial','财务分析','财报数据待接入'],['industry','行业分析','同业数据待接入'],['events','事件雷达','未自动采集公告'],['trend','趋势与量价','结构研究可用'],['risk','风险分析','条件复核可用'],['ai','AI研究对话','安全AI服务未接入'],['plans','投资逻辑与计划','本地留档可用'],['portfolio','持仓组合','本地记录可用'],['fees','费用计算','明确费率后可计算'],['brief','研究简报','本地生成可用']];
+const toolsList=[['health','数据复核','原因、覆盖与备用过程'],['company','公司研究','公开概况与来源'],['financial','财报关键值','报告期与披露可核对'],['industry','行业分析','同业数据待接入'],['events','事件雷达','公告索引·正文待核验'],['trend','趋势与量价','结构研究可用'],['risk','风险分析','条件复核可用'],['ai','AI研究对话','安全AI服务未接入'],['plans','投资逻辑与计划','本地留档可用'],['portfolio','持仓组合','本地记录可用'],['fees','费用计算','明确费率后可计算'],['brief','研究简报','本地生成可用']];
 function brief(){return 'Allen 个人研究简报\n生成 '+new Date().toISOString()+'\n数据截止 '+(state.assessment?.dataThrough||'未知')+'\n数据状态 '+state.assessment?.title+'\n风险预算待设置，不生成仓位建议。\n\n股票池：'+state.saved.watchlist.join('、')+'\n\n独立研究：\n'+state.saved.research.map(r=>(r.name||r.symbol)+' '+r.id+' '+r.status+' 截止'+r.dataThrough).join('\n')+'\n\n笔记：\n'+state.saved.notes.slice(-10).map(x=>x.symbol+' '+x.createdAt+'\n'+x.text).join('\n\n')+'\n仅为本地研究整理；价格变化不等于实际收益。'}
 function toolContent(){
  const t=state.tool,s=state.detail||bySymbol(state.stock);
@@ -114,28 +169,42 @@ function toolContent(){
  if(t==='fees')return '<article class="card"><h2>A股费用计算</h2><p class="muted">填写实际费率，缺失不当成0；不预设个人费率。</p><form id="feeForm"><div class="fields">'+[['buy','买入价'],['sell','卖出价'],['qty','股数'],['commission','佣金（万分之几）'],['minimum','最低单边佣金'],['stamp','卖出印花税（万分之几）'],['transfer','单边过户费（万分之几）']].map(([k,l])=>'<label>'+l+'<input name="'+k+'" type="number" min="0" step="any" required></label>').join('')+'</div><button class="primary">计算费用和估算净变化</button></form><div id="feeResult"></div></article>';
  if(t==='brief')return '<article class="card"><h2>本地研究简报</h2><pre class="brief">'+esc(brief())+'</pre>'+button('下载本地简报','data-download-brief')+'</article>';
  if(['portfolio','plans'].includes(t))return '<article class="card"><h2>投资逻辑、计划与持仓</h2><p>只记录你填写的条件和实际持仓，不生成个人仓位建议。</p>'+button('打开股票池与跟踪','data-page="library"','primary')+'</article>';
- if(['trend','risk','company'].includes(t))return '<article class="card"><h2>'+esc(toolsList.find(x=>x[0]===t)[1])+'</h2><p class="muted">'+esc(s?(s.name+' · '+s.symbol+' · '+(s.exchange||s.company?.exchange||'交易所未提供')+' · '+(s.currency||'币种未提供')):'先选择股票。')+'</p><p class="muted">价格结构、证据、确认与失效在同一个档案中核查。公司基础字段不等于完整尽调，未验证的概率不显示。</p>'+(s?button('打开当前个股档案','data-stock="'+esc(s.symbol)+'"','primary'):'')+search()+'</article>';
- if(t==='events')return '<article class="card"><h2>事件发现渠道 · 自动公告尚未接入</h2><p>在个股笔记中记录公告原文链接、日期、支持与反面证据，明确这是手动研究。事件利好不直接成为价格确认。</p>'+search()+'</article>';
+ if(['trend','risk'].includes(t))return '<article class="card"><h2>'+esc(toolsList.find(x=>x[0]===t)[1])+'</h2><p class="muted">'+esc(s?(s.name+' · '+s.symbol+' · '+(s.exchange||s.company?.exchange||'交易所未提供')+' · '+(s.currency||'币种未提供')):'先选择股票。')+'</p><p class="muted">价格结构、证据、确认与失效在同一个档案中核查。公司基础字段不等于完整尽调，未验证的概率不显示。</p>'+(s?button('打开当前个股档案','data-stock="'+esc(s.symbol)+'"','primary'):'')+search()+'</article>';
+ if(t==='events')return eventRadar(60)+search();
+ if(['company','financial'].includes(t))return s?companyPanel(t==='financial'?'financial':'company')+search():empty('先选择研究对象','公司资料与财报关键值需要核对具体股票。')+search();
  if(t==='ai')return '<article class="card"><h2>AI研究对话入口 · 尚未接入安全服务</h2><p class="muted">GitHub Pages不直接运行原来的AI后台；本版不索取或公开保存API密钥，不把规则文字冒充AI回答。</p><p>仍可在个股档案使用具体日期、公式和来源解释结构，再追加自己的研究问题。</p>'+search()+'</article>';
  return '<article class="card"><h2>'+esc(toolsList.find(x=>x[0]===t)?.[1]||'研究数据')+' · 数据待接入</h2><p class="muted">没有可靠的报告期、披露日期或行业范围时，不生成虚构分析，缺失也不当成0。入口保留，后续逐项适配。</p>'+search()+'</article>';
 }
-function tools(){return title('RESEARCH TOOLS / KEEP THE ENTRANCES','全部研究工具','可用状态逐项公开')+'<p class="muted">本地记录、浏览器计算和公开数据文件可用；原网站的财报、公告和AI后台仍需逐项适配，不冒充全部接通。</p><div class="tool-grid">'+toolsList.map(([id,t,status])=>'<article class="card"><span class="pill">'+status+'</span><h3>'+t+'</h3>'+button('打开 ↗','data-tool="'+id+'"','link')+'</article>').join('')+'</div><div id="toolContent" style="margin-top:20px">'+toolContent()+'</div>'}
+function tools(){return title('RESEARCH TOOLS / KEEP THE ENTRANCES','全部研究工具','可用状态逐项公开')+'<p class="muted">本地记录、浏览器计算和公开数据文件可用；公司概况、财报关键值与公告索引已接入；完整财务分析、行业比较和AI仍需逐项验证。</p><div class="tool-grid">'+toolsList.map(([id,t,status])=>'<article class="card"><span class="pill">'+status+'</span><h3>'+t+'</h3>'+button('打开 ↗','data-tool="'+id+'"','link')+'</article>').join('')+'</div><div id="toolContent" style="margin-top:20px">'+toolContent()+'</div>'}
 function render(){
  document.querySelectorAll('nav [data-page]').forEach(b=>b.classList.toggle('selected',b.dataset.page===state.page));
  $('#app').innerHTML=(state.market.dataKind==='synthetic'?'<p class="test-label">合成测试数据 · 非真实行情或模型成绩</p>':'')+(state.storeError?'<p class="warning">本地记录暂不可读取：'+esc(state.storeError)+'；原数据未清空。</p>':'')+({home,map,dossier,library,validation,tools}[state.page]||home)();
 }
 async function detail(s){if(state.cache.has(s.symbol))return state.cache.get(s.symbol);if(!/^data\/stocks\/[0-9]{6}\.(SS|SZ)\.json$/.test(s.detailPath||''))return s;const d=norm(await readJSON(s.detailPath));if(d.symbol!==s.symbol||d.dataThrough!==(s.dataThrough||s.data?.dataThrough)||(s.generatedAt&&d.generatedAt!==s.generatedAt))throw Error('个股与列表快照不一致，暂停混合判断');state.cache.set(s.symbol,d);return d}
-async function open(symbol,id=null){const selection=++state.selection,epoch=state.epoch;state.stock=symbol;state.recordId=id;state.later=false;state.page='dossier';state.detail=null;render();const s=bySymbol(symbol);if(s)try{const d=await detail(s);if(selection===state.selection&&epoch===state.epoch&&state.page==='dossier'){state.detail=d;render()}}catch(error){notice('图表数据未能读取：'+error.message,true)}else if(!id)notice('不在当前覆盖范围，不编造行情。',true)}
+async function open(symbol,id=null){
+ const selection=++state.selection,epoch=state.epoch;
+ state.stock=symbol;state.recordId=id;state.later=false;state.page='dossier';state.detail=null;state.researchCurrent=null;state.researchLoading=true;state.researchError=null;render();
+ const s=bySymbol(symbol),active=()=>selection===state.selection&&epoch===state.epoch&&state.stock===symbol;
+ if(!s){state.researchLoading=false;render();if(!id)notice('不在当前覆盖范围，不编造行情。',true);return}
+ await Promise.allSettled([
+  detail(s).then(d=>{if(active()){state.detail=d;renderKeepingNote()}}).catch(error=>{if(active())notice('图表数据未能读取：'+error.message,true)}),
+  researchDetail(s).then(b=>{if(active()){state.researchCurrent=b;state.researchLoading=false;renderKeepingNote()}}).catch(error=>{if(active()){state.researchError=error.message;state.researchLoading=false;renderKeepingNote()}})
+ ]);
+}
 async function refresh(announce=true){
- const epoch=++state.epoch,r=await Promise.allSettled(['data/status.json','data/market.json','data/calendar.json','data/history-study.json'].map(readJSON));if(epoch!==state.epoch)return;
+ const epoch=++state.epoch,r=await Promise.allSettled(['data/status.json','data/market.json','data/calendar.json','data/history-study.json','data/research-index.json','data/research-status.json'].map(readJSON));if(epoch!==state.epoch)return;
  state.status=r[0].status==='fulfilled'?r[0].value:{state:'failed',message:r[0].reason.message,coverage:{},failures:[{message:r[0].reason.message}]};
  state.market=r[1].status==='fulfilled'&&Array.isArray(r[1].value?.stocks)?r[1].value:{stocks:[]};state.market.stocks=state.market.stocks.map(norm);
  if(r[1].status==='rejected')state.status={...state.status,state:'failed',message:'股票文件无法读取，无法完成判断'};
  state.calendar=r[2].status==='fulfilled'?r[2].value:null;state.study=r[3].status==='fulfilled'?r[3].value:null;
+ state.researchIndex=r[4].status==='fulfilled'&&r[4].value?.schema===1?r[4].value:null;state.researchStatus=r[5].status==='fulfilled'&&r[5].value?.schema===1?r[5].value:null;state.researchCache.clear();state.researchCurrent=null;state.researchError=null;state.researchLoading=false;
  state.assessment=assessData(state.status,state.market,state.calendar,new Date());state.cache.clear();state.detail=null;saved();
  if(!state.storeError&&state.assessment.canJudge)try{local.reconcile({...state.market,expectedThrough:state.assessment.expectedThrough},{expectedThrough:state.assessment.expectedThrough});saved()}catch(error){state.storeError=error.message}
- if(state.stock){const symbol=state.stock,selection=state.selection,s=bySymbol(symbol);if(s){const d=await detail(s).catch(()=>s);if(epoch===state.epoch&&selection===state.selection&&symbol===state.stock)state.detail=d}}
- if(epoch!==state.epoch)return;render();if(announce)notice(state.assessment.canJudge?'已读取最新发布文件；不是实时扫描。':'读取完成，但'+state.assessment.title+'；不能据此判断没有机会。',!state.assessment.canJudge);
+ if(state.stock){const symbol=state.stock,selection=state.selection,s=bySymbol(symbol);if(s){
+  const [priceResult,researchResult]=await Promise.allSettled([detail(s),researchDetail(s)]);
+  if(epoch===state.epoch&&selection===state.selection&&symbol===state.stock){state.detail=priceResult.status==='fulfilled'?priceResult.value:null;state.researchCurrent=researchResult.status==='fulfilled'?researchResult.value:null;state.researchError=researchResult.status==='rejected'?researchResult.reason.message:null}
+ }}
+ if(epoch!==state.epoch)return;renderKeepingNote();if(announce)notice(state.assessment.canJudge?'已读取最新发布文件；不是实时扫描。':'读取完成，但'+state.assessment.title+'；不能据此判断没有机会。',!state.assessment.canJudge);
 }
 function showEvidence(key){const {view:s,visible,a,e}=archiveView();if(!s)return;$('#evidenceContent').innerHTML='<div class="eyebrow">EXPLAIN / DATE · FORMULA · SOURCE</div><h2>'+esc({pullback:'回调依据',compression:'收窄依据',breakout:'突破为什么仍待确认'}[key])+'</h2><p>数据截止 '+esc(s.dataThrough)+'</p><h3>支持证据</h3>'+e.support.map(f=>'<p><b>'+esc(f.title)+'</b><br>'+esc(f.text)+'<br><small>日期 '+esc(f.date)+'<br>计算 '+esc(f.formula)+'<br>来源 '+esc(f.source||source(s))+'</small></p>').join('')+'<h3>疑点</h3><p class="warning">'+esc(e.doubt)+'</p><h3>确认条件</h3><p>'+esc(e.confirmation)+'</p><h3>失效条件</h3><p>'+esc(e.invalidation)+'</p><small>规则解释不是AI预测，也不是收益保证。</small>';if(!$('#evidenceDialog').open)$('#evidenceDialog').showModal()}
 function recheck(){if(!state.status)return;const next=assessData(state.status,state.market,state.calendar,new Date());const changed=JSON.stringify([next.state,next.expectedThrough,next.canJudge])!==JSON.stringify([state.assessment?.state,state.assessment?.expectedThrough,state.assessment?.canJudge]);state.assessment=next;if(changed){const draft=$('#noteText')?.value;render();if(typeof draft==='string'&&$('#noteText'))$('#noteText').value=draft}}
@@ -148,7 +217,19 @@ document.addEventListener('click',async event=>{
  if(b.hasAttribute('data-refresh')){b.disabled=true;try{await refresh()}catch(error){notice('读取失败：'+error.message,true)}finally{b.disabled=false}return}
  if(d.researchId){saved();const r=state.saved.research.find(r=>r.id===d.researchId);if(r)await open(r.symbol,r.id);return}
  if(d.stock){await open(d.stock);return}if(d.time){state.later=d.time==='later';render();return}
- if(b.hasAttribute('data-save-research')){recheck();const s=norm(state.detail||bySymbol(state.stock));if(!s||!quality(s).canJudge){notice('当前数据不可判断，研究未保存。',true);return}const snapshot={...s,dataThrough:s.dataThrough,generatedAt:new Date().toISOString(),strategyVersion:s.profile?.strategy?.version||s.levels?.version||'range20-t1-review-1',publishedAt:state.market.generatedAt};const r=await change(()=>local.addResearch(snapshot),x=>'原始研究已保存，独立编号 '+x.id);if(r){state.recordId=r.id;state.later=false;render()}return}
+ if(b.hasAttribute('data-save-research')){
+  recheck();const s=norm(state.detail);
+  if(!s||!Array.isArray(s.history)||s.history.length<60||!quality(s).canJudge){notice('当前行情档案未完整加载或数据不可判断，研究未保存。',true);return}
+  const snapshot={...s,dataThrough:s.dataThrough,generatedAt:new Date().toISOString(),strategyVersion:s.profile?.strategy?.version||s.levels?.version||'range20-t1-review-1',publishedAt:state.market.generatedAt};
+  const info=selectResearchView({latest:currentResearch(),symbol:s.symbol,now:new Date()});if(info.bundle)snapshot.research=info.bundle;
+  const r=await change(()=>local.addResearch(snapshot),x=>'原始研究已保存，独立编号 '+x.id+(info.bundle?'；包含当时已取得的公司资料。':'；财报公告未取得，本次只保存价格研究。'));
+  if(r){state.recordId=r.id;state.later=false;render()}return;
+ }
+ if(b.hasAttribute('data-attach-research')){
+  recheck();const r=record(),s=norm(state.detail),view=researchView();
+  if(!r||!state.later||!view.canAttach||!view.bundle||!s||!Array.isArray(s.history)||s.history.length<60||!quality(s).canJudge){notice('当前资料或行情不完整，未追加；原始记录未变。',true);return}
+  await change(()=>local.appendEvent(r.id,{type:'note',note:'追加公司、财报与公告资料快照 '+view.bundle.bundleId,dataThrough:s.dataThrough,snapshot:{...s,research:view.bundle}}),'当前资料已追加，最初判断保持不变。');return;
+ }
  if(d.watch){await change(()=>local.addWatch(bySymbol(d.watch)||d.watch),'已加入此浏览器的股票池。');return}
  if(d.removeWatch){await change(()=>local.removeWatch(d.removeWatch),'已移出股票池，独立研究保留。');return}
  if(d.removeHolding){await change(()=>local.removeHolding(d.removeHolding),'已移除所选持仓。');return}

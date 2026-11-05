@@ -31,6 +31,12 @@ jobs:
           set -euo pipefail
           mkdir -p test-logs
           node scripts/refresh-market.mjs 2>&1 | tee test-logs/market.log
+      - name: Refresh independent public research context
+        id: research
+        continue-on-error: true
+        run: |
+          set -euo pipefail
+          node scripts/refresh-research.mjs 2>&1 | tee test-logs/research.log
       - name: Commit public files only
         id: commit
         run: |
@@ -56,7 +62,7 @@ jobs:
             const result = await github.rest.repos.requestPagesBuild(context.repo);
             core.info('Pages build requested: HTTP '+result.status+'. Publication is pending.');
       - name: Report acquisition failure
-        if: steps.market.outcome != 'success'
+        if: steps.market.outcome != 'success' || steps.research.outcome != 'success'
         run: |
           echo "Acquisition failed; old data is not a new signal."
           exit 1
@@ -68,4 +74,5 @@ jobs:
           path: |
             test-logs/
             data/status.json
+            data/research-status.json
           retention-days: 7
