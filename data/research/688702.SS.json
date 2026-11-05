@@ -9,69 +9,8 @@
     "message": "本次公司资料预算未覆盖，不能视为没有公司资料。"
   },
   "financial": {
-    "state": "partial",
-    "reports": [
-      {
-        "reportDate": "2026-09-30",
-        "noticeDate": "2026-10-30",
-        "updateDate": "2026-10-30",
-        "observedAt": "2026-11-05T02:13:56.842Z",
-        "periodBasis": "year_to_date",
-        "currency": null,
-        "amountUnit": "source_yuan",
-        "unitNote": "来源页面金额单位为元，币种未注明；不默认CNY，不作汇率换算。",
-        "percentageUnit": "percent",
-        "reportName": "2026年 三季报",
-        "industry": null,
-        "metrics": {
-          "revenue": 1137504979.31,
-          "netProfit": -20944512.14,
-          "revenueGrowth": 36.7851054333,
-          "profitGrowth": -323.55,
-          "roe": -0.92,
-          "grossMargin": 43.2172603858,
-          "eps": -0.05,
-          "bps": 5.528243311927,
-          "operatingCashPerShare": -0.055222764878
-        },
-        "source": {
-          "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
-          "fetchedAt": "2026-11-05T02:13:56.842Z",
-          "url": "https://data.eastmoney.com/bbsj/202609/yjbb.html"
-        },
-        "historicalAvailability": "provider_current_revision_not_point_in_time"
-      },
-      {
-        "reportDate": "2026-06-30",
-        "noticeDate": "2026-08-27",
-        "updateDate": "2026-08-27",
-        "observedAt": "2026-11-05T02:14:03.764Z",
-        "periodBasis": "year_to_date",
-        "currency": null,
-        "amountUnit": "source_yuan",
-        "unitNote": "来源页面金额单位为元，币种未注明；不默认CNY，不作汇率换算。",
-        "percentageUnit": "percent",
-        "reportName": "2026年 半年报",
-        "industry": null,
-        "metrics": {
-          "revenue": 670682360.5,
-          "netProfit": -17566204.04,
-          "revenueGrowth": 32.0360407541,
-          "profitGrowth": 25.8468105221,
-          "roe": -0.78,
-          "grossMargin": 43.9686354656,
-          "eps": -0.04,
-          "bps": 5.488853485341,
-          "operatingCashPerShare": -0.798171044561
-        },
-        "source": {
-          "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
-          "fetchedAt": "2026-11-05T02:14:03.764Z",
-          "url": "https://data.eastmoney.com/bbsj/202606/yjbb.html"
-        },
-        "historicalAvailability": "provider_current_revision_not_point_in_time"
-      }
-    ],
+    "state": "unavailable",
+    "reports": [],
     "scope": {
       "periods": [
         "2026-09-30",
@@ -80,30 +19,45 @@
       "complete": false,
       "pageCapPerPeriod": 16
     },
-    "message": "仅展示已取得且日期可核验的累计报告；当前修订版不能冒充历史当时数据。"
+    "message": "未取得可核验的已披露报告，不代表公司没有财报。"
   },
   "announcements": {
     "state": "partial",
-    "items": [],
+    "items": [
+      {
+        "id": "AN202611051831449202",
+        "symbol": "688702.SS",
+        "title": "盛科通信:投资者关系活动记录表-2026003(2026年第三季度业绩说明会)",
+        "noticeDate": "2026-11-05",
+        "displayTime": "2026-11-05 15:33:48:821",
+        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
+        "category": "调研活动",
+        "url": "https://data.eastmoney.com/notices/detail/688702/AN202611051831449202.html",
+        "observedAt": "2026-11-05T15:26:48.419Z",
+        "bodyRead": false,
+        "readState": "index_only",
+        "source": "东方财富公开公告索引"
+      }
+    ],
     "scope": {
       "from": "2026-10-30",
       "through": "2026-11-05",
       "beginDate": "2026-10-30",
       "endDate": "2026-11-05",
       "complete": false,
-      "totalHits": 12768,
-      "totalPages": 128,
-      "returnedPages": 7,
+      "totalHits": 13131,
+      "totalPages": 132,
+      "returnedPages": 11,
       "pageCap": 20,
       "truncated": true,
       "noticeTimePrecision": "day",
       "displayTimeTimezoneVerified": false
     },
-    "message": "本窗口未取得匹配公告索引；不等于没有公告或风险。"
+    "message": "公告索引未读正文，事件不是价格确认。"
   },
-  "bundleId": "688702.SS:2026-11-05T02:15:08.428Z",
-  "fetchedAt": "2026-11-05T02:15:08.428Z",
-  "asOf": "2026-11-05T02:15:08.428Z",
-  "requestedAt": "2026-11-05T02:13:53.424Z",
-  "codeSourceCommit": "0f2fdb02aaae0c06e9a5df2cca0221bf4811d600"
+  "bundleId": "688702.SS:2026-11-05T15:27:52.131Z",
+  "fetchedAt": "2026-11-05T15:27:52.131Z",
+  "asOf": "2026-11-05T15:27:52.131Z",
+  "requestedAt": "2026-11-05T15:26:37.127Z",
+  "codeSourceCommit": "5f4a7f504d9dd83784b637bff0341abc516391b6"
 }

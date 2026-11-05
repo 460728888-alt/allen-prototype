@@ -1,65 +1,65 @@
 {
   "schema": 1,
   "state": "partial",
-  "generatedAt": "2026-11-05T02:15:08.428Z",
-  "attemptedAt": "2026-11-05T02:13:53.424Z",
-  "fetchedAt": "2026-11-05T02:15:08.428Z",
-  "asOf": "2026-11-05T02:15:08.428Z",
-  "priceDataThrough": "2026-11-04",
-  "codeSourceCommit": "0f2fdb02aaae0c06e9a5df2cca0221bf4811d600",
+  "generatedAt": "2026-11-05T15:27:52.131Z",
+  "attemptedAt": "2026-11-05T15:26:37.127Z",
+  "fetchedAt": "2026-11-05T15:27:52.131Z",
+  "asOf": "2026-11-05T15:27:52.131Z",
+  "priceDataThrough": "2026-11-05",
+  "codeSourceCommit": "5f4a7f504d9dd83784b637bff0341abc516391b6",
   "coverage": {
     "poolSize": 1200,
     "company": {
-      "requested": 294,
-      "returned": 281,
+      "requested": 411,
+      "returned": 401,
       "requestFailures": 14,
-      "skipped": 831,
-      "notRequested": 831,
-      "ok": 280,
-      "cached": 75,
+      "skipped": 453,
+      "notRequested": 453,
+      "ok": 397,
+      "cached": 336,
       "failed": 14,
       "stale": 0,
       "insufficient": 0,
-      "usable": 355,
+      "usable": 733,
       "priority": "original_public_sample_then_symbol_not_recommendation"
     },
     "financial": {
-      "withReports": 1200,
-      "withoutReports": 0,
-      "requestedPages": 28,
-      "returnedPages": 28,
+      "withReports": 144,
+      "withoutReports": 1056,
+      "requestedPages": 4,
+      "returnedPages": 2,
       "pageCapPerPeriod": 16,
       "periods": [
         {
           "period": "2026-09-30",
-          "requestedPages": 12,
-          "returnedPages": 12,
+          "requestedPages": 2,
+          "returnedPages": 1,
           "totalPages": 12,
           "truncated": false,
-          "complete": true
+          "complete": false
         },
         {
           "period": "2026-06-30",
-          "requestedPages": 16,
-          "returnedPages": 16,
+          "requestedPages": 2,
+          "returnedPages": 1,
           "totalPages": 23,
           "truncated": true,
           "complete": false
         }
       ],
-      "rejectedRows": 0,
+      "rejectedRows": 1,
       "conflicts": 0,
       "complete": false
     },
     "announcements": {
-      "withItems": 147,
-      "withoutItems": 1053,
+      "withItems": 202,
+      "withoutItems": 998,
       "beginDate": "2026-10-30",
       "endDate": "2026-11-05",
-      "requestedPages": 8,
-      "returnedPages": 7,
-      "totalHits": 12768,
-      "totalPages": 128,
+      "requestedPages": 12,
+      "returnedPages": 11,
+      "totalHits": 13131,
+      "totalPages": 132,
       "pageCap": 20,
       "truncated": true,
       "rejectedItems": 0,
@@ -75,25 +75,49 @@
   },
   "failures": [
     {
+      "symbol": "688347.SS",
+      "source": "financial",
+      "code": "request_error",
+      "message": "报告期、披露日或修订日期缺失/未来，暂停使用"
+    },
+    {
       "symbol": "001399.SZ",
       "source": "company",
       "code": "request_error",
       "message": "公司资料返回证券身份不一致"
     },
     {
-      "symbol": "000688.SZ",
+      "source": "financial",
+      "period": "2026-06-30",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "source": "financial",
+      "period": "2026-09-30",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "002779.SZ",
       "source": "company",
       "code": "timeout",
       "message": "请求超时"
     },
     {
-      "symbol": "000988.SZ",
+      "symbol": "300115.SZ",
       "source": "company",
       "code": "timeout",
       "message": "请求超时"
     },
     {
-      "symbol": "001330.SZ",
+      "symbol": "300265.SZ",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "300493.SZ",
       "source": "company",
       "code": "timeout",
       "message": "请求超时"
@@ -104,61 +128,55 @@
       "message": "请求超时"
     },
     {
-      "symbol": "002185.SZ",
+      "symbol": "301569.SZ",
+      "source": "company",
+      "code": "request_error",
+      "message": "公司资料返回证券身份不一致"
+    },
+    {
+      "symbol": "301513.SZ",
+      "source": "company",
+      "code": "request_error",
+      "message": "公司资料返回证券身份不一致"
+    },
+    {
+      "symbol": "301689.SZ",
+      "source": "company",
+      "code": "request_error",
+      "message": "公司资料返回证券身份不一致"
+    },
+    {
+      "symbol": "600436.SS",
       "source": "company",
       "code": "timeout",
       "message": "请求超时"
     },
     {
-      "symbol": "002304.SZ",
+      "symbol": "600549.SS",
       "source": "company",
       "code": "timeout",
       "message": "请求超时"
     },
     {
-      "symbol": "002466.SZ",
+      "symbol": "600558.SS",
       "source": "company",
       "code": "timeout",
       "message": "请求超时"
     },
     {
-      "symbol": "300073.SZ",
+      "symbol": "600585.SS",
       "source": "company",
       "code": "timeout",
       "message": "请求超时"
     },
     {
-      "symbol": "300077.SZ",
+      "symbol": "600588.SS",
       "source": "company",
       "code": "timeout",
       "message": "请求超时"
     },
     {
-      "symbol": "300058.SZ",
-      "source": "company",
-      "code": "timeout",
-      "message": "请求超时"
-    },
-    {
-      "symbol": "300063.SZ",
-      "source": "company",
-      "code": "timeout",
-      "message": "请求超时"
-    },
-    {
-      "symbol": "300083.SZ",
-      "source": "company",
-      "code": "timeout",
-      "message": "请求超时"
-    },
-    {
-      "symbol": "300085.SZ",
-      "source": "company",
-      "code": "timeout",
-      "message": "请求超时"
-    },
-    {
-      "symbol": "300088.SZ",
+      "symbol": "600600.SS",
       "source": "company",
       "code": "timeout",
       "message": "请求超时"
@@ -167,8 +185,8 @@
   "message": "部分研究来源未完整覆盖，未取得的内容保持未知。",
   "preservedPrevious": false,
   "storedCounts": {
-    "companies": 355,
-    "financial": 1200,
-    "announcementItems": 243
+    "companies": 733,
+    "financial": 144,
+    "announcementItems": 335
   }
 }

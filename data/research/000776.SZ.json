@@ -27,69 +27,8 @@
     "message": "复用7日内公开资料，原获取与观察时间保留。"
   },
   "financial": {
-    "state": "partial",
-    "reports": [
-      {
-        "reportDate": "2026-09-30",
-        "noticeDate": "2026-10-30",
-        "updateDate": "2026-10-30",
-        "observedAt": "2026-11-05T02:14:00.079Z",
-        "periodBasis": "year_to_date",
-        "currency": null,
-        "amountUnit": "source_yuan",
-        "unitNote": "来源页面金额单位为元，币种未注明；不默认CNY，不作汇率换算。",
-        "percentageUnit": "percent",
-        "reportName": "2026年 三季报",
-        "industry": null,
-        "metrics": {
-          "revenue": 37055611760.37,
-          "netProfit": 16027455391.99,
-          "revenueGrowth": 41.63,
-          "profitGrowth": 46.58,
-          "roe": 10.95,
-          "grossMargin": null,
-          "eps": 1.95,
-          "bps": 18.032452594937,
-          "operatingCashPerShare": -1.039998005731
-        },
-        "source": {
-          "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
-          "fetchedAt": "2026-11-05T02:14:00.079Z",
-          "url": "https://data.eastmoney.com/bbsj/202609/yjbb.html"
-        },
-        "historicalAvailability": "provider_current_revision_not_point_in_time"
-      },
-      {
-        "reportDate": "2026-06-30",
-        "noticeDate": "2026-08-29",
-        "updateDate": "2026-08-29",
-        "observedAt": "2026-11-05T02:13:58.917Z",
-        "periodBasis": "year_to_date",
-        "currency": null,
-        "amountUnit": "source_yuan",
-        "unitNote": "来源页面金额单位为元，币种未注明；不默认CNY，不作汇率换算。",
-        "percentageUnit": "percent",
-        "reportName": "2026年 半年报",
-        "industry": null,
-        "metrics": {
-          "revenue": 26882915365.65,
-          "netProfit": 11651737395.81,
-          "revenueGrowth": 74.59,
-          "profitGrowth": 80.1,
-          "roe": 8.08,
-          "grossMargin": null,
-          "eps": 1.43,
-          "bps": 17.654987323146,
-          "operatingCashPerShare": 3.841959216773
-        },
-        "source": {
-          "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
-          "fetchedAt": "2026-11-05T02:13:58.917Z",
-          "url": "https://data.eastmoney.com/bbsj/202606/yjbb.html"
-        },
-        "historicalAvailability": "provider_current_revision_not_point_in_time"
-      }
-    ],
+    "state": "unavailable",
+    "reports": [],
     "scope": {
       "periods": [
         "2026-09-30",
@@ -98,30 +37,45 @@
       "complete": false,
       "pageCapPerPeriod": 16
     },
-    "message": "仅展示已取得且日期可核验的累计报告；当前修订版不能冒充历史当时数据。"
+    "message": "未取得可核验的已披露报告，不代表公司没有财报。"
   },
   "announcements": {
     "state": "partial",
-    "items": [],
+    "items": [
+      {
+        "id": "AN202611051831455578",
+        "symbol": "000776.SZ",
+        "title": "广发证券:广发证券股份有限公司关于“24广发08”兑付兑息暨摘牌、“24广发09”付息的公告",
+        "noticeDate": "2026-11-05",
+        "displayTime": "2026-11-05 17:03:03:556",
+        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
+        "category": "其他",
+        "url": "https://data.eastmoney.com/notices/detail/000776/AN202611051831455578.html",
+        "observedAt": "2026-11-05T15:26:43.022Z",
+        "bodyRead": false,
+        "readState": "index_only",
+        "source": "东方财富公开公告索引"
+      }
+    ],
     "scope": {
       "from": "2026-10-30",
       "through": "2026-11-05",
       "beginDate": "2026-10-30",
       "endDate": "2026-11-05",
       "complete": false,
-      "totalHits": 12768,
-      "totalPages": 128,
-      "returnedPages": 7,
+      "totalHits": 13131,
+      "totalPages": 132,
+      "returnedPages": 11,
       "pageCap": 20,
       "truncated": true,
       "noticeTimePrecision": "day",
       "displayTimeTimezoneVerified": false
     },
-    "message": "本窗口未取得匹配公告索引；不等于没有公告或风险。"
+    "message": "公告索引未读正文，事件不是价格确认。"
   },
-  "bundleId": "000776.SZ:2026-11-05T02:15:08.428Z",
-  "fetchedAt": "2026-11-05T02:15:08.428Z",
-  "asOf": "2026-11-05T02:15:08.428Z",
-  "requestedAt": "2026-11-05T02:13:53.424Z",
-  "codeSourceCommit": "0f2fdb02aaae0c06e9a5df2cca0221bf4811d600"
+  "bundleId": "000776.SZ:2026-11-05T15:27:52.131Z",
+  "fetchedAt": "2026-11-05T15:27:52.131Z",
+  "asOf": "2026-11-05T15:27:52.131Z",
+  "requestedAt": "2026-11-05T15:26:37.127Z",
+  "codeSourceCommit": "5f4a7f504d9dd83784b637bff0341abc516391b6"
 }

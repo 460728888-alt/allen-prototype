@@ -3,7 +3,7 @@
   "symbol": "000938.SZ",
   "company": {
     "state": "ok",
-    "cacheHit": false,
+    "cacheHit": true,
     "symbol": "000938.SZ",
     "fetchedAt": "2026-11-05T02:14:02.597Z",
     "observedAt": "2026-11-05T02:14:02.597Z",
@@ -23,72 +23,12 @@
       "fetchedAt": "2026-11-05T02:14:02.597Z",
       "url": "https://emweb.securities.eastmoney.com/PC_HSF10/CompanySurvey/CompanySurveyAjax?code=SZ000938"
     },
-    "historicalAvailability": "current_profile_not_point_in_time"
+    "historicalAvailability": "current_profile_not_point_in_time",
+    "message": "复用7日内公开资料，原获取与观察时间保留。"
   },
   "financial": {
-    "state": "partial",
-    "reports": [
-      {
-        "reportDate": "2026-09-30",
-        "noticeDate": "2026-10-30",
-        "updateDate": "2026-10-30",
-        "observedAt": "2026-11-05T02:14:00.079Z",
-        "periodBasis": "year_to_date",
-        "currency": null,
-        "amountUnit": "source_yuan",
-        "unitNote": "来源页面金额单位为元，币种未注明；不默认CNY，不作汇率换算。",
-        "percentageUnit": "percent",
-        "reportName": "2026年 三季报",
-        "industry": null,
-        "metrics": {
-          "revenue": 102155448058.32,
-          "netProfit": 2772979073.15,
-          "revenueGrowth": 32.1177692104,
-          "profitGrowth": 97.53,
-          "roe": 16.55,
-          "grossMargin": 12.3027096633,
-          "eps": 0.9695,
-          "bps": 6.463883767639,
-          "operatingCashPerShare": -2.99847694669
-        },
-        "source": {
-          "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
-          "fetchedAt": "2026-11-05T02:14:00.079Z",
-          "url": "https://data.eastmoney.com/bbsj/202609/yjbb.html"
-        },
-        "historicalAvailability": "provider_current_revision_not_point_in_time"
-      },
-      {
-        "reportDate": "2026-06-30",
-        "noticeDate": "2026-08-29",
-        "updateDate": "2026-08-29",
-        "observedAt": "2026-11-05T02:13:58.917Z",
-        "periodBasis": "year_to_date",
-        "currency": null,
-        "amountUnit": "source_yuan",
-        "unitNote": "来源页面金额单位为元，币种未注明；不默认CNY，不作汇率换算。",
-        "percentageUnit": "percent",
-        "reportName": "2026年 半年报",
-        "industry": null,
-        "metrics": {
-          "revenue": 63515824069.48,
-          "netProfit": 2166947642.39,
-          "revenueGrowth": 33.9296150712,
-          "profitGrowth": 108.18,
-          "roe": 13.32,
-          "grossMargin": 13.4056966831,
-          "eps": 0.7577,
-          "bps": 6.248140508865,
-          "operatingCashPerShare": -1.471500156488
-        },
-        "source": {
-          "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
-          "fetchedAt": "2026-11-05T02:13:58.917Z",
-          "url": "https://data.eastmoney.com/bbsj/202606/yjbb.html"
-        },
-        "historicalAvailability": "provider_current_revision_not_point_in_time"
-      }
-    ],
+    "state": "unavailable",
+    "reports": [],
     "scope": {
       "periods": [
         "2026-09-30",
@@ -97,7 +37,7 @@
       "complete": false,
       "pageCapPerPeriod": 16
     },
-    "message": "仅展示已取得且日期可核验的累计报告；当前修订版不能冒充历史当时数据。"
+    "message": "未取得可核验的已披露报告，不代表公司没有财报。"
   },
   "announcements": {
     "state": "partial",
@@ -107,11 +47,11 @@
         "symbol": "000938.SZ",
         "title": "紫光股份:关于为子公司提供担保的进展公告",
         "noticeDate": "2026-11-05",
-        "displayTime": "2026-11-04 17:26:05:399",
+        "displayTime": "2026-11-04 17:26:05:496",
         "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
         "category": "提供/对外担保公告",
         "url": "https://data.eastmoney.com/notices/detail/000938/AN202611041831413174.html",
-        "observedAt": "2026-11-05T02:14:02.209Z",
+        "observedAt": "2026-11-05T15:27:04.459Z",
         "bodyRead": false,
         "readState": "index_only",
         "source": "东方财富公开公告索引"
@@ -123,9 +63,9 @@
       "beginDate": "2026-10-30",
       "endDate": "2026-11-05",
       "complete": false,
-      "totalHits": 12768,
-      "totalPages": 128,
-      "returnedPages": 7,
+      "totalHits": 13131,
+      "totalPages": 132,
+      "returnedPages": 11,
       "pageCap": 20,
       "truncated": true,
       "noticeTimePrecision": "day",
@@ -133,9 +73,9 @@
     },
     "message": "公告索引未读正文，事件不是价格确认。"
   },
-  "bundleId": "000938.SZ:2026-11-05T02:15:08.428Z",
-  "fetchedAt": "2026-11-05T02:15:08.428Z",
-  "asOf": "2026-11-05T02:15:08.428Z",
-  "requestedAt": "2026-11-05T02:13:53.424Z",
-  "codeSourceCommit": "0f2fdb02aaae0c06e9a5df2cca0221bf4811d600"
+  "bundleId": "000938.SZ:2026-11-05T15:27:52.131Z",
+  "fetchedAt": "2026-11-05T15:27:52.131Z",
+  "asOf": "2026-11-05T15:27:52.131Z",
+  "requestedAt": "2026-11-05T15:26:37.127Z",
+  "codeSourceCommit": "5f4a7f504d9dd83784b637bff0341abc516391b6"
 }

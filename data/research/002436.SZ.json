@@ -3,7 +3,7 @@
   "symbol": "002436.SZ",
   "company": {
     "state": "ok",
-    "cacheHit": false,
+    "cacheHit": true,
     "symbol": "002436.SZ",
     "fetchedAt": "2026-11-05T02:14:35.570Z",
     "observedAt": "2026-11-05T02:14:35.570Z",
@@ -23,42 +23,12 @@
       "fetchedAt": "2026-11-05T02:14:35.570Z",
       "url": "https://emweb.securities.eastmoney.com/PC_HSF10/CompanySurvey/CompanySurveyAjax?code=SZ002436"
     },
-    "historicalAvailability": "current_profile_not_point_in_time"
+    "historicalAvailability": "current_profile_not_point_in_time",
+    "message": "复用7日内公开资料，原获取与观察时间保留。"
   },
   "financial": {
-    "state": "partial",
-    "reports": [
-      {
-        "reportDate": "2026-09-30",
-        "noticeDate": "2026-10-29",
-        "updateDate": "2026-10-29",
-        "observedAt": "2026-11-05T02:14:02.905Z",
-        "periodBasis": "year_to_date",
-        "currency": null,
-        "amountUnit": "source_yuan",
-        "unitNote": "来源页面金额单位为元，币种未注明；不默认CNY，不作汇率换算。",
-        "percentageUnit": "percent",
-        "reportName": "2026年 三季报",
-        "industry": null,
-        "metrics": {
-          "revenue": 6770138901.87,
-          "netProfit": 438782733.56,
-          "revenueGrowth": 26.0023035796,
-          "profitGrowth": 233.7,
-          "roe": 7.78,
-          "grossMargin": 24.8142001653,
-          "eps": 0.26,
-          "bps": 3.283912815905,
-          "operatingCashPerShare": 0.066663148558
-        },
-        "source": {
-          "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
-          "fetchedAt": "2026-11-05T02:14:02.905Z",
-          "url": "https://data.eastmoney.com/bbsj/202609/yjbb.html"
-        },
-        "historicalAvailability": "provider_current_revision_not_point_in_time"
-      }
-    ],
+    "state": "unavailable",
+    "reports": [],
     "scope": {
       "periods": [
         "2026-09-30",
@@ -67,7 +37,7 @@
       "complete": false,
       "pageCapPerPeriod": 16
     },
-    "message": "仅展示已取得且日期可核验的累计报告；当前修订版不能冒充历史当时数据。"
+    "message": "未取得可核验的已披露报告，不代表公司没有财报。"
   },
   "announcements": {
     "state": "partial",
@@ -77,11 +47,11 @@
         "symbol": "002436.SZ",
         "title": "兴森科技:关于董事长提议回购公司股份的提示性公告",
         "noticeDate": "2026-11-05",
-        "displayTime": "2026-11-04 16:09:07:257",
+        "displayTime": "2026-11-04 16:09:07:260",
         "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
         "category": "回购预案",
         "url": "https://data.eastmoney.com/notices/detail/002436/AN202611041831408417.html",
-        "observedAt": "2026-11-05T02:14:10.519Z",
+        "observedAt": "2026-11-05T15:27:09.209Z",
         "bodyRead": false,
         "readState": "index_only",
         "source": "东方财富公开公告索引"
@@ -93,9 +63,9 @@
       "beginDate": "2026-10-30",
       "endDate": "2026-11-05",
       "complete": false,
-      "totalHits": 12768,
-      "totalPages": 128,
-      "returnedPages": 7,
+      "totalHits": 13131,
+      "totalPages": 132,
+      "returnedPages": 11,
       "pageCap": 20,
       "truncated": true,
       "noticeTimePrecision": "day",
@@ -103,9 +73,9 @@
     },
     "message": "公告索引未读正文，事件不是价格确认。"
   },
-  "bundleId": "002436.SZ:2026-11-05T02:15:08.428Z",
-  "fetchedAt": "2026-11-05T02:15:08.428Z",
-  "asOf": "2026-11-05T02:15:08.428Z",
-  "requestedAt": "2026-11-05T02:13:53.424Z",
-  "codeSourceCommit": "0f2fdb02aaae0c06e9a5df2cca0221bf4811d600"
+  "bundleId": "002436.SZ:2026-11-05T15:27:52.131Z",
+  "fetchedAt": "2026-11-05T15:27:52.131Z",
+  "asOf": "2026-11-05T15:27:52.131Z",
+  "requestedAt": "2026-11-05T15:26:37.127Z",
+  "codeSourceCommit": "5f4a7f504d9dd83784b637bff0341abc516391b6"
 }

@@ -3,7 +3,7 @@
   "symbol": "002384.SZ",
   "company": {
     "state": "ok",
-    "cacheHit": false,
+    "cacheHit": true,
     "symbol": "002384.SZ",
     "fetchedAt": "2026-11-05T02:14:32.402Z",
     "observedAt": "2026-11-05T02:14:32.402Z",
@@ -23,72 +23,12 @@
       "fetchedAt": "2026-11-05T02:14:32.402Z",
       "url": "https://emweb.securities.eastmoney.com/PC_HSF10/CompanySurvey/CompanySurveyAjax?code=SZ002384"
     },
-    "historicalAvailability": "current_profile_not_point_in_time"
+    "historicalAvailability": "current_profile_not_point_in_time",
+    "message": "复用7日内公开资料，原获取与观察时间保留。"
   },
   "financial": {
-    "state": "partial",
-    "reports": [
-      {
-        "reportDate": "2026-09-30",
-        "noticeDate": "2026-10-31",
-        "updateDate": "2026-10-31",
-        "observedAt": "2026-11-05T02:13:56.842Z",
-        "periodBasis": "year_to_date",
-        "currency": null,
-        "amountUnit": "source_yuan",
-        "unitNote": "来源页面金额单位为元，币种未注明；不默认CNY，不作汇率换算。",
-        "percentageUnit": "percent",
-        "reportName": "2026年 三季报",
-        "industry": null,
-        "metrics": {
-          "revenue": 45379349598.3,
-          "netProfit": 5288744234.6,
-          "revenueGrowth": 67.6331654415,
-          "profitGrowth": 332.34,
-          "roe": 22.08,
-          "grossMargin": 21.283283016,
-          "eps": 2.89,
-          "bps": 14.380320099923,
-          "operatingCashPerShare": 1.91908673938
-        },
-        "source": {
-          "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
-          "fetchedAt": "2026-11-05T02:13:56.842Z",
-          "url": "https://data.eastmoney.com/bbsj/202609/yjbb.html"
-        },
-        "historicalAvailability": "provider_current_revision_not_point_in_time"
-      },
-      {
-        "reportDate": "2026-06-30",
-        "noticeDate": "2026-08-22",
-        "updateDate": "2026-08-22",
-        "observedAt": "2026-11-05T02:14:24.744Z",
-        "periodBasis": "year_to_date",
-        "currency": null,
-        "amountUnit": "source_yuan",
-        "unitNote": "来源页面金额单位为元，币种未注明；不默认CNY，不作汇率换算。",
-        "percentageUnit": "percent",
-        "reportName": "2026年 半年报",
-        "industry": null,
-        "metrics": {
-          "revenue": 27797683972.88,
-          "netProfit": 2956898811.04,
-          "revenueGrowth": 63.9481879305,
-          "profitGrowth": 290.09,
-          "roe": 12.88,
-          "grossMargin": 20.1513507952,
-          "eps": 1.62,
-          "bps": 13.303496414908,
-          "operatingCashPerShare": 1.301527338391
-        },
-        "source": {
-          "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
-          "fetchedAt": "2026-11-05T02:14:24.744Z",
-          "url": "https://data.eastmoney.com/bbsj/202606/yjbb.html"
-        },
-        "historicalAvailability": "provider_current_revision_not_point_in_time"
-      }
-    ],
+    "state": "unavailable",
+    "reports": [],
     "scope": {
       "periods": [
         "2026-09-30",
@@ -97,7 +37,7 @@
       "complete": false,
       "pageCapPerPeriod": 16
     },
-    "message": "仅展示已取得且日期可核验的累计报告；当前修订版不能冒充历史当时数据。"
+    "message": "未取得可核验的已披露报告，不代表公司没有财报。"
   },
   "announcements": {
     "state": "partial",
@@ -111,7 +51,7 @@
         "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
         "category": "其他",
         "url": "https://data.eastmoney.com/notices/detail/002384/AN202611041831415967.html",
-        "observedAt": "2026-11-05T02:13:58.351Z",
+        "observedAt": "2026-11-05T15:26:51.160Z",
         "bodyRead": false,
         "readState": "index_only",
         "source": "东方财富公开公告索引"
@@ -123,9 +63,9 @@
       "beginDate": "2026-10-30",
       "endDate": "2026-11-05",
       "complete": false,
-      "totalHits": 12768,
-      "totalPages": 128,
-      "returnedPages": 7,
+      "totalHits": 13131,
+      "totalPages": 132,
+      "returnedPages": 11,
       "pageCap": 20,
       "truncated": true,
       "noticeTimePrecision": "day",
@@ -133,9 +73,9 @@
     },
     "message": "公告索引未读正文，事件不是价格确认。"
   },
-  "bundleId": "002384.SZ:2026-11-05T02:15:08.428Z",
-  "fetchedAt": "2026-11-05T02:15:08.428Z",
-  "asOf": "2026-11-05T02:15:08.428Z",
-  "requestedAt": "2026-11-05T02:13:53.424Z",
-  "codeSourceCommit": "0f2fdb02aaae0c06e9a5df2cca0221bf4811d600"
+  "bundleId": "002384.SZ:2026-11-05T15:27:52.131Z",
+  "fetchedAt": "2026-11-05T15:27:52.131Z",
+  "asOf": "2026-11-05T15:27:52.131Z",
+  "requestedAt": "2026-11-05T15:26:37.127Z",
+  "codeSourceCommit": "5f4a7f504d9dd83784b637bff0341abc516391b6"
 }
