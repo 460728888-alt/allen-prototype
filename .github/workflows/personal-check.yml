@@ -36,6 +36,14 @@ jobs:
         run: |
           set -euo pipefail
           node scripts/refresh-market.mjs 2>&1 | tee test-logs/market.log
+      - name: Fetch public company and financial context
+        id: research
+        continue-on-error: true
+        env:
+          RESEARCH_REQUIRE_CHANNELS: 'true'
+        run: |
+          set -euo pipefail
+          node scripts/refresh-research.mjs 2>&1 | tee test-logs/research.log
       - name: Install browser
         run: |
           npm install --no-save --ignore-scripts --no-audit --no-fund playwright@1.64.0
@@ -49,6 +57,11 @@ jobs:
         if: steps.market.outcome != 'success'
         run: |
           echo "Public data refresh failed; inspect status and logs."
+          exit 1
+      - name: Require real company, financial and announcement records
+        if: steps.research.outcome != 'success'
+        run: |
+          echo "Research context failed live verification; inspect separate source states."
           exit 1
       - name: Preserve verified public data on isolated branch
         if: github.event_name == 'push' && github.ref == 'refs/heads/upgrade/personal-pages-v1'

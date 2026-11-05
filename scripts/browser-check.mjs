@@ -18,6 +18,16 @@ function stock(symbol,name,flat=false){
  const structure=analyzeVolumeStructure(history),profile=buildVolumeScreenProfile(history,structure);
  return {symbol,code:symbol.slice(0,6),name,price:history.at(-1).close,changePct:0,currency:'CNY',exchange:symbol.endsWith('.SS')?'SHH':'SHZ',dataThrough:through,data:{state:'ok',dataThrough:through,complete:true,lastBarComplete:true,historyStart:dates[0],corporateActions:[],reasons:[]},levels:structure.levels,structure,profile,history,miniHistory:history.slice(-20),detailPath:'data/stocks/'+symbol+'.json',source:{provider:'synthetic-browser-test',attempts:[{host:'synthetic-primary',requested:true,checkedAt:generatedAt,state:'insufficient',dataThrough:through,reasons:['合成日线价格关系异常']},{host:'synthetic-secondary',requested:true,checkedAt:generatedAt,state:'ok',dataThrough:through,reasons:[]}],usedSecondary:true,independentConfirmation:false},company:{name},financial:{state:'unavailable'},news:{state:'unavailable',items:[]}};
 }
+
+function companyFixture(symbol,name,version=1){
+ const observedAt=new Date(instant-1800000+version*1000).toISOString(),id='AN202611041234567890';
+ return {schema:1,symbol,bundleId:'synthetic-'+symbol+'-'+version,fetchedAt:observedAt,asOf:observedAt,
+  company:{state:'ok',symbol,name,fullName:name+'股份有限公司',industry:'合成行业',introduction:'合成公司介绍，非实际公司资料',fetchedAt:observedAt,observedAt,source:{provider:'synthetic-research-test',fetchedAt:observedAt}},
+  financial:{state:'ok',reports:[{symbol,reportDate:'2026-09-30',noticeDate:dates.at(-2),updateDate:dates.at(-2),observedAt,currency:null,amountUnit:'source_yuan',periodBasis:'year_to_date',metrics:{revenue:123456789,netProfit:version===1?-120:456,revenueGrowth:0,profitGrowth:-12.5,roe:3,grossMargin:null,eps:.12,bps:2,operatingCashPerShare:-.2},source:{provider:'synthetic-research-test',fetchedAt:observedAt,url:'https://data.eastmoney.com/bbsj/202609/yjbb.html'}}]},
+  announcements:{state:'partial',items:[{id,symbol,title:'合成公告版本'+version+' <img src=x onerror=bad()>',noticeDate:dates.at(-2),observedAt,url:'https://data.eastmoney.com/notices/detail/'+symbol.slice(0,6)+'/'+id+'.html',category:'合成测试',bodyRead:false,readState:'index_only'}],scope:{from:dates.at(-5),through,complete:false}}
+ };
+}
+
 function fixture(mode='active'){
  const list=[stock('600036.SS','合成样本甲',mode==='empty'),stock('000001.SZ','合成样本乙',mode==='empty')],coverage={targetRequested:2,poolSize:2,requested:2,returned:2,usable:2,failed:0,stale:0,insufficient:0,observations:mode==='empty'?0:2,qualified:null,poolSource:'synthetic-test-only',fallback:false,notRequested:0};
  const status={schema:1,state:'ok',attemptedAt:generatedAt,generatedAt,dataThrough:through,expectedThrough:through,coverage,failures:[],sourceFailures:[],message:'合成浏览器验收数据，不是实盘行情'};
@@ -30,7 +40,10 @@ function fixture(mode='active'){
   status.acquisition={httpRequests:64,secondaryRequests:32,recovered:0,skippedRetries:0};
  }
  if(mode==='stale'){const previous=dates.at(-2);status.dataThrough=previous;coverage.stale=2;coverage.usable=0;for(const item of list){item.dataThrough=previous;item.data.dataThrough=previous;item.data.state='stale';item.history.pop();item.price=item.history.at(-1).close}}
- return {status,market:{schema:1,dataKind:'synthetic',generatedAt,dataThrough:status.dataThrough,expectedThrough:through,stocks:list},list};
+ const researchBundles=Object.fromEntries(list.map(item=>[item.symbol,companyFixture(item.symbol,item.name)]));
+ const researchIndex={schema:1,generatedAt,symbols:Object.fromEntries(Object.entries(researchBundles).map(([symbol,b])=>[symbol,{path:'data/research/'+symbol+'.json',bundleId:b.bundleId}])),eventItems:Object.values(researchBundles).flatMap(b=>b.announcements.items)};
+ const researchStatus={schema:1,state:mode==='research-failed'?'failed':'partial',generatedAt,preservedPrevious:mode==='research-failed',message:'合成研究资料状态，不是实盘信息'};
+ return {status,market:{schema:1,dataKind:'synthetic',generatedAt,dataThrough:status.dataThrough,expectedThrough:through,stocks:list},list,researchBundles,researchIndex,researchStatus,delayResearch:null,delayPrice:null};
 }
 const mime={'.html':'text/html','.js':'text/javascript','.mjs':'text/javascript','.css':'text/css','.json':'application/json','.svg':'image/svg+xml'};
 const server=http.createServer((req,res)=>{try{
@@ -47,10 +60,12 @@ async function open(width,height,mode='active'){
  await context.addInitScript(({instant})=>{const NativeDate=Date;globalThis.Date=class extends NativeDate{constructor(...args){super(...(args.length?args:[instant]))}static now(){return instant}}},{instant});
  const page=await context.newPage(),errors=[],remote=[];page.on('pageerror',error=>errors.push(error.message));
  page.on('request',request=>{const url=new URL(request.url());if(url.origin!==base||url.pathname.startsWith(prefix+'api/'))remote.push(request.url())});
- const f=fixture(mode);await page.route('**/data/**',route=>{
+ const f=fixture(mode);await page.route('**/data/**',async route=>{
   const pathname=new URL(route.request().url()).pathname,key=pathname.slice(pathname.indexOf('/data/')+6);
   if(key==='status.json')return route.fulfill({json:f.status});if(key==='market.json')return route.fulfill({json:f.market});
-  if(key.startsWith('stocks/')){const item=f.list.find(s=>s.symbol===key.slice(7,-5));return item?route.fulfill({json:item}):route.fulfill({status:404,json:{error:'missing'}})}
+  if(key==='research-index.json')return route.fulfill({json:f.researchIndex});if(key==='research-status.json')return route.fulfill({json:f.researchStatus});
+  if(key.startsWith('research/')){const symbol=key.slice(9,-5);if(f.delayResearch===symbol)await new Promise(resolve=>setTimeout(resolve,1600));const b=f.researchBundles[symbol];return b?route.fulfill({json:b}):route.fulfill({status:404,json:{error:'missing research'}})}
+  if(key.startsWith('stocks/')){if(f.delayPrice===key.slice(7,-5))await new Promise(resolve=>setTimeout(resolve,1600));const item=f.list.find(s=>s.symbol===key.slice(7,-5));return item?route.fulfill({json:item}):route.fulfill({status:404,json:{error:'missing'}})}
   return route.continue();
  });
  await page.goto(base+prefix,{waitUntil:'networkidle'});await page.locator('#searchInput').waitFor();
@@ -59,7 +74,7 @@ async function open(width,height,mode='active'){
 async function navigate(page,id){await page.locator('nav [data-page="'+id+'"]').click()}
 async function geometry(page){const size=await page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth}));assert.ok(size.scroll<=size.width+2,JSON.stringify(size))}
 async function screenshot(page,name){await page.screenshot({path:path.join(output,'screens',name+'.jpg'),type:'jpeg',quality:76,fullPage:true})}
-async function choose(page){if(!await page.locator('[data-stock="600036.SS"]').count())await page.locator('#searchInput').fill('600036');await page.locator('[data-stock="600036.SS"]').first().click();await page.locator('#researchArchive').waitFor()}
+async function choose(page){if(!await page.locator('[data-stock="600036.SS"]').count())await page.locator('#searchInput').fill('600036');await page.locator('[data-stock="600036.SS"]').first().click();await page.locator('#researchArchive').waitFor();await page.locator('#companyResearch[data-research-version]').waitFor()}
 try{
  for(const [width,height]of [[1194,834],[390,844],[1440,900]])for(const mode of ['active','failed','partial','empty','stale']){
   const sample=await open(width,height,mode),{context,page,errors,remote}=sample;
@@ -76,7 +91,7 @@ try{
     const originalStage=await page.locator('#researchArchive .archive-grid > section > article:first-child > .pill').innerText();
     await page.locator('[data-save-research]').click();await page.locator('#notice').filter({hasText:/已保存/}).waitFor();
     assert.equal(await page.locator('#researchArchive .archive-grid > section > article:first-child > .pill').innerText(),originalStage);
-    const before=await page.evaluate(()=>JSON.parse(localStorage.getItem('allen.personal.v1')));assert.equal(before.research.length,1);
+    const before=await page.evaluate(()=>JSON.parse(localStorage.getItem('allen.personal.v1')));assert.equal(before.research.length,1);assert.equal(before.research[0].original.research.symbol,'600036.SS');assert.equal(before.research[0].original.history.length,120);
     await page.locator('#noteText').fill('合成：后来追加的笔记');await page.locator('[data-save-note]').click();await page.locator('#notice').filter({hasText:/已追加/}).waitFor();
     const after=await page.evaluate(()=>JSON.parse(localStorage.getItem('allen.personal.v1')));assert.deepEqual(after.research[0].original,before.research[0].original);assert.ok(!await page.locator('#app').innerText().then(t=>t.includes('合成：后来追加的笔记')));
     await page.locator('[data-time="later"]').click();assert.match(await page.locator('#app').innerText(),/合成：后来追加的笔记/);
@@ -87,9 +102,15 @@ try{
     await page.locator('#importBackup').setInputFiles(exportFile);await page.locator('#notice').filter({hasText:/已合并/}).waitFor();assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('allen.personal.v1')).research.length),2);
     const changed=sample.f.list.find(s=>s.symbol==='600036.SS'),rolling={...changed.levels,stop:changed.price+5,invalidation:changed.price+5};
     changed.levels=rolling;changed.structure={...changed.structure,stage:'结构失效',levels:rolling};changed.profile={...changed.profile,levels:rolling};
+    const newer=companyFixture('600036.SS',changed.name,2);sample.f.researchBundles['600036.SS']=newer;sample.f.researchIndex.symbols['600036.SS'].bundleId=newer.bundleId;sample.f.researchIndex.eventItems=newer.announcements.items;
     await navigate(page,'home');await page.locator('[data-refresh]').first().click();await page.locator('#notice').filter({hasText:/已读取/}).waitFor();assert.equal(await page.locator('.review-item').count(),2);assert.match(await page.locator('.review-panel').innerText(),/待设置/);
     const reviewed=await page.evaluate(()=>JSON.parse(localStorage.getItem('allen.personal.v1')));assert.deepEqual(reviewed.research.map(r=>r.original),twice.research.map(r=>r.original));assert.ok(reviewed.research.every(r=>r.status==='observing'));
     await page.locator('.review-item [data-research-id]').first().click();await page.locator('#researchArchive').waitFor();await page.locator('[data-time="later"]').click();assert.match(await page.locator('#researchArchive .archive-grid > section > article:first-child > .pill').innerText(),/原结构继续跟踪/);
+    await page.locator('#companyResearch[data-research-version]').waitFor();assert.match(await page.locator('#companyResearch').innerText(),/合成公告版本2/);assert.equal(await page.locator('#companyResearch img').count(),0);
+    await page.locator('[data-attach-research]').click();await page.locator('#notice').filter({hasText:/资料已追加|资料快照已追加/}).waitFor();
+    const attached=await page.evaluate(()=>JSON.parse(localStorage.getItem('allen.personal.v1')));assert.deepEqual(attached.research.map(r=>r.original),twice.research.map(r=>r.original));assert.ok(attached.research.some(r=>r.events.some(e=>e.snapshot?.research?.bundleId==='synthetic-600036.SS-2')));
+    await page.locator('[data-time="original"]').click();assert.match(await page.locator('#companyResearch').innerText(),/合成公告版本1/);assert.ok(!(await page.locator('#companyResearch').innerText()).includes('合成公告版本2'));await geometry(page);await screenshot(page,'company-research-'+width);
+
     await navigate(page,'validation');await geometry(page);assert.match(await page.locator('#app').innerText(),/事后重建|未验证|未证明/);await screenshot(page,'validation-'+width);
    }
    assert.deepEqual(errors,[]);assert.deepEqual(remote,[]);results.push({width,height,mode,passed:true});
@@ -126,6 +147,25 @@ try{
    assert.equal(await sample.page.evaluate(()=>localStorage.getItem('allen.personal.v1')),before);assert.deepEqual(sample.errors,[]);assert.deepEqual(sample.remote,[]);results.push({case:focusEvent?'overnight-focus':'overnight-save-guard',passed:true});
   }finally{await sample.context.close()}
  }
+
+ for(const [width,height]of [[1194,834],[390,844],[1440,900]]){
+  const sample=await open(width,height,'research-failed'),{page,context}=sample;
+  try{
+   await page.locator('[data-stock="600036.SS"]').first().click();await page.locator('#researchArchive').waitFor();await page.locator('[data-save-research]').waitFor({state:'visible'});await page.locator('[data-save-research]').click();await page.locator('#notice').filter({hasText:/财报公告未取得/}).waitFor();
+   const data=await page.evaluate(()=>JSON.parse(localStorage.getItem('allen.personal.v1')));assert.equal(data.research.length,1);assert.equal(Object.hasOwn(data.research[0].original,'research'),false);assert.equal(data.research[0].original.data.state,'ok');await geometry(page);assert.deepEqual(sample.errors,[]);assert.deepEqual(sample.remote,[]);results.push({case:'research-failed-price-preserved',width,height,passed:true});
+  }finally{await context.close()}
+ }
+ const race=await open(1194,834);try{
+  race.f.delayResearch='600036.SS';await race.page.locator('[data-stock="600036.SS"]').first().click();await race.page.locator('#researchArchive').waitFor();
+  await navigate(race.page,'home');await race.page.locator('#searchInput').fill('000001');await race.page.locator('[data-stock="000001.SZ"]').first().click();await race.page.locator('#companyResearch[data-research-version="synthetic-000001.SZ-1"]').waitFor();await race.page.waitForTimeout(1800);
+  assert.match(await race.page.locator('#researchArchive h1').innerText(),/000001.SZ/);assert.equal(await race.page.locator('#companyResearch').getAttribute('data-research-version'),'synthetic-000001.SZ-1');assert.deepEqual(race.errors,[]);assert.deepEqual(race.remote,[]);results.push({case:'research-selection-race',passed:true});
+ }finally{await race.context.close()}
+ const incomplete=await open(1194,834);try{
+  incomplete.f.delayPrice='600036.SS';await incomplete.page.locator('[data-stock="600036.SS"]').first().click();await incomplete.page.locator('#companyResearch[data-research-version]').waitFor();assert.equal(await incomplete.page.locator('[data-save-research]').isDisabled(),true);
+  await incomplete.page.evaluate(()=>document.querySelector('[data-save-research]').dispatchEvent(new MouseEvent('click',{bubbles:true})));await incomplete.page.locator('#notice').filter({hasText:/未完整加载|不可判断/}).waitFor();assert.equal(await incomplete.page.evaluate(()=>JSON.parse(localStorage.getItem('allen.personal.v1')||'{"research":[]}').research.length),0);
+  await incomplete.page.locator('[data-save-research]').click();await incomplete.page.locator('#notice').filter({hasText:/已保存/}).waitFor();assert.equal(await incomplete.page.evaluate(()=>JSON.parse(localStorage.getItem('allen.personal.v1')).research[0].original.history.length),120);assert.deepEqual(incomplete.errors,[]);results.push({case:'complete-snapshot-before-save',passed:true});
+ }finally{await incomplete.context.close()}
+
  const actual=await browser.newContext({viewport:{width:1194,height:834}});try{
   const page=await actual.newPage(),errors=[];page.on('pageerror',error=>errors.push(error.message));await page.goto(base+prefix,{waitUntil:'networkidle'});await page.locator('#searchInput').waitFor();await geometry(page);
   const file=path.join(output,'screens','real-published-home.jpg');await page.screenshot({path:file,type:'jpeg',quality:72,fullPage:true});assert.deepEqual(errors,[]);console.log('PERSONAL_PREVIEW_IMAGE home '+fs.readFileSync(file).toString('base64'));results.push({case:'real-data-smoke',passed:true});

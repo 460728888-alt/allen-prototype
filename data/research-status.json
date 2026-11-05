@@ -1,0 +1,174 @@
+{
+  "schema": 1,
+  "state": "partial",
+  "generatedAt": "2026-11-05T02:15:08.428Z",
+  "attemptedAt": "2026-11-05T02:13:53.424Z",
+  "fetchedAt": "2026-11-05T02:15:08.428Z",
+  "asOf": "2026-11-05T02:15:08.428Z",
+  "priceDataThrough": "2026-11-04",
+  "codeSourceCommit": "0f2fdb02aaae0c06e9a5df2cca0221bf4811d600",
+  "coverage": {
+    "poolSize": 1200,
+    "company": {
+      "requested": 294,
+      "returned": 281,
+      "requestFailures": 14,
+      "skipped": 831,
+      "notRequested": 831,
+      "ok": 280,
+      "cached": 75,
+      "failed": 14,
+      "stale": 0,
+      "insufficient": 0,
+      "usable": 355,
+      "priority": "original_public_sample_then_symbol_not_recommendation"
+    },
+    "financial": {
+      "withReports": 1200,
+      "withoutReports": 0,
+      "requestedPages": 28,
+      "returnedPages": 28,
+      "pageCapPerPeriod": 16,
+      "periods": [
+        {
+          "period": "2026-09-30",
+          "requestedPages": 12,
+          "returnedPages": 12,
+          "totalPages": 12,
+          "truncated": false,
+          "complete": true
+        },
+        {
+          "period": "2026-06-30",
+          "requestedPages": 16,
+          "returnedPages": 16,
+          "totalPages": 23,
+          "truncated": true,
+          "complete": false
+        }
+      ],
+      "rejectedRows": 0,
+      "conflicts": 0,
+      "complete": false
+    },
+    "announcements": {
+      "withItems": 147,
+      "withoutItems": 1053,
+      "beginDate": "2026-10-30",
+      "endDate": "2026-11-05",
+      "requestedPages": 8,
+      "returnedPages": 7,
+      "totalHits": 12768,
+      "totalPages": 128,
+      "pageCap": 20,
+      "truncated": true,
+      "rejectedItems": 0,
+      "identityMismatches": 0,
+      "complete": false
+    }
+  },
+  "source": {
+    "financial": "东方财富公开业绩报表",
+    "company": "东方财富公司资料",
+    "announcements": "东方财富公告索引",
+    "notice": "公开来源可能修订或缺失；首次观察时间来自本次实际获取，不回溯为披露日。"
+  },
+  "failures": [
+    {
+      "symbol": "001399.SZ",
+      "source": "company",
+      "code": "request_error",
+      "message": "公司资料返回证券身份不一致"
+    },
+    {
+      "symbol": "000688.SZ",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "000988.SZ",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "001330.SZ",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "source": "announcements",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "002185.SZ",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "002304.SZ",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "002466.SZ",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "300073.SZ",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "300077.SZ",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "300058.SZ",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "300063.SZ",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "300083.SZ",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "300085.SZ",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "300088.SZ",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    }
+  ],
+  "message": "部分研究来源未完整覆盖，未取得的内容保持未知。",
+  "preservedPrevious": false,
+  "storedCounts": {
+    "companies": 355,
+    "financial": 1200,
+    "announcementItems": 243
+  }
+}
