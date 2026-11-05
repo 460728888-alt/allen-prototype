@@ -87,7 +87,7 @@ function chart(s){
 function archiveView(){
  const r=record(),current=state.detail||bySymbol(state.stock),later=r&&state.later;
  const view=norm(r?(later?r.events.filter(e=>e.snapshot).at(-1)?.snapshot||r.original:r.original):current);
- const visible=r&&!later?{...r,status:'observing',events:[]}:r;
+ const visible=r&&!later?null:r;
  const a=r&&!later?{...state.assessment,state:'ok',canJudge:view?.data?.state==='ok',expectedThrough:r.dataThrough,dataThrough:r.dataThrough}:state.assessment;
  return {r,current,view,later,visible,a,e:view?explain(view,a,visible):null};
 }

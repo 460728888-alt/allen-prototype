@@ -73,7 +73,9 @@ try{
    if(mode==='active'){
     await navigate(page,'map');await geometry(page);await screenshot(page,'map-'+width);await navigate(page,'home');await choose(page);await page.locator('svg.price-chart').waitFor();await page.locator('.source-audit summary').click();assert.match(await page.locator('.source-audit').innerText(),/synthetic-primary/);assert.match(await page.locator('.source-audit').innerText(),/不是第二份独立证实/);
     for(const marker of ['pullback','compression','breakout']){await page.locator('button[data-marker="'+marker+'"]').click();const d=page.locator('#evidenceDialog');await d.waitFor({state:'visible'});const text=await d.innerText();assert.match(text,/支持证据/);assert.match(text,/疑点/);assert.match(text,/日期|截止/);assert.match(text,/计算|公式/);await page.keyboard.press('Escape')}
+    const originalStage=await page.locator('#researchArchive .archive-grid > section > article:first-child > .pill').innerText();
     await page.locator('[data-save-research]').click();await page.locator('#notice').filter({hasText:/已保存/}).waitFor();
+    assert.equal(await page.locator('#researchArchive .archive-grid > section > article:first-child > .pill').innerText(),originalStage);
     const before=await page.evaluate(()=>JSON.parse(localStorage.getItem('allen.personal.v1')));assert.equal(before.research.length,1);
     await page.locator('#noteText').fill('合成：后来追加的笔记');await page.locator('[data-save-note]').click();await page.locator('#notice').filter({hasText:/已追加/}).waitFor();
     const after=await page.evaluate(()=>JSON.parse(localStorage.getItem('allen.personal.v1')));assert.deepEqual(after.research[0].original,before.research[0].original);assert.ok(!await page.locator('#app').innerText().then(t=>t.includes('合成：后来追加的笔记')));
