@@ -13,7 +13,7 @@
     "state": "ok",
     "reasons": [],
     "dataThrough": "2026-11-04",
-    "fetchedAt": "2026-11-04T15:23:44.398Z",
+    "fetchedAt": "2026-11-05T00:07:01.043Z",
     "expectedThrough": "2026-11-04",
     "corporateActions": [
       {
@@ -30,11 +30,11 @@
     "calendarSource": "SSE/SZSE official annual holiday notices, 2024-2026",
     "calendarVersion": "cn-equities-2024-2026-v1",
     "calendarValidThrough": "2026-12-31",
-    "sessionState": "completed",
+    "sessionState": "not_completed",
     "priceBasis": "judgment_day_raw",
     "anchorFactor": 1,
     "volumeBasis": "source_volume",
-    "judgmentAsOf": "2026-11-04T15:23:24.864Z",
+    "judgmentAsOf": "2026-11-05T00:06:40.162Z",
     "complete": true
   },
   "levels": {
@@ -330,10 +330,24 @@
   ],
   "source": {
     "provider": "Yahoo Finance / query1.finance.yahoo.com",
-    "fetchedAt": "2026-11-04T15:23:44.398Z",
+    "fetchedAt": "2026-11-05T00:07:01.043Z",
     "quoteBasis": "provider_daily_quote_anchored_at_judgment_day",
     "historicalQuoteScaleVerified": false,
-    "note": "提供方可能修订历史报价；严格历史报价尺度未独立核验"
+    "note": "提供方可能修订历史报价；严格历史报价尺度未独立核验",
+    "attempts": [
+      {
+        "host": "query1.finance.yahoo.com",
+        "requested": true,
+        "checkedAt": "2026-11-05T00:07:01.045Z",
+        "state": "ok",
+        "dataThrough": "2026-11-04",
+        "reasons": []
+      }
+    ],
+    "selectedHost": "query1.finance.yahoo.com",
+    "usedSecondary": false,
+    "independentConfirmation": false,
+    "retrySkipped": null
   },
   "history": [
     {
@@ -1791,5 +1805,5 @@
     "items": [],
     "message": "尚未自动采集公告正文；事件不等于价格确认"
   },
-  "generatedAt": "2026-11-04T15:23:47.118Z"
+  "generatedAt": "2026-11-05T00:07:04.182Z"
 }

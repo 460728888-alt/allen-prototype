@@ -21,7 +21,7 @@ test('missing volume remains unknown and cannot become shrinking volume',()=>{
 });
 test('mismatched provider symbol is rejected',()=>assert.throws(()=>normalizeStock(pool.rows[0],chart('000001.SZ'),{calendar,now}),/代码与请求不一致/));
 test('all failures explicitly prevent judgment',async()=>{
- const r=await run({fetchImpl:async()=>({ok:false,status:503})});assert.equal(r.status.state,'failed');assert.equal(r.status.coverage.requested,2);assert.equal(r.status.coverage.returned,0);assert.equal(r.status.coverage.failed,2);assert.equal(r.status.coverage.usable,0);assert.match(r.status.message,/无法完成判断/);assert.equal(r.status.failures.length,2);
+ const r=await run({fetchImpl:async()=>({ok:false,status:503})});assert.equal(r.status.state,'failed');assert.equal(r.status.coverage.requested,2);assert.equal(r.status.coverage.returned,0);assert.equal(r.status.coverage.failed,2);assert.equal(r.status.coverage.usable,0);assert.match(r.status.message,/无法完成判断/);assert.equal(r.status.failures.length,2);assert.ok(r.status.failures.every(f=>f.attempts.length===2));
 });
 test('partial counts distinguish usable response and request failure',async()=>{
  const r=await run({fetchImpl:async url=>url.includes('000001.SZ')?{ok:false,status:429}:fakeFetch(url)});
@@ -41,4 +41,50 @@ test('unrequested symbols are not invented failures',async()=>{
 test('pool outage falls back to original 32 and discloses limited coverage',async()=>{
  const r=await fetchPool({fetchImpl:async()=>({ok:false,status:503}),clock:()=>now.getTime(),deadline:now.getTime()+30000});
  assert.equal(FALLBACK.length,32);assert.equal(r.rows.length,32);assert.equal(r.fallback,true);assert.ok(r.sourceFailures.length>0);
+});
+
+const singlePool={...pool,rows:[pool.rows[0]]};
+const envelope=raw=>response({chart:{result:[raw]}});
+function badOHLC(){const raw=chart();raw.indicators.quote[0].open[124]=raw.indicators.quote[0].high[124]+2;return raw}
+function previousDay(){const raw=chart();raw.timestamp.pop();for(const values of Object.values(raw.indicators.quote[0]))values.pop();raw.indicators.adjclose[0].adjclose.pop();return raw}
+test('quality failure retries the secondary host without changing canonical prices',async()=>{
+ const calls=[];const good=chart();
+ const r=await run({pool:singlePool,fetchImpl:async url=>{calls.push(new URL(url).hostname);return envelope(calls.length===1?badOHLC():good)}});
+ assert.deepEqual(calls,['query1.finance.yahoo.com','query2.finance.yahoo.com']);
+ assert.equal(r.status.coverage.returned,1);assert.equal(r.status.coverage.usable,1);
+ assert.equal(r.status.acquisition.httpRequests,2);assert.equal(r.status.acquisition.secondaryRequests,1);assert.equal(r.status.acquisition.recovered,1);
+ const s=r.market.stocks[0];assert.equal(s.source.usedSecondary,true);assert.equal(s.source.independentConfirmation,false);
+ assert.match(s.source.attempts[0].reasons.join('；'),/日线价格关系异常/);assert.equal(s.source.attempts[1].state,'ok');
+ assert.deepEqual(s.levels,normalizeStock(pool.rows[0],good,{calendar,now}).stock.levels);
+ assert.equal(s.qualified,null);assert.equal(s.probability,null);
+});
+test('two contradictory responses remain insufficient and never become an opportunity',async()=>{
+ const r=await run({pool:singlePool,fetchImpl:async()=>envelope(badOHLC())});
+ assert.equal(r.status.coverage.returned,1);assert.equal(r.status.coverage.insufficient,1);assert.equal(r.status.coverage.usable,0);assert.equal(r.status.coverage.failed,0);
+ const s=r.market.stocks[0];assert.equal(s.source.selectedHost,'query1.finance.yahoo.com');assert.equal(s.source.attempts.length,2);assert.deepEqual(r.status.failures[0].attempts,s.source.attempts);assert.equal(s.observation,false);assert.equal(s.probability,null);
+ assert.ok(r.details[s.symbol].history.at(-1).open>r.details[s.symbol].history.at(-1).high,'do not clamp invalid prices');
+});
+test('older secondary data cannot hide a current invalid response',async()=>{
+ let calls=0;const r=await run({pool:singlePool,fetchImpl:async()=>envelope(++calls===1?badOHLC():previousDay())});
+ const s=r.market.stocks[0];assert.equal(s.dataThrough,'2026-10-29');assert.equal(s.data.state,'insufficient');assert.equal(s.source.selectedHost,'query1.finance.yahoo.com');assert.equal(s.source.attempts[1].state,'stale');assert.equal(r.status.coverage.stale,0);
+});
+test('a missing-volume response remains returned when secondary HTTP fails',async()=>{
+ const raw=chart();raw.indicators.quote[0].volume[124]=null;let calls=0;
+ const r=await run({pool:singlePool,fetchImpl:async()=>++calls===1?envelope(raw):{ok:false,status:503}});
+ const s=r.market.stocks[0];assert.equal(r.status.coverage.returned,1);assert.equal(r.status.coverage.failed,0);assert.equal(r.status.coverage.insufficient,1);assert.equal(s.observation,false);assert.equal(s.source.attempts[1].code,'http_503');assert.equal(s.source.attempts[1].requested,true);
+ assert.equal(r.details[s.symbol].history.at(-1).volume,null);
+});
+test('HTTP recovery is disclosed separately from stock coverage',async()=>{
+ let calls=0;const r=await run({pool:singlePool,fetchImpl:async()=>++calls===1?{ok:false,status:503}:envelope(chart())});
+ assert.equal(r.status.coverage.requested,1);assert.equal(r.status.coverage.returned,1);assert.equal(r.status.coverage.usable,1);assert.equal(r.status.coverage.failed,0);
+ assert.equal(r.status.acquisition.httpRequests,2);assert.equal(r.status.acquisition.requestErrors,1);assert.equal(r.market.stocks[0].source.attempts[0].code,'http_503');
+});
+test('a valid primary response avoids a second request',async()=>{
+ let calls=0;const r=await run({pool:singlePool,fetchImpl:async()=>{calls++;return envelope(chart())}});
+ assert.equal(calls,1);assert.equal(r.status.acquisition.secondaryRequests,0);assert.equal(r.status.acquisition.recovered,0);assert.equal(r.market.stocks[0].source.attempts.length,1);
+});
+test('time budget prevents an unmade secondary request without discarding an invalid response',async()=>{
+ let clockValue=now.getTime(),calls=0;const r=await run({pool:singlePool,clock:()=>clockValue,maxDurationMs:1000,fetchImpl:async()=>{calls++;clockValue+=2000;return envelope(badOHLC())}});
+ assert.equal(calls,1);assert.equal(r.status.coverage.returned,1);assert.equal(r.status.coverage.failed,0);assert.equal(r.status.acquisition.httpRequests,1);assert.equal(r.status.acquisition.secondaryRequests,0);assert.equal(r.status.acquisition.skippedRetries,1);
+ assert.equal(r.market.stocks[0].source.retrySkipped,'time_budget');assert.equal(r.market.stocks[0].source.attempts.length,1);
 });

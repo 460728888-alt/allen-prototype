@@ -21,3 +21,12 @@ test('original stop invalidates without volume or new rolling levels',()=>{const
 test('missing data or incomparable corporate actions pause old-price judgment',()=>{const s=stock();s.price=9;s.data.state='stale';assert.equal(stageOf(s,assess(),record()).id,'paused');s.data.state='ok';s.data.corporateActions=[{date:day,type:'splits'}];assert.equal(stageOf(s,assess(),record()).id,'paused');s.data.corporateActions=[];delete s.data.historyStart;assert.equal(stageOf(s,assess(),record()).id,'paused')});
 test('recorded invalidation remains visible without current data',()=>assert.equal(stageOf(null,{canJudge:false},{status:'invalidated'}).id,'invalid'));
 test('order is stable and probability remains unavailable',()=>{const a=stock(),b={...stock(),symbol:'000001.SZ'},q=assess();assert.deepEqual(selectFocus([a,b],q).map(s=>s.symbol),selectFocus([b,a],q).map(s=>s.symbol));assert.equal(explain(a,q).probability,null);assert.equal(selectFocus([a],q,0).length,0);assert.deepEqual(selectFocus([a],{canJudge:false}),[])});
+
+test('rolling window breakdown cannot invalidate a saved original structure',()=>{
+ const s=stock(),r=record(),before=JSON.stringify(r);s.structure.stage='结构失效';s.levels={state:'ok',stop:12,invalidation:12,breakout:14};
+ const p=stageOf(s,assess(),r);assert.equal(p.id,'follow');assert.match(p.label,/原结构继续跟踪/);assert.equal(JSON.stringify(r),before);
+});
+test('saved research uses its own breakout and price touch is not volume confirmation',()=>{
+ const s=stock(),r=record();s.structure.stage='向上突破待确认';s.levels.breakout=10.5;
+ assert.equal(stageOf(s,assess(),r).id,'follow');s.price=12;const p=stageOf(s,assess(),r);assert.equal(p.id,'trigger');assert.match(p.label,/原突破参考/);assert.match(p.reason,/不代表买点/);
+});
