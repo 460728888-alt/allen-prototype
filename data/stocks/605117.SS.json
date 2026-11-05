@@ -13,7 +13,7 @@
     "state": "ok",
     "reasons": [],
     "dataThrough": "2026-11-04",
-    "fetchedAt": "2026-11-04T15:23:34.489Z",
+    "fetchedAt": "2026-11-05T00:06:49.865Z",
     "expectedThrough": "2026-11-04",
     "corporateActions": [
       {
@@ -34,11 +34,11 @@
     "calendarSource": "SSE/SZSE official annual holiday notices, 2024-2026",
     "calendarVersion": "cn-equities-2024-2026-v1",
     "calendarValidThrough": "2026-12-31",
-    "sessionState": "completed",
+    "sessionState": "not_completed",
     "priceBasis": "judgment_day_raw",
     "anchorFactor": 1,
     "volumeBasis": "source_volume_split_check",
-    "judgmentAsOf": "2026-11-04T15:23:24.864Z",
+    "judgmentAsOf": "2026-11-05T00:06:40.162Z",
     "complete": true
   },
   "levels": {
@@ -334,10 +334,24 @@
   ],
   "source": {
     "provider": "Yahoo Finance / query1.finance.yahoo.com",
-    "fetchedAt": "2026-11-04T15:23:34.489Z",
+    "fetchedAt": "2026-11-05T00:06:49.865Z",
     "quoteBasis": "provider_daily_quote_anchored_at_judgment_day",
     "historicalQuoteScaleVerified": false,
-    "note": "提供方可能修订历史报价；严格历史报价尺度未独立核验"
+    "note": "提供方可能修订历史报价；严格历史报价尺度未独立核验",
+    "attempts": [
+      {
+        "host": "query1.finance.yahoo.com",
+        "requested": true,
+        "checkedAt": "2026-11-05T00:06:49.867Z",
+        "state": "ok",
+        "dataThrough": "2026-11-04",
+        "reasons": []
+      }
+    ],
+    "selectedHost": "query1.finance.yahoo.com",
+    "usedSecondary": false,
+    "independentConfirmation": false,
+    "retrySkipped": null
   },
   "history": [
     {
@@ -404,13 +418,13 @@
       "time": 1779154200,
       "date": "2026-05-19",
       "complete": true,
-      "open": 109.90682080708156,
-      "high": 115.15819895937591,
-      "low": 107.50855703909451,
-      "close": 108.63188171386719,
+      "open": 109.90682852601714,
+      "high": 115.15820704712435,
+      "low": 107.5085645895961,
+      "close": 108.63188934326172,
       "volume": 18169204,
-      "adjustmentFactor": 0.9648203648098348,
-      "scaleFactor": 0.9648203648098348
+      "adjustmentFactor": 0.9648204325707452,
+      "scaleFactor": 0.9648204325707452
     },
     {
       "time": 1779240600,
@@ -1795,5 +1809,5 @@
     "items": [],
     "message": "尚未自动采集公告正文；事件不等于价格确认"
   },
-  "generatedAt": "2026-11-04T15:23:47.118Z"
+  "generatedAt": "2026-11-05T00:07:04.182Z"
 }

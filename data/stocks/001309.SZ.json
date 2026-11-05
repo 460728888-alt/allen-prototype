@@ -12,11 +12,10 @@
     "version": "daily-contract-1",
     "state": "insufficient",
     "reasons": [
-      "观察窗口含拆合股，成交量口径尚未核验",
-      "日线价格关系异常"
+      "观察窗口含拆合股，成交量口径尚未核验"
     ],
     "dataThrough": "2026-11-04",
-    "fetchedAt": "2026-11-04T15:23:31.553Z",
+    "fetchedAt": "2026-11-05T00:06:46.491Z",
     "expectedThrough": "2026-11-04",
     "corporateActions": [
       {
@@ -37,27 +36,33 @@
     "calendarSource": "SSE/SZSE official annual holiday notices, 2024-2026",
     "calendarVersion": "cn-equities-2024-2026-v1",
     "calendarValidThrough": "2026-12-31",
-    "sessionState": "completed",
+    "sessionState": "not_completed",
     "priceBasis": "judgment_day_raw",
     "anchorFactor": 1,
     "volumeBasis": "source_volume_split_check",
-    "judgmentAsOf": "2026-11-04T15:23:24.864Z",
+    "judgmentAsOf": "2026-11-05T00:06:40.162Z",
     "complete": false
   },
   "levels": {
     "version": "range20-1",
-    "state": "unavailable",
-    "reason": "日线价格关系异常",
+    "state": "ok",
+    "reason": null,
     "planType": "breakout",
     "priceBasis": "judgment_day_raw",
     "tick": 0.01,
     "dataThrough": "2026-11-04",
-    "entry": null,
-    "stop": null,
-    "target1": null,
-    "target2": null,
-    "rr1": null,
-    "rr2": null
+    "entry": 266.19,
+    "stop": 186.43,
+    "target1": 343.78,
+    "target2": 422.17,
+    "rr1": 0.972793380140421,
+    "rr2": 1.9556168505516554,
+    "upper": 265.3904328232014,
+    "lower": 187,
+    "width": 78.39043282320142,
+    "breakout": 266.19,
+    "invalidation": 186.43,
+    "rounding": "入场向上；止损及目标向下；仅展示时四舍五入比值"
   },
   "structure": null,
   "profile": null,
@@ -212,17 +217,43 @@
     {
       "date": "2026-11-04",
       "close": 200.08999633789062,
-      "volume": 27124679,
+      "volume": 26852579,
       "complete": true,
       "missingSession": false
     }
   ],
   "source": {
     "provider": "Yahoo Finance / query1.finance.yahoo.com",
-    "fetchedAt": "2026-11-04T15:23:31.553Z",
+    "fetchedAt": "2026-11-05T00:06:46.491Z",
     "quoteBasis": "provider_daily_quote_anchored_at_judgment_day",
     "historicalQuoteScaleVerified": false,
-    "note": "提供方可能修订历史报价；严格历史报价尺度未独立核验"
+    "note": "提供方可能修订历史报价；严格历史报价尺度未独立核验",
+    "attempts": [
+      {
+        "host": "query1.finance.yahoo.com",
+        "requested": true,
+        "checkedAt": "2026-11-05T00:06:46.492Z",
+        "state": "insufficient",
+        "dataThrough": "2026-11-04",
+        "reasons": [
+          "观察窗口含拆合股，成交量口径尚未核验"
+        ]
+      },
+      {
+        "host": "query2.finance.yahoo.com",
+        "requested": true,
+        "checkedAt": "2026-11-05T00:06:46.619Z",
+        "state": "insufficient",
+        "dataThrough": "2026-11-04",
+        "reasons": [
+          "观察窗口含拆合股，成交量口径尚未核验"
+        ]
+      }
+    ],
+    "selectedHost": "query1.finance.yahoo.com",
+    "usedSecondary": false,
+    "independentConfirmation": false,
+    "retrySkipped": null
   },
   "history": [
     {
@@ -1657,11 +1688,11 @@
       "time": 1793755800,
       "date": "2026-11-04",
       "complete": true,
-      "open": 209,
+      "open": 187,
       "high": 202.8800048828125,
       "low": 182.27000427246094,
       "close": 200.08999633789062,
-      "volume": 27124679,
+      "volume": 26852579,
       "adjustmentFactor": 1,
       "scaleFactor": 1
     }
@@ -1680,5 +1711,5 @@
     "items": [],
     "message": "尚未自动采集公告正文；事件不等于价格确认"
   },
-  "generatedAt": "2026-11-04T15:23:47.118Z"
+  "generatedAt": "2026-11-05T00:07:04.182Z"
 }
