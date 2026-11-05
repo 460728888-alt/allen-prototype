@@ -1,20 +1,20 @@
 {
   "schema": 1,
   "state": "partial",
-  "attemptedAt": "2026-11-05T02:02:46.855Z",
-  "generatedAt": "2026-11-05T02:03:08.463Z",
+  "attemptedAt": "2026-11-05T02:13:31.592Z",
+  "generatedAt": "2026-11-05T02:13:52.430Z",
   "dataThrough": "2026-11-04",
   "expectedThrough": "2026-11-04",
-  "codeSourceCommit": "e7e7b19a40173303edcf0d080c13d68a80c14714",
+  "codeSourceCommit": "0f2fdb02aaae0c06e9a5df2cca0221bf4811d600",
   "coverage": {
     "targetRequested": 1200,
     "poolSize": 1200,
     "requested": 1200,
     "returned": 1200,
-    "usable": 1163,
+    "usable": 1162,
     "failed": 0,
     "stale": 0,
-    "insufficient": 37,
+    "insufficient": 38,
     "observations": 0,
     "qualified": null,
     "poolSource": "sina_current_amount_rank_filtered",
@@ -22,8 +22,8 @@
     "notRequested": 0
   },
   "acquisition": {
-    "httpRequests": 1237,
-    "secondaryRequests": 37,
+    "httpRequests": 1238,
+    "secondaryRequests": 38,
     "recovered": 0,
     "skippedRetries": 0,
     "requestErrors": 0
@@ -38,7 +38,7 @@
         {
           "host": "query1.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:02:58.580Z",
+          "checkedAt": "2026-11-05T02:13:38.145Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
@@ -48,7 +48,7 @@
         {
           "host": "query2.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:02:58.671Z",
+          "checkedAt": "2026-11-05T02:13:38.262Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
@@ -67,7 +67,7 @@
         {
           "host": "query1.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:02:58.716Z",
+          "checkedAt": "2026-11-05T02:13:38.256Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
@@ -77,36 +77,7 @@
         {
           "host": "query2.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:02:58.761Z",
-          "state": "insufficient",
-          "dataThrough": "2026-11-04",
-          "reasons": [
-            "观察窗口含拆合股，成交量口径尚未核验"
-          ]
-        }
-      ],
-      "retrySkipped": null
-    },
-    {
-      "symbol": "688808.SS",
-      "state": "insufficient",
-      "code": "insufficient",
-      "message": "观察窗口含拆合股，成交量口径尚未核验",
-      "attempts": [
-        {
-          "host": "query1.finance.yahoo.com",
-          "requested": true,
-          "checkedAt": "2026-11-05T02:02:58.875Z",
-          "state": "insufficient",
-          "dataThrough": "2026-11-04",
-          "reasons": [
-            "观察窗口含拆合股，成交量口径尚未核验"
-          ]
-        },
-        {
-          "host": "query2.finance.yahoo.com",
-          "requested": true,
-          "checkedAt": "2026-11-05T02:02:58.916Z",
+          "checkedAt": "2026-11-05T02:13:38.343Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
@@ -125,7 +96,7 @@
         {
           "host": "query1.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:02:58.987Z",
+          "checkedAt": "2026-11-05T02:13:38.380Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
@@ -135,11 +106,40 @@
         {
           "host": "query2.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:02:59.030Z",
+          "checkedAt": "2026-11-05T02:13:38.437Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
             "至少需要60根连续完整日线"
+          ]
+        }
+      ],
+      "retrySkipped": null
+    },
+    {
+      "symbol": "688808.SS",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "观察窗口含拆合股，成交量口径尚未核验",
+      "attempts": [
+        {
+          "host": "query1.finance.yahoo.com",
+          "requested": true,
+          "checkedAt": "2026-11-05T02:13:38.465Z",
+          "state": "insufficient",
+          "dataThrough": "2026-11-04",
+          "reasons": [
+            "观察窗口含拆合股，成交量口径尚未核验"
+          ]
+        },
+        {
+          "host": "query2.finance.yahoo.com",
+          "requested": true,
+          "checkedAt": "2026-11-05T02:13:38.550Z",
+          "state": "insufficient",
+          "dataThrough": "2026-11-04",
+          "reasons": [
+            "观察窗口含拆合股，成交量口径尚未核验"
           ]
         }
       ],
@@ -154,7 +154,7 @@
         {
           "host": "query1.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:02:59.349Z",
+          "checkedAt": "2026-11-05T02:13:39.277Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
@@ -164,36 +164,7 @@
         {
           "host": "query2.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:02:59.396Z",
-          "state": "insufficient",
-          "dataThrough": "2026-11-04",
-          "reasons": [
-            "成交量为零，停牌或交易状态待核验，暂停量能判断"
-          ]
-        }
-      ],
-      "retrySkipped": null
-    },
-    {
-      "symbol": "002155.SZ",
-      "state": "insufficient",
-      "code": "insufficient",
-      "message": "成交量为零，停牌或交易状态待核验，暂停量能判断",
-      "attempts": [
-        {
-          "host": "query1.finance.yahoo.com",
-          "requested": true,
-          "checkedAt": "2026-11-05T02:02:59.545Z",
-          "state": "insufficient",
-          "dataThrough": "2026-11-04",
-          "reasons": [
-            "成交量为零，停牌或交易状态待核验，暂停量能判断"
-          ]
-        },
-        {
-          "host": "query2.finance.yahoo.com",
-          "requested": true,
-          "checkedAt": "2026-11-05T02:02:59.598Z",
+          "checkedAt": "2026-11-05T02:13:39.335Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
@@ -212,7 +183,7 @@
         {
           "host": "query1.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:02:59.554Z",
+          "checkedAt": "2026-11-05T02:13:39.471Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
@@ -222,11 +193,40 @@
         {
           "host": "query2.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:02:59.619Z",
+          "checkedAt": "2026-11-05T02:13:39.521Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
             "至少需要60根连续完整日线"
+          ]
+        }
+      ],
+      "retrySkipped": null
+    },
+    {
+      "symbol": "002155.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "成交量为零，停牌或交易状态待核验，暂停量能判断",
+      "attempts": [
+        {
+          "host": "query1.finance.yahoo.com",
+          "requested": true,
+          "checkedAt": "2026-11-05T02:13:39.543Z",
+          "state": "insufficient",
+          "dataThrough": "2026-11-04",
+          "reasons": [
+            "成交量为零，停牌或交易状态待核验，暂停量能判断"
+          ]
+        },
+        {
+          "host": "query2.finance.yahoo.com",
+          "requested": true,
+          "checkedAt": "2026-11-05T02:13:39.618Z",
+          "state": "insufficient",
+          "dataThrough": "2026-11-04",
+          "reasons": [
+            "成交量为零，停牌或交易状态待核验，暂停量能判断"
           ]
         }
       ],
@@ -241,7 +241,7 @@
         {
           "host": "query1.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:02:59.844Z",
+          "checkedAt": "2026-11-05T02:13:39.925Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
@@ -251,7 +251,7 @@
         {
           "host": "query2.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:02:59.899Z",
+          "checkedAt": "2026-11-05T02:13:39.989Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
@@ -270,7 +270,7 @@
         {
           "host": "query1.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:03:00.600Z",
+          "checkedAt": "2026-11-05T02:13:40.806Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
@@ -280,7 +280,7 @@
         {
           "host": "query2.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:03:00.640Z",
+          "checkedAt": "2026-11-05T02:13:40.858Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
@@ -299,7 +299,7 @@
         {
           "host": "query1.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:03:00.654Z",
+          "checkedAt": "2026-11-05T02:13:41.233Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
@@ -309,69 +309,11 @@
         {
           "host": "query2.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:03:00.718Z",
+          "checkedAt": "2026-11-05T02:13:41.312Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
             "成交量为零，停牌或交易状态待核验，暂停量能判断"
-          ]
-        }
-      ],
-      "retrySkipped": null
-    },
-    {
-      "symbol": "605577.SS",
-      "state": "insufficient",
-      "code": "insufficient",
-      "message": "成交量为零，停牌或交易状态待核验，暂停量能判断",
-      "attempts": [
-        {
-          "host": "query1.finance.yahoo.com",
-          "requested": true,
-          "checkedAt": "2026-11-05T02:03:00.825Z",
-          "state": "insufficient",
-          "dataThrough": "2026-11-04",
-          "reasons": [
-            "成交量为零，停牌或交易状态待核验，暂停量能判断"
-          ]
-        },
-        {
-          "host": "query2.finance.yahoo.com",
-          "requested": true,
-          "checkedAt": "2026-11-05T02:03:00.867Z",
-          "state": "insufficient",
-          "dataThrough": "2026-11-04",
-          "reasons": [
-            "成交量为零，停牌或交易状态待核验，暂停量能判断"
-          ]
-        }
-      ],
-      "retrySkipped": null
-    },
-    {
-      "symbol": "001381.SZ",
-      "state": "insufficient",
-      "code": "insufficient",
-      "message": "至少需要60根连续完整日线",
-      "attempts": [
-        {
-          "host": "query1.finance.yahoo.com",
-          "requested": true,
-          "checkedAt": "2026-11-05T02:03:00.881Z",
-          "state": "insufficient",
-          "dataThrough": "2026-11-04",
-          "reasons": [
-            "至少需要60根连续完整日线"
-          ]
-        },
-        {
-          "host": "query2.finance.yahoo.com",
-          "requested": true,
-          "checkedAt": "2026-11-05T02:03:00.918Z",
-          "state": "insufficient",
-          "dataThrough": "2026-11-04",
-          "reasons": [
-            "至少需要60根连续完整日线"
           ]
         }
       ],
@@ -386,7 +328,7 @@
         {
           "host": "query1.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:03:00.958Z",
+          "checkedAt": "2026-11-05T02:13:41.390Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
@@ -396,11 +338,40 @@
         {
           "host": "query2.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:03:01.000Z",
+          "checkedAt": "2026-11-05T02:13:41.444Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
             "观察窗口含拆合股，成交量口径尚未核验"
+          ]
+        }
+      ],
+      "retrySkipped": null
+    },
+    {
+      "symbol": "001381.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "至少需要60根连续完整日线",
+      "attempts": [
+        {
+          "host": "query1.finance.yahoo.com",
+          "requested": true,
+          "checkedAt": "2026-11-05T02:13:41.537Z",
+          "state": "insufficient",
+          "dataThrough": "2026-11-04",
+          "reasons": [
+            "至少需要60根连续完整日线"
+          ]
+        },
+        {
+          "host": "query2.finance.yahoo.com",
+          "requested": true,
+          "checkedAt": "2026-11-05T02:13:41.589Z",
+          "state": "insufficient",
+          "dataThrough": "2026-11-04",
+          "reasons": [
+            "至少需要60根连续完整日线"
           ]
         }
       ],
@@ -415,7 +386,7 @@
         {
           "host": "query1.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:03:01.178Z",
+          "checkedAt": "2026-11-05T02:13:41.694Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
@@ -425,11 +396,69 @@
         {
           "host": "query2.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:03:01.218Z",
+          "checkedAt": "2026-11-05T02:13:41.751Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
             "观察窗口含拆合股，成交量口径尚未核验"
+          ]
+        }
+      ],
+      "retrySkipped": null
+    },
+    {
+      "symbol": "605577.SS",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "成交量为零，停牌或交易状态待核验，暂停量能判断",
+      "attempts": [
+        {
+          "host": "query1.finance.yahoo.com",
+          "requested": true,
+          "checkedAt": "2026-11-05T02:13:41.915Z",
+          "state": "insufficient",
+          "dataThrough": "2026-11-04",
+          "reasons": [
+            "成交量为零，停牌或交易状态待核验，暂停量能判断"
+          ]
+        },
+        {
+          "host": "query2.finance.yahoo.com",
+          "requested": true,
+          "checkedAt": "2026-11-05T02:13:41.990Z",
+          "state": "insufficient",
+          "dataThrough": "2026-11-04",
+          "reasons": [
+            "成交量为零，停牌或交易状态待核验，暂停量能判断"
+          ]
+        }
+      ],
+      "retrySkipped": null
+    },
+    {
+      "symbol": "688835.SS",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "至少需要60根连续完整日线",
+      "attempts": [
+        {
+          "host": "query1.finance.yahoo.com",
+          "requested": true,
+          "checkedAt": "2026-11-05T02:13:42.632Z",
+          "state": "insufficient",
+          "dataThrough": "2026-11-04",
+          "reasons": [
+            "至少需要60根连续完整日线"
+          ]
+        },
+        {
+          "host": "query2.finance.yahoo.com",
+          "requested": true,
+          "checkedAt": "2026-11-05T02:13:42.686Z",
+          "state": "insufficient",
+          "dataThrough": "2026-11-04",
+          "reasons": [
+            "至少需要60根连续完整日线"
           ]
         }
       ],
@@ -439,57 +468,26 @@
       "symbol": "301569.SZ",
       "state": "insufficient",
       "code": "insufficient",
-      "message": "复权因子缺失，不能统一到判断日原始价格尺度；至少需要60根连续完整日线",
+      "message": "至少需要60根连续完整日线",
       "attempts": [
         {
           "host": "query1.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:03:01.588Z",
+          "checkedAt": "2026-11-05T02:13:42.663Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
-            "复权因子缺失，不能统一到判断日原始价格尺度",
             "至少需要60根连续完整日线"
           ]
         },
         {
           "host": "query2.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:03:01.624Z",
+          "checkedAt": "2026-11-05T02:13:42.726Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
-            "复权因子缺失，不能统一到判断日原始价格尺度",
             "至少需要60根连续完整日线"
-          ]
-        }
-      ],
-      "retrySkipped": null
-    },
-    {
-      "symbol": "002388.SZ",
-      "state": "insufficient",
-      "code": "insufficient",
-      "message": "成交量为零，停牌或交易状态待核验，暂停量能判断",
-      "attempts": [
-        {
-          "host": "query1.finance.yahoo.com",
-          "requested": true,
-          "checkedAt": "2026-11-05T02:03:01.680Z",
-          "state": "insufficient",
-          "dataThrough": "2026-11-04",
-          "reasons": [
-            "成交量为零，停牌或交易状态待核验，暂停量能判断"
-          ]
-        },
-        {
-          "host": "query2.finance.yahoo.com",
-          "requested": true,
-          "checkedAt": "2026-11-05T02:03:01.729Z",
-          "state": "insufficient",
-          "dataThrough": "2026-11-04",
-          "reasons": [
-            "成交量为零，停牌或交易状态待核验，暂停量能判断"
           ]
         }
       ],
@@ -504,7 +502,7 @@
         {
           "host": "query1.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:03:01.822Z",
+          "checkedAt": "2026-11-05T02:13:42.668Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
@@ -514,7 +512,7 @@
         {
           "host": "query2.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:03:01.871Z",
+          "checkedAt": "2026-11-05T02:13:42.734Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
@@ -533,7 +531,7 @@
         {
           "host": "query1.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:03:01.943Z",
+          "checkedAt": "2026-11-05T02:13:42.914Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
@@ -543,7 +541,7 @@
         {
           "host": "query2.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:03:01.980Z",
+          "checkedAt": "2026-11-05T02:13:43.004Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
@@ -554,36 +552,7 @@
       "retrySkipped": null
     },
     {
-      "symbol": "688835.SS",
-      "state": "insufficient",
-      "code": "insufficient",
-      "message": "至少需要60根连续完整日线",
-      "attempts": [
-        {
-          "host": "query1.finance.yahoo.com",
-          "requested": true,
-          "checkedAt": "2026-11-05T02:03:02.372Z",
-          "state": "insufficient",
-          "dataThrough": "2026-11-04",
-          "reasons": [
-            "至少需要60根连续完整日线"
-          ]
-        },
-        {
-          "host": "query2.finance.yahoo.com",
-          "requested": true,
-          "checkedAt": "2026-11-05T02:03:02.409Z",
-          "state": "insufficient",
-          "dataThrough": "2026-11-04",
-          "reasons": [
-            "至少需要60根连续完整日线"
-          ]
-        }
-      ],
-      "retrySkipped": null
-    },
-    {
-      "symbol": "302132.SZ",
+      "symbol": "002388.SZ",
       "state": "insufficient",
       "code": "insufficient",
       "message": "成交量为零，停牌或交易状态待核验，暂停量能判断",
@@ -591,7 +560,7 @@
         {
           "host": "query1.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:03:02.713Z",
+          "checkedAt": "2026-11-05T02:13:43.446Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
@@ -601,7 +570,7 @@
         {
           "host": "query2.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:03:02.762Z",
+          "checkedAt": "2026-11-05T02:13:43.509Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
@@ -620,7 +589,7 @@
         {
           "host": "query1.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:03:02.793Z",
+          "checkedAt": "2026-11-05T02:13:43.761Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
@@ -630,11 +599,40 @@
         {
           "host": "query2.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:03:02.833Z",
+          "checkedAt": "2026-11-05T02:13:43.816Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
             "至少需要60根连续完整日线"
+          ]
+        }
+      ],
+      "retrySkipped": null
+    },
+    {
+      "symbol": "302132.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "成交量为零，停牌或交易状态待核验，暂停量能判断",
+      "attempts": [
+        {
+          "host": "query1.finance.yahoo.com",
+          "requested": true,
+          "checkedAt": "2026-11-05T02:13:44.243Z",
+          "state": "insufficient",
+          "dataThrough": "2026-11-04",
+          "reasons": [
+            "成交量为零，停牌或交易状态待核验，暂停量能判断"
+          ]
+        },
+        {
+          "host": "query2.finance.yahoo.com",
+          "requested": true,
+          "checkedAt": "2026-11-05T02:13:44.332Z",
+          "state": "insufficient",
+          "dataThrough": "2026-11-04",
+          "reasons": [
+            "成交量为零，停牌或交易状态待核验，暂停量能判断"
           ]
         }
       ],
@@ -649,7 +647,7 @@
         {
           "host": "query1.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:03:02.952Z",
+          "checkedAt": "2026-11-05T02:13:44.464Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
@@ -659,36 +657,7 @@
         {
           "host": "query2.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:03:02.994Z",
-          "state": "insufficient",
-          "dataThrough": "2026-11-04",
-          "reasons": [
-            "至少需要60根连续完整日线"
-          ]
-        }
-      ],
-      "retrySkipped": null
-    },
-    {
-      "symbol": "601123.SS",
-      "state": "insufficient",
-      "code": "insufficient",
-      "message": "至少需要60根连续完整日线",
-      "attempts": [
-        {
-          "host": "query1.finance.yahoo.com",
-          "requested": true,
-          "checkedAt": "2026-11-05T02:03:02.962Z",
-          "state": "insufficient",
-          "dataThrough": "2026-11-04",
-          "reasons": [
-            "至少需要60根连续完整日线"
-          ]
-        },
-        {
-          "host": "query2.finance.yahoo.com",
-          "requested": true,
-          "checkedAt": "2026-11-05T02:03:03.002Z",
+          "checkedAt": "2026-11-05T02:13:44.516Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
@@ -707,7 +676,7 @@
         {
           "host": "query1.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:03:03.000Z",
+          "checkedAt": "2026-11-05T02:13:44.589Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
@@ -717,7 +686,7 @@
         {
           "host": "query2.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:03:03.051Z",
+          "checkedAt": "2026-11-05T02:13:44.660Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
@@ -728,7 +697,7 @@
       "retrySkipped": null
     },
     {
-      "symbol": "301697.SZ",
+      "symbol": "601091.SS",
       "state": "insufficient",
       "code": "insufficient",
       "message": "至少需要60根连续完整日线",
@@ -736,7 +705,7 @@
         {
           "host": "query1.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:03:03.210Z",
+          "checkedAt": "2026-11-05T02:13:44.844Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
@@ -746,7 +715,36 @@
         {
           "host": "query2.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:03:03.253Z",
+          "checkedAt": "2026-11-05T02:13:44.892Z",
+          "state": "insufficient",
+          "dataThrough": "2026-11-04",
+          "reasons": [
+            "至少需要60根连续完整日线"
+          ]
+        }
+      ],
+      "retrySkipped": null
+    },
+    {
+      "symbol": "601123.SS",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "至少需要60根连续完整日线",
+      "attempts": [
+        {
+          "host": "query1.finance.yahoo.com",
+          "requested": true,
+          "checkedAt": "2026-11-05T02:13:45.055Z",
+          "state": "insufficient",
+          "dataThrough": "2026-11-04",
+          "reasons": [
+            "至少需要60根连续完整日线"
+          ]
+        },
+        {
+          "host": "query2.finance.yahoo.com",
+          "requested": true,
+          "checkedAt": "2026-11-05T02:13:45.105Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
@@ -765,7 +763,7 @@
         {
           "host": "query1.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:03:03.383Z",
+          "checkedAt": "2026-11-05T02:13:45.348Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
@@ -775,36 +773,7 @@
         {
           "host": "query2.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:03:03.423Z",
-          "state": "insufficient",
-          "dataThrough": "2026-11-04",
-          "reasons": [
-            "至少需要60根连续完整日线"
-          ]
-        }
-      ],
-      "retrySkipped": null
-    },
-    {
-      "symbol": "601091.SS",
-      "state": "insufficient",
-      "code": "insufficient",
-      "message": "至少需要60根连续完整日线",
-      "attempts": [
-        {
-          "host": "query1.finance.yahoo.com",
-          "requested": true,
-          "checkedAt": "2026-11-05T02:03:03.442Z",
-          "state": "insufficient",
-          "dataThrough": "2026-11-04",
-          "reasons": [
-            "至少需要60根连续完整日线"
-          ]
-        },
-        {
-          "host": "query2.finance.yahoo.com",
-          "requested": true,
-          "checkedAt": "2026-11-05T02:03:03.534Z",
+          "checkedAt": "2026-11-05T02:13:45.406Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
@@ -823,7 +792,7 @@
         {
           "host": "query1.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:03:03.947Z",
+          "checkedAt": "2026-11-05T02:13:45.722Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
@@ -833,7 +802,36 @@
         {
           "host": "query2.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:03:03.995Z",
+          "checkedAt": "2026-11-05T02:13:45.770Z",
+          "state": "insufficient",
+          "dataThrough": "2026-11-04",
+          "reasons": [
+            "至少需要60根连续完整日线"
+          ]
+        }
+      ],
+      "retrySkipped": null
+    },
+    {
+      "symbol": "301697.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "至少需要60根连续完整日线",
+      "attempts": [
+        {
+          "host": "query1.finance.yahoo.com",
+          "requested": true,
+          "checkedAt": "2026-11-05T02:13:45.786Z",
+          "state": "insufficient",
+          "dataThrough": "2026-11-04",
+          "reasons": [
+            "至少需要60根连续完整日线"
+          ]
+        },
+        {
+          "host": "query2.finance.yahoo.com",
+          "requested": true,
+          "checkedAt": "2026-11-05T02:13:45.834Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
@@ -852,7 +850,7 @@
         {
           "host": "query1.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:03:04.203Z",
+          "checkedAt": "2026-11-05T02:13:46.287Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
@@ -862,7 +860,7 @@
         {
           "host": "query2.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:03:04.242Z",
+          "checkedAt": "2026-11-05T02:13:46.366Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
@@ -881,7 +879,7 @@
         {
           "host": "query1.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:03:04.361Z",
+          "checkedAt": "2026-11-05T02:13:46.383Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
@@ -891,7 +889,7 @@
         {
           "host": "query2.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:03:04.405Z",
+          "checkedAt": "2026-11-05T02:13:46.450Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
@@ -910,7 +908,7 @@
         {
           "host": "query1.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:03:04.734Z",
+          "checkedAt": "2026-11-05T02:13:46.827Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
@@ -920,7 +918,7 @@
         {
           "host": "query2.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:03:04.780Z",
+          "checkedAt": "2026-11-05T02:13:46.917Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
@@ -939,7 +937,7 @@
         {
           "host": "query1.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:03:05.088Z",
+          "checkedAt": "2026-11-05T02:13:47.292Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
@@ -949,7 +947,7 @@
         {
           "host": "query2.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:03:05.129Z",
+          "checkedAt": "2026-11-05T02:13:47.346Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
@@ -968,7 +966,7 @@
         {
           "host": "query1.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:03:06.779Z",
+          "checkedAt": "2026-11-05T02:13:49.823Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
@@ -978,7 +976,7 @@
         {
           "host": "query2.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:03:06.823Z",
+          "checkedAt": "2026-11-05T02:13:49.893Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
@@ -997,7 +995,7 @@
         {
           "host": "query1.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:03:07.107Z",
+          "checkedAt": "2026-11-05T02:13:50.410Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
@@ -1007,40 +1005,11 @@
         {
           "host": "query2.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:03:07.147Z",
+          "checkedAt": "2026-11-05T02:13:50.463Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
             "至少需要60根连续完整日线"
-          ]
-        }
-      ],
-      "retrySkipped": null
-    },
-    {
-      "symbol": "000635.SZ",
-      "state": "insufficient",
-      "code": "insufficient",
-      "message": "成交量为零，停牌或交易状态待核验，暂停量能判断",
-      "attempts": [
-        {
-          "host": "query1.finance.yahoo.com",
-          "requested": true,
-          "checkedAt": "2026-11-05T02:03:07.185Z",
-          "state": "insufficient",
-          "dataThrough": "2026-11-04",
-          "reasons": [
-            "成交量为零，停牌或交易状态待核验，暂停量能判断"
-          ]
-        },
-        {
-          "host": "query2.finance.yahoo.com",
-          "requested": true,
-          "checkedAt": "2026-11-05T02:03:07.243Z",
-          "state": "insufficient",
-          "dataThrough": "2026-11-04",
-          "reasons": [
-            "成交量为零，停牌或交易状态待核验，暂停量能判断"
           ]
         }
       ],
@@ -1055,7 +1024,7 @@
         {
           "host": "query1.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:03:07.423Z",
+          "checkedAt": "2026-11-05T02:13:51.157Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
@@ -1065,7 +1034,36 @@
         {
           "host": "query2.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:03:07.470Z",
+          "checkedAt": "2026-11-05T02:13:51.254Z",
+          "state": "insufficient",
+          "dataThrough": "2026-11-04",
+          "reasons": [
+            "成交量为零，停牌或交易状态待核验，暂停量能判断"
+          ]
+        }
+      ],
+      "retrySkipped": null
+    },
+    {
+      "symbol": "600301.SS",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "成交量为零，停牌或交易状态待核验，暂停量能判断",
+      "attempts": [
+        {
+          "host": "query1.finance.yahoo.com",
+          "requested": true,
+          "checkedAt": "2026-11-05T02:13:51.249Z",
+          "state": "insufficient",
+          "dataThrough": "2026-11-04",
+          "reasons": [
+            "成交量为零，停牌或交易状态待核验，暂停量能判断"
+          ]
+        },
+        {
+          "host": "query2.finance.yahoo.com",
+          "requested": true,
+          "checkedAt": "2026-11-05T02:13:51.339Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
@@ -1084,7 +1082,7 @@
         {
           "host": "query1.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:03:07.769Z",
+          "checkedAt": "2026-11-05T02:13:51.744Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
@@ -1094,7 +1092,36 @@
         {
           "host": "query2.finance.yahoo.com",
           "requested": true,
-          "checkedAt": "2026-11-05T02:03:07.819Z",
+          "checkedAt": "2026-11-05T02:13:51.849Z",
+          "state": "insufficient",
+          "dataThrough": "2026-11-04",
+          "reasons": [
+            "成交量为零，停牌或交易状态待核验，暂停量能判断"
+          ]
+        }
+      ],
+      "retrySkipped": null
+    },
+    {
+      "symbol": "000635.SZ",
+      "state": "insufficient",
+      "code": "insufficient",
+      "message": "成交量为零，停牌或交易状态待核验，暂停量能判断",
+      "attempts": [
+        {
+          "host": "query1.finance.yahoo.com",
+          "requested": true,
+          "checkedAt": "2026-11-05T02:13:51.802Z",
+          "state": "insufficient",
+          "dataThrough": "2026-11-04",
+          "reasons": [
+            "成交量为零，停牌或交易状态待核验，暂停量能判断"
+          ]
+        },
+        {
+          "host": "query2.finance.yahoo.com",
+          "requested": true,
+          "checkedAt": "2026-11-05T02:13:51.886Z",
           "state": "insufficient",
           "dataThrough": "2026-11-04",
           "reasons": [
