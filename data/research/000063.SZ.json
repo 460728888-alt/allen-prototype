@@ -27,8 +27,39 @@
     "message": "复用7日内公开资料，原获取与观察时间保留。"
   },
   "financial": {
-    "state": "unavailable",
-    "reports": [],
+    "state": "partial",
+    "reports": [
+      {
+        "reportDate": "2026-06-30",
+        "noticeDate": "2026-08-22",
+        "updateDate": "2026-08-22",
+        "observedAt": "2026-11-06T15:00:09.515Z",
+        "periodBasis": "year_to_date",
+        "currency": null,
+        "amountUnit": "source_yuan",
+        "unitNote": "来源页面金额单位为元，币种未注明；不默认CNY，不作汇率换算。",
+        "percentageUnit": "percent",
+        "reportName": "2026年 半年报",
+        "industry": null,
+        "metrics": {
+          "revenue": 78025359000,
+          "netProfit": 2752825000,
+          "revenueGrowth": 9.0459506411,
+          "profitGrowth": -45.57,
+          "roe": 3.65,
+          "grossMargin": 25.4848414091,
+          "eps": 0.58,
+          "bps": 15.751700363852,
+          "operatingCashPerShare": -0.02646578315
+        },
+        "source": {
+          "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
+          "fetchedAt": "2026-11-06T15:00:09.515Z",
+          "url": "https://data.eastmoney.com/bbsj/202606/yjbb.html"
+        },
+        "historicalAvailability": "provider_current_revision_not_point_in_time"
+      }
+    ],
     "scope": {
       "periods": [
         "2026-09-30",
@@ -37,21 +68,49 @@
       "complete": false,
       "pageCapPerPeriod": 16
     },
-    "message": "未取得可核验的已披露报告，不代表公司没有财报。"
+    "message": "仅展示已取得且日期可核验的累计报告；当前修订版不能冒充历史当时数据。"
   },
   "announcements": {
     "state": "partial",
     "items": [
       {
+        "id": "AN202611061831503348",
+        "symbol": "000063.SZ",
+        "title": "中兴通讯:中兴通讯股份有限公司2026年面向专业投资者公开发行科技创新可续期公司债券(第一期)票面利率公告",
+        "noticeDate": "2026-11-06",
+        "displayTime": "2026-11-06 20:05:39:664",
+        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
+        "category": "其他 / 一般债券票面利率公告",
+        "url": "https://data.eastmoney.com/notices/detail/000063/AN202611061831503348.html",
+        "observedAt": "2026-11-06T14:59:11.973Z",
+        "bodyRead": false,
+        "readState": "index_only",
+        "source": "东方财富公开公告索引"
+      },
+      {
+        "id": "AN202611061831501162",
+        "symbol": "000063.SZ",
+        "title": "中兴通讯:关于延长中兴通讯股份有限公司2026年面向专业投资者公开发行科技创新可续期公司债券(第一期)簿记建档时间的公告",
+        "noticeDate": "2026-11-06",
+        "displayTime": "2026-11-06 18:30:36:687",
+        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
+        "category": "其他 / 一般债券延长簿记建档时间公告",
+        "url": "https://data.eastmoney.com/notices/detail/000063/AN202611061831501162.html",
+        "observedAt": "2026-11-06T14:59:17.118Z",
+        "bodyRead": false,
+        "readState": "index_only",
+        "source": "东方财富公开公告索引"
+      },
+      {
         "id": "AN202611051831450818",
         "symbol": "000063.SZ",
         "title": "中兴通讯:中兴通讯股份有限公司2026年面向专业投资者公开发行科技创新可续期公司债券(第一期)发行公告",
         "noticeDate": "2026-11-05",
-        "displayTime": "2026-11-05 16:14:16:287",
+        "displayTime": "2026-11-05 16:14:16:186",
         "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
         "category": "其他 / 一般债券发行公告",
         "url": "https://data.eastmoney.com/notices/detail/000063/AN202611051831450818.html",
-        "observedAt": "2026-11-05T15:26:48.419Z",
+        "observedAt": "2026-11-06T14:59:40.989Z",
         "bodyRead": false,
         "readState": "index_only",
         "source": "东方财富公开公告索引"
@@ -61,11 +120,11 @@
         "symbol": "000063.SZ",
         "title": "中兴通讯:中兴通讯股份有限公司2026年面向专业投资者公开发行科技创新可续期公司债券(第一期)募集说明书",
         "noticeDate": "2026-11-05",
-        "displayTime": "2026-11-05 16:14:16:143",
+        "displayTime": "2026-11-05 16:14:16:110",
         "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
         "category": "其他 / 一般债券募集说明书",
         "url": "https://data.eastmoney.com/notices/detail/000063/AN202611051831450815.html",
-        "observedAt": "2026-11-05T15:26:48.419Z",
+        "observedAt": "2026-11-06T14:59:40.989Z",
         "bodyRead": false,
         "readState": "index_only",
         "source": "东方财富公开公告索引"
@@ -75,11 +134,11 @@
         "symbol": "000063.SZ",
         "title": "中兴通讯:中兴通讯股份有限公司2026年面向专业投资者公开发行公司债券更名公告",
         "noticeDate": "2026-11-05",
-        "displayTime": "2026-11-05 16:14:45:786",
+        "displayTime": "2026-11-05 16:14:45:703",
         "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
         "category": "其他 / 一般债券更名公告",
         "url": "https://data.eastmoney.com/notices/detail/000063/AN202611051831450814.html",
-        "observedAt": "2026-11-05T15:26:48.419Z",
+        "observedAt": "2026-11-06T14:59:40.989Z",
         "bodyRead": false,
         "readState": "index_only",
         "source": "东方财富公开公告索引"
@@ -89,25 +148,25 @@
         "symbol": "000063.SZ",
         "title": "中兴通讯:中兴通讯股份有限公司2026年面向专业投资者公开发行科技创新可续期公司债券(第一期)信用评级报告",
         "noticeDate": "2026-11-05",
-        "displayTime": "2026-11-05 16:14:16:143",
+        "displayTime": "2026-11-05 16:14:16:087",
         "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
         "category": "其他 / 首次评级公告",
         "url": "https://data.eastmoney.com/notices/detail/000063/AN202611051831450813.html",
-        "observedAt": "2026-11-05T15:26:48.419Z",
+        "observedAt": "2026-11-06T14:59:40.989Z",
         "bodyRead": false,
         "readState": "index_only",
         "source": "东方财富公开公告索引"
       }
     ],
     "scope": {
-      "from": "2026-10-30",
-      "through": "2026-11-05",
-      "beginDate": "2026-10-30",
-      "endDate": "2026-11-05",
+      "from": "2026-10-31",
+      "through": "2026-11-06",
+      "beginDate": "2026-10-31",
+      "endDate": "2026-11-06",
       "complete": false,
-      "totalHits": 13131,
-      "totalPages": 132,
-      "returnedPages": 11,
+      "totalHits": 8700,
+      "totalPages": 87,
+      "returnedPages": 20,
       "pageCap": 20,
       "truncated": true,
       "noticeTimePrecision": "day",
@@ -115,9 +174,9 @@
     },
     "message": "公告索引未读正文，事件不是价格确认。"
   },
-  "bundleId": "000063.SZ:2026-11-05T15:27:52.131Z",
-  "fetchedAt": "2026-11-05T15:27:52.131Z",
-  "asOf": "2026-11-05T15:27:52.131Z",
-  "requestedAt": "2026-11-05T15:26:37.127Z",
-  "codeSourceCommit": "5f4a7f504d9dd83784b637bff0341abc516391b6"
+  "bundleId": "000063.SZ:2026-11-06T15:00:23.781Z",
+  "fetchedAt": "2026-11-06T15:00:23.781Z",
+  "asOf": "2026-11-06T15:00:23.781Z",
+  "requestedAt": "2026-11-06T14:59:08.777Z",
+  "codeSourceCommit": "311a5ebc6a68fc209140cfaac6aecb38a98c5653"
 }

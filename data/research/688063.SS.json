@@ -2,15 +2,44 @@
   "schema": 1,
   "symbol": "688063.SS",
   "company": {
-    "state": "not_requested",
-    "fetchedAt": null,
-    "observedAt": null,
-    "requestState": "not_requested",
-    "message": "本次公司资料预算未覆盖，不能视为没有公司资料。"
+    "state": "failed",
+    "previousFetchedAt": null,
+    "message": "请求超时"
   },
   "financial": {
-    "state": "unavailable",
-    "reports": [],
+    "state": "partial",
+    "reports": [
+      {
+        "reportDate": "2026-06-30",
+        "noticeDate": "2026-08-22",
+        "updateDate": "2026-08-22",
+        "observedAt": "2026-11-06T15:00:09.515Z",
+        "periodBasis": "year_to_date",
+        "currency": null,
+        "amountUnit": "source_yuan",
+        "unitNote": "来源页面金额单位为元，币种未注明；不默认CNY，不作汇率换算。",
+        "percentageUnit": "percent",
+        "reportName": "2026年 半年报",
+        "industry": null,
+        "metrics": {
+          "revenue": 2644233928.42,
+          "netProfit": 79286184.72,
+          "revenueGrowth": 130.0650742084,
+          "profitGrowth": 469.92,
+          "roe": 0.86,
+          "grossMargin": 20.1190405884,
+          "eps": 0.33,
+          "bps": 37.94983832034,
+          "operatingCashPerShare": -1.169680111549
+        },
+        "source": {
+          "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
+          "fetchedAt": "2026-11-06T15:00:09.515Z",
+          "url": "https://data.eastmoney.com/bbsj/202606/yjbb.html"
+        },
+        "historicalAvailability": "provider_current_revision_not_point_in_time"
+      }
+    ],
     "scope": {
       "periods": [
         "2026-09-30",
@@ -19,35 +48,35 @@
       "complete": false,
       "pageCapPerPeriod": 16
     },
-    "message": "未取得可核验的已披露报告，不代表公司没有财报。"
+    "message": "仅展示已取得且日期可核验的累计报告；当前修订版不能冒充历史当时数据。"
   },
   "announcements": {
     "state": "partial",
     "items": [
       {
-        "id": "AN202611041831408276",
+        "id": "AN202611051831449612",
         "symbol": "688063.SS",
-        "title": "派能科技:关于回购股份事项前十名股东和前十名无限售条件股东持股情况的公告",
-        "noticeDate": "2026-11-05",
-        "displayTime": "2026-11-04 16:05:09:284",
+        "title": "派能科技:关于以集中竞价交易方式首次回购公司股份的公告",
+        "noticeDate": "2026-11-06",
+        "displayTime": "2026-11-05 15:40:29:420",
         "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "回购进展情况",
-        "url": "https://data.eastmoney.com/notices/detail/688063/AN202611041831408276.html",
-        "observedAt": "2026-11-05T15:27:09.209Z",
+        "category": "回购实施公告",
+        "url": "https://data.eastmoney.com/notices/detail/688063/AN202611051831449612.html",
+        "observedAt": "2026-11-06T14:59:34.597Z",
         "bodyRead": false,
         "readState": "index_only",
         "source": "东方财富公开公告索引"
       }
     ],
     "scope": {
-      "from": "2026-10-30",
-      "through": "2026-11-05",
-      "beginDate": "2026-10-30",
-      "endDate": "2026-11-05",
+      "from": "2026-10-31",
+      "through": "2026-11-06",
+      "beginDate": "2026-10-31",
+      "endDate": "2026-11-06",
       "complete": false,
-      "totalHits": 13131,
-      "totalPages": 132,
-      "returnedPages": 11,
+      "totalHits": 8700,
+      "totalPages": 87,
+      "returnedPages": 20,
       "pageCap": 20,
       "truncated": true,
       "noticeTimePrecision": "day",
@@ -55,9 +84,9 @@
     },
     "message": "公告索引未读正文，事件不是价格确认。"
   },
-  "bundleId": "688063.SS:2026-11-05T15:27:52.131Z",
-  "fetchedAt": "2026-11-05T15:27:52.131Z",
-  "asOf": "2026-11-05T15:27:52.131Z",
-  "requestedAt": "2026-11-05T15:26:37.127Z",
-  "codeSourceCommit": "5f4a7f504d9dd83784b637bff0341abc516391b6"
+  "bundleId": "688063.SS:2026-11-06T15:00:23.781Z",
+  "fetchedAt": "2026-11-06T15:00:23.781Z",
+  "asOf": "2026-11-06T15:00:23.781Z",
+  "requestedAt": "2026-11-06T14:59:08.777Z",
+  "codeSourceCommit": "311a5ebc6a68fc209140cfaac6aecb38a98c5653"
 }

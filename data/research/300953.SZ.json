@@ -3,7 +3,7 @@
   "symbol": "300953.SZ",
   "company": {
     "state": "ok",
-    "cacheHit": false,
+    "cacheHit": true,
     "symbol": "300953.SZ",
     "fetchedAt": "2026-11-05T15:27:21.305Z",
     "observedAt": "2026-11-05T15:27:21.305Z",
@@ -23,11 +23,43 @@
       "fetchedAt": "2026-11-05T15:27:21.305Z",
       "url": "https://emweb.securities.eastmoney.com/PC_HSF10/CompanySurvey/CompanySurveyAjax?code=SZ300953"
     },
-    "historicalAvailability": "current_profile_not_point_in_time"
+    "historicalAvailability": "current_profile_not_point_in_time",
+    "message": "复用7日内公开资料，原获取与观察时间保留。"
   },
   "financial": {
-    "state": "unavailable",
-    "reports": [],
+    "state": "partial",
+    "reports": [
+      {
+        "reportDate": "2026-06-30",
+        "noticeDate": "2026-08-27",
+        "updateDate": "2026-08-27",
+        "observedAt": "2026-11-06T14:59:39.956Z",
+        "periodBasis": "year_to_date",
+        "currency": null,
+        "amountUnit": "source_yuan",
+        "unitNote": "来源页面金额单位为元，币种未注明；不默认CNY，不作汇率换算。",
+        "percentageUnit": "percent",
+        "reportName": "2026年 半年报",
+        "industry": null,
+        "metrics": {
+          "revenue": 6394440075.91,
+          "netProfit": 423322864.52,
+          "revenueGrowth": 58.0137189346,
+          "profitGrowth": 100.3,
+          "roe": 9.02,
+          "grossMargin": 13.9507362104,
+          "eps": 1.75,
+          "bps": 20.097626619123,
+          "operatingCashPerShare": 0.242944359246
+        },
+        "source": {
+          "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
+          "fetchedAt": "2026-11-06T14:59:39.956Z",
+          "url": "https://data.eastmoney.com/bbsj/202606/yjbb.html"
+        },
+        "historicalAvailability": "provider_current_revision_not_point_in_time"
+      }
+    ],
     "scope": {
       "periods": [
         "2026-09-30",
@@ -36,7 +68,7 @@
       "complete": false,
       "pageCapPerPeriod": 16
     },
-    "message": "未取得可核验的已披露报告，不代表公司没有财报。"
+    "message": "仅展示已取得且日期可核验的累计报告；当前修订版不能冒充历史当时数据。"
   },
   "announcements": {
     "state": "partial",
@@ -46,11 +78,11 @@
         "symbol": "300953.SZ",
         "title": "震裕科技:第五届董事会第二十次会议决议公告",
         "noticeDate": "2026-11-05",
-        "displayTime": "2026-11-05 18:41:05:414",
+        "displayTime": "2026-11-05 18:41:05:501",
         "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
         "category": "董事会决议公告 / 其它",
         "url": "https://data.eastmoney.com/notices/detail/300953/AN202611051831459831.html",
-        "observedAt": "2026-11-05T15:26:40.145Z",
+        "observedAt": "2026-11-06T14:59:36.995Z",
         "bodyRead": false,
         "readState": "index_only",
         "source": "东方财富公开公告索引"
@@ -60,11 +92,11 @@
         "symbol": "300953.SZ",
         "title": "震裕科技:2026年第三次临时股东会决议公告",
         "noticeDate": "2026-11-05",
-        "displayTime": "2026-11-05 18:41:05:397",
+        "displayTime": "2026-11-05 18:41:05:502",
         "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
         "category": "股东大会决议公告 / 其它",
         "url": "https://data.eastmoney.com/notices/detail/300953/AN202611051831459830.html",
-        "observedAt": "2026-11-05T15:26:40.145Z",
+        "observedAt": "2026-11-06T14:59:36.995Z",
         "bodyRead": false,
         "readState": "index_only",
         "source": "东方财富公开公告索引"
@@ -74,11 +106,11 @@
         "symbol": "300953.SZ",
         "title": "震裕科技:浙江天册律师事务所关于宁波震裕科技股份有限公司2026年度第三次临时股东会的法律意见书",
         "noticeDate": "2026-11-05",
-        "displayTime": "2026-11-05 18:41:05:388",
+        "displayTime": "2026-11-05 18:41:05:474",
         "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
         "category": "法律意见书",
         "url": "https://data.eastmoney.com/notices/detail/300953/AN202611051831459828.html",
-        "observedAt": "2026-11-05T15:26:40.145Z",
+        "observedAt": "2026-11-06T14:59:36.995Z",
         "bodyRead": false,
         "readState": "index_only",
         "source": "东方财富公开公告索引"
@@ -88,25 +120,25 @@
         "symbol": "300953.SZ",
         "title": "震裕科技:关于向下修正“震裕转02”转股价格的公告",
         "noticeDate": "2026-11-05",
-        "displayTime": "2026-11-05 18:41:05:389",
+        "displayTime": "2026-11-05 18:41:05:493",
         "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
         "category": "其他 / 转股价格调整和修正公告",
         "url": "https://data.eastmoney.com/notices/detail/300953/AN202611051831459827.html",
-        "observedAt": "2026-11-05T15:26:40.145Z",
+        "observedAt": "2026-11-06T14:59:36.995Z",
         "bodyRead": false,
         "readState": "index_only",
         "source": "东方财富公开公告索引"
       }
     ],
     "scope": {
-      "from": "2026-10-30",
-      "through": "2026-11-05",
-      "beginDate": "2026-10-30",
-      "endDate": "2026-11-05",
+      "from": "2026-10-31",
+      "through": "2026-11-06",
+      "beginDate": "2026-10-31",
+      "endDate": "2026-11-06",
       "complete": false,
-      "totalHits": 13131,
-      "totalPages": 132,
-      "returnedPages": 11,
+      "totalHits": 8700,
+      "totalPages": 87,
+      "returnedPages": 20,
       "pageCap": 20,
       "truncated": true,
       "noticeTimePrecision": "day",
@@ -114,9 +146,9 @@
     },
     "message": "公告索引未读正文，事件不是价格确认。"
   },
-  "bundleId": "300953.SZ:2026-11-05T15:27:52.131Z",
-  "fetchedAt": "2026-11-05T15:27:52.131Z",
-  "asOf": "2026-11-05T15:27:52.131Z",
-  "requestedAt": "2026-11-05T15:26:37.127Z",
-  "codeSourceCommit": "5f4a7f504d9dd83784b637bff0341abc516391b6"
+  "bundleId": "300953.SZ:2026-11-06T15:00:23.781Z",
+  "fetchedAt": "2026-11-06T15:00:23.781Z",
+  "asOf": "2026-11-06T15:00:23.781Z",
+  "requestedAt": "2026-11-06T14:59:08.777Z",
+  "codeSourceCommit": "311a5ebc6a68fc209140cfaac6aecb38a98c5653"
 }

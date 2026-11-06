@@ -27,8 +27,39 @@
     "message": "复用7日内公开资料，原获取与观察时间保留。"
   },
   "financial": {
-    "state": "unavailable",
-    "reports": [],
+    "state": "partial",
+    "reports": [
+      {
+        "reportDate": "2026-06-30",
+        "noticeDate": "2026-08-28",
+        "updateDate": "2026-08-28",
+        "observedAt": "2026-11-06T14:59:32.860Z",
+        "periodBasis": "year_to_date",
+        "currency": null,
+        "amountUnit": "source_yuan",
+        "unitNote": "来源页面金额单位为元，币种未注明；不默认CNY，不作汇率换算。",
+        "percentageUnit": "percent",
+        "reportName": "2026年 半年报",
+        "industry": null,
+        "metrics": {
+          "revenue": 2591327008.71,
+          "netProfit": 290096588.29,
+          "revenueGrowth": 19.8127985336,
+          "profitGrowth": 13.61,
+          "roe": 5.87,
+          "grossMargin": 29.424542789,
+          "eps": 0.5,
+          "bps": 8.373245857624,
+          "operatingCashPerShare": 0.30423397546
+        },
+        "source": {
+          "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
+          "fetchedAt": "2026-11-06T14:59:32.860Z",
+          "url": "https://data.eastmoney.com/bbsj/202606/yjbb.html"
+        },
+        "historicalAvailability": "provider_current_revision_not_point_in_time"
+      }
+    ],
     "scope": {
       "periods": [
         "2026-09-30",
@@ -37,20 +68,20 @@
       "complete": false,
       "pageCapPerPeriod": 16
     },
-    "message": "未取得可核验的已披露报告，不代表公司没有财报。"
+    "message": "仅展示已取得且日期可核验的累计报告；当前修订版不能冒充历史当时数据。"
   },
   "announcements": {
     "state": "partial",
     "items": [],
     "scope": {
-      "from": "2026-10-30",
-      "through": "2026-11-05",
-      "beginDate": "2026-10-30",
-      "endDate": "2026-11-05",
+      "from": "2026-10-31",
+      "through": "2026-11-06",
+      "beginDate": "2026-10-31",
+      "endDate": "2026-11-06",
       "complete": false,
-      "totalHits": 13131,
-      "totalPages": 132,
-      "returnedPages": 11,
+      "totalHits": 8700,
+      "totalPages": 87,
+      "returnedPages": 20,
       "pageCap": 20,
       "truncated": true,
       "noticeTimePrecision": "day",
@@ -58,9 +89,9 @@
     },
     "message": "本窗口未取得匹配公告索引；不等于没有公告或风险。"
   },
-  "bundleId": "002518.SZ:2026-11-05T15:27:52.131Z",
-  "fetchedAt": "2026-11-05T15:27:52.131Z",
-  "asOf": "2026-11-05T15:27:52.131Z",
-  "requestedAt": "2026-11-05T15:26:37.127Z",
-  "codeSourceCommit": "5f4a7f504d9dd83784b637bff0341abc516391b6"
+  "bundleId": "002518.SZ:2026-11-06T15:00:23.781Z",
+  "fetchedAt": "2026-11-06T15:00:23.781Z",
+  "asOf": "2026-11-06T15:00:23.781Z",
+  "requestedAt": "2026-11-06T14:59:08.777Z",
+  "codeSourceCommit": "311a5ebc6a68fc209140cfaac6aecb38a98c5653"
 }

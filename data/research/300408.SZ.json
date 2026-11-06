@@ -3,7 +3,7 @@
   "symbol": "300408.SZ",
   "company": {
     "state": "ok",
-    "cacheHit": false,
+    "cacheHit": true,
     "symbol": "300408.SZ",
     "fetchedAt": "2026-11-05T15:26:59.559Z",
     "observedAt": "2026-11-05T15:26:59.559Z",
@@ -23,11 +23,43 @@
       "fetchedAt": "2026-11-05T15:26:59.559Z",
       "url": "https://emweb.securities.eastmoney.com/PC_HSF10/CompanySurvey/CompanySurveyAjax?code=SZ300408"
     },
-    "historicalAvailability": "current_profile_not_point_in_time"
+    "historicalAvailability": "current_profile_not_point_in_time",
+    "message": "复用7日内公开资料，原获取与观察时间保留。"
   },
   "financial": {
-    "state": "unavailable",
-    "reports": [],
+    "state": "partial",
+    "reports": [
+      {
+        "reportDate": "2026-06-30",
+        "noticeDate": "2026-08-28",
+        "updateDate": "2026-08-28",
+        "observedAt": "2026-11-06T14:59:32.860Z",
+        "periodBasis": "year_to_date",
+        "currency": null,
+        "amountUnit": "source_yuan",
+        "unitNote": "来源页面金额单位为元，币种未注明；不默认CNY，不作汇率换算。",
+        "percentageUnit": "percent",
+        "reportName": "2026年 半年报",
+        "industry": null,
+        "metrics": {
+          "revenue": 6423331756.2,
+          "netProfit": 1932118240.71,
+          "revenueGrowth": 54.824030357,
+          "profitGrowth": 56.18,
+          "roe": 8.61,
+          "grossMargin": 44.3196613034,
+          "eps": 1.01,
+          "bps": 11.815521176528,
+          "operatingCashPerShare": 0.676922188645
+        },
+        "source": {
+          "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
+          "fetchedAt": "2026-11-06T14:59:32.860Z",
+          "url": "https://data.eastmoney.com/bbsj/202606/yjbb.html"
+        },
+        "historicalAvailability": "provider_current_revision_not_point_in_time"
+      }
+    ],
     "scope": {
       "periods": [
         "2026-09-30",
@@ -36,11 +68,95 @@
       "complete": false,
       "pageCapPerPeriod": 16
     },
-    "message": "未取得可核验的已披露报告，不代表公司没有财报。"
+    "message": "仅展示已取得且日期可核验的累计报告；当前修订版不能冒充历史当时数据。"
   },
   "announcements": {
     "state": "partial",
     "items": [
+      {
+        "id": "AN202611061831501290",
+        "symbol": "300408.SZ",
+        "title": "三环集团:H股公告-翌日披露报表",
+        "noticeDate": "2026-11-06",
+        "displayTime": "2026-11-06 18:34:12:718",
+        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
+        "category": "其他",
+        "url": "https://data.eastmoney.com/notices/detail/300408/AN202611061831501290.html",
+        "observedAt": "2026-11-06T14:59:11.973Z",
+        "bodyRead": false,
+        "readState": "index_only",
+        "source": "东方财富公开公告索引"
+      },
+      {
+        "id": "AN202611061831501286",
+        "symbol": "300408.SZ",
+        "title": "三环集团:关于取得金融机构股票回购贷款承诺书的公告",
+        "noticeDate": "2026-11-06",
+        "displayTime": "2026-11-06 18:34:45:736",
+        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
+        "category": "借贷 / 回购预案",
+        "url": "https://data.eastmoney.com/notices/detail/300408/AN202611061831501286.html",
+        "observedAt": "2026-11-06T14:59:11.973Z",
+        "bodyRead": false,
+        "readState": "index_only",
+        "source": "东方财富公开公告索引"
+      },
+      {
+        "id": "AN202611061831485288",
+        "symbol": "300408.SZ",
+        "title": "三环集团:关于公司股份回购事项的公告",
+        "noticeDate": "2026-11-06",
+        "displayTime": "2026-11-06 11:43:36:671",
+        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
+        "category": "回购进展情况",
+        "url": "https://data.eastmoney.com/notices/detail/300408/AN202611061831485288.html",
+        "observedAt": "2026-11-06T14:59:21.954Z",
+        "bodyRead": false,
+        "readState": "index_only",
+        "source": "东方财富公开公告索引"
+      },
+      {
+        "id": "AN202611051831459688",
+        "symbol": "300408.SZ",
+        "title": "三环集团:H股公告-翌日披露报表",
+        "noticeDate": "2026-11-06",
+        "displayTime": "2026-11-05 18:36:03:700",
+        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
+        "category": "其他",
+        "url": "https://data.eastmoney.com/notices/detail/300408/AN202611051831459688.html",
+        "observedAt": "2026-11-06T14:59:26.125Z",
+        "bodyRead": false,
+        "readState": "index_only",
+        "source": "东方财富公开公告索引"
+      },
+      {
+        "id": "AN202611051831459684",
+        "symbol": "300408.SZ",
+        "title": "三环集团:关于首次回购公司股份的公告",
+        "noticeDate": "2026-11-06",
+        "displayTime": "2026-11-05 18:36:30:670",
+        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
+        "category": "回购实施公告",
+        "url": "https://data.eastmoney.com/notices/detail/300408/AN202611051831459684.html",
+        "observedAt": "2026-11-06T14:59:26.125Z",
+        "bodyRead": false,
+        "readState": "index_only",
+        "source": "东方财富公开公告索引"
+      },
+      {
+        "id": "AN202611051831459599",
+        "symbol": "300408.SZ",
+        "title": "三环集团:关于回购股份事项前十名股东和前十名无限售条件股东持股情况的公告",
+        "noticeDate": "2026-11-06",
+        "displayTime": "2026-11-05 18:34:51:676",
+        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
+        "category": "回购进展情况",
+        "url": "https://data.eastmoney.com/notices/detail/300408/AN202611051831459599.html",
+        "observedAt": "2026-11-06T14:59:26.125Z",
+        "bodyRead": false,
+        "readState": "index_only",
+        "source": "东方财富公开公告索引"
+      },
       {
         "id": "AN202611041831419506",
         "symbol": "300408.SZ",
@@ -50,7 +166,7 @@
         "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
         "category": "员工持股计划",
         "url": "https://data.eastmoney.com/notices/detail/300408/AN202611041831419506.html",
-        "observedAt": "2026-11-05T15:26:48.419Z",
+        "observedAt": "2026-11-06T14:59:41.894Z",
         "bodyRead": false,
         "readState": "index_only",
         "source": "东方财富公开公告索引"
@@ -64,7 +180,7 @@
         "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
         "category": "其他",
         "url": "https://data.eastmoney.com/notices/detail/300408/AN202611041831419505.html",
-        "observedAt": "2026-11-05T15:26:48.419Z",
+        "observedAt": "2026-11-06T14:59:41.894Z",
         "bodyRead": false,
         "readState": "index_only",
         "source": "东方财富公开公告索引"
@@ -78,7 +194,7 @@
         "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
         "category": "回购预案 / 回购报告书",
         "url": "https://data.eastmoney.com/notices/detail/300408/AN202611041831419503.html",
-        "observedAt": "2026-11-05T15:26:48.419Z",
+        "observedAt": "2026-11-06T14:59:41.894Z",
         "bodyRead": false,
         "readState": "index_only",
         "source": "东方财富公开公告索引"
@@ -92,21 +208,21 @@
         "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
         "category": "董事会决议公告",
         "url": "https://data.eastmoney.com/notices/detail/300408/AN202611041831419502.html",
-        "observedAt": "2026-11-05T15:26:48.419Z",
+        "observedAt": "2026-11-06T14:59:41.894Z",
         "bodyRead": false,
         "readState": "index_only",
         "source": "东方财富公开公告索引"
       }
     ],
     "scope": {
-      "from": "2026-10-30",
-      "through": "2026-11-05",
-      "beginDate": "2026-10-30",
-      "endDate": "2026-11-05",
+      "from": "2026-10-31",
+      "through": "2026-11-06",
+      "beginDate": "2026-10-31",
+      "endDate": "2026-11-06",
       "complete": false,
-      "totalHits": 13131,
-      "totalPages": 132,
-      "returnedPages": 11,
+      "totalHits": 8700,
+      "totalPages": 87,
+      "returnedPages": 20,
       "pageCap": 20,
       "truncated": true,
       "noticeTimePrecision": "day",
@@ -114,9 +230,9 @@
     },
     "message": "公告索引未读正文，事件不是价格确认。"
   },
-  "bundleId": "300408.SZ:2026-11-05T15:27:52.131Z",
-  "fetchedAt": "2026-11-05T15:27:52.131Z",
-  "asOf": "2026-11-05T15:27:52.131Z",
-  "requestedAt": "2026-11-05T15:26:37.127Z",
-  "codeSourceCommit": "5f4a7f504d9dd83784b637bff0341abc516391b6"
+  "bundleId": "300408.SZ:2026-11-06T15:00:23.781Z",
+  "fetchedAt": "2026-11-06T15:00:23.781Z",
+  "asOf": "2026-11-06T15:00:23.781Z",
+  "requestedAt": "2026-11-06T14:59:08.777Z",
+  "codeSourceCommit": "311a5ebc6a68fc209140cfaac6aecb38a98c5653"
 }

@@ -3,7 +3,7 @@
   "symbol": "300677.SZ",
   "company": {
     "state": "ok",
-    "cacheHit": false,
+    "cacheHit": true,
     "symbol": "300677.SZ",
     "fetchedAt": "2026-11-05T15:27:12.195Z",
     "observedAt": "2026-11-05T15:27:12.195Z",
@@ -23,11 +23,43 @@
       "fetchedAt": "2026-11-05T15:27:12.195Z",
       "url": "https://emweb.securities.eastmoney.com/PC_HSF10/CompanySurvey/CompanySurveyAjax?code=SZ300677"
     },
-    "historicalAvailability": "current_profile_not_point_in_time"
+    "historicalAvailability": "current_profile_not_point_in_time",
+    "message": "复用7日内公开资料，原获取与观察时间保留。"
   },
   "financial": {
-    "state": "unavailable",
-    "reports": [],
+    "state": "partial",
+    "reports": [
+      {
+        "reportDate": "2026-06-30",
+        "noticeDate": "2026-08-25",
+        "updateDate": "2026-08-25",
+        "observedAt": "2026-11-06T15:00:01.482Z",
+        "periodBasis": "year_to_date",
+        "currency": null,
+        "amountUnit": "source_yuan",
+        "unitNote": "来源页面金额单位为元，币种未注明；不默认CNY，不作汇率换算。",
+        "percentageUnit": "percent",
+        "reportName": "2026年 半年报",
+        "industry": null,
+        "metrics": {
+          "revenue": 6909022700.33,
+          "netProfit": 837340519.61,
+          "revenueGrowth": 40.6148044026,
+          "profitGrowth": 17.86,
+          "roe": 4.49,
+          "grossMargin": 37.8178528498,
+          "eps": 1.31,
+          "bps": 29.018598528878,
+          "operatingCashPerShare": 2.684591191339
+        },
+        "source": {
+          "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
+          "fetchedAt": "2026-11-06T15:00:01.482Z",
+          "url": "https://data.eastmoney.com/bbsj/202606/yjbb.html"
+        },
+        "historicalAvailability": "provider_current_revision_not_point_in_time"
+      }
+    ],
     "scope": {
       "periods": [
         "2026-09-30",
@@ -36,30 +68,45 @@
       "complete": false,
       "pageCapPerPeriod": 16
     },
-    "message": "未取得可核验的已披露报告，不代表公司没有财报。"
+    "message": "仅展示已取得且日期可核验的累计报告；当前修订版不能冒充历史当时数据。"
   },
   "announcements": {
     "state": "partial",
-    "items": [],
+    "items": [
+      {
+        "id": "AN202611061831492710",
+        "symbol": "300677.SZ",
+        "title": "英科医疗:关于为子公司提供担保事项的进展公告",
+        "noticeDate": "2026-11-06",
+        "displayTime": "2026-11-06 15:50:05:305",
+        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
+        "category": "提供/对外担保公告",
+        "url": "https://data.eastmoney.com/notices/detail/300677/AN202611061831492710.html",
+        "observedAt": "2026-11-06T14:59:21.954Z",
+        "bodyRead": false,
+        "readState": "index_only",
+        "source": "东方财富公开公告索引"
+      }
+    ],
     "scope": {
-      "from": "2026-10-30",
-      "through": "2026-11-05",
-      "beginDate": "2026-10-30",
-      "endDate": "2026-11-05",
+      "from": "2026-10-31",
+      "through": "2026-11-06",
+      "beginDate": "2026-10-31",
+      "endDate": "2026-11-06",
       "complete": false,
-      "totalHits": 13131,
-      "totalPages": 132,
-      "returnedPages": 11,
+      "totalHits": 8700,
+      "totalPages": 87,
+      "returnedPages": 20,
       "pageCap": 20,
       "truncated": true,
       "noticeTimePrecision": "day",
       "displayTimeTimezoneVerified": false
     },
-    "message": "本窗口未取得匹配公告索引；不等于没有公告或风险。"
+    "message": "公告索引未读正文，事件不是价格确认。"
   },
-  "bundleId": "300677.SZ:2026-11-05T15:27:52.131Z",
-  "fetchedAt": "2026-11-05T15:27:52.131Z",
-  "asOf": "2026-11-05T15:27:52.131Z",
-  "requestedAt": "2026-11-05T15:26:37.127Z",
-  "codeSourceCommit": "5f4a7f504d9dd83784b637bff0341abc516391b6"
+  "bundleId": "300677.SZ:2026-11-06T15:00:23.781Z",
+  "fetchedAt": "2026-11-06T15:00:23.781Z",
+  "asOf": "2026-11-06T15:00:23.781Z",
+  "requestedAt": "2026-11-06T14:59:08.777Z",
+  "codeSourceCommit": "311a5ebc6a68fc209140cfaac6aecb38a98c5653"
 }

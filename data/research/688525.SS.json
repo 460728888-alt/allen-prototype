@@ -9,8 +9,39 @@
     "message": "本次公司资料预算未覆盖，不能视为没有公司资料。"
   },
   "financial": {
-    "state": "unavailable",
-    "reports": [],
+    "state": "partial",
+    "reports": [
+      {
+        "reportDate": "2026-06-30",
+        "noticeDate": "2026-08-25",
+        "updateDate": "2026-08-25",
+        "observedAt": "2026-11-06T14:59:59.163Z",
+        "periodBasis": "year_to_date",
+        "currency": null,
+        "amountUnit": "source_yuan",
+        "unitNote": "来源页面金额单位为元，币种未注明；不默认CNY，不作汇率换算。",
+        "percentageUnit": "percent",
+        "reportName": "2026年 半年报",
+        "industry": null,
+        "metrics": {
+          "revenue": 15574943371.35,
+          "netProfit": 7165580281.51,
+          "revenueGrowth": 298.0982138029,
+          "profitGrowth": 3273.4822888579,
+          "roe": 78.69,
+          "grossMargin": 54.8116105058,
+          "eps": 15.28,
+          "bps": 26.932081103228,
+          "operatingCashPerShare": -13.277384824639
+        },
+        "source": {
+          "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
+          "fetchedAt": "2026-11-06T14:59:59.163Z",
+          "url": "https://data.eastmoney.com/bbsj/202606/yjbb.html"
+        },
+        "historicalAvailability": "provider_current_revision_not_point_in_time"
+      }
+    ],
     "scope": {
       "periods": [
         "2026-09-30",
@@ -19,30 +50,73 @@
       "complete": false,
       "pageCapPerPeriod": 16
     },
-    "message": "未取得可核验的已披露报告，不代表公司没有财报。"
+    "message": "仅展示已取得且日期可核验的累计报告；当前修订版不能冒充历史当时数据。"
   },
   "announcements": {
     "state": "partial",
-    "items": [],
+    "items": [
+      {
+        "id": "AN202611051831461358",
+        "symbol": "688525.SS",
+        "title": "佰维存储:关于股份回购事项前十大股东和前十大无限售条件股东持股情况的公告",
+        "noticeDate": "2026-11-06",
+        "displayTime": "2026-11-05 19:43:34:246",
+        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
+        "category": "回购进展情况",
+        "url": "https://data.eastmoney.com/notices/detail/688525/AN202611051831461358.html",
+        "observedAt": "2026-11-06T14:59:24.280Z",
+        "bodyRead": false,
+        "readState": "index_only",
+        "source": "东方财富公开公告索引"
+      },
+      {
+        "id": "AN202611051831461357",
+        "symbol": "688525.SS",
+        "title": "佰维存储:关于控股子公司增资扩股引入投资者暨公司放弃优先认购权并构成与关联方共同投资进展暨完成工商变更登记的公告",
+        "noticeDate": "2026-11-06",
+        "displayTime": "2026-11-05 19:43:34:509",
+        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
+        "category": "公司关联方基本资料变更 / 增资扩股 / 其他",
+        "url": "https://data.eastmoney.com/notices/detail/688525/AN202611051831461357.html",
+        "observedAt": "2026-11-06T14:59:24.280Z",
+        "bodyRead": false,
+        "readState": "index_only",
+        "source": "东方财富公开公告索引"
+      },
+      {
+        "id": "AN202611051831461321",
+        "symbol": "688525.SS",
+        "title": "佰维存储:2026年第五次临时股东会会议资料",
+        "noticeDate": "2026-11-06",
+        "displayTime": "2026-11-05 19:41:22:304",
+        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
+        "category": "股东大会资料",
+        "url": "https://data.eastmoney.com/notices/detail/688525/AN202611051831461321.html",
+        "observedAt": "2026-11-06T14:59:24.280Z",
+        "bodyRead": false,
+        "readState": "index_only",
+        "source": "东方财富公开公告索引"
+      }
+    ],
     "scope": {
-      "from": "2026-10-30",
-      "through": "2026-11-05",
-      "beginDate": "2026-10-30",
-      "endDate": "2026-11-05",
+      "from": "2026-10-31",
+      "through": "2026-11-06",
+      "beginDate": "2026-10-31",
+      "endDate": "2026-11-06",
       "complete": false,
-      "totalHits": 13131,
-      "totalPages": 132,
-      "returnedPages": 11,
+      "totalHits": 8700,
+      "totalPages": 87,
+      "returnedPages": 20,
       "pageCap": 20,
       "truncated": true,
       "noticeTimePrecision": "day",
       "displayTimeTimezoneVerified": false
     },
-    "message": "本窗口未取得匹配公告索引；不等于没有公告或风险。"
+    "message": "公告索引未读正文，事件不是价格确认。"
   },
-  "bundleId": "688525.SS:2026-11-05T15:27:52.131Z",
-  "fetchedAt": "2026-11-05T15:27:52.131Z",
-  "asOf": "2026-11-05T15:27:52.131Z",
-  "requestedAt": "2026-11-05T15:26:37.127Z",
-  "codeSourceCommit": "5f4a7f504d9dd83784b637bff0341abc516391b6"
+  "bundleId": "688525.SS:2026-11-06T15:00:23.781Z",
+  "fetchedAt": "2026-11-06T15:00:23.781Z",
+  "asOf": "2026-11-06T15:00:23.781Z",
+  "requestedAt": "2026-11-06T14:59:08.777Z",
+  "codeSourceCommit": "311a5ebc6a68fc209140cfaac6aecb38a98c5653"
 }

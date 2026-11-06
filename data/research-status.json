@@ -1,65 +1,65 @@
 {
   "schema": 1,
   "state": "partial",
-  "generatedAt": "2026-11-05T15:27:52.131Z",
-  "attemptedAt": "2026-11-05T15:26:37.127Z",
-  "fetchedAt": "2026-11-05T15:27:52.131Z",
-  "asOf": "2026-11-05T15:27:52.131Z",
-  "priceDataThrough": "2026-11-05",
-  "codeSourceCommit": "5f4a7f504d9dd83784b637bff0341abc516391b6",
+  "generatedAt": "2026-11-06T15:00:23.781Z",
+  "attemptedAt": "2026-11-06T14:59:08.777Z",
+  "fetchedAt": "2026-11-06T15:00:23.781Z",
+  "asOf": "2026-11-06T15:00:23.781Z",
+  "priceDataThrough": "2026-11-06",
+  "codeSourceCommit": "311a5ebc6a68fc209140cfaac6aecb38a98c5653",
   "coverage": {
     "poolSize": 1200,
     "company": {
-      "requested": 411,
-      "returned": 401,
-      "requestFailures": 14,
-      "skipped": 453,
-      "notRequested": 453,
-      "ok": 397,
-      "cached": 336,
-      "failed": 14,
+      "requested": 367,
+      "returned": 361,
+      "requestFailures": 10,
+      "skipped": 159,
+      "notRequested": 159,
+      "ok": 357,
+      "cached": 674,
+      "failed": 10,
       "stale": 0,
       "insufficient": 0,
-      "usable": 733,
+      "usable": 1031,
       "priority": "original_public_sample_then_symbol_not_recommendation"
     },
     "financial": {
-      "withReports": 144,
-      "withoutReports": 1056,
-      "requestedPages": 4,
-      "returnedPages": 2,
+      "withReports": 888,
+      "withoutReports": 312,
+      "requestedPages": 17,
+      "returnedPages": 16,
       "pageCapPerPeriod": 16,
       "periods": [
         {
           "period": "2026-09-30",
-          "requestedPages": 2,
-          "returnedPages": 1,
-          "totalPages": 12,
+          "requestedPages": 1,
+          "returnedPages": 0,
+          "totalPages": null,
           "truncated": false,
           "complete": false
         },
         {
           "period": "2026-06-30",
-          "requestedPages": 2,
-          "returnedPages": 1,
+          "requestedPages": 16,
+          "returnedPages": 16,
           "totalPages": 23,
           "truncated": true,
           "complete": false
         }
       ],
-      "rejectedRows": 1,
+      "rejectedRows": 0,
       "conflicts": 0,
       "complete": false
     },
     "announcements": {
-      "withItems": 202,
-      "withoutItems": 998,
-      "beginDate": "2026-10-30",
-      "endDate": "2026-11-05",
-      "requestedPages": 12,
-      "returnedPages": 11,
-      "totalHits": 13131,
-      "totalPages": 132,
+      "withItems": 350,
+      "withoutItems": 850,
+      "beginDate": "2026-10-31",
+      "endDate": "2026-11-06",
+      "requestedPages": 20,
+      "returnedPages": 20,
+      "totalHits": 8700,
+      "totalPages": 87,
       "pageCap": 20,
       "truncated": true,
       "rejectedItems": 0,
@@ -75,12 +75,6 @@
   },
   "failures": [
     {
-      "symbol": "688347.SS",
-      "source": "financial",
-      "code": "request_error",
-      "message": "报告期、披露日或修订日期缺失/未来，暂停使用"
-    },
-    {
       "symbol": "001399.SZ",
       "source": "company",
       "code": "request_error",
@@ -88,42 +82,7 @@
     },
     {
       "source": "financial",
-      "period": "2026-06-30",
-      "code": "timeout",
-      "message": "请求超时"
-    },
-    {
-      "source": "financial",
       "period": "2026-09-30",
-      "code": "timeout",
-      "message": "请求超时"
-    },
-    {
-      "symbol": "002779.SZ",
-      "source": "company",
-      "code": "timeout",
-      "message": "请求超时"
-    },
-    {
-      "symbol": "300115.SZ",
-      "source": "company",
-      "code": "timeout",
-      "message": "请求超时"
-    },
-    {
-      "symbol": "300265.SZ",
-      "source": "company",
-      "code": "timeout",
-      "message": "请求超时"
-    },
-    {
-      "symbol": "300493.SZ",
-      "source": "company",
-      "code": "timeout",
-      "message": "请求超时"
-    },
-    {
-      "source": "announcements",
       "code": "timeout",
       "message": "请求超时"
     },
@@ -146,37 +105,37 @@
       "message": "公司资料返回证券身份不一致"
     },
     {
-      "symbol": "600436.SS",
+      "symbol": "688071.SS",
       "source": "company",
       "code": "timeout",
       "message": "请求超时"
     },
     {
-      "symbol": "600549.SS",
+      "symbol": "688036.SS",
       "source": "company",
       "code": "timeout",
       "message": "请求超时"
     },
     {
-      "symbol": "600558.SS",
+      "symbol": "688063.SS",
       "source": "company",
       "code": "timeout",
       "message": "请求超时"
     },
     {
-      "symbol": "600585.SS",
+      "symbol": "688073.SS",
       "source": "company",
       "code": "timeout",
       "message": "请求超时"
     },
     {
-      "symbol": "600588.SS",
+      "symbol": "688082.SS",
       "source": "company",
       "code": "timeout",
       "message": "请求超时"
     },
     {
-      "symbol": "600600.SS",
+      "symbol": "688090.SS",
       "source": "company",
       "code": "timeout",
       "message": "请求超时"
@@ -185,8 +144,8 @@
   "message": "部分研究来源未完整覆盖，未取得的内容保持未知。",
   "preservedPrevious": false,
   "storedCounts": {
-    "companies": 733,
-    "financial": 144,
-    "announcementItems": 335
+    "companies": 1031,
+    "financial": 888,
+    "announcementItems": 669
   }
 }
