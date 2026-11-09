@@ -2,20 +2,48 @@
   "schema": 1,
   "symbol": "688783.SS",
   "company": {
-    "state": "not_requested",
-    "fetchedAt": null,
-    "observedAt": null,
-    "requestState": "not_requested",
-    "message": "本次公司资料预算未覆盖，不能视为没有公司资料。"
+    "state": "failed",
+    "previousFetchedAt": null,
+    "message": "请求超时"
   },
   "financial": {
     "state": "partial",
     "reports": [
       {
+        "reportDate": "2026-09-30",
+        "noticeDate": "2026-10-20",
+        "updateDate": "2026-10-20",
+        "observedAt": "2026-11-09T08:44:50.878Z",
+        "periodBasis": "year_to_date",
+        "currency": null,
+        "amountUnit": "source_yuan",
+        "unitNote": "来源页面金额单位为元，币种未注明；不默认CNY，不作汇率换算。",
+        "percentageUnit": "percent",
+        "reportName": "2026年 三季报",
+        "industry": null,
+        "metrics": {
+          "revenue": 2650937340.45,
+          "netProfit": 151406686.58,
+          "revenueGrowth": 37.1616739327,
+          "profitGrowth": 127.1425157914,
+          "roe": 1.21,
+          "grossMargin": 5.1284004788,
+          "eps": 0.04,
+          "bps": 3.119939538979,
+          "operatingCashPerShare": 0.160691730289
+        },
+        "source": {
+          "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
+          "fetchedAt": "2026-11-09T08:44:50.878Z",
+          "url": "https://data.eastmoney.com/bbsj/202609/yjbb.html"
+        },
+        "historicalAvailability": "provider_current_revision_not_point_in_time"
+      },
+      {
         "reportDate": "2026-06-30",
         "noticeDate": "2026-08-26",
         "updateDate": "2026-08-26",
-        "observedAt": "2026-11-06T14:59:45.899Z",
+        "observedAt": "2026-11-09T08:44:45.670Z",
         "periodBasis": "year_to_date",
         "currency": null,
         "amountUnit": "source_yuan",
@@ -36,7 +64,7 @@
         },
         "source": {
           "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
-          "fetchedAt": "2026-11-06T14:59:45.899Z",
+          "fetchedAt": "2026-11-09T08:44:45.670Z",
           "url": "https://data.eastmoney.com/bbsj/202606/yjbb.html"
         },
         "historicalAvailability": "provider_current_revision_not_point_in_time"
@@ -64,20 +92,20 @@
         "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
         "category": "回购进展情况",
         "url": "https://data.eastmoney.com/notices/detail/688783/AN202611061831485575.html",
-        "observedAt": "2026-11-06T14:59:21.954Z",
+        "observedAt": "2026-11-09T08:44:50.369Z",
         "bodyRead": false,
         "readState": "index_only",
         "source": "东方财富公开公告索引"
       }
     ],
     "scope": {
-      "from": "2026-10-31",
-      "through": "2026-11-06",
-      "beginDate": "2026-10-31",
-      "endDate": "2026-11-06",
+      "from": "2026-11-03",
+      "through": "2026-11-09",
+      "beginDate": "2026-11-03",
+      "endDate": "2026-11-09",
       "complete": false,
-      "totalHits": 8700,
-      "totalPages": 87,
+      "totalHits": 6165,
+      "totalPages": 62,
       "returnedPages": 20,
       "pageCap": 20,
       "truncated": true,
@@ -86,9 +114,9 @@
     },
     "message": "公告索引未读正文，事件不是价格确认。"
   },
-  "bundleId": "688783.SS:2026-11-06T15:00:23.781Z",
-  "fetchedAt": "2026-11-06T15:00:23.781Z",
-  "asOf": "2026-11-06T15:00:23.781Z",
-  "requestedAt": "2026-11-06T14:59:08.777Z",
-  "codeSourceCommit": "311a5ebc6a68fc209140cfaac6aecb38a98c5653"
+  "bundleId": "688783.SS:2026-11-09T08:45:20.190Z",
+  "fetchedAt": "2026-11-09T08:45:20.190Z",
+  "asOf": "2026-11-09T08:45:20.190Z",
+  "requestedAt": "2026-11-09T08:44:28.270Z",
+  "codeSourceCommit": "9cc92f69ead99db48b03c512cddaf739cdb138ae"
 }
