@@ -3,7 +3,7 @@
   "symbol": "600499.SS",
   "company": {
     "state": "ok",
-    "cacheHit": false,
+    "cacheHit": true,
     "symbol": "600499.SS",
     "fetchedAt": "2026-11-05T15:27:48.672Z",
     "observedAt": "2026-11-05T15:27:48.672Z",
@@ -23,11 +23,73 @@
       "fetchedAt": "2026-11-05T15:27:48.672Z",
       "url": "https://emweb.securities.eastmoney.com/PC_HSF10/CompanySurvey/CompanySurveyAjax?code=SH600499"
     },
-    "historicalAvailability": "current_profile_not_point_in_time"
+    "historicalAvailability": "current_profile_not_point_in_time",
+    "message": "复用7日内公开资料，原获取与观察时间保留。"
   },
   "financial": {
-    "state": "unavailable",
-    "reports": [],
+    "state": "partial",
+    "reports": [
+      {
+        "reportDate": "2026-09-30",
+        "noticeDate": "2026-10-29",
+        "updateDate": "2026-10-29",
+        "observedAt": "2026-11-09T08:35:00.447Z",
+        "periodBasis": "year_to_date",
+        "currency": null,
+        "amountUnit": "source_yuan",
+        "unitNote": "来源页面金额单位为元，币种未注明；不默认CNY，不作汇率换算。",
+        "percentageUnit": "percent",
+        "reportName": "2026年 三季报",
+        "industry": null,
+        "metrics": {
+          "revenue": 15826567200,
+          "netProfit": 1910975000,
+          "revenueGrowth": 25.5544909095,
+          "profitGrowth": 66.3,
+          "roe": 14.41,
+          "grossMargin": 31.3521968302,
+          "eps": 1,
+          "bps": 7.221019501246,
+          "operatingCashPerShare": 1.14761564543
+        },
+        "source": {
+          "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
+          "fetchedAt": "2026-11-09T08:35:00.447Z",
+          "url": "https://data.eastmoney.com/bbsj/202609/yjbb.html"
+        },
+        "historicalAvailability": "provider_current_revision_not_point_in_time"
+      },
+      {
+        "reportDate": "2026-06-30",
+        "noticeDate": "2026-08-25",
+        "updateDate": "2026-08-25",
+        "observedAt": "2026-11-09T08:35:20.139Z",
+        "periodBasis": "year_to_date",
+        "currency": null,
+        "amountUnit": "source_yuan",
+        "unitNote": "来源页面金额单位为元，币种未注明；不默认CNY，不作汇率换算。",
+        "percentageUnit": "percent",
+        "reportName": "2026年 半年报",
+        "industry": null,
+        "metrics": {
+          "revenue": 10392409000,
+          "netProfit": 1284420200,
+          "revenueGrowth": 26.9159422218,
+          "profitGrowth": 72.39,
+          "roe": 9.79,
+          "grossMargin": 31.9103751594,
+          "eps": 0.673,
+          "bps": 6.910970445962,
+          "operatingCashPerShare": 0.711910964763
+        },
+        "source": {
+          "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
+          "fetchedAt": "2026-11-09T08:35:20.139Z",
+          "url": "https://data.eastmoney.com/bbsj/202606/yjbb.html"
+        },
+        "historicalAvailability": "provider_current_revision_not_point_in_time"
+      }
+    ],
     "scope": {
       "periods": [
         "2026-09-30",
@@ -36,73 +98,30 @@
       "complete": false,
       "pageCapPerPeriod": 16
     },
-    "message": "未取得可核验的已披露报告，不代表公司没有财报。"
+    "message": "仅展示已取得且日期可核验的累计报告；当前修订版不能冒充历史当时数据。"
   },
   "announcements": {
     "state": "partial",
-    "items": [
-      {
-        "id": "AN202611041831413983",
-        "symbol": "600499.SS",
-        "title": "科达制造:科达制造股份有限公司关于股东权益变动的提示性公告",
-        "noticeDate": "2026-11-05",
-        "displayTime": "2026-11-04 17:49:14:273",
-        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "权益变动报告书",
-        "url": "https://data.eastmoney.com/notices/detail/600499/AN202611041831413983.html",
-        "observedAt": "2026-11-05T15:27:00.428Z",
-        "bodyRead": false,
-        "readState": "index_only",
-        "source": "东方财富公开公告索引"
-      },
-      {
-        "id": "AN202611041831413982",
-        "symbol": "600499.SS",
-        "title": "科达制造:科达制造股份有限公司关于法院受理子公司破产清算的公告",
-        "noticeDate": "2026-11-05",
-        "displayTime": "2026-11-04 17:49:14:320",
-        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "公司关联方基本资料变更",
-        "url": "https://data.eastmoney.com/notices/detail/600499/AN202611041831413982.html",
-        "observedAt": "2026-11-05T15:27:00.428Z",
-        "bodyRead": false,
-        "readState": "index_only",
-        "source": "东方财富公开公告索引"
-      },
-      {
-        "id": "AN202611041831413977",
-        "symbol": "600499.SS",
-        "title": "科达制造:科达制造股份有限公司简式权益变动报告书",
-        "noticeDate": "2026-11-05",
-        "displayTime": "2026-11-04 17:49:10:596",
-        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "权益变动报告书",
-        "url": "https://data.eastmoney.com/notices/detail/600499/AN202611041831413977.html",
-        "observedAt": "2026-11-05T15:27:00.428Z",
-        "bodyRead": false,
-        "readState": "index_only",
-        "source": "东方财富公开公告索引"
-      }
-    ],
+    "items": [],
     "scope": {
-      "from": "2026-10-30",
-      "through": "2026-11-05",
-      "beginDate": "2026-10-30",
-      "endDate": "2026-11-05",
+      "from": "2026-11-03",
+      "through": "2026-11-09",
+      "beginDate": "2026-11-03",
+      "endDate": "2026-11-09",
       "complete": false,
-      "totalHits": 13131,
-      "totalPages": 132,
-      "returnedPages": 11,
+      "totalHits": 6149,
+      "totalPages": 62,
+      "returnedPages": 20,
       "pageCap": 20,
       "truncated": true,
       "noticeTimePrecision": "day",
       "displayTimeTimezoneVerified": false
     },
-    "message": "公告索引未读正文，事件不是价格确认。"
+    "message": "本窗口未取得匹配公告索引；不等于没有公告或风险。"
   },
-  "bundleId": "600499.SS:2026-11-05T15:27:52.131Z",
-  "fetchedAt": "2026-11-05T15:27:52.131Z",
-  "asOf": "2026-11-05T15:27:52.131Z",
-  "requestedAt": "2026-11-05T15:26:37.127Z",
-  "codeSourceCommit": "5f4a7f504d9dd83784b637bff0341abc516391b6"
+  "bundleId": "600499.SS:2026-11-09T08:36:04.069Z",
+  "fetchedAt": "2026-11-09T08:36:04.069Z",
+  "asOf": "2026-11-09T08:36:04.069Z",
+  "requestedAt": "2026-11-09T08:34:49.064Z",
+  "codeSourceCommit": "f1c3aa75269180d7a67c33d6298f907952d215b6"
 }

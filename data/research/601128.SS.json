@@ -3,7 +3,7 @@
   "symbol": "601128.SS",
   "company": {
     "state": "ok",
-    "cacheHit": false,
+    "cacheHit": true,
     "symbol": "601128.SS",
     "fetchedAt": "2026-11-06T14:59:43.827Z",
     "observedAt": "2026-11-06T14:59:43.827Z",
@@ -23,16 +23,47 @@
       "fetchedAt": "2026-11-06T14:59:43.827Z",
       "url": "https://emweb.securities.eastmoney.com/PC_HSF10/CompanySurvey/CompanySurveyAjax?code=SH601128"
     },
-    "historicalAvailability": "current_profile_not_point_in_time"
+    "historicalAvailability": "current_profile_not_point_in_time",
+    "message": "复用7日内公开资料，原获取与观察时间保留。"
   },
   "financial": {
     "state": "partial",
     "reports": [
       {
+        "reportDate": "2026-09-30",
+        "noticeDate": "2026-10-31",
+        "updateDate": "2026-10-31",
+        "observedAt": "2026-11-09T08:34:51.060Z",
+        "periodBasis": "year_to_date",
+        "currency": null,
+        "amountUnit": "source_yuan",
+        "unitNote": "来源页面金额单位为元，币种未注明；不默认CNY，不作汇率换算。",
+        "percentageUnit": "percent",
+        "reportName": "2026年 三季报",
+        "industry": null,
+        "metrics": {
+          "revenue": 9397553000,
+          "netProfit": 3626843000,
+          "revenueGrowth": 3.8145199875,
+          "profitGrowth": 8.02,
+          "roe": 10.965,
+          "grossMargin": null,
+          "eps": 0.99,
+          "bps": 9.281539133455,
+          "operatingCashPerShare": 0.826004934738
+        },
+        "source": {
+          "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
+          "fetchedAt": "2026-11-09T08:34:51.060Z",
+          "url": "https://data.eastmoney.com/bbsj/202609/yjbb.html"
+        },
+        "historicalAvailability": "provider_current_revision_not_point_in_time"
+      },
+      {
         "reportDate": "2026-06-30",
         "noticeDate": "2026-08-27",
         "updateDate": "2026-08-27",
-        "observedAt": "2026-11-06T14:59:39.956Z",
+        "observedAt": "2026-11-09T08:35:06.548Z",
         "periodBasis": "year_to_date",
         "currency": null,
         "amountUnit": "source_yuan",
@@ -53,7 +84,7 @@
         },
         "source": {
           "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
-          "fetchedAt": "2026-11-06T14:59:39.956Z",
+          "fetchedAt": "2026-11-09T08:35:06.548Z",
           "url": "https://data.eastmoney.com/bbsj/202606/yjbb.html"
         },
         "historicalAvailability": "provider_current_revision_not_point_in_time"
@@ -71,26 +102,55 @@
   },
   "announcements": {
     "state": "partial",
-    "items": [],
+    "items": [
+      {
+        "id": "AN202611081831532375",
+        "symbol": "601128.SS",
+        "title": "常熟银行:江苏常熟农村商业银行股份有限公司2026年半年度权益分派实施公告",
+        "noticeDate": "2026-11-09",
+        "displayTime": "2026-11-08 15:30:34:287",
+        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
+        "category": "分配方案实施",
+        "url": "https://data.eastmoney.com/notices/detail/601128/AN202611081831532375.html",
+        "observedAt": "2026-11-09T08:34:51.963Z",
+        "bodyRead": false,
+        "readState": "index_only",
+        "source": "东方财富公开公告索引"
+      },
+      {
+        "id": "AN202611081831532354",
+        "symbol": "601128.SS",
+        "title": "常熟银行:江苏常熟农村商业银行股份有限公司关于根据2026年中期利润分配方案调整A股可转换公司债券转股价格的公告",
+        "noticeDate": "2026-11-09",
+        "displayTime": "2026-11-08 15:30:36:638",
+        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
+        "category": "其他",
+        "url": "https://data.eastmoney.com/notices/detail/601128/AN202611081831532354.html",
+        "observedAt": "2026-11-09T08:34:51.963Z",
+        "bodyRead": false,
+        "readState": "index_only",
+        "source": "东方财富公开公告索引"
+      }
+    ],
     "scope": {
-      "from": "2026-10-31",
-      "through": "2026-11-06",
-      "beginDate": "2026-10-31",
-      "endDate": "2026-11-06",
+      "from": "2026-11-03",
+      "through": "2026-11-09",
+      "beginDate": "2026-11-03",
+      "endDate": "2026-11-09",
       "complete": false,
-      "totalHits": 8700,
-      "totalPages": 87,
+      "totalHits": 6149,
+      "totalPages": 62,
       "returnedPages": 20,
       "pageCap": 20,
       "truncated": true,
       "noticeTimePrecision": "day",
       "displayTimeTimezoneVerified": false
     },
-    "message": "本窗口未取得匹配公告索引；不等于没有公告或风险。"
+    "message": "公告索引未读正文，事件不是价格确认。"
   },
-  "bundleId": "601128.SS:2026-11-06T15:00:23.781Z",
-  "fetchedAt": "2026-11-06T15:00:23.781Z",
-  "asOf": "2026-11-06T15:00:23.781Z",
-  "requestedAt": "2026-11-06T14:59:08.777Z",
-  "codeSourceCommit": "311a5ebc6a68fc209140cfaac6aecb38a98c5653"
+  "bundleId": "601128.SS:2026-11-09T08:36:04.069Z",
+  "fetchedAt": "2026-11-09T08:36:04.069Z",
+  "asOf": "2026-11-09T08:36:04.069Z",
+  "requestedAt": "2026-11-09T08:34:49.064Z",
+  "codeSourceCommit": "f1c3aa75269180d7a67c33d6298f907952d215b6"
 }

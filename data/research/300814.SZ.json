@@ -27,8 +27,39 @@
     "message": "复用7日内公开资料，原获取与观察时间保留。"
   },
   "financial": {
-    "state": "unavailable",
-    "reports": [],
+    "state": "partial",
+    "reports": [
+      {
+        "reportDate": "2026-09-30",
+        "noticeDate": "2026-10-23",
+        "updateDate": "2026-10-23",
+        "observedAt": "2026-11-09T08:35:09.314Z",
+        "periodBasis": "year_to_date",
+        "currency": null,
+        "amountUnit": "source_yuan",
+        "unitNote": "来源页面金额单位为元，币种未注明；不默认CNY，不作汇率换算。",
+        "percentageUnit": "percent",
+        "reportName": "2026年 三季报",
+        "industry": null,
+        "metrics": {
+          "revenue": 2009650749.29,
+          "netProfit": 118156002.12,
+          "revenueGrowth": 48.3351098029,
+          "profitGrowth": 324.2,
+          "roe": 6.9,
+          "grossMargin": 22.5963132241,
+          "eps": 0.62,
+          "bps": 9.212345316201,
+          "operatingCashPerShare": -0.118920568367
+        },
+        "source": {
+          "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
+          "fetchedAt": "2026-11-09T08:35:09.314Z",
+          "url": "https://data.eastmoney.com/bbsj/202609/yjbb.html"
+        },
+        "historicalAvailability": "provider_current_revision_not_point_in_time"
+      }
+    ],
     "scope": {
       "periods": [
         "2026-09-30",
@@ -37,7 +68,7 @@
       "complete": false,
       "pageCapPerPeriod": 16
     },
-    "message": "未取得可核验的已披露报告，不代表公司没有财报。"
+    "message": "仅展示已取得且日期可核验的累计报告；当前修订版不能冒充历史当时数据。"
   },
   "announcements": {
     "state": "partial",
@@ -47,11 +78,11 @@
         "symbol": "300814.SZ",
         "title": "中富电路:关于深圳中富电路股份有限公司申请向特定对象发行股票的审核问询函的回复",
         "noticeDate": "2026-11-06",
-        "displayTime": "2026-11-06 17:51:14:415",
+        "displayTime": "2026-11-06 17:51:14:329",
         "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
         "category": "回复问询函公告",
         "url": "https://data.eastmoney.com/notices/detail/300814/AN202611061831500107.html",
-        "observedAt": "2026-11-06T14:59:19.209Z",
+        "observedAt": "2026-11-09T08:35:04.883Z",
         "bodyRead": false,
         "readState": "index_only",
         "source": "东方财富公开公告索引"
@@ -61,11 +92,11 @@
         "symbol": "300814.SZ",
         "title": "中富电路:北京市金杜律师事务所关于深圳中富电路股份有限公司向特定对象发行股票之补充法律意见书(一)",
         "noticeDate": "2026-11-06",
-        "displayTime": "2026-11-06 17:51:14:469",
+        "displayTime": "2026-11-06 17:51:14:466",
         "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
         "category": "法律意见书",
         "url": "https://data.eastmoney.com/notices/detail/300814/AN202611061831500106.html",
-        "observedAt": "2026-11-06T14:59:11.973Z",
+        "observedAt": "2026-11-09T08:35:02.998Z",
         "bodyRead": false,
         "readState": "index_only",
         "source": "东方财富公开公告索引"
@@ -75,11 +106,11 @@
         "symbol": "300814.SZ",
         "title": "中富电路:容诚会计师事务所(特殊普通合伙)关于深圳中富电路股份有限公司申请向特定对象发行股票的审核问询函的回复",
         "noticeDate": "2026-11-06",
-        "displayTime": "2026-11-06 17:51:14:570",
+        "displayTime": "2026-11-06 17:51:14:469",
         "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
         "category": "会计师事务所问询函回复公告",
         "url": "https://data.eastmoney.com/notices/detail/300814/AN202611061831500104.html",
-        "observedAt": "2026-11-06T14:59:19.209Z",
+        "observedAt": "2026-11-09T08:35:04.883Z",
         "bodyRead": false,
         "readState": "index_only",
         "source": "东方财富公开公告索引"
@@ -89,24 +120,24 @@
         "symbol": "300814.SZ",
         "title": "中富电路:关于向特定对象发行股票的审核问询函回复的提示性公告",
         "noticeDate": "2026-11-06",
-        "displayTime": "2026-11-06 17:51:14:402",
+        "displayTime": "2026-11-06 17:51:14:299",
         "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
         "category": "回复问询函公告",
         "url": "https://data.eastmoney.com/notices/detail/300814/AN202611061831500101.html",
-        "observedAt": "2026-11-06T14:59:19.209Z",
+        "observedAt": "2026-11-09T08:35:04.883Z",
         "bodyRead": false,
         "readState": "index_only",
         "source": "东方财富公开公告索引"
       }
     ],
     "scope": {
-      "from": "2026-10-31",
-      "through": "2026-11-06",
-      "beginDate": "2026-10-31",
-      "endDate": "2026-11-06",
+      "from": "2026-11-03",
+      "through": "2026-11-09",
+      "beginDate": "2026-11-03",
+      "endDate": "2026-11-09",
       "complete": false,
-      "totalHits": 8700,
-      "totalPages": 87,
+      "totalHits": 6149,
+      "totalPages": 62,
       "returnedPages": 20,
       "pageCap": 20,
       "truncated": true,
@@ -115,9 +146,9 @@
     },
     "message": "公告索引未读正文，事件不是价格确认。"
   },
-  "bundleId": "300814.SZ:2026-11-06T15:00:23.781Z",
-  "fetchedAt": "2026-11-06T15:00:23.781Z",
-  "asOf": "2026-11-06T15:00:23.781Z",
-  "requestedAt": "2026-11-06T14:59:08.777Z",
-  "codeSourceCommit": "311a5ebc6a68fc209140cfaac6aecb38a98c5653"
+  "bundleId": "300814.SZ:2026-11-09T08:36:04.069Z",
+  "fetchedAt": "2026-11-09T08:36:04.069Z",
+  "asOf": "2026-11-09T08:36:04.069Z",
+  "requestedAt": "2026-11-09T08:34:49.064Z",
+  "codeSourceCommit": "f1c3aa75269180d7a67c33d6298f907952d215b6"
 }

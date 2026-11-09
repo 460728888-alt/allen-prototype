@@ -3,7 +3,7 @@
   "symbol": "603444.SS",
   "company": {
     "state": "ok",
-    "cacheHit": false,
+    "cacheHit": true,
     "symbol": "603444.SS",
     "fetchedAt": "2026-11-06T15:00:07.689Z",
     "observedAt": "2026-11-06T15:00:07.689Z",
@@ -23,11 +23,43 @@
       "fetchedAt": "2026-11-06T15:00:07.689Z",
       "url": "https://emweb.securities.eastmoney.com/PC_HSF10/CompanySurvey/CompanySurveyAjax?code=SH603444"
     },
-    "historicalAvailability": "current_profile_not_point_in_time"
+    "historicalAvailability": "current_profile_not_point_in_time",
+    "message": "复用7日内公开资料，原获取与观察时间保留。"
   },
   "financial": {
-    "state": "unavailable",
-    "reports": [],
+    "state": "partial",
+    "reports": [
+      {
+        "reportDate": "2026-09-30",
+        "noticeDate": "2026-10-23",
+        "updateDate": "2026-10-23",
+        "observedAt": "2026-11-09T08:35:09.314Z",
+        "periodBasis": "year_to_date",
+        "currency": null,
+        "amountUnit": "source_yuan",
+        "unitNote": "来源页面金额单位为元，币种未注明；不默认CNY，不作汇率换算。",
+        "percentageUnit": "percent",
+        "reportName": "2026年 三季报",
+        "industry": null,
+        "metrics": {
+          "revenue": 5496468492.26,
+          "netProfit": 1585007442.94,
+          "revenueGrowth": 22.5309750311,
+          "profitGrowth": 30.55,
+          "roe": 26.73,
+          "grossMargin": 93.8593741777,
+          "eps": 22,
+          "bps": 80.77620863665,
+          "operatingCashPerShare": 26.584983595267
+        },
+        "source": {
+          "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
+          "fetchedAt": "2026-11-09T08:35:09.314Z",
+          "url": "https://data.eastmoney.com/bbsj/202609/yjbb.html"
+        },
+        "historicalAvailability": "provider_current_revision_not_point_in_time"
+      }
+    ],
     "scope": {
       "periods": [
         "2026-09-30",
@@ -36,30 +68,59 @@
       "complete": false,
       "pageCapPerPeriod": 16
     },
-    "message": "未取得可核验的已披露报告，不代表公司没有财报。"
+    "message": "仅展示已取得且日期可核验的累计报告；当前修订版不能冒充历史当时数据。"
   },
   "announcements": {
     "state": "partial",
-    "items": [],
+    "items": [
+      {
+        "id": "AN202611061831500761",
+        "symbol": "603444.SS",
+        "title": "吉比特:福建天衡联合律师事务所关于厦门吉比特网络技术股份有限公司差异化权益分派事项的法律意见书",
+        "noticeDate": "2026-11-07",
+        "displayTime": "2026-11-06 18:14:59:318",
+        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
+        "category": "法律意见书",
+        "url": "https://data.eastmoney.com/notices/detail/603444/AN202611061831500761.html",
+        "observedAt": "2026-11-09T08:34:57.020Z",
+        "bodyRead": false,
+        "readState": "index_only",
+        "source": "东方财富公开公告索引"
+      },
+      {
+        "id": "AN202611061831500760",
+        "symbol": "603444.SS",
+        "title": "吉比特:厦门吉比特网络技术股份有限公司2026年第三季度权益分派实施公告",
+        "noticeDate": "2026-11-07",
+        "displayTime": "2026-11-06 18:14:55:444",
+        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
+        "category": "分配方案实施",
+        "url": "https://data.eastmoney.com/notices/detail/603444/AN202611061831500760.html",
+        "observedAt": "2026-11-09T08:34:57.020Z",
+        "bodyRead": false,
+        "readState": "index_only",
+        "source": "东方财富公开公告索引"
+      }
+    ],
     "scope": {
-      "from": "2026-10-31",
-      "through": "2026-11-06",
-      "beginDate": "2026-10-31",
-      "endDate": "2026-11-06",
+      "from": "2026-11-03",
+      "through": "2026-11-09",
+      "beginDate": "2026-11-03",
+      "endDate": "2026-11-09",
       "complete": false,
-      "totalHits": 8700,
-      "totalPages": 87,
+      "totalHits": 6149,
+      "totalPages": 62,
       "returnedPages": 20,
       "pageCap": 20,
       "truncated": true,
       "noticeTimePrecision": "day",
       "displayTimeTimezoneVerified": false
     },
-    "message": "本窗口未取得匹配公告索引；不等于没有公告或风险。"
+    "message": "公告索引未读正文，事件不是价格确认。"
   },
-  "bundleId": "603444.SS:2026-11-06T15:00:23.781Z",
-  "fetchedAt": "2026-11-06T15:00:23.781Z",
-  "asOf": "2026-11-06T15:00:23.781Z",
-  "requestedAt": "2026-11-06T14:59:08.777Z",
-  "codeSourceCommit": "311a5ebc6a68fc209140cfaac6aecb38a98c5653"
+  "bundleId": "603444.SS:2026-11-09T08:36:04.069Z",
+  "fetchedAt": "2026-11-09T08:36:04.069Z",
+  "asOf": "2026-11-09T08:36:04.069Z",
+  "requestedAt": "2026-11-09T08:34:49.064Z",
+  "codeSourceCommit": "f1c3aa75269180d7a67c33d6298f907952d215b6"
 }

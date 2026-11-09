@@ -2,20 +2,48 @@
   "schema": 1,
   "symbol": "688331.SS",
   "company": {
-    "state": "not_requested",
-    "fetchedAt": null,
-    "observedAt": null,
-    "requestState": "not_requested",
-    "message": "本次公司资料预算未覆盖，不能视为没有公司资料。"
+    "state": "failed",
+    "previousFetchedAt": null,
+    "message": "请求超时"
   },
   "financial": {
     "state": "partial",
     "reports": [
       {
+        "reportDate": "2026-09-30",
+        "noticeDate": "2026-10-30",
+        "updateDate": "2026-10-30",
+        "observedAt": "2026-11-09T08:34:55.468Z",
+        "periodBasis": "year_to_date",
+        "currency": null,
+        "amountUnit": "source_yuan",
+        "unitNote": "来源页面金额单位为元，币种未注明；不默认CNY，不作汇率换算。",
+        "percentageUnit": "percent",
+        "reportName": "2026年 三季报",
+        "industry": null,
+        "metrics": {
+          "revenue": 6763781382.06,
+          "netProfit": 5273231114.53,
+          "revenueGrowth": 293.2812816675,
+          "profitGrowth": 1057.5495923336,
+          "roe": 84.13,
+          "grossMargin": 93.9501749009,
+          "eps": 9.41,
+          "bps": 15.75394421646,
+          "operatingCashPerShare": 7.23446820365
+        },
+        "source": {
+          "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
+          "fetchedAt": "2026-11-09T08:34:55.468Z",
+          "url": "https://data.eastmoney.com/bbsj/202609/yjbb.html"
+        },
+        "historicalAvailability": "provider_current_revision_not_point_in_time"
+      },
+      {
         "reportDate": "2026-06-30",
         "noticeDate": "2026-08-25",
         "updateDate": "2026-08-25",
-        "observedAt": "2026-11-06T14:59:59.163Z",
+        "observedAt": "2026-11-09T08:35:18.883Z",
         "periodBasis": "year_to_date",
         "currency": null,
         "amountUnit": "source_yuan",
@@ -36,7 +64,7 @@
         },
         "source": {
           "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
-          "fetchedAt": "2026-11-06T14:59:59.163Z",
+          "fetchedAt": "2026-11-09T08:35:18.883Z",
           "url": "https://data.eastmoney.com/bbsj/202606/yjbb.html"
         },
         "historicalAvailability": "provider_current_revision_not_point_in_time"
@@ -54,97 +82,26 @@
   },
   "announcements": {
     "state": "partial",
-    "items": [
-      {
-        "id": "AN202611051831456506",
-        "symbol": "688331.SS",
-        "title": "荣昌生物:荣昌生物关于作废部分2022年A股限制性股票激励计划已授予尚未归属的限制性股票的公告",
-        "noticeDate": "2026-11-06",
-        "displayTime": "2026-11-05 17:18:43:281",
-        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "股权激励进展公告",
-        "url": "https://data.eastmoney.com/notices/detail/688331/AN202611051831456506.html",
-        "observedAt": "2026-11-06T14:59:31.273Z",
-        "bodyRead": false,
-        "readState": "index_only",
-        "source": "东方财富公开公告索引"
-      },
-      {
-        "id": "AN202611051831456505",
-        "symbol": "688331.SS",
-        "title": "荣昌生物:荣昌生物第三届董事会第七会议决议公告",
-        "noticeDate": "2026-11-06",
-        "displayTime": "2026-11-05 17:18:43:281",
-        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "董事会决议公告",
-        "url": "https://data.eastmoney.com/notices/detail/688331/AN202611051831456505.html",
-        "observedAt": "2026-11-06T14:59:31.273Z",
-        "bodyRead": false,
-        "readState": "index_only",
-        "source": "东方财富公开公告索引"
-      },
-      {
-        "id": "AN202611051831456503",
-        "symbol": "688331.SS",
-        "title": "荣昌生物:荣昌生物关于公司2022年A股限制性股票激励计划之B类权益预留授予第二个归属期符合归属条件的公告",
-        "noticeDate": "2026-11-06",
-        "displayTime": "2026-11-05 17:18:39:344",
-        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "股权激励进展公告",
-        "url": "https://data.eastmoney.com/notices/detail/688331/AN202611051831456503.html",
-        "observedAt": "2026-11-06T14:59:31.273Z",
-        "bodyRead": false,
-        "readState": "index_only",
-        "source": "东方财富公开公告索引"
-      },
-      {
-        "id": "AN202611051831456502",
-        "symbol": "688331.SS",
-        "title": "荣昌生物:荣昌生物董事会薪酬与考核委员会关于公司2022年限制性股票激励计划之B类权益预留授予部分第二个归属期归属名单的核查意见",
-        "noticeDate": "2026-11-06",
-        "displayTime": "2026-11-05 17:18:39:388",
-        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "专项说明/独立意见",
-        "url": "https://data.eastmoney.com/notices/detail/688331/AN202611051831456502.html",
-        "observedAt": "2026-11-06T14:59:31.273Z",
-        "bodyRead": false,
-        "readState": "index_only",
-        "source": "东方财富公开公告索引"
-      },
-      {
-        "id": "AN202611051831456501",
-        "symbol": "688331.SS",
-        "title": "荣昌生物:北京海润天睿律师事务所关于荣昌生物制药(烟台)股份有限公司2022年A股限制性股票激励计划之B类权益预留授予第二个归属期符合归属条件及作废部分已授予尚未归属的限制性股票之法律意见书",
-        "noticeDate": "2026-11-06",
-        "displayTime": "2026-11-05 17:18:39:344",
-        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "法律意见书",
-        "url": "https://data.eastmoney.com/notices/detail/688331/AN202611051831456501.html",
-        "observedAt": "2026-11-06T14:59:31.273Z",
-        "bodyRead": false,
-        "readState": "index_only",
-        "source": "东方财富公开公告索引"
-      }
-    ],
+    "items": [],
     "scope": {
-      "from": "2026-10-31",
-      "through": "2026-11-06",
-      "beginDate": "2026-10-31",
-      "endDate": "2026-11-06",
+      "from": "2026-11-03",
+      "through": "2026-11-09",
+      "beginDate": "2026-11-03",
+      "endDate": "2026-11-09",
       "complete": false,
-      "totalHits": 8700,
-      "totalPages": 87,
+      "totalHits": 6149,
+      "totalPages": 62,
       "returnedPages": 20,
       "pageCap": 20,
       "truncated": true,
       "noticeTimePrecision": "day",
       "displayTimeTimezoneVerified": false
     },
-    "message": "公告索引未读正文，事件不是价格确认。"
+    "message": "本窗口未取得匹配公告索引；不等于没有公告或风险。"
   },
-  "bundleId": "688331.SS:2026-11-06T15:00:23.781Z",
-  "fetchedAt": "2026-11-06T15:00:23.781Z",
-  "asOf": "2026-11-06T15:00:23.781Z",
-  "requestedAt": "2026-11-06T14:59:08.777Z",
-  "codeSourceCommit": "311a5ebc6a68fc209140cfaac6aecb38a98c5653"
+  "bundleId": "688331.SS:2026-11-09T08:36:04.069Z",
+  "fetchedAt": "2026-11-09T08:36:04.069Z",
+  "asOf": "2026-11-09T08:36:04.069Z",
+  "requestedAt": "2026-11-09T08:34:49.064Z",
+  "codeSourceCommit": "f1c3aa75269180d7a67c33d6298f907952d215b6"
 }

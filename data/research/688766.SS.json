@@ -9,8 +9,39 @@
     "message": "本次公司资料预算未覆盖，不能视为没有公司资料。"
   },
   "financial": {
-    "state": "unavailable",
-    "reports": [],
+    "state": "partial",
+    "reports": [
+      {
+        "reportDate": "2026-09-30",
+        "noticeDate": "2026-10-30",
+        "updateDate": "2026-10-30",
+        "observedAt": "2026-11-09T08:34:55.468Z",
+        "periodBasis": "year_to_date",
+        "currency": null,
+        "amountUnit": "source_yuan",
+        "unitNote": "来源页面金额单位为元，币种未注明；不默认CNY，不作汇率换算。",
+        "percentageUnit": "percent",
+        "reportName": "2026年 三季报",
+        "industry": null,
+        "metrics": {
+          "revenue": 7009652223.26,
+          "netProfit": 1554903201.35,
+          "revenueGrowth": 389.0544882581,
+          "profitGrowth": 2533.23,
+          "roe": 48.49,
+          "grossMargin": 52.8920437812,
+          "eps": 10.49,
+          "bps": 26.892984287,
+          "operatingCashPerShare": 10.774539351995
+        },
+        "source": {
+          "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
+          "fetchedAt": "2026-11-09T08:34:55.468Z",
+          "url": "https://data.eastmoney.com/bbsj/202609/yjbb.html"
+        },
+        "historicalAvailability": "provider_current_revision_not_point_in_time"
+      }
+    ],
     "scope": {
       "periods": [
         "2026-09-30",
@@ -19,115 +50,30 @@
       "complete": false,
       "pageCapPerPeriod": 16
     },
-    "message": "未取得可核验的已披露报告，不代表公司没有财报。"
+    "message": "仅展示已取得且日期可核验的累计报告；当前修订版不能冒充历史当时数据。"
   },
   "announcements": {
     "state": "partial",
-    "items": [
-      {
-        "id": "AN202611051831449208",
-        "symbol": "688766.SS",
-        "title": "普冉股份:2026-006普冉半导体(上海)股份有限公司投资者关系活动记录表(2026年10月29日)",
-        "noticeDate": "2026-11-05",
-        "displayTime": "2026-11-05 16:26:09:623",
-        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "调研活动",
-        "url": "https://data.eastmoney.com/notices/detail/688766/AN202611051831449208.html",
-        "observedAt": "2026-11-06T14:59:40.989Z",
-        "bodyRead": false,
-        "readState": "index_only",
-        "source": "东方财富公开公告索引"
-      },
-      {
-        "id": "AN202611041831414711",
-        "symbol": "688766.SS",
-        "title": "普冉股份:普冉半导体(上海)股份有限公司关于发行股份、可转换公司债券及支付现金购买资产并募集配套资金报告书修订说明的公告",
-        "noticeDate": "2026-11-05",
-        "displayTime": "2026-11-04 18:03:13:305",
-        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "其他",
-        "url": "https://data.eastmoney.com/notices/detail/688766/AN202611041831414711.html",
-        "observedAt": "2026-11-06T14:59:45.040Z",
-        "bodyRead": false,
-        "readState": "index_only",
-        "source": "东方财富公开公告索引"
-      },
-      {
-        "id": "AN202611041831414710",
-        "symbol": "688766.SS",
-        "title": "普冉股份:国泰海通证券股份有限公司关于普冉半导体(上海)股份有限公司发行股份、可转换公司债券及支付现金购买资产并募集配套资金之独立财务顾问报告",
-        "noticeDate": "2026-11-05",
-        "displayTime": "2026-11-04 18:03:13:384",
-        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "其他 / 保荐/核查意见",
-        "url": "https://data.eastmoney.com/notices/detail/688766/AN202611041831414710.html",
-        "observedAt": "2026-11-06T14:59:45.040Z",
-        "bodyRead": false,
-        "readState": "index_only",
-        "source": "东方财富公开公告索引"
-      },
-      {
-        "id": "AN202611041831414709",
-        "symbol": "688766.SS",
-        "title": "普冉股份:普冉半导体(上海)股份有限公司关于发行股份、可转换公司债券及支付现金购买资产并募集配套资金事项获得中国证券监督管理委员会同意注册批复的公告",
-        "noticeDate": "2026-11-05",
-        "displayTime": "2026-11-04 18:03:13:384",
-        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "其他",
-        "url": "https://data.eastmoney.com/notices/detail/688766/AN202611041831414709.html",
-        "observedAt": "2026-11-06T14:59:45.040Z",
-        "bodyRead": false,
-        "readState": "index_only",
-        "source": "东方财富公开公告索引"
-      },
-      {
-        "id": "AN202611041831414708",
-        "symbol": "688766.SS",
-        "title": "普冉股份:普冉半导体(上海)股份有限公司发行股份、可转换公司债券及支付现金购买资产并募集配套资金报告书",
-        "noticeDate": "2026-11-05",
-        "displayTime": "2026-11-04 18:03:09:413",
-        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "其他增发事项公告 / 其他",
-        "url": "https://data.eastmoney.com/notices/detail/688766/AN202611041831414708.html",
-        "observedAt": "2026-11-06T14:59:45.040Z",
-        "bodyRead": false,
-        "readState": "index_only",
-        "source": "东方财富公开公告索引"
-      },
-      {
-        "id": "AN202611041831414707",
-        "symbol": "688766.SS",
-        "title": "普冉股份:普冉半导体(上海)股份有限公司发行股份、可转换公司债券及支付现金购买资产并募集配套资金报告书摘要",
-        "noticeDate": "2026-11-05",
-        "displayTime": "2026-11-04 18:03:09:447",
-        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "其他增发事项公告 / 其他",
-        "url": "https://data.eastmoney.com/notices/detail/688766/AN202611041831414707.html",
-        "observedAt": "2026-11-06T14:59:45.040Z",
-        "bodyRead": false,
-        "readState": "index_only",
-        "source": "东方财富公开公告索引"
-      }
-    ],
+    "items": [],
     "scope": {
-      "from": "2026-10-31",
-      "through": "2026-11-06",
-      "beginDate": "2026-10-31",
-      "endDate": "2026-11-06",
+      "from": "2026-11-03",
+      "through": "2026-11-09",
+      "beginDate": "2026-11-03",
+      "endDate": "2026-11-09",
       "complete": false,
-      "totalHits": 8700,
-      "totalPages": 87,
+      "totalHits": 6149,
+      "totalPages": 62,
       "returnedPages": 20,
       "pageCap": 20,
       "truncated": true,
       "noticeTimePrecision": "day",
       "displayTimeTimezoneVerified": false
     },
-    "message": "公告索引未读正文，事件不是价格确认。"
+    "message": "本窗口未取得匹配公告索引；不等于没有公告或风险。"
   },
-  "bundleId": "688766.SS:2026-11-06T15:00:23.781Z",
-  "fetchedAt": "2026-11-06T15:00:23.781Z",
-  "asOf": "2026-11-06T15:00:23.781Z",
-  "requestedAt": "2026-11-06T14:59:08.777Z",
-  "codeSourceCommit": "311a5ebc6a68fc209140cfaac6aecb38a98c5653"
+  "bundleId": "688766.SS:2026-11-09T08:36:04.069Z",
+  "fetchedAt": "2026-11-09T08:36:04.069Z",
+  "asOf": "2026-11-09T08:36:04.069Z",
+  "requestedAt": "2026-11-09T08:34:49.064Z",
+  "codeSourceCommit": "f1c3aa75269180d7a67c33d6298f907952d215b6"
 }

@@ -2,21 +2,21 @@
   "symbol": "001232.SZ",
   "code": "001232",
   "name": "嘉立创",
-  "price": 154.86000061035156,
-  "changePct": -3.7299514964778013,
+  "price": 158.88999938964844,
+  "changePct": 2.602349711619145,
   "currency": "CNY",
   "exchange": "SHZ",
   "industry": null,
-  "dataThrough": "2026-11-06",
+  "dataThrough": "2026-11-09",
   "data": {
     "version": "daily-contract-1",
     "state": "insufficient",
     "reasons": [
       "日线价格关系异常"
     ],
-    "dataThrough": "2026-11-06",
-    "fetchedAt": "2026-11-06T14:59:06.190Z",
-    "expectedThrough": "2026-11-06",
+    "dataThrough": "2026-11-09",
+    "fetchedAt": "2026-11-09T08:34:40.065Z",
+    "expectedThrough": "2026-11-09",
     "corporateActions": [
       {
         "type": "dividends",
@@ -32,7 +32,7 @@
     "priceBasis": "judgment_day_raw",
     "anchorFactor": 1,
     "volumeBasis": "source_volume",
-    "judgmentAsOf": "2026-11-06T14:58:48.515Z",
+    "judgmentAsOf": "2026-11-09T08:34:12.108Z",
     "complete": false
   },
   "levels": {
@@ -42,7 +42,7 @@
     "planType": "breakout",
     "priceBasis": "judgment_day_raw",
     "tick": 0.01,
-    "dataThrough": "2026-11-06",
+    "dataThrough": "2026-11-09",
     "entry": null,
     "stop": null,
     "target1": null,
@@ -67,13 +67,6 @@
   "probability": null,
   "detailPath": "data/stocks/001232.SZ.json",
   "miniHistory": [
-    {
-      "date": "2026-10-12",
-      "close": 167.89999389648438,
-      "volume": 3597728,
-      "complete": true,
-      "missingSession": false
-    },
     {
       "date": "2026-10-13",
       "close": 169.55999755859375,
@@ -206,11 +199,18 @@
       "volume": 2190725,
       "complete": true,
       "missingSession": false
+    },
+    {
+      "date": "2026-11-09",
+      "close": 158.88999938964844,
+      "volume": 2310737,
+      "complete": true,
+      "missingSession": false
     }
   ],
   "source": {
     "provider": "Yahoo Finance / query1.finance.yahoo.com",
-    "fetchedAt": "2026-11-06T14:59:06.190Z",
+    "fetchedAt": "2026-11-09T08:34:40.065Z",
     "quoteBasis": "provider_daily_quote_anchored_at_judgment_day",
     "historicalQuoteScaleVerified": false,
     "note": "提供方可能修订历史报价；严格历史报价尺度未独立核验",
@@ -218,9 +218,9 @@
       {
         "host": "query1.finance.yahoo.com",
         "requested": true,
-        "checkedAt": "2026-11-06T14:59:06.191Z",
+        "checkedAt": "2026-11-09T08:34:40.067Z",
         "state": "insufficient",
-        "dataThrough": "2026-11-06",
+        "dataThrough": "2026-11-09",
         "reasons": [
           "日线价格关系异常"
         ]
@@ -228,9 +228,9 @@
       {
         "host": "query2.finance.yahoo.com",
         "requested": true,
-        "checkedAt": "2026-11-06T14:59:06.234Z",
+        "checkedAt": "2026-11-09T08:34:40.149Z",
         "state": "insufficient",
-        "dataThrough": "2026-11-06",
+        "dataThrough": "2026-11-09",
         "reasons": [
           "日线价格关系异常"
         ]
@@ -990,11 +990,23 @@
       "time": 1793928600,
       "date": "2026-11-06",
       "complete": true,
-      "open": 147,
+      "open": 152.5,
       "high": 156.5500030517578,
       "low": 150.3800048828125,
       "close": 154.86000061035156,
       "volume": 2190725,
+      "adjustmentFactor": 1,
+      "scaleFactor": 1
+    },
+    {
+      "time": 1794187800,
+      "date": "2026-11-09",
+      "complete": true,
+      "open": 152.5,
+      "high": 160.8000030517578,
+      "low": 155.39999389648438,
+      "close": 158.88999938964844,
+      "volume": 2310737,
       "adjustmentFactor": 1,
       "scaleFactor": 1
     }
@@ -1013,5 +1025,5 @@
     "items": [],
     "message": "尚未自动采集公告正文；事件不等于价格确认"
   },
-  "generatedAt": "2026-11-06T14:59:07.779Z"
+  "generatedAt": "2026-11-09T08:34:47.926Z"
 }

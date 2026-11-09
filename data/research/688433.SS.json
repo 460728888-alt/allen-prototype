@@ -9,8 +9,39 @@
     "message": "本次公司资料预算未覆盖，不能视为没有公司资料。"
   },
   "financial": {
-    "state": "unavailable",
-    "reports": [],
+    "state": "partial",
+    "reports": [
+      {
+        "reportDate": "2026-09-30",
+        "noticeDate": "2026-10-30",
+        "updateDate": "2026-10-30",
+        "observedAt": "2026-11-09T08:34:55.468Z",
+        "periodBasis": "year_to_date",
+        "currency": null,
+        "amountUnit": "source_yuan",
+        "unitNote": "来源页面金额单位为元，币种未注明；不默认CNY，不作汇率换算。",
+        "percentageUnit": "percent",
+        "reportName": "2026年 三季报",
+        "industry": null,
+        "metrics": {
+          "revenue": 510044905.76,
+          "netProfit": 19577278.78,
+          "revenueGrowth": 28.1070381828,
+          "profitGrowth": 34.48,
+          "roe": 0.92,
+          "grossMargin": 44.1392201407,
+          "eps": 0.0472,
+          "bps": 5.251532214566,
+          "operatingCashPerShare": -0.348780508506
+        },
+        "source": {
+          "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
+          "fetchedAt": "2026-11-09T08:34:55.468Z",
+          "url": "https://data.eastmoney.com/bbsj/202609/yjbb.html"
+        },
+        "historicalAvailability": "provider_current_revision_not_point_in_time"
+      }
+    ],
     "scope": {
       "periods": [
         "2026-09-30",
@@ -19,7 +50,7 @@
       "complete": false,
       "pageCapPerPeriod": 16
     },
-    "message": "未取得可核验的已披露报告，不代表公司没有财报。"
+    "message": "仅展示已取得且日期可核验的累计报告；当前修订版不能冒充历史当时数据。"
   },
   "announcements": {
     "state": "partial",
@@ -29,11 +60,11 @@
         "symbol": "688433.SS",
         "title": "7-2会计师关于审核问询函的回复(湖南华曙高科技股份有限公司)",
         "noticeDate": "2026-11-06",
-        "displayTime": "2026-11-06 17:11:12:830",
+        "displayTime": "2026-11-06 17:11:12:752",
         "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
         "category": "科创板再融资问询与回复",
         "url": "https://data.eastmoney.com/notices/detail/688433/AN202611061831498292.html",
-        "observedAt": "2026-11-06T14:59:19.209Z",
+        "observedAt": "2026-11-09T08:35:05.723Z",
         "bodyRead": false,
         "readState": "index_only",
         "source": "东方财富公开公告索引"
@@ -43,11 +74,11 @@
         "symbol": "688433.SS",
         "title": "7-1发行人及保荐机构关于审核问询函的回复(湖南华曙高科技股份有限公司)",
         "noticeDate": "2026-11-06",
-        "displayTime": "2026-11-06 17:11:18:779",
+        "displayTime": "2026-11-06 17:11:18:696",
         "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
         "category": "科创板再融资问询与回复",
         "url": "https://data.eastmoney.com/notices/detail/688433/AN202611061831498291.html",
-        "observedAt": "2026-11-06T14:59:19.209Z",
+        "observedAt": "2026-11-09T08:35:05.723Z",
         "bodyRead": false,
         "readState": "index_only",
         "source": "东方财富公开公告索引"
@@ -57,122 +88,24 @@
         "symbol": "688433.SS",
         "title": "7-3补充法律意见书(二)(湖南华曙高科技股份有限公司)",
         "noticeDate": "2026-11-06",
-        "displayTime": "2026-11-06 17:12:27:832",
+        "displayTime": "2026-11-06 17:12:27:747",
         "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
         "category": "科创板再融资问询与回复",
         "url": "https://data.eastmoney.com/notices/detail/688433/AN202611061831498290.html",
-        "observedAt": "2026-11-06T14:59:19.209Z",
-        "bodyRead": false,
-        "readState": "index_only",
-        "source": "东方财富公开公告索引"
-      },
-      {
-        "id": "AN202611051831459113",
-        "symbol": "688433.SS",
-        "title": "华曙高科:关于湖南华曙高科技股份有限公司向特定对象发行股票申请文件的审核问询函的回复报告(修订稿)",
-        "noticeDate": "2026-11-06",
-        "displayTime": "2026-11-05 18:16:00:683",
-        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "回复问询函公告",
-        "url": "https://data.eastmoney.com/notices/detail/688433/AN202611051831459113.html",
-        "observedAt": "2026-11-06T14:59:27.069Z",
-        "bodyRead": false,
-        "readState": "index_only",
-        "source": "东方财富公开公告索引"
-      },
-      {
-        "id": "AN202611051831459112",
-        "symbol": "688433.SS",
-        "title": "华曙高科:西部证券股份有限公司关于湖南华曙高科技股份有限公司2026年度向特定对象发行A股股票之发行保荐书",
-        "noticeDate": "2026-11-06",
-        "displayTime": "2026-11-05 18:16:00:741",
-        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "发行保荐书",
-        "url": "https://data.eastmoney.com/notices/detail/688433/AN202611051831459112.html",
-        "observedAt": "2026-11-06T14:59:27.069Z",
-        "bodyRead": false,
-        "readState": "index_only",
-        "source": "东方财富公开公告索引"
-      },
-      {
-        "id": "AN202611051831459111",
-        "symbol": "688433.SS",
-        "title": "华曙高科:关于2026年度向特定对象发行A股股票申请文件的审核问询函回复及募集说明书等申请文件修订的提示性公告",
-        "noticeDate": "2026-11-06",
-        "displayTime": "2026-11-05 18:16:00:711",
-        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "回复问询函公告",
-        "url": "https://data.eastmoney.com/notices/detail/688433/AN202611051831459111.html",
-        "observedAt": "2026-11-06T14:59:27.069Z",
-        "bodyRead": false,
-        "readState": "index_only",
-        "source": "东方财富公开公告索引"
-      },
-      {
-        "id": "AN202611051831459110",
-        "symbol": "688433.SS",
-        "title": "华曙高科:湖南启元律师事务所关于湖南华曙高科技股份有限公司2026年度向特定对象发行股票的补充法律意见书(二)(修订稿)",
-        "noticeDate": "2026-11-06",
-        "displayTime": "2026-11-05 18:16:00:683",
-        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "法律意见书",
-        "url": "https://data.eastmoney.com/notices/detail/688433/AN202611051831459110.html",
-        "observedAt": "2026-11-06T14:59:27.069Z",
-        "bodyRead": false,
-        "readState": "index_only",
-        "source": "东方财富公开公告索引"
-      },
-      {
-        "id": "AN202611051831459109",
-        "symbol": "688433.SS",
-        "title": "华曙高科:天健会计师事务所关于湖南华曙高科技股份有限公司向特定对象发行股票审核问询函中有关财务事项的说明(修订稿)",
-        "noticeDate": "2026-11-06",
-        "displayTime": "2026-11-05 18:16:00:697",
-        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "其他增发事项公告",
-        "url": "https://data.eastmoney.com/notices/detail/688433/AN202611051831459109.html",
-        "observedAt": "2026-11-06T14:59:27.069Z",
-        "bodyRead": false,
-        "readState": "index_only",
-        "source": "东方财富公开公告索引"
-      },
-      {
-        "id": "AN202611051831459108",
-        "symbol": "688433.SS",
-        "title": "华曙高科:西部证券股份有限公司关于湖南华曙高科技股份有限公司2026年度向特定对象发行A股股票之上市保荐书",
-        "noticeDate": "2026-11-06",
-        "displayTime": "2026-11-05 18:16:00:682",
-        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "上市保荐书",
-        "url": "https://data.eastmoney.com/notices/detail/688433/AN202611051831459108.html",
-        "observedAt": "2026-11-06T14:59:27.069Z",
-        "bodyRead": false,
-        "readState": "index_only",
-        "source": "东方财富公开公告索引"
-      },
-      {
-        "id": "AN202611051831459107",
-        "symbol": "688433.SS",
-        "title": "华曙高科:湖南华曙高科技股份有限公司2026年度向特定对象发行A股股票募集说明书(申报稿)",
-        "noticeDate": "2026-11-06",
-        "displayTime": "2026-11-05 18:16:00:683",
-        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "科创板再融资募集说明书申报稿",
-        "url": "https://data.eastmoney.com/notices/detail/688433/AN202611051831459107.html",
-        "observedAt": "2026-11-06T14:59:27.069Z",
+        "observedAt": "2026-11-09T08:35:05.723Z",
         "bodyRead": false,
         "readState": "index_only",
         "source": "东方财富公开公告索引"
       }
     ],
     "scope": {
-      "from": "2026-10-31",
-      "through": "2026-11-06",
-      "beginDate": "2026-10-31",
-      "endDate": "2026-11-06",
+      "from": "2026-11-03",
+      "through": "2026-11-09",
+      "beginDate": "2026-11-03",
+      "endDate": "2026-11-09",
       "complete": false,
-      "totalHits": 8700,
-      "totalPages": 87,
+      "totalHits": 6149,
+      "totalPages": 62,
       "returnedPages": 20,
       "pageCap": 20,
       "truncated": true,
@@ -181,9 +114,9 @@
     },
     "message": "公告索引未读正文，事件不是价格确认。"
   },
-  "bundleId": "688433.SS:2026-11-06T15:00:23.781Z",
-  "fetchedAt": "2026-11-06T15:00:23.781Z",
-  "asOf": "2026-11-06T15:00:23.781Z",
-  "requestedAt": "2026-11-06T14:59:08.777Z",
-  "codeSourceCommit": "311a5ebc6a68fc209140cfaac6aecb38a98c5653"
+  "bundleId": "688433.SS:2026-11-09T08:36:04.069Z",
+  "fetchedAt": "2026-11-09T08:36:04.069Z",
+  "asOf": "2026-11-09T08:36:04.069Z",
+  "requestedAt": "2026-11-09T08:34:49.064Z",
+  "codeSourceCommit": "f1c3aa75269180d7a67c33d6298f907952d215b6"
 }

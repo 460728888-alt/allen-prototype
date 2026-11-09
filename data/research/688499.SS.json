@@ -9,8 +9,39 @@
     "message": "本次公司资料预算未覆盖，不能视为没有公司资料。"
   },
   "financial": {
-    "state": "unavailable",
-    "reports": [],
+    "state": "partial",
+    "reports": [
+      {
+        "reportDate": "2026-09-30",
+        "noticeDate": "2026-10-31",
+        "updateDate": "2026-10-31",
+        "observedAt": "2026-11-09T08:34:51.060Z",
+        "periodBasis": "year_to_date",
+        "currency": null,
+        "amountUnit": "source_yuan",
+        "unitNote": "来源页面金额单位为元，币种未注明；不默认CNY，不作汇率换算。",
+        "percentageUnit": "percent",
+        "reportName": "2026年 三季报",
+        "industry": null,
+        "metrics": {
+          "revenue": 2892566647.98,
+          "netProfit": 53832071.36,
+          "revenueGrowth": 19.3223675717,
+          "profitGrowth": 13.35,
+          "roe": 2.3,
+          "grossMargin": 24.1844254817,
+          "eps": 0.32,
+          "bps": 14.250454358958,
+          "operatingCashPerShare": 0.512265991918
+        },
+        "source": {
+          "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
+          "fetchedAt": "2026-11-09T08:34:51.060Z",
+          "url": "https://data.eastmoney.com/bbsj/202609/yjbb.html"
+        },
+        "historicalAvailability": "provider_current_revision_not_point_in_time"
+      }
+    ],
     "scope": {
       "periods": [
         "2026-09-30",
@@ -19,34 +50,34 @@
       "complete": false,
       "pageCapPerPeriod": 16
     },
-    "message": "未取得可核验的已披露报告，不代表公司没有财报。"
+    "message": "仅展示已取得且日期可核验的累计报告；当前修订版不能冒充历史当时数据。"
   },
   "announcements": {
     "state": "partial",
     "items": [
       {
-        "id": "AN202611051831454368",
+        "id": "AN202611091831551035",
         "symbol": "688499.SS",
-        "title": "利元亨:广东利元亨智能装备股份有限公司第三届董事会第二十七次会议决议公告",
-        "noticeDate": "2026-11-06",
-        "displayTime": "2026-11-05 16:45:03:346",
+        "title": "利元亨:广东利元亨智能装备股份有限公司2026年11月投资者交流记录表(一)",
+        "noticeDate": "2026-11-09",
+        "displayTime": "2026-11-09 16:00:09:550",
         "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "增发预案 / 董事会决议公告",
-        "url": "https://data.eastmoney.com/notices/detail/688499/AN202611051831454368.html",
-        "observedAt": "2026-11-06T14:59:33.054Z",
+        "category": "调研活动",
+        "url": "https://data.eastmoney.com/notices/detail/688499/AN202611091831551035.html",
+        "observedAt": "2026-11-09T08:34:50.958Z",
         "bodyRead": false,
         "readState": "index_only",
         "source": "东方财富公开公告索引"
       }
     ],
     "scope": {
-      "from": "2026-10-31",
-      "through": "2026-11-06",
-      "beginDate": "2026-10-31",
-      "endDate": "2026-11-06",
+      "from": "2026-11-03",
+      "through": "2026-11-09",
+      "beginDate": "2026-11-03",
+      "endDate": "2026-11-09",
       "complete": false,
-      "totalHits": 8700,
-      "totalPages": 87,
+      "totalHits": 6149,
+      "totalPages": 62,
       "returnedPages": 20,
       "pageCap": 20,
       "truncated": true,
@@ -55,9 +86,9 @@
     },
     "message": "公告索引未读正文，事件不是价格确认。"
   },
-  "bundleId": "688499.SS:2026-11-06T15:00:23.781Z",
-  "fetchedAt": "2026-11-06T15:00:23.781Z",
-  "asOf": "2026-11-06T15:00:23.781Z",
-  "requestedAt": "2026-11-06T14:59:08.777Z",
-  "codeSourceCommit": "311a5ebc6a68fc209140cfaac6aecb38a98c5653"
+  "bundleId": "688499.SS:2026-11-09T08:36:04.069Z",
+  "fetchedAt": "2026-11-09T08:36:04.069Z",
+  "asOf": "2026-11-09T08:36:04.069Z",
+  "requestedAt": "2026-11-09T08:34:49.064Z",
+  "codeSourceCommit": "f1c3aa75269180d7a67c33d6298f907952d215b6"
 }

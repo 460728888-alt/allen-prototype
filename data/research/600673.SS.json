@@ -3,7 +3,7 @@
   "symbol": "600673.SS",
   "company": {
     "state": "ok",
-    "cacheHit": false,
+    "cacheHit": true,
     "symbol": "600673.SS",
     "fetchedAt": "2026-11-06T14:59:28.309Z",
     "observedAt": "2026-11-06T14:59:28.309Z",
@@ -23,11 +23,43 @@
       "fetchedAt": "2026-11-06T14:59:28.309Z",
       "url": "https://emweb.securities.eastmoney.com/PC_HSF10/CompanySurvey/CompanySurveyAjax?code=SH600673"
     },
-    "historicalAvailability": "current_profile_not_point_in_time"
+    "historicalAvailability": "current_profile_not_point_in_time",
+    "message": "复用7日内公开资料，原获取与观察时间保留。"
   },
   "financial": {
-    "state": "unavailable",
-    "reports": [],
+    "state": "partial",
+    "reports": [
+      {
+        "reportDate": "2026-09-30",
+        "noticeDate": "2026-10-23",
+        "updateDate": "2026-10-23",
+        "observedAt": "2026-11-09T08:35:09.314Z",
+        "periodBasis": "year_to_date",
+        "currency": null,
+        "amountUnit": "source_yuan",
+        "unitNote": "来源页面金额单位为元，币种未注明；不默认CNY，不作汇率换算。",
+        "percentageUnit": "percent",
+        "reportName": "2026年 三季报",
+        "industry": null,
+        "metrics": {
+          "revenue": 14672183975.9,
+          "netProfit": 637750272.6,
+          "revenueGrowth": 33.7447228883,
+          "profitGrowth": -29.57,
+          "roe": 6.3,
+          "grossMargin": 21.0357671314,
+          "eps": 0.213,
+          "bps": 3.428628159047,
+          "operatingCashPerShare": 4.108461857697
+        },
+        "source": {
+          "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
+          "fetchedAt": "2026-11-09T08:35:09.314Z",
+          "url": "https://data.eastmoney.com/bbsj/202609/yjbb.html"
+        },
+        "historicalAvailability": "provider_current_revision_not_point_in_time"
+      }
+    ],
     "scope": {
       "periods": [
         "2026-09-30",
@@ -36,34 +68,34 @@
       "complete": false,
       "pageCapPerPeriod": 16
     },
-    "message": "未取得可核验的已披露报告，不代表公司没有财报。"
+    "message": "仅展示已取得且日期可核验的累计报告；当前修订版不能冒充历史当时数据。"
   },
   "announcements": {
     "state": "partial",
     "items": [
       {
-        "id": "AN202611041831416825",
+        "id": "AN202611061831500595",
         "symbol": "600673.SS",
-        "title": "东阳光:东阳光关于控股股东增持公司股份进展暨权益变动触及1%刻度的提示性公告",
-        "noticeDate": "2026-11-05",
-        "displayTime": "2026-11-04 19:07:41:277",
+        "title": "东阳光:东阳光关于控股股东之一致行动人部分股份质押的公告",
+        "noticeDate": "2026-11-07",
+        "displayTime": "2026-11-06 18:06:02:305",
         "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "权益变动报告书 / 股东/实际控制人股份增持",
-        "url": "https://data.eastmoney.com/notices/detail/600673/AN202611041831416825.html",
-        "observedAt": "2026-11-06T14:59:43.513Z",
+        "category": "股份质押、冻结",
+        "url": "https://data.eastmoney.com/notices/detail/600673/AN202611061831500595.html",
+        "observedAt": "2026-11-09T08:34:57.020Z",
         "bodyRead": false,
         "readState": "index_only",
         "source": "东方财富公开公告索引"
       }
     ],
     "scope": {
-      "from": "2026-10-31",
-      "through": "2026-11-06",
-      "beginDate": "2026-10-31",
-      "endDate": "2026-11-06",
+      "from": "2026-11-03",
+      "through": "2026-11-09",
+      "beginDate": "2026-11-03",
+      "endDate": "2026-11-09",
       "complete": false,
-      "totalHits": 8700,
-      "totalPages": 87,
+      "totalHits": 6149,
+      "totalPages": 62,
       "returnedPages": 20,
       "pageCap": 20,
       "truncated": true,
@@ -72,9 +104,9 @@
     },
     "message": "公告索引未读正文，事件不是价格确认。"
   },
-  "bundleId": "600673.SS:2026-11-06T15:00:23.781Z",
-  "fetchedAt": "2026-11-06T15:00:23.781Z",
-  "asOf": "2026-11-06T15:00:23.781Z",
-  "requestedAt": "2026-11-06T14:59:08.777Z",
-  "codeSourceCommit": "311a5ebc6a68fc209140cfaac6aecb38a98c5653"
+  "bundleId": "600673.SS:2026-11-09T08:36:04.069Z",
+  "fetchedAt": "2026-11-09T08:36:04.069Z",
+  "asOf": "2026-11-09T08:36:04.069Z",
+  "requestedAt": "2026-11-09T08:34:49.064Z",
+  "codeSourceCommit": "f1c3aa75269180d7a67c33d6298f907952d215b6"
 }

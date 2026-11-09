@@ -3,7 +3,7 @@
   "symbol": "601919.SS",
   "company": {
     "state": "ok",
-    "cacheHit": false,
+    "cacheHit": true,
     "symbol": "601919.SS",
     "fetchedAt": "2026-11-06T14:59:53.411Z",
     "observedAt": "2026-11-06T14:59:53.411Z",
@@ -23,16 +23,47 @@
       "fetchedAt": "2026-11-06T14:59:53.411Z",
       "url": "https://emweb.securities.eastmoney.com/PC_HSF10/CompanySurvey/CompanySurveyAjax?code=SH601919"
     },
-    "historicalAvailability": "current_profile_not_point_in_time"
+    "historicalAvailability": "current_profile_not_point_in_time",
+    "message": "复用7日内公开资料，原获取与观察时间保留。"
   },
   "financial": {
     "state": "partial",
     "reports": [
       {
+        "reportDate": "2026-09-30",
+        "noticeDate": "2026-10-30",
+        "updateDate": "2026-10-30",
+        "observedAt": "2026-11-09T08:34:57.245Z",
+        "periodBasis": "year_to_date",
+        "currency": null,
+        "amountUnit": "source_yuan",
+        "unitNote": "来源页面金额单位为元，币种未注明；不默认CNY，不作汇率换算。",
+        "percentageUnit": "percent",
+        "reportName": "2026年 三季报",
+        "industry": null,
+        "metrics": {
+          "revenue": 187613535812.15,
+          "netProfit": 30648933177.57,
+          "revenueGrowth": 11.9420869269,
+          "profitGrowth": 13.22,
+          "roe": 12.74,
+          "grossMargin": 23.4306429728,
+          "eps": 2.01,
+          "bps": 15.87572196048,
+          "operatingCashPerShare": 3.137810001325
+        },
+        "source": {
+          "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
+          "fetchedAt": "2026-11-09T08:34:57.245Z",
+          "url": "https://data.eastmoney.com/bbsj/202609/yjbb.html"
+        },
+        "historicalAvailability": "provider_current_revision_not_point_in_time"
+      },
+      {
         "reportDate": "2026-06-30",
         "noticeDate": "2026-08-29",
         "updateDate": "2026-08-29",
-        "observedAt": "2026-11-06T14:59:14.490Z",
+        "observedAt": "2026-11-09T08:34:57.829Z",
         "periodBasis": "year_to_date",
         "currency": null,
         "amountUnit": "source_yuan",
@@ -53,7 +84,7 @@
         },
         "source": {
           "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
-          "fetchedAt": "2026-11-06T14:59:14.490Z",
+          "fetchedAt": "2026-11-09T08:34:57.829Z",
           "url": "https://data.eastmoney.com/bbsj/202606/yjbb.html"
         },
         "historicalAvailability": "provider_current_revision_not_point_in_time"
@@ -73,42 +104,28 @@
     "state": "partial",
     "items": [
       {
-        "id": "AN202611051831458375",
-        "symbol": "601919.SS",
-        "title": "中远海控:H股公告:翌日披露报表",
-        "noticeDate": "2026-11-06",
-        "displayTime": "2026-11-05 18:09:21:740",
-        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "其他",
-        "url": "https://data.eastmoney.com/notices/detail/601919/AN202611051831458375.html",
-        "observedAt": "2026-11-06T14:59:27.069Z",
-        "bodyRead": false,
-        "readState": "index_only",
-        "source": "东方财富公开公告索引"
-      },
-      {
-        "id": "AN202611041831414902",
+        "id": "AN202611061831500223",
         "symbol": "601919.SS",
         "title": "中远海控:中远海控H股公告:翌日披露报表",
-        "noticeDate": "2026-11-05",
-        "displayTime": "2026-11-04 18:11:24:790",
+        "noticeDate": "2026-11-07",
+        "displayTime": "2026-11-06 17:59:36:621",
         "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
         "category": "其他",
-        "url": "https://data.eastmoney.com/notices/detail/601919/AN202611041831414902.html",
-        "observedAt": "2026-11-06T14:59:45.040Z",
+        "url": "https://data.eastmoney.com/notices/detail/601919/AN202611061831500223.html",
+        "observedAt": "2026-11-09T08:34:57.824Z",
         "bodyRead": false,
         "readState": "index_only",
         "source": "东方财富公开公告索引"
       }
     ],
     "scope": {
-      "from": "2026-10-31",
-      "through": "2026-11-06",
-      "beginDate": "2026-10-31",
-      "endDate": "2026-11-06",
+      "from": "2026-11-03",
+      "through": "2026-11-09",
+      "beginDate": "2026-11-03",
+      "endDate": "2026-11-09",
       "complete": false,
-      "totalHits": 8700,
-      "totalPages": 87,
+      "totalHits": 6149,
+      "totalPages": 62,
       "returnedPages": 20,
       "pageCap": 20,
       "truncated": true,
@@ -117,9 +134,9 @@
     },
     "message": "公告索引未读正文，事件不是价格确认。"
   },
-  "bundleId": "601919.SS:2026-11-06T15:00:23.781Z",
-  "fetchedAt": "2026-11-06T15:00:23.781Z",
-  "asOf": "2026-11-06T15:00:23.781Z",
-  "requestedAt": "2026-11-06T14:59:08.777Z",
-  "codeSourceCommit": "311a5ebc6a68fc209140cfaac6aecb38a98c5653"
+  "bundleId": "601919.SS:2026-11-09T08:36:04.069Z",
+  "fetchedAt": "2026-11-09T08:36:04.069Z",
+  "asOf": "2026-11-09T08:36:04.069Z",
+  "requestedAt": "2026-11-09T08:34:49.064Z",
+  "codeSourceCommit": "f1c3aa75269180d7a67c33d6298f907952d215b6"
 }

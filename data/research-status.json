@@ -1,42 +1,42 @@
 {
   "schema": 1,
   "state": "partial",
-  "generatedAt": "2026-11-06T15:00:23.781Z",
-  "attemptedAt": "2026-11-06T14:59:08.777Z",
-  "fetchedAt": "2026-11-06T15:00:23.781Z",
-  "asOf": "2026-11-06T15:00:23.781Z",
-  "priceDataThrough": "2026-11-06",
-  "codeSourceCommit": "311a5ebc6a68fc209140cfaac6aecb38a98c5653",
+  "generatedAt": "2026-11-09T08:36:04.069Z",
+  "attemptedAt": "2026-11-09T08:34:49.064Z",
+  "fetchedAt": "2026-11-09T08:36:04.069Z",
+  "asOf": "2026-11-09T08:36:04.069Z",
+  "priceDataThrough": "2026-11-09",
+  "codeSourceCommit": "f1c3aa75269180d7a67c33d6298f907952d215b6",
   "coverage": {
     "poolSize": 1200,
     "company": {
-      "requested": 367,
-      "returned": 361,
-      "requestFailures": 10,
-      "skipped": 159,
-      "notRequested": 159,
-      "ok": 357,
-      "cached": 674,
-      "failed": 10,
+      "requested": 199,
+      "returned": 173,
+      "requestFailures": 28,
+      "skipped": 93,
+      "notRequested": 93,
+      "ok": 171,
+      "cached": 908,
+      "failed": 28,
       "stale": 0,
       "insufficient": 0,
-      "usable": 1031,
+      "usable": 1079,
       "priority": "original_public_sample_then_symbol_not_recommendation"
     },
     "financial": {
-      "withReports": 888,
-      "withoutReports": 312,
-      "requestedPages": 17,
-      "returnedPages": 16,
+      "withReports": 1200,
+      "withoutReports": 0,
+      "requestedPages": 28,
+      "returnedPages": 28,
       "pageCapPerPeriod": 16,
       "periods": [
         {
           "period": "2026-09-30",
-          "requestedPages": 1,
-          "returnedPages": 0,
-          "totalPages": null,
+          "requestedPages": 12,
+          "returnedPages": 12,
+          "totalPages": 12,
           "truncated": false,
-          "complete": false
+          "complete": true
         },
         {
           "period": "2026-06-30",
@@ -52,18 +52,18 @@
       "complete": false
     },
     "announcements": {
-      "withItems": 350,
-      "withoutItems": 850,
-      "beginDate": "2026-10-31",
-      "endDate": "2026-11-06",
+      "withItems": 302,
+      "withoutItems": 898,
+      "beginDate": "2026-11-03",
+      "endDate": "2026-11-09",
       "requestedPages": 20,
       "returnedPages": 20,
-      "totalHits": 8700,
-      "totalPages": 87,
+      "totalHits": 6149,
+      "totalPages": 62,
       "pageCap": 20,
       "truncated": true,
       "rejectedItems": 0,
-      "identityMismatches": 0,
+      "identityMismatches": 1,
       "complete": false
     }
   },
@@ -75,14 +75,26 @@
   },
   "failures": [
     {
-      "symbol": "001399.SZ",
+      "symbol": "000628.SZ",
       "source": "company",
-      "code": "request_error",
-      "message": "公司资料返回证券身份不一致"
+      "code": "timeout",
+      "message": "请求超时"
     },
     {
-      "source": "financial",
-      "period": "2026-09-30",
+      "symbol": "300069.SZ",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "300951.SZ",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "301068.SZ",
+      "source": "company",
       "code": "timeout",
       "message": "请求超时"
     },
@@ -99,13 +111,79 @@
       "message": "公司资料返回证券身份不一致"
     },
     {
-      "symbol": "301689.SZ",
+      "symbol": "301127.SZ",
       "source": "company",
-      "code": "request_error",
-      "message": "公司资料返回证券身份不一致"
+      "code": "timeout",
+      "message": "请求超时"
     },
     {
-      "symbol": "688071.SS",
+      "symbol": "301363.SZ",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "301630.SZ",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "301689.SZ",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "600023.SS",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "600903.SS",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "603103.SS",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "603730.SS",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "603939.SS",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "605133.SS",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "605333.SS",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "605598.SS",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "688011.SS",
       "source": "company",
       "code": "timeout",
       "message": "请求超时"
@@ -117,25 +195,49 @@
       "message": "请求超时"
     },
     {
-      "symbol": "688063.SS",
-      "source": "company",
-      "code": "timeout",
-      "message": "请求超时"
-    },
-    {
-      "symbol": "688073.SS",
-      "source": "company",
-      "code": "timeout",
-      "message": "请求超时"
-    },
-    {
-      "symbol": "688082.SS",
-      "source": "company",
-      "code": "timeout",
-      "message": "请求超时"
-    },
-    {
       "symbol": "688090.SS",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "688102.SS",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "688172.SS",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "688322.SS",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "688331.SS",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "688169.SS",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "688323.SS",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "688343.SS",
       "source": "company",
       "code": "timeout",
       "message": "请求超时"
@@ -144,8 +246,8 @@
   "message": "部分研究来源未完整覆盖，未取得的内容保持未知。",
   "preservedPrevious": false,
   "storedCounts": {
-    "companies": 1031,
-    "financial": 888,
-    "announcementItems": 669
+    "companies": 1079,
+    "financial": 1200,
+    "announcementItems": 667
   }
 }
