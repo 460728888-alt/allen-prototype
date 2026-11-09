@@ -3,7 +3,7 @@
   "symbol": "603893.SS",
   "company": {
     "state": "ok",
-    "cacheHit": false,
+    "cacheHit": true,
     "symbol": "603893.SS",
     "fetchedAt": "2026-11-06T15:00:16.510Z",
     "observedAt": "2026-11-06T15:00:16.510Z",
@@ -23,11 +23,43 @@
       "fetchedAt": "2026-11-06T15:00:16.510Z",
       "url": "https://emweb.securities.eastmoney.com/PC_HSF10/CompanySurvey/CompanySurveyAjax?code=SH603893"
     },
-    "historicalAvailability": "current_profile_not_point_in_time"
+    "historicalAvailability": "current_profile_not_point_in_time",
+    "message": "复用7日内公开资料，原获取与观察时间保留。"
   },
   "financial": {
-    "state": "unavailable",
-    "reports": [],
+    "state": "partial",
+    "reports": [
+      {
+        "reportDate": "2026-09-30",
+        "noticeDate": "2026-10-27",
+        "updateDate": "2026-10-27",
+        "observedAt": "2026-11-09T17:27:29.987Z",
+        "periodBasis": "year_to_date",
+        "currency": null,
+        "amountUnit": "source_yuan",
+        "unitNote": "来源页面金额单位为元，币种未注明；不默认CNY，不作汇率换算。",
+        "percentageUnit": "percent",
+        "reportName": "2026年 三季报",
+        "industry": null,
+        "metrics": {
+          "revenue": 4449410045.39,
+          "netProfit": 1332266808.07,
+          "revenueGrowth": 41.6386406075,
+          "profitGrowth": 70.9,
+          "roe": 27.35,
+          "grossMargin": 46.3651548674,
+          "eps": 3.16,
+          "bps": 12.916151178014,
+          "operatingCashPerShare": 2.083837944363
+        },
+        "source": {
+          "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
+          "fetchedAt": "2026-11-09T17:27:29.987Z",
+          "url": "https://data.eastmoney.com/bbsj/202609/yjbb.html"
+        },
+        "historicalAvailability": "provider_current_revision_not_point_in_time"
+      }
+    ],
     "scope": {
       "periods": [
         "2026-09-30",
@@ -36,19 +68,19 @@
       "complete": false,
       "pageCapPerPeriod": 16
     },
-    "message": "未取得可核验的已披露报告，不代表公司没有财报。"
+    "message": "仅展示已取得且日期可核验的累计报告；当前修订版不能冒充历史当时数据。"
   },
   "announcements": {
     "state": "partial",
     "items": [],
     "scope": {
-      "from": "2026-10-31",
-      "through": "2026-11-06",
-      "beginDate": "2026-10-31",
-      "endDate": "2026-11-06",
+      "from": "2026-11-04",
+      "through": "2026-11-10",
+      "beginDate": "2026-11-04",
+      "endDate": "2026-11-10",
       "complete": false,
-      "totalHits": 8700,
-      "totalPages": 87,
+      "totalHits": 6001,
+      "totalPages": 61,
       "returnedPages": 20,
       "pageCap": 20,
       "truncated": true,
@@ -57,9 +89,9 @@
     },
     "message": "本窗口未取得匹配公告索引；不等于没有公告或风险。"
   },
-  "bundleId": "603893.SS:2026-11-06T15:00:23.781Z",
-  "fetchedAt": "2026-11-06T15:00:23.781Z",
-  "asOf": "2026-11-06T15:00:23.781Z",
-  "requestedAt": "2026-11-06T14:59:08.777Z",
-  "codeSourceCommit": "311a5ebc6a68fc209140cfaac6aecb38a98c5653"
+  "bundleId": "603893.SS:2026-11-09T17:27:45.133Z",
+  "fetchedAt": "2026-11-09T17:27:45.133Z",
+  "asOf": "2026-11-09T17:27:45.133Z",
+  "requestedAt": "2026-11-09T17:27:12.658Z",
+  "codeSourceCommit": "4cb1a28e6ac1959235a6553d577a1405e240cff9"
 }

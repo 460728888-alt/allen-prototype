@@ -3,7 +3,7 @@
   "symbol": "600711.SS",
   "company": {
     "state": "ok",
-    "cacheHit": false,
+    "cacheHit": true,
     "symbol": "600711.SS",
     "fetchedAt": "2026-11-06T14:59:29.489Z",
     "observedAt": "2026-11-06T14:59:29.489Z",
@@ -23,11 +23,43 @@
       "fetchedAt": "2026-11-06T14:59:29.489Z",
       "url": "https://emweb.securities.eastmoney.com/PC_HSF10/CompanySurvey/CompanySurveyAjax?code=SH600711"
     },
-    "historicalAvailability": "current_profile_not_point_in_time"
+    "historicalAvailability": "current_profile_not_point_in_time",
+    "message": "复用7日内公开资料，原获取与观察时间保留。"
   },
   "financial": {
-    "state": "unavailable",
-    "reports": [],
+    "state": "partial",
+    "reports": [
+      {
+        "reportDate": "2026-09-30",
+        "noticeDate": "2026-10-31",
+        "updateDate": "2026-10-31",
+        "observedAt": "2026-11-09T17:27:14.917Z",
+        "periodBasis": "year_to_date",
+        "currency": null,
+        "amountUnit": "source_yuan",
+        "unitNote": "来源页面金额单位为元，币种未注明；不默认CNY，不作汇率换算。",
+        "percentageUnit": "percent",
+        "reportName": "2026年 三季报",
+        "industry": null,
+        "metrics": {
+          "revenue": 29936627014.54,
+          "netProfit": 2278283639.44,
+          "revenueGrowth": 37.8496279961,
+          "profitGrowth": 33.89,
+          "roe": 13.132,
+          "grossMargin": 20.9683763891,
+          "eps": 0.751,
+          "bps": 5.837816407618,
+          "operatingCashPerShare": 0.859885688672
+        },
+        "source": {
+          "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
+          "fetchedAt": "2026-11-09T17:27:14.917Z",
+          "url": "https://data.eastmoney.com/bbsj/202609/yjbb.html"
+        },
+        "historicalAvailability": "provider_current_revision_not_point_in_time"
+      }
+    ],
     "scope": {
       "periods": [
         "2026-09-30",
@@ -36,30 +68,73 @@
       "complete": false,
       "pageCapPerPeriod": 16
     },
-    "message": "未取得可核验的已披露报告，不代表公司没有财报。"
+    "message": "仅展示已取得且日期可核验的累计报告；当前修订版不能冒充历史当时数据。"
   },
   "announcements": {
     "state": "partial",
-    "items": [],
+    "items": [
+      {
+        "id": "AN202611091831553959",
+        "symbol": "600711.SS",
+        "title": "盛屯矿业:盛屯矿业集团股份有限公司2026年第四次临时股东会资料",
+        "noticeDate": "2026-11-10",
+        "displayTime": "2026-11-09 17:05:34:327",
+        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
+        "category": "股东大会资料",
+        "url": "https://data.eastmoney.com/notices/detail/600711/AN202611091831553959.html",
+        "observedAt": "2026-11-09T17:27:23.414Z",
+        "bodyRead": false,
+        "readState": "index_only",
+        "source": "东方财富公开公告索引"
+      },
+      {
+        "id": "AN202611091831553958",
+        "symbol": "600711.SS",
+        "title": "盛屯矿业:盛屯矿业集团股份有限公司关于控股股东部分股份质押的公告",
+        "noticeDate": "2026-11-10",
+        "displayTime": "2026-11-09 17:05:34:492",
+        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
+        "category": "股份质押、冻结",
+        "url": "https://data.eastmoney.com/notices/detail/600711/AN202611091831553958.html",
+        "observedAt": "2026-11-09T17:27:23.414Z",
+        "bodyRead": false,
+        "readState": "index_only",
+        "source": "东方财富公开公告索引"
+      },
+      {
+        "id": "AN202611091831553957",
+        "symbol": "600711.SS",
+        "title": "盛屯矿业:盛屯矿业集团股份有限公司关于召开2026年第四次临时股东会提示性公告",
+        "noticeDate": "2026-11-10",
+        "displayTime": "2026-11-09 17:05:34:489",
+        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
+        "category": "召开股东大会提示性公告",
+        "url": "https://data.eastmoney.com/notices/detail/600711/AN202611091831553957.html",
+        "observedAt": "2026-11-09T17:27:23.414Z",
+        "bodyRead": false,
+        "readState": "index_only",
+        "source": "东方财富公开公告索引"
+      }
+    ],
     "scope": {
-      "from": "2026-10-31",
-      "through": "2026-11-06",
-      "beginDate": "2026-10-31",
-      "endDate": "2026-11-06",
+      "from": "2026-11-04",
+      "through": "2026-11-10",
+      "beginDate": "2026-11-04",
+      "endDate": "2026-11-10",
       "complete": false,
-      "totalHits": 8700,
-      "totalPages": 87,
+      "totalHits": 6001,
+      "totalPages": 61,
       "returnedPages": 20,
       "pageCap": 20,
       "truncated": true,
       "noticeTimePrecision": "day",
       "displayTimeTimezoneVerified": false
     },
-    "message": "本窗口未取得匹配公告索引；不等于没有公告或风险。"
+    "message": "公告索引未读正文，事件不是价格确认。"
   },
-  "bundleId": "600711.SS:2026-11-06T15:00:23.781Z",
-  "fetchedAt": "2026-11-06T15:00:23.781Z",
-  "asOf": "2026-11-06T15:00:23.781Z",
-  "requestedAt": "2026-11-06T14:59:08.777Z",
-  "codeSourceCommit": "311a5ebc6a68fc209140cfaac6aecb38a98c5653"
+  "bundleId": "600711.SS:2026-11-09T17:27:45.133Z",
+  "fetchedAt": "2026-11-09T17:27:45.133Z",
+  "asOf": "2026-11-09T17:27:45.133Z",
+  "requestedAt": "2026-11-09T17:27:12.658Z",
+  "codeSourceCommit": "4cb1a28e6ac1959235a6553d577a1405e240cff9"
 }

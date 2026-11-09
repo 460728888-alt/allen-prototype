@@ -3,7 +3,7 @@
   "symbol": "603236.SS",
   "company": {
     "state": "ok",
-    "cacheHit": false,
+    "cacheHit": true,
     "symbol": "603236.SS",
     "fetchedAt": "2026-11-06T15:00:03.070Z",
     "observedAt": "2026-11-06T15:00:03.070Z",
@@ -23,11 +23,43 @@
       "fetchedAt": "2026-11-06T15:00:03.070Z",
       "url": "https://emweb.securities.eastmoney.com/PC_HSF10/CompanySurvey/CompanySurveyAjax?code=SH603236"
     },
-    "historicalAvailability": "current_profile_not_point_in_time"
+    "historicalAvailability": "current_profile_not_point_in_time",
+    "message": "复用7日内公开资料，原获取与观察时间保留。"
   },
   "financial": {
-    "state": "unavailable",
-    "reports": [],
+    "state": "partial",
+    "reports": [
+      {
+        "reportDate": "2026-09-30",
+        "noticeDate": "2026-10-20",
+        "updateDate": "2026-10-20",
+        "observedAt": "2026-11-09T17:27:35.045Z",
+        "periodBasis": "year_to_date",
+        "currency": null,
+        "amountUnit": "source_yuan",
+        "unitNote": "来源页面金额单位为元，币种未注明；不默认CNY，不作汇率换算。",
+        "percentageUnit": "percent",
+        "reportName": "2026年 三季报",
+        "industry": null,
+        "metrics": {
+          "revenue": 23798546752.28,
+          "netProfit": 1211807150.12,
+          "revenueGrowth": 33.1253023572,
+          "profitGrowth": 65.21,
+          "roe": 16.39,
+          "grossMargin": 20.7233915172,
+          "eps": 3,
+          "bps": 19.467025524194,
+          "operatingCashPerShare": -4.584744515324
+        },
+        "source": {
+          "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
+          "fetchedAt": "2026-11-09T17:27:35.045Z",
+          "url": "https://data.eastmoney.com/bbsj/202609/yjbb.html"
+        },
+        "historicalAvailability": "provider_current_revision_not_point_in_time"
+      }
+    ],
     "scope": {
       "periods": [
         "2026-09-30",
@@ -36,34 +68,48 @@
       "complete": false,
       "pageCapPerPeriod": 16
     },
-    "message": "未取得可核验的已披露报告，不代表公司没有财报。"
+    "message": "仅展示已取得且日期可核验的累计报告；当前修订版不能冒充历史当时数据。"
   },
   "announcements": {
     "state": "partial",
     "items": [
       {
-        "id": "AN202611041831415490",
+        "id": "AN202611091831555209",
         "symbol": "603236.SS",
-        "title": "移远通信:股票交易异常波动公告",
-        "noticeDate": "2026-11-05",
-        "displayTime": "2026-11-04 18:27:36:376",
+        "title": "移远通信:2026年第一次临时股东会决议公告",
+        "noticeDate": "2026-11-10",
+        "displayTime": "2026-11-09 17:19:40:762",
         "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "股票交易异常波动",
-        "url": "https://data.eastmoney.com/notices/detail/603236/AN202611041831415490.html",
-        "observedAt": "2026-11-06T14:59:43.513Z",
+        "category": "股东大会决议公告",
+        "url": "https://data.eastmoney.com/notices/detail/603236/AN202611091831555209.html",
+        "observedAt": "2026-11-09T17:27:22.263Z",
+        "bodyRead": false,
+        "readState": "index_only",
+        "source": "东方财富公开公告索引"
+      },
+      {
+        "id": "AN202611091831555207",
+        "symbol": "603236.SS",
+        "title": "移远通信:上海市锦天城律师事务所关于上海移远通信技术股份有限公司2026年第一次临时股东会的法律意见书",
+        "noticeDate": "2026-11-10",
+        "displayTime": "2026-11-09 17:19:40:630",
+        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
+        "category": "法律意见书",
+        "url": "https://data.eastmoney.com/notices/detail/603236/AN202611091831555207.html",
+        "observedAt": "2026-11-09T17:27:22.263Z",
         "bodyRead": false,
         "readState": "index_only",
         "source": "东方财富公开公告索引"
       }
     ],
     "scope": {
-      "from": "2026-10-31",
-      "through": "2026-11-06",
-      "beginDate": "2026-10-31",
-      "endDate": "2026-11-06",
+      "from": "2026-11-04",
+      "through": "2026-11-10",
+      "beginDate": "2026-11-04",
+      "endDate": "2026-11-10",
       "complete": false,
-      "totalHits": 8700,
-      "totalPages": 87,
+      "totalHits": 6001,
+      "totalPages": 61,
       "returnedPages": 20,
       "pageCap": 20,
       "truncated": true,
@@ -72,9 +118,9 @@
     },
     "message": "公告索引未读正文，事件不是价格确认。"
   },
-  "bundleId": "603236.SS:2026-11-06T15:00:23.781Z",
-  "fetchedAt": "2026-11-06T15:00:23.781Z",
-  "asOf": "2026-11-06T15:00:23.781Z",
-  "requestedAt": "2026-11-06T14:59:08.777Z",
-  "codeSourceCommit": "311a5ebc6a68fc209140cfaac6aecb38a98c5653"
+  "bundleId": "603236.SS:2026-11-09T17:27:45.133Z",
+  "fetchedAt": "2026-11-09T17:27:45.133Z",
+  "asOf": "2026-11-09T17:27:45.133Z",
+  "requestedAt": "2026-11-09T17:27:12.658Z",
+  "codeSourceCommit": "4cb1a28e6ac1959235a6553d577a1405e240cff9"
 }

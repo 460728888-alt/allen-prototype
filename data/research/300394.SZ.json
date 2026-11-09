@@ -27,8 +27,39 @@
     "message": "复用7日内公开资料，原获取与观察时间保留。"
   },
   "financial": {
-    "state": "unavailable",
-    "reports": [],
+    "state": "partial",
+    "reports": [
+      {
+        "reportDate": "2026-09-30",
+        "noticeDate": "2026-10-29",
+        "updateDate": "2026-10-29",
+        "observedAt": "2026-11-09T17:27:24.791Z",
+        "periodBasis": "year_to_date",
+        "currency": null,
+        "amountUnit": "source_yuan",
+        "unitNote": "来源页面金额单位为元，币种未注明；不默认CNY，不作汇率换算。",
+        "percentageUnit": "percent",
+        "reportName": "2026年 三季报",
+        "industry": null,
+        "metrics": {
+          "revenue": 4751099905,
+          "netProfit": 2083459571.46,
+          "revenueGrowth": 21.250922103,
+          "profitGrowth": 42.18,
+          "roe": 32.51,
+          "grossMargin": 62.5614236312,
+          "eps": 1.9119,
+          "bps": 6.031946356078,
+          "operatingCashPerShare": 1.340133565868
+        },
+        "source": {
+          "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
+          "fetchedAt": "2026-11-09T17:27:24.791Z",
+          "url": "https://data.eastmoney.com/bbsj/202609/yjbb.html"
+        },
+        "historicalAvailability": "provider_current_revision_not_point_in_time"
+      }
+    ],
     "scope": {
       "periods": [
         "2026-09-30",
@@ -37,48 +68,76 @@
       "complete": false,
       "pageCapPerPeriod": 16
     },
-    "message": "未取得可核验的已披露报告，不代表公司没有财报。"
+    "message": "仅展示已取得且日期可核验的累计报告；当前修订版不能冒充历史当时数据。"
   },
   "announcements": {
     "state": "partial",
     "items": [
       {
-        "id": "AN202611061831485273",
+        "id": "AN202611091831558850",
         "symbol": "300394.SZ",
-        "title": "天孚通信:关于公司股份回购事项的公告",
-        "noticeDate": "2026-11-06",
-        "displayTime": "2026-11-06 11:41:04:179",
+        "title": "天孚通信:关于回购公司股份用于注销并减少注册资本暨通知债权人的公告",
+        "noticeDate": "2026-11-09",
+        "displayTime": "2026-11-09 19:29:10:707",
         "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "回购进展情况",
-        "url": "https://data.eastmoney.com/notices/detail/300394/AN202611061831485273.html",
-        "observedAt": "2026-11-06T14:59:21.954Z",
+        "category": "公司注册资本变更 / 通知债权人公告",
+        "url": "https://data.eastmoney.com/notices/detail/300394/AN202611091831558850.html",
+        "observedAt": "2026-11-09T17:27:29.522Z",
         "bodyRead": false,
         "readState": "index_only",
         "source": "东方财富公开公告索引"
       },
       {
-        "id": "AN202611051831458149",
+        "id": "AN202611091831558847",
         "symbol": "300394.SZ",
-        "title": "天孚通信:关于回购股份事项前十名股东和前十名无限售条件股东情况的公告",
-        "noticeDate": "2026-11-05",
-        "displayTime": "2026-11-05 17:59:06:333",
+        "title": "天孚通信:2026年第四次临时股东会决议公告",
+        "noticeDate": "2026-11-09",
+        "displayTime": "2026-11-09 19:29:10:708",
         "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "回购进展情况",
-        "url": "https://data.eastmoney.com/notices/detail/300394/AN202611051831458149.html",
-        "observedAt": "2026-11-06T14:59:38.941Z",
+        "category": "股东大会决议公告",
+        "url": "https://data.eastmoney.com/notices/detail/300394/AN202611091831558847.html",
+        "observedAt": "2026-11-09T17:27:29.522Z",
+        "bodyRead": false,
+        "readState": "index_only",
+        "source": "东方财富公开公告索引"
+      },
+      {
+        "id": "AN202611091831558837",
+        "symbol": "300394.SZ",
+        "title": "天孚通信:江苏世纪同仁律师事务所关于公司2026年第四次临时股东会的法律意见书",
+        "noticeDate": "2026-11-09",
+        "displayTime": "2026-11-09 19:29:10:707",
+        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
+        "category": "法律意见书",
+        "url": "https://data.eastmoney.com/notices/detail/300394/AN202611091831558837.html",
+        "observedAt": "2026-11-09T17:27:29.522Z",
+        "bodyRead": false,
+        "readState": "index_only",
+        "source": "东方财富公开公告索引"
+      },
+      {
+        "id": "AN202611091831558834",
+        "symbol": "300394.SZ",
+        "title": "天孚通信:回购股份报告书",
+        "noticeDate": "2026-11-09",
+        "displayTime": "2026-11-09 19:29:10:784",
+        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
+        "category": "回购报告书",
+        "url": "https://data.eastmoney.com/notices/detail/300394/AN202611091831558834.html",
+        "observedAt": "2026-11-09T17:27:29.522Z",
         "bodyRead": false,
         "readState": "index_only",
         "source": "东方财富公开公告索引"
       }
     ],
     "scope": {
-      "from": "2026-10-31",
-      "through": "2026-11-06",
-      "beginDate": "2026-10-31",
-      "endDate": "2026-11-06",
+      "from": "2026-11-04",
+      "through": "2026-11-10",
+      "beginDate": "2026-11-04",
+      "endDate": "2026-11-10",
       "complete": false,
-      "totalHits": 8700,
-      "totalPages": 87,
+      "totalHits": 6001,
+      "totalPages": 61,
       "returnedPages": 20,
       "pageCap": 20,
       "truncated": true,
@@ -87,9 +146,9 @@
     },
     "message": "公告索引未读正文，事件不是价格确认。"
   },
-  "bundleId": "300394.SZ:2026-11-06T15:00:23.781Z",
-  "fetchedAt": "2026-11-06T15:00:23.781Z",
-  "asOf": "2026-11-06T15:00:23.781Z",
-  "requestedAt": "2026-11-06T14:59:08.777Z",
-  "codeSourceCommit": "311a5ebc6a68fc209140cfaac6aecb38a98c5653"
+  "bundleId": "300394.SZ:2026-11-09T17:27:45.133Z",
+  "fetchedAt": "2026-11-09T17:27:45.133Z",
+  "asOf": "2026-11-09T17:27:45.133Z",
+  "requestedAt": "2026-11-09T17:27:12.658Z",
+  "codeSourceCommit": "4cb1a28e6ac1959235a6553d577a1405e240cff9"
 }

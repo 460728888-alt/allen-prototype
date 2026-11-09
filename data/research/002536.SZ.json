@@ -27,8 +27,39 @@
     "message": "复用7日内公开资料，原获取与观察时间保留。"
   },
   "financial": {
-    "state": "unavailable",
-    "reports": [],
+    "state": "partial",
+    "reports": [
+      {
+        "reportDate": "2026-09-30",
+        "noticeDate": "2026-10-29",
+        "updateDate": "2026-10-29",
+        "observedAt": "2026-11-09T17:27:24.791Z",
+        "periodBasis": "year_to_date",
+        "currency": null,
+        "amountUnit": "source_yuan",
+        "unitNote": "来源页面金额单位为元，币种未注明；不默认CNY，不作汇率换算。",
+        "percentageUnit": "percent",
+        "reportName": "2026年 三季报",
+        "industry": null,
+        "metrics": {
+          "revenue": 3368636118.03,
+          "netProfit": 106556691.88,
+          "revenueGrowth": 4.0509296861,
+          "profitGrowth": -62.84,
+          "roe": 3.09,
+          "grossMargin": 19.8684971597,
+          "eps": 0.19,
+          "bps": 5.813884477797,
+          "operatingCashPerShare": 0.650428832118
+        },
+        "source": {
+          "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
+          "fetchedAt": "2026-11-09T17:27:24.791Z",
+          "url": "https://data.eastmoney.com/bbsj/202609/yjbb.html"
+        },
+        "historicalAvailability": "provider_current_revision_not_point_in_time"
+      }
+    ],
     "scope": {
       "periods": [
         "2026-09-30",
@@ -37,34 +68,62 @@
       "complete": false,
       "pageCapPerPeriod": 16
     },
-    "message": "未取得可核验的已披露报告，不代表公司没有财报。"
+    "message": "仅展示已取得且日期可核验的累计报告；当前修订版不能冒充历史当时数据。"
   },
   "announcements": {
     "state": "partial",
     "items": [
       {
-        "id": "AN202611051831455060",
+        "id": "AN202611061831502731",
         "symbol": "002536.SZ",
-        "title": "飞龙股份:002536飞龙股份投资者关系管理信息20261105",
-        "noticeDate": "2026-11-05",
-        "displayTime": "2026-11-05 16:52:51:672",
+        "title": "飞龙股份:关于调整全资子公司增资扩股方案的公告",
+        "noticeDate": "2026-11-07",
+        "displayTime": "2026-11-06 19:35:10:725",
         "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "调研活动",
-        "url": "https://data.eastmoney.com/notices/detail/002536/AN202611051831455060.html",
-        "observedAt": "2026-11-06T14:59:40.989Z",
+        "category": "增资扩股",
+        "url": "https://data.eastmoney.com/notices/detail/002536/AN202611061831502731.html",
+        "observedAt": "2026-11-09T17:27:40.911Z",
+        "bodyRead": false,
+        "readState": "index_only",
+        "source": "东方财富公开公告索引"
+      },
+      {
+        "id": "AN202611061831502730",
+        "symbol": "002536.SZ",
+        "title": "飞龙股份:安徽航逸科技有限公司拟增资涉及其股东全部权益价值资产评估报告",
+        "noticeDate": "2026-11-07",
+        "displayTime": "2026-11-06 19:35:10:798",
+        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
+        "category": "其他",
+        "url": "https://data.eastmoney.com/notices/detail/002536/AN202611061831502730.html",
+        "observedAt": "2026-11-09T17:27:40.911Z",
+        "bodyRead": false,
+        "readState": "index_only",
+        "source": "东方财富公开公告索引"
+      },
+      {
+        "id": "AN202611061831502729",
+        "symbol": "002536.SZ",
+        "title": "飞龙股份:第九届董事会第五次(临时)会议决议公告",
+        "noticeDate": "2026-11-07",
+        "displayTime": "2026-11-06 19:35:10:449",
+        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
+        "category": "董事会决议公告",
+        "url": "https://data.eastmoney.com/notices/detail/002536/AN202611061831502729.html",
+        "observedAt": "2026-11-09T17:27:40.911Z",
         "bodyRead": false,
         "readState": "index_only",
         "source": "东方财富公开公告索引"
       }
     ],
     "scope": {
-      "from": "2026-10-31",
-      "through": "2026-11-06",
-      "beginDate": "2026-10-31",
-      "endDate": "2026-11-06",
+      "from": "2026-11-04",
+      "through": "2026-11-10",
+      "beginDate": "2026-11-04",
+      "endDate": "2026-11-10",
       "complete": false,
-      "totalHits": 8700,
-      "totalPages": 87,
+      "totalHits": 6001,
+      "totalPages": 61,
       "returnedPages": 20,
       "pageCap": 20,
       "truncated": true,
@@ -73,9 +132,9 @@
     },
     "message": "公告索引未读正文，事件不是价格确认。"
   },
-  "bundleId": "002536.SZ:2026-11-06T15:00:23.781Z",
-  "fetchedAt": "2026-11-06T15:00:23.781Z",
-  "asOf": "2026-11-06T15:00:23.781Z",
-  "requestedAt": "2026-11-06T14:59:08.777Z",
-  "codeSourceCommit": "311a5ebc6a68fc209140cfaac6aecb38a98c5653"
+  "bundleId": "002536.SZ:2026-11-09T17:27:45.133Z",
+  "fetchedAt": "2026-11-09T17:27:45.133Z",
+  "asOf": "2026-11-09T17:27:45.133Z",
+  "requestedAt": "2026-11-09T17:27:12.658Z",
+  "codeSourceCommit": "4cb1a28e6ac1959235a6553d577a1405e240cff9"
 }

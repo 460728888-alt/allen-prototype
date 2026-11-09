@@ -3,7 +3,7 @@
   "symbol": "603618.SS",
   "company": {
     "state": "ok",
-    "cacheHit": false,
+    "cacheHit": true,
     "symbol": "603618.SS",
     "fetchedAt": "2026-11-06T15:00:10.130Z",
     "observedAt": "2026-11-06T15:00:10.130Z",
@@ -23,16 +23,47 @@
       "fetchedAt": "2026-11-06T15:00:10.130Z",
       "url": "https://emweb.securities.eastmoney.com/PC_HSF10/CompanySurvey/CompanySurveyAjax?code=SH603618"
     },
-    "historicalAvailability": "current_profile_not_point_in_time"
+    "historicalAvailability": "current_profile_not_point_in_time",
+    "message": "复用7日内公开资料，原获取与观察时间保留。"
   },
   "financial": {
     "state": "partial",
     "reports": [
       {
+        "reportDate": "2026-09-30",
+        "noticeDate": "2026-10-29",
+        "updateDate": "2026-10-29",
+        "observedAt": "2026-11-09T17:27:23.232Z",
+        "periodBasis": "year_to_date",
+        "currency": null,
+        "amountUnit": "source_yuan",
+        "unitNote": "来源页面金额单位为元，币种未注明；不默认CNY，不作汇率换算。",
+        "percentageUnit": "percent",
+        "reportName": "2026年 三季报",
+        "industry": null,
+        "metrics": {
+          "revenue": 8422181186.98,
+          "netProfit": 674229875.22,
+          "revenueGrowth": 22.2924537202,
+          "profitGrowth": 407.3600449436,
+          "roe": 22.1,
+          "grossMargin": 18.3058993738,
+          "eps": 0.98,
+          "bps": 4.81714315587,
+          "operatingCashPerShare": -0.239614010411
+        },
+        "source": {
+          "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
+          "fetchedAt": "2026-11-09T17:27:23.232Z",
+          "url": "https://data.eastmoney.com/bbsj/202609/yjbb.html"
+        },
+        "historicalAvailability": "provider_current_revision_not_point_in_time"
+      },
+      {
         "reportDate": "2026-06-30",
         "noticeDate": "2026-08-26",
         "updateDate": "2026-08-26",
-        "observedAt": "2026-11-06T14:59:45.899Z",
+        "observedAt": "2026-11-09T17:27:33.364Z",
         "periodBasis": "year_to_date",
         "currency": null,
         "amountUnit": "source_yuan",
@@ -53,7 +84,7 @@
         },
         "source": {
           "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
-          "fetchedAt": "2026-11-06T14:59:45.899Z",
+          "fetchedAt": "2026-11-09T17:27:33.364Z",
           "url": "https://data.eastmoney.com/bbsj/202606/yjbb.html"
         },
         "historicalAvailability": "provider_current_revision_not_point_in_time"
@@ -71,139 +102,26 @@
   },
   "announcements": {
     "state": "partial",
-    "items": [
-      {
-        "id": "AN202611051831461194",
-        "symbol": "603618.SS",
-        "title": "杭电股份:关于2026年度向特定对象发行A股股票申请获得上海证券交易所受理的公告",
-        "noticeDate": "2026-11-06",
-        "displayTime": "2026-11-05 19:32:43:279",
-        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "其他增发事项公告",
-        "url": "https://data.eastmoney.com/notices/detail/603618/AN202611051831461194.html",
-        "observedAt": "2026-11-06T14:59:24.280Z",
-        "bodyRead": false,
-        "readState": "index_only",
-        "source": "东方财富公开公告索引"
-      },
-      {
-        "id": "AN202611051831461189",
-        "symbol": "603618.SS",
-        "title": "杭电股份:关于董事长提议公司回购股份的提示性公告",
-        "noticeDate": "2026-11-06",
-        "displayTime": "2026-11-05 19:32:43:264",
-        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "回购预案",
-        "url": "https://data.eastmoney.com/notices/detail/603618/AN202611051831461189.html",
-        "observedAt": "2026-11-06T14:59:24.280Z",
-        "bodyRead": false,
-        "readState": "index_only",
-        "source": "东方财富公开公告索引"
-      },
-      {
-        "id": "AN202611051831457238",
-        "symbol": "603618.SS",
-        "title": "杭电股份:关于持股5%以上股东非公开发行可交换公司债券拟办理股份担保及信托登记的公告",
-        "noticeDate": "2026-11-06",
-        "displayTime": "2026-11-05 17:32:41:255",
-        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "其他担保公告 / 其他",
-        "url": "https://data.eastmoney.com/notices/detail/603618/AN202611051831457238.html",
-        "observedAt": "2026-11-06T14:59:28.060Z",
-        "bodyRead": false,
-        "readState": "index_only",
-        "source": "东方财富公开公告索引"
-      },
-      {
-        "id": "AN202611051831457749",
-        "symbol": "603618.SS",
-        "title": "3-2国金证券股份有限公司关于杭州电缆股份有限公司向特定对象发行股票之上市保荐书(申报稿)(杭州电缆股份有限公司)",
-        "noticeDate": "2026-11-05",
-        "displayTime": "2026-11-05 17:48:24:689",
-        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "沪主板再融资上市保荐书",
-        "url": "https://data.eastmoney.com/notices/detail/603618/AN202611051831457749.html",
-        "observedAt": "2026-11-06T14:59:38.941Z",
-        "bodyRead": false,
-        "readState": "index_only",
-        "source": "东方财富公开公告索引"
-      },
-      {
-        "id": "AN202611051831457748",
-        "symbol": "603618.SS",
-        "title": "3-1国金证券股份有限公司关于杭州电缆股份有限公司向特定对象发行股票之发行保荐书(申报稿)(杭州电缆股份有限公司)",
-        "noticeDate": "2026-11-05",
-        "displayTime": "2026-11-05 17:48:24:672",
-        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "沪主板再融资发行保荐书",
-        "url": "https://data.eastmoney.com/notices/detail/603618/AN202611051831457748.html",
-        "observedAt": "2026-11-06T14:59:38.941Z",
-        "bodyRead": false,
-        "readState": "index_only",
-        "source": "东方财富公开公告索引"
-      },
-      {
-        "id": "AN202611051831457747",
-        "symbol": "603618.SS",
-        "title": "4-1浙江天册律师事务所关于杭州电缆股份有限公司向特定对象发行股票之法律意见书(申报稿)(杭州电缆股份有限公司)",
-        "noticeDate": "2026-11-05",
-        "displayTime": "2026-11-05 17:48:24:660",
-        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "沪主板再融资法律意见书",
-        "url": "https://data.eastmoney.com/notices/detail/603618/AN202611051831457747.html",
-        "observedAt": "2026-11-06T14:59:38.941Z",
-        "bodyRead": false,
-        "readState": "index_only",
-        "source": "东方财富公开公告索引"
-      },
-      {
-        "id": "AN202611051831457746",
-        "symbol": "603618.SS",
-        "title": "6-1天健会计师事务所(特殊普通合伙)关于杭州电缆股份有限公司向特定对象发行股票的财务报告及审计报告(申报稿)(杭州电缆股份有限公司)",
-        "noticeDate": "2026-11-05",
-        "displayTime": "2026-11-05 17:48:24:682",
-        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "沪主板再融资审计报告",
-        "url": "https://data.eastmoney.com/notices/detail/603618/AN202611051831457746.html",
-        "observedAt": "2026-11-06T14:59:38.941Z",
-        "bodyRead": false,
-        "readState": "index_only",
-        "source": "东方财富公开公告索引"
-      },
-      {
-        "id": "AN202611051831457616",
-        "symbol": "603618.SS",
-        "title": "1-1杭州电缆股份有限公司向特定对象发行股票证券募集说明书(申报稿)",
-        "noticeDate": "2026-11-05",
-        "displayTime": "2026-11-05 17:47:57:647",
-        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "沪主板再融资募集说明书申报稿",
-        "url": "https://data.eastmoney.com/notices/detail/603618/AN202611051831457616.html",
-        "observedAt": "2026-11-06T14:59:38.941Z",
-        "bodyRead": false,
-        "readState": "index_only",
-        "source": "东方财富公开公告索引"
-      }
-    ],
+    "items": [],
     "scope": {
-      "from": "2026-10-31",
-      "through": "2026-11-06",
-      "beginDate": "2026-10-31",
-      "endDate": "2026-11-06",
+      "from": "2026-11-04",
+      "through": "2026-11-10",
+      "beginDate": "2026-11-04",
+      "endDate": "2026-11-10",
       "complete": false,
-      "totalHits": 8700,
-      "totalPages": 87,
+      "totalHits": 6001,
+      "totalPages": 61,
       "returnedPages": 20,
       "pageCap": 20,
       "truncated": true,
       "noticeTimePrecision": "day",
       "displayTimeTimezoneVerified": false
     },
-    "message": "公告索引未读正文，事件不是价格确认。"
+    "message": "本窗口未取得匹配公告索引；不等于没有公告或风险。"
   },
-  "bundleId": "603618.SS:2026-11-06T15:00:23.781Z",
-  "fetchedAt": "2026-11-06T15:00:23.781Z",
-  "asOf": "2026-11-06T15:00:23.781Z",
-  "requestedAt": "2026-11-06T14:59:08.777Z",
-  "codeSourceCommit": "311a5ebc6a68fc209140cfaac6aecb38a98c5653"
+  "bundleId": "603618.SS:2026-11-09T17:27:45.133Z",
+  "fetchedAt": "2026-11-09T17:27:45.133Z",
+  "asOf": "2026-11-09T17:27:45.133Z",
+  "requestedAt": "2026-11-09T17:27:12.658Z",
+  "codeSourceCommit": "4cb1a28e6ac1959235a6553d577a1405e240cff9"
 }

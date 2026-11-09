@@ -3,7 +3,7 @@
   "symbol": "688072.SS",
   "company": {
     "state": "ok",
-    "cacheHit": false,
+    "cacheHit": true,
     "symbol": "688072.SS",
     "fetchedAt": "2026-11-06T15:00:23.587Z",
     "observedAt": "2026-11-06T15:00:23.587Z",
@@ -23,11 +23,43 @@
       "fetchedAt": "2026-11-06T15:00:23.587Z",
       "url": "https://emweb.securities.eastmoney.com/PC_HSF10/CompanySurvey/CompanySurveyAjax?code=SH688072"
     },
-    "historicalAvailability": "current_profile_not_point_in_time"
+    "historicalAvailability": "current_profile_not_point_in_time",
+    "message": "复用7日内公开资料，原获取与观察时间保留。"
   },
   "financial": {
-    "state": "unavailable",
-    "reports": [],
+    "state": "partial",
+    "reports": [
+      {
+        "reportDate": "2026-09-30",
+        "noticeDate": "2026-10-29",
+        "updateDate": "2026-10-29",
+        "observedAt": "2026-11-09T17:27:23.232Z",
+        "periodBasis": "year_to_date",
+        "currency": null,
+        "amountUnit": "source_yuan",
+        "unitNote": "来源页面金额单位为元，币种未注明；不默认CNY，不作汇率换算。",
+        "percentageUnit": "percent",
+        "reportName": "2026年 三季报",
+        "industry": null,
+        "metrics": {
+          "revenue": 5220442197.15,
+          "netProfit": 2430786886.72,
+          "revenueGrowth": 23.7039539353,
+          "profitGrowth": 336.79,
+          "roe": 25.75,
+          "grossMargin": 41.6520049479,
+          "eps": 8.55,
+          "bps": 47.300325848083,
+          "operatingCashPerShare": -0.12176386909
+        },
+        "source": {
+          "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
+          "fetchedAt": "2026-11-09T17:27:23.232Z",
+          "url": "https://data.eastmoney.com/bbsj/202609/yjbb.html"
+        },
+        "historicalAvailability": "provider_current_revision_not_point_in_time"
+      }
+    ],
     "scope": {
       "periods": [
         "2026-09-30",
@@ -36,90 +68,76 @@
       "complete": false,
       "pageCapPerPeriod": 16
     },
-    "message": "未取得可核验的已披露报告，不代表公司没有财报。"
+    "message": "仅展示已取得且日期可核验的累计报告；当前修订版不能冒充历史当时数据。"
   },
   "announcements": {
     "state": "partial",
     "items": [
       {
-        "id": "AN202611061831498500",
+        "id": "AN202611061831502650",
         "symbol": "688072.SS",
-        "title": "3-1本次重大资产重组涉及的拟购买资产最近两年及一期的财务报告和审计报告(申报稿)(拓荆科技股份有限公司)",
-        "noticeDate": "2026-11-06",
-        "displayTime": "2026-11-06 17:13:39:818",
+        "title": "拓荆科技:北京市中伦律师事务所关于拓荆科技股份有限公司发行股份及支付现金购买资产并募集配套资金的法律意见书",
+        "noticeDate": "2026-11-07",
+        "displayTime": "2026-11-06 19:30:02:233",
         "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "科创板并购重组审计报告",
-        "url": "https://data.eastmoney.com/notices/detail/688072/AN202611061831498500.html",
-        "observedAt": "2026-11-06T14:59:19.209Z",
+        "category": "法律意见书",
+        "url": "https://data.eastmoney.com/notices/detail/688072/AN202611061831502650.html",
+        "observedAt": "2026-11-09T17:27:40.911Z",
         "bodyRead": false,
         "readState": "index_only",
         "source": "东方财富公开公告索引"
       },
       {
-        "id": "AN202611061831498499",
+        "id": "AN202611061831502649",
         "symbol": "688072.SS",
-        "title": "2-1华泰联合证券有限责任公司关于拓荆科技股份有限公司发行股份及支付现金购买资产并募集配套资金之独立财务顾问报告(申报稿)(拓荆科技股份有限公司)",
-        "noticeDate": "2026-11-06",
-        "displayTime": "2026-11-06 17:13:15:864",
+        "title": "拓荆科技:关于发行股份及支付现金购买资产并募集配套资金的申请文件获得上海证券交易所受理的公告",
+        "noticeDate": "2026-11-07",
+        "displayTime": "2026-11-06 19:30:02:294",
         "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "科创板并购重组独立财务顾问报告",
-        "url": "https://data.eastmoney.com/notices/detail/688072/AN202611061831498499.html",
-        "observedAt": "2026-11-06T14:59:19.209Z",
+        "category": "其他增发事项公告",
+        "url": "https://data.eastmoney.com/notices/detail/688072/AN202611061831502649.html",
+        "observedAt": "2026-11-09T17:27:40.911Z",
         "bodyRead": false,
         "readState": "index_only",
         "source": "东方财富公开公告索引"
       },
       {
-        "id": "AN202611061831498498",
+        "id": "AN202611061831502648",
         "symbol": "688072.SS",
-        "title": "3-2本次重大资产重组涉及的拟购买资产的评估报告及评估说明,或者估值报告(申报稿)(拓荆科技股份有限公司)",
-        "noticeDate": "2026-11-06",
-        "displayTime": "2026-11-06 17:13:43:036",
+        "title": "拓荆科技:关于股份回购实施结果暨股份变动的公告",
+        "noticeDate": "2026-11-07",
+        "displayTime": "2026-11-06 19:30:02:278",
         "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "科创板并购重组资产评估报告",
-        "url": "https://data.eastmoney.com/notices/detail/688072/AN202611061831498498.html",
-        "observedAt": "2026-11-06T14:59:19.209Z",
+        "category": "股本变动 / 回购进展情况 / 回购实施公告",
+        "url": "https://data.eastmoney.com/notices/detail/688072/AN202611061831502648.html",
+        "observedAt": "2026-11-09T17:27:40.911Z",
         "bodyRead": false,
         "readState": "index_only",
         "source": "东方财富公开公告索引"
       },
       {
-        "id": "AN202611061831498497",
+        "id": "AN202611061831502646",
         "symbol": "688072.SS",
-        "title": "2-2法律意见书(申报稿)(拓荆科技股份有限公司)",
-        "noticeDate": "2026-11-06",
-        "displayTime": "2026-11-06 17:13:12:807",
+        "title": "拓荆科技:关于发行股份及支付现金购买资产并募集配套资金报告书(申报稿)修订说明的公告",
+        "noticeDate": "2026-11-07",
+        "displayTime": "2026-11-06 19:30:00:780",
         "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "科创板并购重组法律意见书",
-        "url": "https://data.eastmoney.com/notices/detail/688072/AN202611061831498497.html",
-        "observedAt": "2026-11-06T14:59:19.209Z",
-        "bodyRead": false,
-        "readState": "index_only",
-        "source": "东方财富公开公告索引"
-      },
-      {
-        "id": "AN202611061831498293",
-        "symbol": "688072.SS",
-        "title": "1-1拓荆科技股份有限公司发行股份及支付现金购买资产并募集配套资金报告书(申报稿)",
-        "noticeDate": "2026-11-06",
-        "displayTime": "2026-11-06 17:11:42:802",
-        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "科创板并购重组报告书申报稿",
-        "url": "https://data.eastmoney.com/notices/detail/688072/AN202611061831498293.html",
-        "observedAt": "2026-11-06T14:59:19.209Z",
+        "category": "其他增发事项公告 / 收购出售资产/股权",
+        "url": "https://data.eastmoney.com/notices/detail/688072/AN202611061831502646.html",
+        "observedAt": "2026-11-09T17:27:40.911Z",
         "bodyRead": false,
         "readState": "index_only",
         "source": "东方财富公开公告索引"
       }
     ],
     "scope": {
-      "from": "2026-10-31",
-      "through": "2026-11-06",
-      "beginDate": "2026-10-31",
-      "endDate": "2026-11-06",
+      "from": "2026-11-04",
+      "through": "2026-11-10",
+      "beginDate": "2026-11-04",
+      "endDate": "2026-11-10",
       "complete": false,
-      "totalHits": 8700,
-      "totalPages": 87,
+      "totalHits": 6001,
+      "totalPages": 61,
       "returnedPages": 20,
       "pageCap": 20,
       "truncated": true,
@@ -128,9 +146,9 @@
     },
     "message": "公告索引未读正文，事件不是价格确认。"
   },
-  "bundleId": "688072.SS:2026-11-06T15:00:23.781Z",
-  "fetchedAt": "2026-11-06T15:00:23.781Z",
-  "asOf": "2026-11-06T15:00:23.781Z",
-  "requestedAt": "2026-11-06T14:59:08.777Z",
-  "codeSourceCommit": "311a5ebc6a68fc209140cfaac6aecb38a98c5653"
+  "bundleId": "688072.SS:2026-11-09T17:27:45.133Z",
+  "fetchedAt": "2026-11-09T17:27:45.133Z",
+  "asOf": "2026-11-09T17:27:45.133Z",
+  "requestedAt": "2026-11-09T17:27:12.658Z",
+  "codeSourceCommit": "4cb1a28e6ac1959235a6553d577a1405e240cff9"
 }
