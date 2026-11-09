@@ -8,6 +8,7 @@ import {analyzeVolumeStructure} from '../lib/volume-structure.js';
 import {buildVolumeScreenProfile} from '../lib/volume-screen.js';
 const root=path.resolve(fileURLToPath(new URL('..',import.meta.url))),prefix='/allen-prototype/',output=path.join(root,'test-results');
 fs.mkdirSync(path.join(output,'screens'),{recursive:true});
+const frozenStudy=JSON.parse(fs.readFileSync(path.join(root,'data/history-study.json'),'utf8'));
 const calendar=JSON.parse(fs.readFileSync(path.join(root,'data/calendar.json'),'utf8')),published=JSON.parse(fs.readFileSync(path.join(root,'data/market.json'),'utf8'));
 const completed=calendar.sessions.filter(d=>Date.parse(d+'T15:05:00+08:00')<=Date.now()),through=published.expectedThrough||completed.at(-1);
 assert.ok(through&&calendar.sessions.includes(through),'Reviewed current calendar required');
@@ -62,6 +63,7 @@ async function open(width,height,mode='active'){
  page.on('request',request=>{const url=new URL(request.url());if(url.origin!==base||url.pathname.startsWith(prefix+'api/'))remote.push(request.url())});
  const f=fixture(mode);await page.route('**/data/**',async route=>{
   const pathname=new URL(route.request().url()).pathname,key=pathname.slice(pathname.indexOf('/data/')+6);
+  if(key==='history-study.json'&&mode==='study-missing')return route.fulfill({status:503,json:{error:'synthetic-study-outage'}});
   if(key==='status.json')return route.fulfill({json:f.status});if(key==='market.json')return route.fulfill({json:f.market});
   if(key==='research-index.json')return route.fulfill({json:f.researchIndex});if(key==='research-status.json')return route.fulfill({json:f.researchStatus});
   if(key.startsWith('research/')){const symbol=key.slice(9,-5);if(f.delayResearch===symbol)await new Promise(resolve=>setTimeout(resolve,1600));const b=f.researchBundles[symbol];return b?route.fulfill({json:b}):route.fulfill({status:404,json:{error:'missing research'}})}
@@ -111,7 +113,13 @@ try{
     const attached=await page.evaluate(()=>JSON.parse(localStorage.getItem('allen.personal.v1')));assert.deepEqual(attached.research.map(r=>r.original),twice.research.map(r=>r.original));assert.ok(attached.research.some(r=>r.events.some(e=>e.snapshot?.research?.bundleId==='synthetic-600036.SS-2')));
     await page.locator('[data-time="original"]').click();assert.match(await page.locator('#companyResearch').innerText(),/合成公告版本1/);assert.ok(!(await page.locator('#companyResearch').innerText()).includes('合成公告版本2'));await geometry(page);await screenshot(page,'company-research-'+width);
 
-    await navigate(page,'validation');await geometry(page);assert.match(await page.locator('#app').innerText(),/事后重建|未验证|未证明/);await screenshot(page,'validation-'+width);
+    await navigate(page,'validation');await geometry(page);assert.match(await page.locator('#app').innerText(),/事后重建|未验证|未证明/);await page.locator('#studyComparison').waitFor();
+    const studyGroup=frozenStudy.groups.find(g=>g.id==='legacy_observation'),getCost=(g,cost)=>String(g.hypotheticalCostScenarios.find(s=>s.roundTripBps===cost).dailyEqualWeightMeanAssumedReturn);
+    assert.equal(await page.locator('.study-assumed').getAttribute('data-value'),getCost(studyGroup,30));
+    const sampleDifference=await page.locator('.study-sample').getAttribute('data-value'),quarters=await page.locator('.study-quarter-grid').innerText(),order=await page.locator('[data-study-row]').evaluateAll(nodes=>nodes.map(n=>n.dataset.studyRow));
+    await page.locator('#studyCost').selectOption('60');assert.equal(await page.locator('.study-assumed').getAttribute('data-value'),getCost(studyGroup,60));assert.equal(await page.locator('.study-sample').getAttribute('data-value'),sampleDifference);assert.equal(await page.locator('.study-quarter-grid').innerText(),quarters);assert.deepEqual(await page.locator('[data-study-row]').evaluateAll(nodes=>nodes.map(n=>n.dataset.studyRow)),order);
+    await page.locator('#studyGroup').selectOption('legacy_with_prior_trend');const prior=frozenStudy.groups.find(g=>g.id==='legacy_with_prior_trend');assert.equal(await page.locator('.study-assumed').getAttribute('data-value'),getCost(prior,60));assert.ok(Number(await page.locator('.study-assumed').getAttribute('data-value'))<0);assert.match(await page.locator('.study-counterexample').innerText(),/正变化比例/);
+    const studyDownload=page.waitForEvent('download');await page.locator('[data-download-study]').click();const studyFile=path.join(output,'frozen-study-'+width+'.json');await (await studyDownload).saveAs(studyFile);assert.deepEqual(JSON.parse(fs.readFileSync(studyFile,'utf8')),frozenStudy);assert.match(await page.locator('.study-audit').innerText(),/原逐日样本|不能宣称已完整复现/);assert.match(await page.locator('.benchmark-card').innerText(),/Zacks Rank/);await geometry(page);await screenshot(page,'validation-'+width);
    }
    assert.deepEqual(errors,[]);assert.deepEqual(remote,[]);results.push({width,height,mode,passed:true});
   }finally{await context.close()}
@@ -165,6 +173,13 @@ try{
   await incomplete.page.evaluate(()=>document.querySelector('[data-save-research]').dispatchEvent(new MouseEvent('click',{bubbles:true})));await incomplete.page.locator('#notice').filter({hasText:/未完整加载|不可判断/}).waitFor();assert.equal(await incomplete.page.evaluate(()=>JSON.parse(localStorage.getItem('allen.personal.v1')||'{"research":[]}').research.length),0);
   await incomplete.page.locator('[data-save-research]').click();await incomplete.page.locator('#notice').filter({hasText:/已保存/}).waitFor();assert.equal(await incomplete.page.evaluate(()=>JSON.parse(localStorage.getItem('allen.personal.v1')).research[0].original.history.length),120);assert.deepEqual(incomplete.errors,[]);results.push({case:'complete-snapshot-before-save',passed:true});
  }finally{await incomplete.context.close()}
+
+
+ for(const [width,height]of [[1194,834],[390,844],[1440,900]]){
+  const sample=await open(width,height,'study-missing');try{
+   await navigate(sample.page,'validation');assert.match(await sample.page.locator('#studyComparison').innerText(),/暂不可比较|未取得|缺少/);assert.equal(await sample.page.locator('.study-assumed').count(),0);assert.equal(await sample.page.locator('[data-download-study]').count(),0);await geometry(sample.page);assert.deepEqual(sample.errors,[]);assert.deepEqual(sample.remote,[]);results.push({case:'study-missing-no-results',width,height,passed:true});
+  }finally{await sample.context.close()}
+ }
 
  const actual=await browser.newContext({viewport:{width:1194,height:834}});try{
   const page=await actual.newPage(),errors=[];page.on('pageerror',error=>errors.push(error.message));await page.goto(base+prefix,{waitUntil:'networkidle'});await page.locator('#searchInput').waitFor();await geometry(page);
