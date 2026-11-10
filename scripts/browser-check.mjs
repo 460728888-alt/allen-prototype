@@ -62,6 +62,7 @@ async function open(width,height,mode='active'){
  const page=await context.newPage(),errors=[],remote=[];page.on('pageerror',error=>errors.push(error.message));
  page.on('request',request=>{const url=new URL(request.url());if(url.origin!==base||url.pathname.startsWith(prefix+'api/'))remote.push(request.url())});
  if(mode==='training-missing')await page.route('**/training-review.json*',route=>route.fulfill({status:503,json:{error:'synthetic-training-review-outage'}}));
+ if(mode==='long-training-missing')await page.route('**/long-training-review.json*',route=>route.fulfill({status:503,json:{error:'synthetic-long-review-outage'}}));
  const f=fixture(mode);await page.route('**/data/**',async route=>{
   const pathname=new URL(route.request().url()).pathname,key=pathname.slice(pathname.indexOf('/data/')+6);
   if(key==='history-study.json'&&mode==='study-missing')return route.fulfill({status:503,json:{error:'synthetic-study-outage'}});
@@ -114,7 +115,7 @@ try{
     const attached=await page.evaluate(()=>JSON.parse(localStorage.getItem('allen.personal.v1')));assert.deepEqual(attached.research.map(r=>r.original),twice.research.map(r=>r.original));assert.ok(attached.research.some(r=>r.events.some(e=>e.snapshot?.research?.bundleId==='synthetic-600036.SS-2')));
     await page.locator('[data-time="original"]').click();assert.match(await page.locator('#companyResearch').innerText(),/合成公告版本1/);assert.ok(!(await page.locator('#companyResearch').innerText()).includes('合成公告版本2'));await geometry(page);await screenshot(page,'company-research-'+width);
 
-    await navigate(page,'validation');await geometry(page);assert.match(await page.locator('#app').innerText(),/事后重建|未验证|未证明/);await page.locator('#studyComparison').waitFor();await page.locator('#trainingReview[data-state="research-only"]').waitFor();assert.equal(await page.locator('[data-training-model]').count(),3);assert.match(await page.locator('#trainingReview').innerText(),/暂不启用|开发验证/);assert.match(await page.locator('#trainingReview').innerText(),/不能解读为今天没有机会/);
+    await navigate(page,'validation');await geometry(page);assert.match(await page.locator('#app').innerText(),/事后重建|未验证|未证明/);await page.locator('#studyComparison').waitFor();await page.locator('#trainingReview[data-state="research-only"]').waitFor();await page.locator('#longTrainingReview[data-state="research-only"]').waitFor();assert.equal(await page.locator('[data-long-core]').count(),9);assert.equal(await page.locator('[data-long-expanded]').count(),3);await page.locator('#longQuarters > summary').click();assert.equal(await page.locator('#longQuarters tbody tr').count(),48);assert.match(await page.locator('#longQuarters').innerText(),/Q4/);await geometry(page);await page.locator('#longQuarters > summary').click();assert.match(await page.locator('#longTrainingReview').innerText(),/-21.59%/);assert.equal(await page.locator('[data-training-model]').count(),3);assert.match(await page.locator('#trainingReview').innerText(),/暂不启用|开发验证/);assert.match(await page.locator('#trainingReview').innerText(),/不能解读为今天没有机会/);
     const studyGroup=frozenStudy.groups.find(g=>g.id==='legacy_observation'),getCost=(g,cost)=>String(g.hypotheticalCostScenarios.find(s=>s.roundTripBps===cost).dailyEqualWeightMeanAssumedReturn);
     assert.equal(await page.locator('.study-assumed').getAttribute('data-value'),getCost(studyGroup,30));
     const sampleDifference=await page.locator('.study-sample').getAttribute('data-value'),quarters=await page.locator('.study-quarter-grid').innerText(),order=await page.locator('[data-study-row]').evaluateAll(nodes=>nodes.map(n=>n.dataset.studyRow));
@@ -189,6 +190,15 @@ try{
    assert.equal(await sample.page.locator('[data-training-model]').count(),0);await sample.page.locator('#studyComparison').waitFor();
    await geometry(sample.page);assert.deepEqual(sample.errors,[]);assert.deepEqual(sample.remote,[]);
    results.push({case:'training-review-missing-no-zero',width,height,passed:true});
+  }finally{await sample.context.close()}
+ }
+ for(const [width,height]of [[1194,834],[390,844],[1440,900]]){
+  const sample=await open(width,height,'long-training-missing');try{
+   await navigate(sample.page,'validation');await sample.page.locator('#longTrainingReview[data-state="unavailable"]').waitFor();
+   assert.match(await sample.page.locator('#longTrainingReview').innerText(),/不能显示成零收益或没有机会/);
+   assert.equal(await sample.page.locator('[data-long-core]').count(),0);await sample.page.locator('#trainingReview[data-state="research-only"]').waitFor();
+   await geometry(sample.page);assert.deepEqual(sample.errors,[]);assert.deepEqual(sample.remote,[]);
+   results.push({case:'long-review-missing-no-false-zero',width,height,passed:true});
   }finally{await sample.context.close()}
  }
  const actual=await browser.newContext({viewport:{width:1194,height:834}});try{

@@ -1,3 +1,4 @@
+import {renderLongReview} from './long-training-review.js';
 import {renderTrainingReview} from './training-review.js';
 import {createPersonalStore} from './personal-store.js';
 import {assessData,stockQuality,isObservation,stageOf,explain,selectFocus} from './personal-domain.js';
@@ -9,7 +10,7 @@ import {buildStudyView} from './study-compare.js';
 import {renderStudyPanel,renderBenchmarkCard} from './study-panel.js';
 const $=s=>document.querySelector(s),esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const finite=x=>typeof x==='number'&&Number.isFinite(x),fmt=x=>finite(x)?x.toFixed(2):'未核验',pct=x=>finite(x)?(x*100).toFixed(2)+'%':'未核验',n=x=>Number.isInteger(x)?String(x):'未核验';
-const state={page:'home',stock:null,recordId:null,later:false,detail:null,cache:new Map(),researchCache:new Map(),researchCurrent:null,researchIndex:null,researchStatus:null,researchLoading:false,researchError:null,market:{stocks:[]},status:null,calendar:null,assessment:null,study:null,studyAudit:null,trainingReview:null,studyCostBps:30,studyGroup:'legacy_observation',search:'',healthQuery:'',healthReason:'',healthPage:1,tool:'all',epoch:0,selection:0,saved:{watchlist:[],research:[],notes:[],portfolio:[],riskBudget:null},storeError:null};
+const state={page:'home',stock:null,recordId:null,later:false,detail:null,cache:new Map(),researchCache:new Map(),researchCurrent:null,researchIndex:null,researchStatus:null,researchLoading:false,researchError:null,market:{stocks:[]},status:null,calendar:null,assessment:null,study:null,studyAudit:null,trainingReview:null,longReview:null,studyCostBps:30,studyGroup:'legacy_observation',search:'',healthQuery:'',healthReason:'',healthPage:1,tool:'all',epoch:0,selection:0,saved:{watchlist:[],research:[],notes:[],portfolio:[],riskBudget:null},storeError:null};
 let local;
 const button=(text,attrs='',cls='')=>'<button class="'+cls+'" '+attrs+'>'+esc(text)+'</button>';
 const bySymbol=symbol=>state.market.stocks.find(s=>s.symbol===symbol)||null;
@@ -160,7 +161,7 @@ function library(){
 }
 function validation(){
  return '<section class="hero"><div><div class="eyebrow">VALIDATION / FAIR COMPARISON</div><h1>用同条件结果检验上涨机会。</h1><p>补齐已有五日研究的成本、同日对照和季度检验。事后重建不代表当时预测，高正比例不代表稳定赚钱。</p></div><div class="conditions"><p>对标 Zacks Rank 的公开验证方式；市场、周期和成本不同，当前不能声称预测超过它。</p><p>模型与正式策略仍待验证，不生成未经支持的概率。</p></div></section>'+
- renderTrainingReview(state.trainingReview)+renderStudyPanel(state.study,{costBps:state.studyCostBps,groupId:state.studyGroup,audit:state.studyAudit})+renderBenchmarkCard()+banner();
+ renderLongReview(state.longReview)+renderTrainingReview(state.trainingReview)+renderStudyPanel(state.study,{costBps:state.studyCostBps,groupId:state.studyGroup,audit:state.studyAudit})+renderBenchmarkCard()+banner();
 }
 const toolsList=[['health','数据复核','原因、覆盖与备用过程'],['company','公司研究','公开概况与来源'],['financial','财报关键值','报告期与披露可核对'],['industry','行业分析','同业数据待接入'],['events','事件雷达','公告索引·正文待核验'],['trend','趋势与量价','结构研究可用'],['risk','风险分析','条件复核可用'],['ai','AI研究对话','安全AI服务未接入'],['plans','投资逻辑与计划','本地留档可用'],['portfolio','持仓组合','本地记录可用'],['fees','费用计算','明确费率后可计算'],['brief','研究简报','本地生成可用']];
 function brief(){return 'Allen 个人研究简报\n生成 '+new Date().toISOString()+'\n数据截止 '+(state.assessment?.dataThrough||'未知')+'\n数据状态 '+state.assessment?.title+'\n风险预算待设置，不生成仓位建议。\n\n股票池：'+state.saved.watchlist.join('、')+'\n\n独立研究：\n'+state.saved.research.map(r=>(r.name||r.symbol)+' '+r.id+' '+r.status+' 截止'+r.dataThrough).join('\n')+'\n\n笔记：\n'+state.saved.notes.slice(-10).map(x=>x.symbol+' '+x.createdAt+'\n'+x.text).join('\n\n')+'\n仅为本地研究整理；价格变化不等于实际收益。'}
@@ -194,11 +195,11 @@ async function open(symbol,id=null){
  ]);
 }
 async function refresh(announce=true){
- const epoch=++state.epoch,r=await Promise.allSettled(['data/status.json','data/market.json','data/calendar.json','data/history-study.json','data/research-index.json','data/research-status.json','study-audit.json','training-review.json'].map(readJSON));if(epoch!==state.epoch)return;
+ const epoch=++state.epoch,r=await Promise.allSettled(['data/status.json','data/market.json','data/calendar.json','data/history-study.json','data/research-index.json','data/research-status.json','study-audit.json','training-review.json','long-training-review.json'].map(readJSON));if(epoch!==state.epoch)return;
  state.status=r[0].status==='fulfilled'?r[0].value:{state:'failed',message:r[0].reason.message,coverage:{},failures:[{message:r[0].reason.message}]};
  state.market=r[1].status==='fulfilled'&&Array.isArray(r[1].value?.stocks)?r[1].value:{stocks:[]};state.market.stocks=state.market.stocks.map(norm);
  if(r[1].status==='rejected')state.status={...state.status,state:'failed',message:'股票文件无法读取，无法完成判断'};
- state.calendar=r[2].status==='fulfilled'?r[2].value:null;state.study=r[3].status==='fulfilled'?r[3].value:null;state.studyAudit=r[6].status==='fulfilled'&&r[6].value?.schema===1?r[6].value:null;state.trainingReview=r[7].status==='fulfilled'?r[7].value:null;
+ state.calendar=r[2].status==='fulfilled'?r[2].value:null;state.study=r[3].status==='fulfilled'?r[3].value:null;state.studyAudit=r[6].status==='fulfilled'&&r[6].value?.schema===1?r[6].value:null;state.trainingReview=r[7].status==='fulfilled'?r[7].value:null;state.longReview=r[8].status==='fulfilled'?r[8].value:null;
  state.researchIndex=r[4].status==='fulfilled'&&r[4].value?.schema===1?r[4].value:null;state.researchStatus=r[5].status==='fulfilled'&&r[5].value?.schema===1?r[5].value:null;state.researchCache.clear();state.researchCurrent=null;state.researchError=null;state.researchLoading=false;
  state.assessment=assessData(state.status,state.market,state.calendar,new Date());state.cache.clear();state.detail=null;saved();
  if(!state.storeError&&state.assessment.canJudge)try{local.reconcile({...state.market,expectedThrough:state.assessment.expectedThrough},{expectedThrough:state.assessment.expectedThrough});saved()}catch(error){state.storeError=error.message}

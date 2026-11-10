@@ -1,0 +1,2231 @@
+{
+  "schema": 1,
+  "protocolId": "allen-long-history-development-20261110-v2",
+  "approved": false,
+  "probabilitiesEnabled": false,
+  "winner": null,
+  "finalTestOpened": false,
+  "sourceCommit": "86c0c4d6f0228be6d4b23167bf27870b29472d07",
+  "sourceRunUrl": "https://github.com/460728888-alt/allen-prototype/actions/runs/42733142406",
+  "replayRunUrl": "https://github.com/460728888-alt/allen-prototype/actions/runs/42734142043",
+  "artifact": {
+    "id": 13726081098,
+    "name": "Allen-long-history-development-42733142406-1",
+    "sizeBytes": 77027290,
+    "expiresAt": "2027-02-08T01:04:57Z",
+    "digest": "sha256:a23f36efe9e508627e2450aa5b3327aa360e4c41d0a3eb8f4640324234c65e68",
+    "temporary": true
+  },
+  "summary": {
+    "status": "exploratory_development_only",
+    "successfulCandidates": 9,
+    "coverage": {
+      "requestedStocks": 240,
+      "receivedStocks": 233,
+      "failedStocks": 7,
+      "eligibleStockDays": 349200,
+      "readableLabels": 266106,
+      "benchmarkPairedLabels": 266106
+    },
+    "coreCohortHash": "ec739a4f4ed59bfdf8501a7678cfd78beee7123bf58b2b6bf6d4eab46601e170",
+    "coreDevelopmentStockDays": 6944,
+    "expandedDevelopmentStockDays": 50858,
+    "pairedCoreBrierDifferences": [
+      {
+        "a": "long_core/logistic",
+        "b": "short_core/logistic",
+        "state": "paired_core_daily_brier",
+        "difference": -0.00042365051627658943,
+        "meaning": "negative means lower error on this same development cohort",
+        "uncertainty": {
+          "state": "exploratory_circular_date_block_interval",
+          "signalDates": 233,
+          "minimumDates": 20,
+          "low": -0.005072616807211922,
+          "high": 0.003838377029881057,
+          "replicates": 400,
+          "blockSessions": 10
+        }
+      },
+      {
+        "a": "long_expanded/logistic",
+        "b": "long_core/logistic",
+        "state": "paired_core_daily_brier",
+        "difference": 0.003534499495681154,
+        "meaning": "negative means lower error on this same development cohort",
+        "uncertainty": {
+          "state": "exploratory_circular_date_block_interval",
+          "signalDates": 233,
+          "minimumDates": 20,
+          "low": -0.0005516099226559919,
+          "high": 0.007777233323972811,
+          "replicates": 400,
+          "blockSessions": 10
+        }
+      },
+      {
+        "a": "long_expanded/logistic",
+        "b": "short_core/logistic",
+        "state": "paired_core_daily_brier",
+        "difference": 0.003110848979404565,
+        "meaning": "negative means lower error on this same development cohort",
+        "uncertainty": {
+          "state": "exploratory_circular_date_block_interval",
+          "signalDates": 233,
+          "minimumDates": 20,
+          "low": -0.005483700652013856,
+          "high": 0.011438741662249327,
+          "replicates": 400,
+          "blockSessions": 10
+        }
+      },
+      {
+        "a": "long_core/lightgbm",
+        "b": "short_core/lightgbm",
+        "state": "paired_core_daily_brier",
+        "difference": -0.00039321078627744236,
+        "meaning": "negative means lower error on this same development cohort",
+        "uncertainty": {
+          "state": "exploratory_circular_date_block_interval",
+          "signalDates": 233,
+          "minimumDates": 20,
+          "low": -0.004484465327530592,
+          "high": 0.003492580706641012,
+          "replicates": 400,
+          "blockSessions": 10
+        }
+      },
+      {
+        "a": "long_expanded/lightgbm",
+        "b": "long_core/lightgbm",
+        "state": "paired_core_daily_brier",
+        "difference": 0.002957800932162301,
+        "meaning": "negative means lower error on this same development cohort",
+        "uncertainty": {
+          "state": "exploratory_circular_date_block_interval",
+          "signalDates": 233,
+          "minimumDates": 20,
+          "low": -0.0014666966049383715,
+          "high": 0.007351239784442781,
+          "replicates": 400,
+          "blockSessions": 10
+        }
+      },
+      {
+        "a": "long_expanded/lightgbm",
+        "b": "short_core/lightgbm",
+        "state": "paired_core_daily_brier",
+        "difference": 0.0025645901458848583,
+        "meaning": "negative means lower error on this same development cohort",
+        "uncertainty": {
+          "state": "exploratory_circular_date_block_interval",
+          "signalDates": 233,
+          "minimumDates": 20,
+          "low": -0.005724945566209694,
+          "high": 0.010647614354476366,
+          "replicates": 400,
+          "blockSessions": 10
+        }
+      },
+      {
+        "a": "long_core/catboost",
+        "b": "short_core/catboost",
+        "state": "paired_core_daily_brier",
+        "difference": -0.0005157096196319216,
+        "meaning": "negative means lower error on this same development cohort",
+        "uncertainty": {
+          "state": "exploratory_circular_date_block_interval",
+          "signalDates": 233,
+          "minimumDates": 20,
+          "low": -0.004832550052678465,
+          "high": 0.003392135413615031,
+          "replicates": 400,
+          "blockSessions": 10
+        }
+      },
+      {
+        "a": "long_expanded/catboost",
+        "b": "long_core/catboost",
+        "state": "paired_core_daily_brier",
+        "difference": 0.0034701730196695494,
+        "meaning": "negative means lower error on this same development cohort",
+        "uncertainty": {
+          "state": "exploratory_circular_date_block_interval",
+          "signalDates": 233,
+          "minimumDates": 20,
+          "low": -0.000843602907811084,
+          "high": 0.007889120726961515,
+          "replicates": 400,
+          "blockSessions": 10
+        }
+      },
+      {
+        "a": "long_expanded/catboost",
+        "b": "short_core/catboost",
+        "state": "paired_core_daily_brier",
+        "difference": 0.002954463400037627,
+        "meaning": "negative means lower error on this same development cohort",
+        "uncertainty": {
+          "state": "exploratory_circular_date_block_interval",
+          "signalDates": 233,
+          "minimumDates": 20,
+          "low": -0.005347137115367296,
+          "high": 0.010982741510321832,
+          "replicates": 400,
+          "blockSessions": 10
+        }
+      }
+    ],
+    "regimes": {
+      "short_core": {
+        "counts": {
+          "train": 2055,
+          "calibration": 1950,
+          "development": 6944,
+          "purged": 223,
+          "outside_regime": 254934
+        },
+        "models": {
+          "logistic": {
+            "status": "research_only",
+            "scopes": {
+              "core_common": {
+                "stockDays": 6944,
+                "brier": 0.2489812458848848,
+                "rocAuc": 0.4900195366584084,
+                "signalStockDays": 0,
+                "signalDates": 0,
+                "assumed30bps": null,
+                "sameDateSampleExcess30bps": null,
+                "uncertainty30bps": {
+                  "assumedPriceReturn": {
+                    "state": "insufficient_signal_dates",
+                    "signalDates": 0,
+                    "minimumDates": 20,
+                    "low": null,
+                    "high": null,
+                    "replicates": 0,
+                    "blockSessions": 10
+                  },
+                  "sameDateSampleExcess": {
+                    "state": "insufficient_signal_dates",
+                    "signalDates": 0,
+                    "minimumDates": 20,
+                    "low": null,
+                    "high": null,
+                    "replicates": 0,
+                    "blockSessions": 10
+                  }
+                },
+                "singleStockLowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 0,
+                  "stockDayMean": null,
+                  "stockDayP05": null,
+                  "worstObserved": null,
+                  "dateEqualMean": null,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              }
+            }
+          },
+          "lightgbm": {
+            "status": "research_only",
+            "scopes": {
+              "core_common": {
+                "stockDays": 6944,
+                "brier": 0.24903383726695863,
+                "rocAuc": 0.48934093289341174,
+                "signalStockDays": 0,
+                "signalDates": 0,
+                "assumed30bps": null,
+                "sameDateSampleExcess30bps": null,
+                "uncertainty30bps": {
+                  "assumedPriceReturn": {
+                    "state": "insufficient_signal_dates",
+                    "signalDates": 0,
+                    "minimumDates": 20,
+                    "low": null,
+                    "high": null,
+                    "replicates": 0,
+                    "blockSessions": 10
+                  },
+                  "sameDateSampleExcess": {
+                    "state": "insufficient_signal_dates",
+                    "signalDates": 0,
+                    "minimumDates": 20,
+                    "low": null,
+                    "high": null,
+                    "replicates": 0,
+                    "blockSessions": 10
+                  }
+                },
+                "singleStockLowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 0,
+                  "stockDayMean": null,
+                  "stockDayP05": null,
+                  "worstObserved": null,
+                  "dateEqualMean": null,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              }
+            }
+          },
+          "catboost": {
+            "status": "research_only",
+            "scopes": {
+              "core_common": {
+                "stockDays": 6944,
+                "brier": 0.24867252807452747,
+                "rocAuc": 0.5106567897639545,
+                "signalStockDays": 0,
+                "signalDates": 0,
+                "assumed30bps": null,
+                "sameDateSampleExcess30bps": null,
+                "uncertainty30bps": {
+                  "assumedPriceReturn": {
+                    "state": "insufficient_signal_dates",
+                    "signalDates": 0,
+                    "minimumDates": 20,
+                    "low": null,
+                    "high": null,
+                    "replicates": 0,
+                    "blockSessions": 10
+                  },
+                  "sameDateSampleExcess": {
+                    "state": "insufficient_signal_dates",
+                    "signalDates": 0,
+                    "minimumDates": 20,
+                    "low": null,
+                    "high": null,
+                    "replicates": 0,
+                    "blockSessions": 10
+                  }
+                },
+                "singleStockLowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 0,
+                  "stockDayMean": null,
+                  "stockDayP05": null,
+                  "worstObserved": null,
+                  "dateEqualMean": null,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              }
+            }
+          }
+        }
+      },
+      "long_core": {
+        "counts": {
+          "train": 26454,
+          "calibration": 5986,
+          "development": 6944,
+          "purged": 320,
+          "outside_regime": 226402
+        },
+        "models": {
+          "logistic": {
+            "status": "research_only",
+            "scopes": {
+              "core_common": {
+                "stockDays": 6944,
+                "brier": 0.2485575953686082,
+                "rocAuc": 0.513742598217434,
+                "signalStockDays": 58,
+                "signalDates": 24,
+                "assumed30bps": 0.06004581222330713,
+                "sameDateSampleExcess30bps": 0.04586156997932731,
+                "uncertainty30bps": {
+                  "assumedPriceReturn": {
+                    "state": "exploratory_circular_date_block_interval",
+                    "signalDates": 24,
+                    "minimumDates": 20,
+                    "low": 0.01574912028440438,
+                    "high": 0.11577373435555824,
+                    "replicates": 400,
+                    "blockSessions": 10
+                  },
+                  "sameDateSampleExcess": {
+                    "state": "exploratory_circular_date_block_interval",
+                    "signalDates": 24,
+                    "minimumDates": 20,
+                    "low": 0.011393543846597735,
+                    "high": 0.08730561747868781,
+                    "replicates": 400,
+                    "blockSessions": 10
+                  }
+                },
+                "singleStockLowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 58,
+                  "stockDayMean": -0.04283505722382422,
+                  "stockDayP05": -0.10889230106485018,
+                  "worstObserved": -0.13742258532530616,
+                  "dateEqualMean": -0.046120583610929335,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              }
+            }
+          },
+          "lightgbm": {
+            "status": "research_only",
+            "scopes": {
+              "core_common": {
+                "stockDays": 6944,
+                "brier": 0.24864062648068122,
+                "rocAuc": 0.5108166627374915,
+                "signalStockDays": 71,
+                "signalDates": 48,
+                "assumed30bps": 0.053014138232084125,
+                "sameDateSampleExcess30bps": 0.040835024488584094,
+                "uncertainty30bps": {
+                  "assumedPriceReturn": {
+                    "state": "exploratory_circular_date_block_interval",
+                    "signalDates": 48,
+                    "minimumDates": 20,
+                    "low": 0.02728396070808112,
+                    "high": 0.09883220247634136,
+                    "replicates": 400,
+                    "blockSessions": 10
+                  },
+                  "sameDateSampleExcess": {
+                    "state": "exploratory_circular_date_block_interval",
+                    "signalDates": 48,
+                    "minimumDates": 20,
+                    "low": 0.01909071176574094,
+                    "high": 0.07854467871540634,
+                    "replicates": 400,
+                    "blockSessions": 10
+                  }
+                },
+                "singleStockLowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 71,
+                  "stockDayMean": -0.04624009595808441,
+                  "stockDayP05": -0.13803949826186135,
+                  "worstObserved": -0.1646511462307716,
+                  "dateEqualMean": -0.04057617795824376,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              }
+            }
+          },
+          "catboost": {
+            "status": "research_only",
+            "scopes": {
+              "core_common": {
+                "stockDays": 6944,
+                "brier": 0.24815681845489554,
+                "rocAuc": 0.5222859005313127,
+                "signalStockDays": 32,
+                "signalDates": 13,
+                "assumed30bps": 0.03671914995601272,
+                "sameDateSampleExcess30bps": 0.019105204983331472,
+                "uncertainty30bps": {
+                  "assumedPriceReturn": {
+                    "state": "insufficient_signal_dates",
+                    "signalDates": 13,
+                    "minimumDates": 20,
+                    "low": null,
+                    "high": null,
+                    "replicates": 0,
+                    "blockSessions": 10
+                  },
+                  "sameDateSampleExcess": {
+                    "state": "insufficient_signal_dates",
+                    "signalDates": 13,
+                    "minimumDates": 20,
+                    "low": null,
+                    "high": null,
+                    "replicates": 0,
+                    "blockSessions": 10
+                  }
+                },
+                "singleStockLowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 32,
+                  "stockDayMean": -0.04044597404529325,
+                  "stockDayP05": -0.09896828205461101,
+                  "worstObserved": -0.13742258532530616,
+                  "dateEqualMean": -0.03364407596976979,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              }
+            }
+          }
+        }
+      },
+      "long_expanded": {
+        "counts": {
+          "train": 172147,
+          "calibration": 39710,
+          "development": 50858,
+          "purged": 2259,
+          "outside_regime": 1132
+        },
+        "models": {
+          "logistic": {
+            "status": "research_only",
+            "scopes": {
+              "core_common": {
+                "stockDays": 6944,
+                "brier": 0.25209209486428935,
+                "rocAuc": 0.5168639235393664,
+                "signalStockDays": 1,
+                "signalDates": 1,
+                "assumed30bps": -0.06493300091610243,
+                "sameDateSampleExcess30bps": -0.06875722357047462,
+                "uncertainty30bps": {
+                  "assumedPriceReturn": {
+                    "state": "insufficient_signal_dates",
+                    "signalDates": 1,
+                    "minimumDates": 20,
+                    "low": null,
+                    "high": null,
+                    "replicates": 0,
+                    "blockSessions": 10
+                  },
+                  "sameDateSampleExcess": {
+                    "state": "insufficient_signal_dates",
+                    "signalDates": 1,
+                    "minimumDates": 20,
+                    "low": null,
+                    "high": null,
+                    "replicates": 0,
+                    "blockSessions": 10
+                  }
+                },
+                "singleStockLowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 1,
+                  "stockDayMean": -0.07290013605955425,
+                  "stockDayP05": -0.07290013605955425,
+                  "worstObserved": -0.07290013605955425,
+                  "dateEqualMean": -0.07290013605955425,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              },
+              "expanded_readable": {
+                "stockDays": 50858,
+                "brier": 0.251713111907743,
+                "rocAuc": 0.5184251938364562,
+                "signalStockDays": 3,
+                "signalDates": 3,
+                "assumed30bps": 0.10467258614340842,
+                "sameDateSampleExcess30bps": 0.047243847918858765,
+                "uncertainty30bps": {
+                  "assumedPriceReturn": {
+                    "state": "insufficient_signal_dates",
+                    "signalDates": 3,
+                    "minimumDates": 20,
+                    "low": null,
+                    "high": null,
+                    "replicates": 0,
+                    "blockSessions": 10
+                  },
+                  "sameDateSampleExcess": {
+                    "state": "insufficient_signal_dates",
+                    "signalDates": 3,
+                    "minimumDates": 20,
+                    "low": null,
+                    "high": null,
+                    "replicates": 0,
+                    "blockSessions": 10
+                  }
+                },
+                "singleStockLowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 3,
+                  "stockDayMean": -0.0531714406175284,
+                  "stockDayP05": -0.08524278081968326,
+                  "worstObserved": -0.08661418579303093,
+                  "dateEqualMean": -0.0531714406175284,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              }
+            }
+          },
+          "lightgbm": {
+            "status": "research_only",
+            "scopes": {
+              "core_common": {
+                "stockDays": 6944,
+                "brier": 0.2515984274128435,
+                "rocAuc": 0.5294198096868779,
+                "signalStockDays": 29,
+                "signalDates": 11,
+                "assumed30bps": 0.041171467970500836,
+                "sameDateSampleExcess30bps": 0.022652283655496038,
+                "uncertainty30bps": {
+                  "assumedPriceReturn": {
+                    "state": "insufficient_signal_dates",
+                    "signalDates": 11,
+                    "minimumDates": 20,
+                    "low": null,
+                    "high": null,
+                    "replicates": 0,
+                    "blockSessions": 10
+                  },
+                  "sameDateSampleExcess": {
+                    "state": "insufficient_signal_dates",
+                    "signalDates": 11,
+                    "minimumDates": 20,
+                    "low": null,
+                    "high": null,
+                    "replicates": 0,
+                    "blockSessions": 10
+                  }
+                },
+                "singleStockLowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 29,
+                  "stockDayMean": -0.038421799870096,
+                  "stockDayP05": -0.09150919963952613,
+                  "worstObserved": -0.10626420047519591,
+                  "dateEqualMean": -0.03376214797659065,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              },
+              "expanded_readable": {
+                "stockDays": 50858,
+                "brier": 0.25149535024817865,
+                "rocAuc": 0.5279062882191626,
+                "signalStockDays": 212,
+                "signalDates": 39,
+                "assumed30bps": 0.04088435109021175,
+                "sameDateSampleExcess30bps": 0.02969637730178204,
+                "uncertainty30bps": {
+                  "assumedPriceReturn": {
+                    "state": "exploratory_circular_date_block_interval",
+                    "signalDates": 39,
+                    "minimumDates": 20,
+                    "low": 0.0053804319366612535,
+                    "high": 0.07794562637250109,
+                    "replicates": 400,
+                    "blockSessions": 10
+                  },
+                  "sameDateSampleExcess": {
+                    "state": "exploratory_circular_date_block_interval",
+                    "signalDates": 39,
+                    "minimumDates": 20,
+                    "low": 0.00903354813324308,
+                    "high": 0.054410237343859316,
+                    "replicates": 400,
+                    "blockSessions": 10
+                  }
+                },
+                "singleStockLowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 212,
+                  "stockDayMean": -0.05155106555129291,
+                  "stockDayP05": -0.11296210432642978,
+                  "worstObserved": -0.21587841941371588,
+                  "dateEqualMean": -0.04486007880881187,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              }
+            }
+          },
+          "catboost": {
+            "status": "research_only",
+            "scopes": {
+              "core_common": {
+                "stockDays": 6944,
+                "brier": 0.2516269914745651,
+                "rocAuc": 0.5292677845399434,
+                "signalStockDays": 31,
+                "signalDates": 12,
+                "assumed30bps": 0.04007142701686336,
+                "sameDateSampleExcess30bps": 0.022436786907768725,
+                "uncertainty30bps": {
+                  "assumedPriceReturn": {
+                    "state": "insufficient_signal_dates",
+                    "signalDates": 12,
+                    "minimumDates": 20,
+                    "low": null,
+                    "high": null,
+                    "replicates": 0,
+                    "blockSessions": 10
+                  },
+                  "sameDateSampleExcess": {
+                    "state": "insufficient_signal_dates",
+                    "signalDates": 12,
+                    "minimumDates": 20,
+                    "low": null,
+                    "high": null,
+                    "replicates": 0,
+                    "blockSessions": 10
+                  }
+                },
+                "singleStockLowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 31,
+                  "stockDayMean": -0.04037383315824619,
+                  "stockDayP05": -0.0925140688615122,
+                  "worstObserved": -0.10626420047519591,
+                  "dateEqualMean": -0.03262519334896776,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              },
+              "expanded_readable": {
+                "stockDays": 50858,
+                "brier": 0.2514671611106033,
+                "rocAuc": 0.5272105626951948,
+                "signalStockDays": 203,
+                "signalDates": 37,
+                "assumed30bps": 0.032920592885658115,
+                "sameDateSampleExcess30bps": 0.02272537481181721,
+                "uncertainty30bps": {
+                  "assumedPriceReturn": {
+                    "state": "exploratory_circular_date_block_interval",
+                    "signalDates": 37,
+                    "minimumDates": 20,
+                    "low": 0.000397937229398646,
+                    "high": 0.07859172672163876,
+                    "replicates": 400,
+                    "blockSessions": 10
+                  },
+                  "sameDateSampleExcess": {
+                    "state": "exploratory_circular_date_block_interval",
+                    "signalDates": 37,
+                    "minimumDates": 20,
+                    "low": 0.002176418322302992,
+                    "high": 0.05644476839553076,
+                    "replicates": 400,
+                    "blockSessions": 10
+                  }
+                },
+                "singleStockLowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 203,
+                  "stockDayMean": -0.05424019837517041,
+                  "stockDayP05": -0.12465046691664027,
+                  "worstObserved": -0.21587841941371588,
+                  "dateEqualMean": -0.049424623017903936,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "replay": {
+    "status": "saved_predictions_reproduced",
+    "sourceRun": 42733142406,
+    "manifestFilesVerified": 279,
+    "predictionRows": 50858,
+    "replays": [
+      {
+        "regime": "short_core",
+        "model": "logistic",
+        "rows": 6944,
+        "maxRawDifference": 0,
+        "maxCalibratedDifference": 0
+      },
+      {
+        "regime": "short_core",
+        "model": "lightgbm",
+        "rows": 6944,
+        "maxRawDifference": 0,
+        "maxCalibratedDifference": 0
+      },
+      {
+        "regime": "short_core",
+        "model": "catboost",
+        "rows": 6944,
+        "maxRawDifference": 0,
+        "maxCalibratedDifference": 0
+      },
+      {
+        "regime": "long_core",
+        "model": "logistic",
+        "rows": 6944,
+        "maxRawDifference": 0,
+        "maxCalibratedDifference": 0
+      },
+      {
+        "regime": "long_core",
+        "model": "lightgbm",
+        "rows": 6944,
+        "maxRawDifference": 0,
+        "maxCalibratedDifference": 0
+      },
+      {
+        "regime": "long_core",
+        "model": "catboost",
+        "rows": 6944,
+        "maxRawDifference": 0,
+        "maxCalibratedDifference": 0
+      },
+      {
+        "regime": "long_expanded",
+        "model": "logistic",
+        "rows": 50858,
+        "maxRawDifference": 0,
+        "maxCalibratedDifference": 0
+      },
+      {
+        "regime": "long_expanded",
+        "model": "lightgbm",
+        "rows": 50858,
+        "maxRawDifference": 0,
+        "maxCalibratedDifference": 0
+      },
+      {
+        "regime": "long_expanded",
+        "model": "catboost",
+        "rows": 50858,
+        "maxRawDifference": 0,
+        "maxCalibratedDifference": 0
+      }
+    ],
+    "quarters": {
+      "short_core": {
+        "logistic": {
+          "core_common": {
+            "calibrationBins": [
+              {
+                "low": 0,
+                "high": 0.2,
+                "stockDays": 0,
+                "dateEqualWeightMass": 0,
+                "meanProbability": null,
+                "observedGrossUpFraction": null
+              },
+              {
+                "low": 0.2,
+                "high": 0.4,
+                "stockDays": 0,
+                "dateEqualWeightMass": 0,
+                "meanProbability": null,
+                "observedGrossUpFraction": null
+              },
+              {
+                "low": 0.4,
+                "high": 0.6,
+                "stockDays": 6944,
+                "dateEqualWeightMass": 1,
+                "meanProbability": 0.562821737336064,
+                "observedGrossUpFraction": 0.5396341905204876
+              },
+              {
+                "low": 0.6,
+                "high": 0.8,
+                "stockDays": 0,
+                "dateEqualWeightMass": 0,
+                "meanProbability": null,
+                "observedGrossUpFraction": null
+              },
+              {
+                "low": 0.8,
+                "high": 1,
+                "stockDays": 0,
+                "dateEqualWeightMass": 0,
+                "meanProbability": null,
+                "observedGrossUpFraction": null
+              }
+            ],
+            "rawBrier": 0.2601151740770002,
+            "calibratedBrier": 0.2489812458848848,
+            "quarters": [
+              {
+                "quarter": 1,
+                "signals": 0,
+                "dates": 0,
+                "assumed30bps": null,
+                "sampleExcess30bps": null,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 0,
+                  "stockDayMean": null,
+                  "stockDayP05": null,
+                  "worstObserved": null,
+                  "dateEqualMean": null,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              },
+              {
+                "quarter": 2,
+                "signals": 0,
+                "dates": 0,
+                "assumed30bps": null,
+                "sampleExcess30bps": null,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 0,
+                  "stockDayMean": null,
+                  "stockDayP05": null,
+                  "worstObserved": null,
+                  "dateEqualMean": null,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              },
+              {
+                "quarter": 3,
+                "signals": 0,
+                "dates": 0,
+                "assumed30bps": null,
+                "sampleExcess30bps": null,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 0,
+                  "stockDayMean": null,
+                  "stockDayP05": null,
+                  "worstObserved": null,
+                  "dateEqualMean": null,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              },
+              {
+                "quarter": 4,
+                "signals": 0,
+                "dates": 0,
+                "assumed30bps": null,
+                "sampleExcess30bps": null,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 0,
+                  "stockDayMean": null,
+                  "stockDayP05": null,
+                  "worstObserved": null,
+                  "dateEqualMean": null,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              }
+            ]
+          }
+        },
+        "lightgbm": {
+          "core_common": {
+            "calibrationBins": [
+              {
+                "low": 0,
+                "high": 0.2,
+                "stockDays": 0,
+                "dateEqualWeightMass": 0,
+                "meanProbability": null,
+                "observedGrossUpFraction": null
+              },
+              {
+                "low": 0.2,
+                "high": 0.4,
+                "stockDays": 0,
+                "dateEqualWeightMass": 0,
+                "meanProbability": null,
+                "observedGrossUpFraction": null
+              },
+              {
+                "low": 0.4,
+                "high": 0.6,
+                "stockDays": 6944,
+                "dateEqualWeightMass": 1,
+                "meanProbability": 0.5609141282303818,
+                "observedGrossUpFraction": 0.5396341905204876
+              },
+              {
+                "low": 0.6,
+                "high": 0.8,
+                "stockDays": 0,
+                "dateEqualWeightMass": 0,
+                "meanProbability": null,
+                "observedGrossUpFraction": null
+              },
+              {
+                "low": 0.8,
+                "high": 1,
+                "stockDays": 0,
+                "dateEqualWeightMass": 0,
+                "meanProbability": null,
+                "observedGrossUpFraction": null
+              }
+            ],
+            "rawBrier": 0.2574701590418842,
+            "calibratedBrier": 0.24903383726695863,
+            "quarters": [
+              {
+                "quarter": 1,
+                "signals": 0,
+                "dates": 0,
+                "assumed30bps": null,
+                "sampleExcess30bps": null,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 0,
+                  "stockDayMean": null,
+                  "stockDayP05": null,
+                  "worstObserved": null,
+                  "dateEqualMean": null,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              },
+              {
+                "quarter": 2,
+                "signals": 0,
+                "dates": 0,
+                "assumed30bps": null,
+                "sampleExcess30bps": null,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 0,
+                  "stockDayMean": null,
+                  "stockDayP05": null,
+                  "worstObserved": null,
+                  "dateEqualMean": null,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              },
+              {
+                "quarter": 3,
+                "signals": 0,
+                "dates": 0,
+                "assumed30bps": null,
+                "sampleExcess30bps": null,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 0,
+                  "stockDayMean": null,
+                  "stockDayP05": null,
+                  "worstObserved": null,
+                  "dateEqualMean": null,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              },
+              {
+                "quarter": 4,
+                "signals": 0,
+                "dates": 0,
+                "assumed30bps": null,
+                "sampleExcess30bps": null,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 0,
+                  "stockDayMean": null,
+                  "stockDayP05": null,
+                  "worstObserved": null,
+                  "dateEqualMean": null,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              }
+            ]
+          }
+        },
+        "catboost": {
+          "core_common": {
+            "calibrationBins": [
+              {
+                "low": 0,
+                "high": 0.2,
+                "stockDays": 0,
+                "dateEqualWeightMass": 0,
+                "meanProbability": null,
+                "observedGrossUpFraction": null
+              },
+              {
+                "low": 0.2,
+                "high": 0.4,
+                "stockDays": 0,
+                "dateEqualWeightMass": 0,
+                "meanProbability": null,
+                "observedGrossUpFraction": null
+              },
+              {
+                "low": 0.4,
+                "high": 0.6,
+                "stockDays": 6944,
+                "dateEqualWeightMass": 1,
+                "meanProbability": 0.559735433670416,
+                "observedGrossUpFraction": 0.5396341905204876
+              },
+              {
+                "low": 0.6,
+                "high": 0.8,
+                "stockDays": 0,
+                "dateEqualWeightMass": 0,
+                "meanProbability": null,
+                "observedGrossUpFraction": null
+              },
+              {
+                "low": 0.8,
+                "high": 1,
+                "stockDays": 0,
+                "dateEqualWeightMass": 0,
+                "meanProbability": null,
+                "observedGrossUpFraction": null
+              }
+            ],
+            "rawBrier": 0.25268207259261427,
+            "calibratedBrier": 0.24867252807452747,
+            "quarters": [
+              {
+                "quarter": 1,
+                "signals": 0,
+                "dates": 0,
+                "assumed30bps": null,
+                "sampleExcess30bps": null,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 0,
+                  "stockDayMean": null,
+                  "stockDayP05": null,
+                  "worstObserved": null,
+                  "dateEqualMean": null,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              },
+              {
+                "quarter": 2,
+                "signals": 0,
+                "dates": 0,
+                "assumed30bps": null,
+                "sampleExcess30bps": null,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 0,
+                  "stockDayMean": null,
+                  "stockDayP05": null,
+                  "worstObserved": null,
+                  "dateEqualMean": null,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              },
+              {
+                "quarter": 3,
+                "signals": 0,
+                "dates": 0,
+                "assumed30bps": null,
+                "sampleExcess30bps": null,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 0,
+                  "stockDayMean": null,
+                  "stockDayP05": null,
+                  "worstObserved": null,
+                  "dateEqualMean": null,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              },
+              {
+                "quarter": 4,
+                "signals": 0,
+                "dates": 0,
+                "assumed30bps": null,
+                "sampleExcess30bps": null,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 0,
+                  "stockDayMean": null,
+                  "stockDayP05": null,
+                  "worstObserved": null,
+                  "dateEqualMean": null,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              }
+            ]
+          }
+        }
+      },
+      "long_core": {
+        "logistic": {
+          "core_common": {
+            "calibrationBins": [
+              {
+                "low": 0,
+                "high": 0.2,
+                "stockDays": 0,
+                "dateEqualWeightMass": 0,
+                "meanProbability": null,
+                "observedGrossUpFraction": null
+              },
+              {
+                "low": 0.2,
+                "high": 0.4,
+                "stockDays": 2,
+                "dateEqualWeightMass": 0.0003012748683904522,
+                "meanProbability": 0.388373636324219,
+                "observedGrossUpFraction": 0
+              },
+              {
+                "low": 0.4,
+                "high": 0.6,
+                "stockDays": 6884,
+                "dateEqualWeightMass": 0.991361537691419,
+                "meanProbability": 0.5206801078656911,
+                "observedGrossUpFraction": 0.538948373478281
+              },
+              {
+                "low": 0.6,
+                "high": 0.8,
+                "stockDays": 58,
+                "dateEqualWeightMass": 0.008337187440190538,
+                "meanProbability": 0.6166648628141866,
+                "observedGrossUpFraction": 0.640683958599811
+              },
+              {
+                "low": 0.8,
+                "high": 1,
+                "stockDays": 0,
+                "dateEqualWeightMass": 0,
+                "meanProbability": null,
+                "observedGrossUpFraction": null
+              }
+            ],
+            "rawBrier": 0.25228061781119626,
+            "calibratedBrier": 0.2485575953686082,
+            "quarters": [
+              {
+                "quarter": 1,
+                "signals": 3,
+                "dates": 2,
+                "assumed30bps": 0.03302456611292004,
+                "sampleExcess30bps": 0.031109448468219045,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 3,
+                  "stockDayMean": -0.026570422584401714,
+                  "stockDayP05": -0.04307141579933986,
+                  "worstObserved": -0.04423075455885672,
+                  "dateEqualMean": -0.020638603495966357,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              },
+              {
+                "quarter": 2,
+                "signals": 26,
+                "dates": 8,
+                "assumed30bps": 0.025060271812701113,
+                "sampleExcess30bps": 0.007488318681624582,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 26,
+                  "stockDayMean": -0.04358947117854915,
+                  "stockDayP05": -0.10238043383094811,
+                  "worstObserved": -0.13742258532530616,
+                  "dateEqualMean": -0.04598217710513791,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              },
+              {
+                "quarter": 3,
+                "signals": 10,
+                "dates": 6,
+                "assumed30bps": 0.15078576503159927,
+                "sampleExcess30bps": 0.10907896860979827,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 10,
+                  "stockDayMean": -0.047181223857005836,
+                  "stockDayP05": -0.11029479966966226,
+                  "worstObserved": -0.12690355329949243,
+                  "dateEqualMean": -0.047699934520303,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              },
+              {
+                "quarter": 4,
+                "signals": 19,
+                "dates": 8,
+                "assumed30bps": 0.03373169955529083,
+                "sampleExcess30bps": 0.04050980268195388,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 19,
+                  "stockDayMean": -0.04208334536927702,
+                  "stockDayP05": -0.0957118204406224,
+                  "worstObserved": -0.12378487107289105,
+                  "dateEqualMean": -0.05144497196343125,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              }
+            ]
+          }
+        },
+        "lightgbm": {
+          "core_common": {
+            "calibrationBins": [
+              {
+                "low": 0,
+                "high": 0.2,
+                "stockDays": 0,
+                "dateEqualWeightMass": 0,
+                "meanProbability": null,
+                "observedGrossUpFraction": null
+              },
+              {
+                "low": 0.2,
+                "high": 0.4,
+                "stockDays": 0,
+                "dateEqualWeightMass": 0,
+                "meanProbability": null,
+                "observedGrossUpFraction": null
+              },
+              {
+                "low": 0.4,
+                "high": 0.6,
+                "stockDays": 6873,
+                "dateEqualWeightMass": 0.9896415399296521,
+                "meanProbability": 0.5193275978718492,
+                "observedGrossUpFraction": 0.5382675702483245
+              },
+              {
+                "low": 0.6,
+                "high": 0.8,
+                "stockDays": 71,
+                "dateEqualWeightMass": 0.01035846007034786,
+                "meanProbability": 0.6282600999578116,
+                "observedGrossUpFraction": 0.6702003346633054
+              },
+              {
+                "low": 0.8,
+                "high": 1,
+                "stockDays": 0,
+                "dateEqualWeightMass": 0,
+                "meanProbability": null,
+                "observedGrossUpFraction": null
+              }
+            ],
+            "rawBrier": 0.2525038549495524,
+            "calibratedBrier": 0.24864062648068122,
+            "quarters": [
+              {
+                "quarter": 1,
+                "signals": 4,
+                "dates": 4,
+                "assumed30bps": 0.09223256980085726,
+                "sampleExcess30bps": 0.06796496475432112,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 4,
+                  "stockDayMean": -0.013590295582638662,
+                  "stockDayP05": -0.025208983392728323,
+                  "worstObserved": -0.02738368996090834,
+                  "dateEqualMean": -0.013590295582638662,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              },
+              {
+                "quarter": 2,
+                "signals": 30,
+                "dates": 14,
+                "assumed30bps": 0.024866997172890988,
+                "sampleExcess30bps": 0.013061460589365807,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 30,
+                  "stockDayMean": -0.03823557754240996,
+                  "stockDayP05": -0.10029481267653555,
+                  "worstObserved": -0.13742258532530616,
+                  "dateEqualMean": -0.033358316937884644,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              },
+              {
+                "quarter": 3,
+                "signals": 23,
+                "dates": 18,
+                "assumed30bps": 0.08325259286155473,
+                "sampleExcess30bps": 0.0644915627780964,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 23,
+                  "stockDayMean": -0.05836437475094549,
+                  "stockDayP05": -0.14309463198040942,
+                  "worstObserved": -0.1560150228801167,
+                  "dateEqualMean": -0.047187506554087204,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              },
+              {
+                "quarter": 4,
+                "signals": 14,
+                "dates": 12,
+                "assumed30bps": 0.027421977000679203,
+                "sampleExcess30bps": 0.028709394848157942,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 14,
+                  "stockDayMean": -0.05280269179638526,
+                  "stockDayP05": -0.13808806737814924,
+                  "worstObserved": -0.1646511462307716,
+                  "dateEqualMean": -0.04807531704676595,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              }
+            ]
+          }
+        },
+        "catboost": {
+          "core_common": {
+            "calibrationBins": [
+              {
+                "low": 0,
+                "high": 0.2,
+                "stockDays": 0,
+                "dateEqualWeightMass": 0,
+                "meanProbability": null,
+                "observedGrossUpFraction": null
+              },
+              {
+                "low": 0.2,
+                "high": 0.4,
+                "stockDays": 0,
+                "dateEqualWeightMass": 0,
+                "meanProbability": null,
+                "observedGrossUpFraction": null
+              },
+              {
+                "low": 0.4,
+                "high": 0.6,
+                "stockDays": 6912,
+                "dateEqualWeightMass": 0.9955572158542076,
+                "meanProbability": 0.5203074241940183,
+                "observedGrossUpFraction": 0.5391094662814074
+              },
+              {
+                "low": 0.6,
+                "high": 0.8,
+                "stockDays": 32,
+                "dateEqualWeightMass": 0.004442784145792256,
+                "meanProbability": 0.6124475342895727,
+                "observedGrossUpFraction": 0.6572165410032774
+              },
+              {
+                "low": 0.8,
+                "high": 1,
+                "stockDays": 0,
+                "dateEqualWeightMass": 0,
+                "meanProbability": null,
+                "observedGrossUpFraction": null
+              }
+            ],
+            "rawBrier": 0.25151172150059065,
+            "calibratedBrier": 0.24815681845489554,
+            "quarters": [
+              {
+                "quarter": 1,
+                "signals": 3,
+                "dates": 3,
+                "assumed30bps": 0.0783304005224789,
+                "sampleExcess30bps": 0.04905298778310411,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 3,
+                  "stockDayMean": -0.016447727234919645,
+                  "stockDayP05": -0.026556955516136536,
+                  "worstObserved": -0.02738368996090834,
+                  "dateEqualMean": -0.016447727234919645,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              },
+              {
+                "quarter": 2,
+                "signals": 29,
+                "dates": 10,
+                "assumed30bps": 0.024235774786072868,
+                "sampleExcess30bps": 0.010120870143399685,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 29,
+                  "stockDayMean": -0.042928551301538796,
+                  "stockDayP05": -0.10095807798749781,
+                  "worstObserved": -0.13742258532530616,
+                  "dateEqualMean": -0.03880298059022482,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              },
+              {
+                "quarter": 3,
+                "signals": 0,
+                "dates": 0,
+                "assumed30bps": null,
+                "sampleExcess30bps": null,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 0,
+                  "stockDayMean": null,
+                  "stockDayP05": null,
+                  "worstObserved": null,
+                  "dateEqualMean": null,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              },
+              {
+                "quarter": 4,
+                "signals": 0,
+                "dates": 0,
+                "assumed30bps": null,
+                "sampleExcess30bps": null,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 0,
+                  "stockDayMean": null,
+                  "stockDayP05": null,
+                  "worstObserved": null,
+                  "dateEqualMean": null,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              }
+            ]
+          }
+        }
+      },
+      "long_expanded": {
+        "logistic": {
+          "core_common": {
+            "calibrationBins": [
+              {
+                "low": 0,
+                "high": 0.2,
+                "stockDays": 0,
+                "dateEqualWeightMass": 0,
+                "meanProbability": null,
+                "observedGrossUpFraction": null
+              },
+              {
+                "low": 0.2,
+                "high": 0.4,
+                "stockDays": 41,
+                "dateEqualWeightMass": 0.006311463792594471,
+                "meanProbability": 0.38404648311342354,
+                "observedGrossUpFraction": 0.4391330239944418
+              },
+              {
+                "low": 0.4,
+                "high": 0.6,
+                "stockDays": 6902,
+                "dateEqualWeightMass": 0.9935500895785808,
+                "meanProbability": 0.47749587773746394,
+                "observedGrossUpFraction": 0.5403478133318141
+              },
+              {
+                "low": 0.6,
+                "high": 0.8,
+                "stockDays": 1,
+                "dateEqualWeightMass": 0.0001384466288245881,
+                "meanProbability": 0.6003173338409732,
+                "observedGrossUpFraction": 0
+              },
+              {
+                "low": 0.8,
+                "high": 1,
+                "stockDays": 0,
+                "dateEqualWeightMass": 0,
+                "meanProbability": null,
+                "observedGrossUpFraction": null
+              }
+            ],
+            "rawBrier": 0.25324929434199256,
+            "calibratedBrier": 0.25209209486428935,
+            "quarters": [
+              {
+                "quarter": 1,
+                "signals": 0,
+                "dates": 0,
+                "assumed30bps": null,
+                "sampleExcess30bps": null,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 0,
+                  "stockDayMean": null,
+                  "stockDayP05": null,
+                  "worstObserved": null,
+                  "dateEqualMean": null,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              },
+              {
+                "quarter": 2,
+                "signals": 1,
+                "dates": 1,
+                "assumed30bps": -0.06493300091610243,
+                "sampleExcess30bps": -0.06875722357047462,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 1,
+                  "stockDayMean": -0.07290013605955425,
+                  "stockDayP05": -0.07290013605955425,
+                  "worstObserved": -0.07290013605955425,
+                  "dateEqualMean": -0.07290013605955425,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              },
+              {
+                "quarter": 3,
+                "signals": 0,
+                "dates": 0,
+                "assumed30bps": null,
+                "sampleExcess30bps": null,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 0,
+                  "stockDayMean": null,
+                  "stockDayP05": null,
+                  "worstObserved": null,
+                  "dateEqualMean": null,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              },
+              {
+                "quarter": 4,
+                "signals": 0,
+                "dates": 0,
+                "assumed30bps": null,
+                "sampleExcess30bps": null,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 0,
+                  "stockDayMean": null,
+                  "stockDayP05": null,
+                  "worstObserved": null,
+                  "dateEqualMean": null,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              }
+            ]
+          },
+          "expanded_readable": {
+            "calibrationBins": [
+              {
+                "low": 0,
+                "high": 0.2,
+                "stockDays": 0,
+                "dateEqualWeightMass": 0,
+                "meanProbability": null,
+                "observedGrossUpFraction": null
+              },
+              {
+                "low": 0.2,
+                "high": 0.4,
+                "stockDays": 272,
+                "dateEqualWeightMass": 0.005320549499112624,
+                "meanProbability": 0.379300392206002,
+                "observedGrossUpFraction": 0.4120769901289043
+              },
+              {
+                "low": 0.4,
+                "high": 0.6,
+                "stockDays": 50583,
+                "dateEqualWeightMass": 0.9946230603257898,
+                "meanProbability": 0.4784203428312723,
+                "observedGrossUpFraction": 0.5365978644758346
+              },
+              {
+                "low": 0.6,
+                "high": 0.8,
+                "stockDays": 3,
+                "dateEqualWeightMass": 0.00005639017509768587,
+                "meanProbability": 0.6099504661459806,
+                "observedGrossUpFraction": 0.664714494875549
+              },
+              {
+                "low": 0.8,
+                "high": 1,
+                "stockDays": 0,
+                "dateEqualWeightMass": 0,
+                "meanProbability": null,
+                "observedGrossUpFraction": null
+              }
+            ],
+            "rawBrier": 0.25272927326879335,
+            "calibratedBrier": 0.251713111907743,
+            "quarters": [
+              {
+                "quarter": 1,
+                "signals": 0,
+                "dates": 0,
+                "assumed30bps": null,
+                "sampleExcess30bps": null,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 0,
+                  "stockDayMean": null,
+                  "stockDayP05": null,
+                  "worstObserved": null,
+                  "dateEqualMean": null,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              },
+              {
+                "quarter": 2,
+                "signals": 3,
+                "dates": 3,
+                "assumed30bps": 0.10467258614340842,
+                "sampleExcess30bps": 0.047243847918858765,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 3,
+                  "stockDayMean": -0.0531714406175284,
+                  "stockDayP05": -0.08524278081968326,
+                  "worstObserved": -0.08661418579303093,
+                  "dateEqualMean": -0.0531714406175284,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              },
+              {
+                "quarter": 3,
+                "signals": 0,
+                "dates": 0,
+                "assumed30bps": null,
+                "sampleExcess30bps": null,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 0,
+                  "stockDayMean": null,
+                  "stockDayP05": null,
+                  "worstObserved": null,
+                  "dateEqualMean": null,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              },
+              {
+                "quarter": 4,
+                "signals": 0,
+                "dates": 0,
+                "assumed30bps": null,
+                "sampleExcess30bps": null,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 0,
+                  "stockDayMean": null,
+                  "stockDayP05": null,
+                  "worstObserved": null,
+                  "dateEqualMean": null,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              }
+            ]
+          }
+        },
+        "lightgbm": {
+          "core_common": {
+            "calibrationBins": [
+              {
+                "low": 0,
+                "high": 0.2,
+                "stockDays": 0,
+                "dateEqualWeightMass": 0,
+                "meanProbability": null,
+                "observedGrossUpFraction": null
+              },
+              {
+                "low": 0.2,
+                "high": 0.4,
+                "stockDays": 0,
+                "dateEqualWeightMass": 0,
+                "meanProbability": null,
+                "observedGrossUpFraction": null
+              },
+              {
+                "low": 0.4,
+                "high": 0.6,
+                "stockDays": 6915,
+                "dateEqualWeightMass": 0.9959901499997613,
+                "meanProbability": 0.476191253353471,
+                "observedGrossUpFraction": 0.539031796830319
+              },
+              {
+                "low": 0.6,
+                "high": 0.8,
+                "stockDays": 29,
+                "dateEqualWeightMass": 0.0040098500002387,
+                "meanProbability": 0.658686758972657,
+                "observedGrossUpFraction": 0.6892602817194861
+              },
+              {
+                "low": 0.8,
+                "high": 1,
+                "stockDays": 0,
+                "dateEqualWeightMass": 0,
+                "meanProbability": null,
+                "observedGrossUpFraction": null
+              }
+            ],
+            "rawBrier": 0.2520067563138118,
+            "calibratedBrier": 0.2515984274128435,
+            "quarters": [
+              {
+                "quarter": 1,
+                "signals": 2,
+                "dates": 2,
+                "assumed30bps": 0.08186414256281338,
+                "sampleExcess30bps": 0.05514830319894986,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 2,
+                  "stockDayMean": -0.015113418095784314,
+                  "stockDayP05": -0.02615666277439594,
+                  "worstObserved": -0.02738368996090834,
+                  "dateEqualMean": -0.015113418095784314,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              },
+              {
+                "quarter": 2,
+                "signals": 27,
+                "dates": 9,
+                "assumed30bps": 0.03212865139443138,
+                "sampleExcess30bps": 0.015430945979172966,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 27,
+                  "stockDayMean": -0.04014834666819316,
+                  "stockDayP05": -0.09163921059641303,
+                  "worstObserved": -0.10626420047519591,
+                  "dateEqualMean": -0.03790631017232538,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              },
+              {
+                "quarter": 3,
+                "signals": 0,
+                "dates": 0,
+                "assumed30bps": null,
+                "sampleExcess30bps": null,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 0,
+                  "stockDayMean": null,
+                  "stockDayP05": null,
+                  "worstObserved": null,
+                  "dateEqualMean": null,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              },
+              {
+                "quarter": 4,
+                "signals": 0,
+                "dates": 0,
+                "assumed30bps": null,
+                "sampleExcess30bps": null,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 0,
+                  "stockDayMean": null,
+                  "stockDayP05": null,
+                  "worstObserved": null,
+                  "dateEqualMean": null,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              }
+            ]
+          },
+          "expanded_readable": {
+            "calibrationBins": [
+              {
+                "low": 0,
+                "high": 0.2,
+                "stockDays": 0,
+                "dateEqualWeightMass": 0,
+                "meanProbability": null,
+                "observedGrossUpFraction": null
+              },
+              {
+                "low": 0.2,
+                "high": 0.4,
+                "stockDays": 65,
+                "dateEqualWeightMass": 0.0012748447309235914,
+                "meanProbability": 0.39113660408836026,
+                "observedGrossUpFraction": 0.5136397793174268
+              },
+              {
+                "low": 0.4,
+                "high": 0.6,
+                "stockDays": 50581,
+                "dateEqualWeightMass": 0.9947309611712789,
+                "meanProbability": 0.4748849866454267,
+                "observedGrossUpFraction": 0.5350943460503027
+              },
+              {
+                "low": 0.6,
+                "high": 0.8,
+                "stockDays": 212,
+                "dateEqualWeightMass": 0.003994194097797508,
+                "meanProbability": 0.6591715647314306,
+                "observedGrossUpFraction": 0.7543062043208106
+              },
+              {
+                "low": 0.8,
+                "high": 1,
+                "stockDays": 0,
+                "dateEqualWeightMass": 0,
+                "meanProbability": null,
+                "observedGrossUpFraction": null
+              }
+            ],
+            "rawBrier": 0.25191091586851216,
+            "calibratedBrier": 0.25149535024817865,
+            "quarters": [
+              {
+                "quarter": 1,
+                "signals": 22,
+                "dates": 16,
+                "assumed30bps": 0.05155149112020096,
+                "sampleExcess30bps": 0.04254223033138312,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 22,
+                  "stockDayMean": -0.03915268223155819,
+                  "stockDayP05": -0.1950557763549103,
+                  "worstObserved": -0.21587841941371588,
+                  "dateEqualMean": -0.048366541544378944,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              },
+              {
+                "quarter": 2,
+                "signals": 182,
+                "dates": 15,
+                "assumed30bps": 0.03620116066895677,
+                "sampleExcess30bps": 0.02851344858058801,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 182,
+                  "stockDayMean": -0.05483358031868155,
+                  "stockDayP05": -0.11288305432110918,
+                  "worstObserved": -0.2059528071173926,
+                  "dateEqualMean": -0.05919487593692167,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              },
+              {
+                "quarter": 3,
+                "signals": 0,
+                "dates": 0,
+                "assumed30bps": null,
+                "sampleExcess30bps": null,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 0,
+                  "stockDayMean": null,
+                  "stockDayP05": null,
+                  "worstObserved": null,
+                  "dateEqualMean": null,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              },
+              {
+                "quarter": 4,
+                "signals": 8,
+                "dates": 8,
+                "assumed30bps": 0.028331053070086404,
+                "sampleExcess30bps": 0.006222662594818653,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 8,
+                  "stockDayMean": -0.010969408722471818,
+                  "stockDayP05": -0.032567510453446344,
+                  "worstObserved": -0.03530745733149099,
+                  "dateEqualMean": -0.010969408722471818,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              }
+            ]
+          }
+        },
+        "catboost": {
+          "core_common": {
+            "calibrationBins": [
+              {
+                "low": 0,
+                "high": 0.2,
+                "stockDays": 0,
+                "dateEqualWeightMass": 0,
+                "meanProbability": null,
+                "observedGrossUpFraction": null
+              },
+              {
+                "low": 0.2,
+                "high": 0.4,
+                "stockDays": 0,
+                "dateEqualWeightMass": 0,
+                "meanProbability": null,
+                "observedGrossUpFraction": null
+              },
+              {
+                "low": 0.4,
+                "high": 0.6,
+                "stockDays": 6913,
+                "dateEqualWeightMass": 0.9957132567421121,
+                "meanProbability": 0.47581988110290757,
+                "observedGrossUpFraction": 0.539042651000737
+              },
+              {
+                "low": 0.6,
+                "high": 0.8,
+                "stockDays": 31,
+                "dateEqualWeightMass": 0.004286743257887876,
+                "meanProbability": 0.6333574887309289,
+                "observedGrossUpFraction": 0.6770354077776
+              },
+              {
+                "low": 0.8,
+                "high": 1,
+                "stockDays": 0,
+                "dateEqualWeightMass": 0,
+                "meanProbability": null,
+                "observedGrossUpFraction": null
+              }
+            ],
+            "rawBrier": 0.2519916525468865,
+            "calibratedBrier": 0.2516269914745651,
+            "quarters": [
+              {
+                "quarter": 1,
+                "signals": 2,
+                "dates": 2,
+                "assumed30bps": 0.08186414256281338,
+                "sampleExcess30bps": 0.05514830319894986,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 2,
+                  "stockDayMean": -0.015113418095784314,
+                  "stockDayP05": -0.02615666277439594,
+                  "worstObserved": -0.02738368996090834,
+                  "dateEqualMean": -0.015113418095784314,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              },
+              {
+                "quarter": 2,
+                "signals": 29,
+                "dates": 10,
+                "assumed30bps": 0.03171288390767335,
+                "sampleExcess30bps": 0.015894483649532498,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 29,
+                  "stockDayMean": -0.04211593074876081,
+                  "stockDayP05": -0.09261103394039989,
+                  "worstObserved": -0.10626420047519591,
+                  "dateEqualMean": -0.03612754839960445,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              },
+              {
+                "quarter": 3,
+                "signals": 0,
+                "dates": 0,
+                "assumed30bps": null,
+                "sampleExcess30bps": null,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 0,
+                  "stockDayMean": null,
+                  "stockDayP05": null,
+                  "worstObserved": null,
+                  "dateEqualMean": null,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              },
+              {
+                "quarter": 4,
+                "signals": 0,
+                "dates": 0,
+                "assumed30bps": null,
+                "sampleExcess30bps": null,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 0,
+                  "stockDayMean": null,
+                  "stockDayP05": null,
+                  "worstObserved": null,
+                  "dateEqualMean": null,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              }
+            ]
+          },
+          "expanded_readable": {
+            "calibrationBins": [
+              {
+                "low": 0,
+                "high": 0.2,
+                "stockDays": 0,
+                "dateEqualWeightMass": 0,
+                "meanProbability": null,
+                "observedGrossUpFraction": null
+              },
+              {
+                "low": 0.2,
+                "high": 0.4,
+                "stockDays": 0,
+                "dateEqualWeightMass": 0,
+                "meanProbability": null,
+                "observedGrossUpFraction": null
+              },
+              {
+                "low": 0.4,
+                "high": 0.6,
+                "stockDays": 50655,
+                "dateEqualWeightMass": 0.9961743101885868,
+                "meanProbability": 0.475200521063448,
+                "observedGrossUpFraction": 0.535222810459572
+              },
+              {
+                "low": 0.6,
+                "high": 0.8,
+                "stockDays": 203,
+                "dateEqualWeightMass": 0.0038256898114132974,
+                "meanProbability": 0.6317207983829898,
+                "observedGrossUpFraction": 0.7233611842767682
+              },
+              {
+                "low": 0.8,
+                "high": 1,
+                "stockDays": 0,
+                "dateEqualWeightMass": 0,
+                "meanProbability": null,
+                "observedGrossUpFraction": null
+              }
+            ],
+            "rawBrier": 0.2518191735380684,
+            "calibratedBrier": 0.2514671611106033,
+            "quarters": [
+              {
+                "quarter": 1,
+                "signals": 19,
+                "dates": 13,
+                "assumed30bps": 0.03703656369984524,
+                "sampleExcess30bps": 0.03133149923871735,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 19,
+                  "stockDayMean": -0.04214803163960767,
+                  "stockDayP05": -0.20127752552670294,
+                  "worstObserved": -0.21587841941371588,
+                  "dateEqualMean": -0.055565427734485216,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              },
+              {
+                "quarter": 2,
+                "signals": 172,
+                "dates": 14,
+                "assumed30bps": 0.033126973182833974,
+                "sampleExcess30bps": 0.02477774502951949,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 172,
+                  "stockDayMean": -0.057616211931429226,
+                  "stockDayP05": -0.12197294868441842,
+                  "worstObserved": -0.2059528071173926,
+                  "dateEqualMean": -0.06330030289575568,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              },
+              {
+                "quarter": 3,
+                "signals": 0,
+                "dates": 0,
+                "assumed30bps": null,
+                "sampleExcess30bps": null,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 0,
+                  "stockDayMean": null,
+                  "stockDayP05": null,
+                  "worstObserved": null,
+                  "dateEqualMean": null,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              },
+              {
+                "quarter": 4,
+                "signals": 12,
+                "dates": 10,
+                "assumed30bps": 0.027280898411168673,
+                "sampleExcess30bps": 0.008664094752063832,
+                "lowExcursion": {
+                  "kind": "single_stock_five_session_low_relative_to_entry_open",
+                  "stockDays": 12,
+                  "stockDayMean": -0.024996601400101532,
+                  "stockDayP05": -0.05769225478877493,
+                  "worstObserved": -0.05769225478877493,
+                  "dateEqualMean": -0.022015625057355846,
+                  "portfolioMaxDrawdown": null,
+                  "actualTradingReturn": null
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "artifactDatasetSha256": "79d0ef7bc81d6b8a3b3e11965abee51df80a65c333175c55e748d28405a7b5d5",
+    "coreCohortHash": "ec739a4f4ed59bfdf8501a7678cfd78beee7123bf58b2b6bf6d4eab46601e170",
+    "notes": [
+      "Own frozen artifact only; saved inference reproduced, not a fresh retrain or final-test evaluation.",
+      "Regimes change training cutoffs and calibration ranges; descriptive configuration comparison only."
+    ]
+  },
+  "limitations": [
+    "2025 is development, 2026 research daily bars not evaluated",
+    "A/B change training cutoff and calibration windows together; descriptive configuration comparison, not a causal training-years effect",
+    "fixed current-list survivorship and liquidity selection bias; seven failed downloads not replaced",
+    "reported cost scenarios and single-stock paths do not establish executable returns or portfolio drawdown",
+    "saved model inference reproduced, not a full fresh retrain or final-test result",
+    "all paired Brier error difference intervals cross zero; no stable model superiority established"
+  ]
+}
