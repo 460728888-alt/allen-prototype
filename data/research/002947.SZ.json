@@ -27,8 +27,39 @@
     "message": "复用7日内公开资料，原获取与观察时间保留。"
   },
   "financial": {
-    "state": "unavailable",
-    "reports": [],
+    "state": "partial",
+    "reports": [
+      {
+        "reportDate": "2026-09-30",
+        "noticeDate": "2026-10-26",
+        "updateDate": "2026-10-26",
+        "observedAt": "2026-11-10T15:34:57.492Z",
+        "periodBasis": "year_to_date",
+        "currency": null,
+        "amountUnit": "source_yuan",
+        "unitNote": "来源页面金额单位为元，币种未注明；不默认CNY，不作汇率换算。",
+        "percentageUnit": "percent",
+        "reportName": "2026年 三季报",
+        "industry": null,
+        "metrics": {
+          "revenue": 2195749635.29,
+          "netProfit": 349970597.68,
+          "revenueGrowth": 11.8820114453,
+          "profitGrowth": -14.2,
+          "roe": 10.87,
+          "grossMargin": 34.2762398342,
+          "eps": 1.37,
+          "bps": 13.276334983933,
+          "operatingCashPerShare": 2.48289714604
+        },
+        "source": {
+          "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
+          "fetchedAt": "2026-11-10T15:34:57.492Z",
+          "url": "https://data.eastmoney.com/bbsj/202609/yjbb.html"
+        },
+        "historicalAvailability": "provider_current_revision_not_point_in_time"
+      }
+    ],
     "scope": {
       "periods": [
         "2026-09-30",
@@ -37,30 +68,59 @@
       "complete": false,
       "pageCapPerPeriod": 16
     },
-    "message": "未取得可核验的已披露报告，不代表公司没有财报。"
+    "message": "仅展示已取得且日期可核验的累计报告；当前修订版不能冒充历史当时数据。"
   },
   "announcements": {
     "state": "partial",
-    "items": [],
+    "items": [
+      {
+        "id": "AN202611091831555891",
+        "symbol": "002947.SZ",
+        "title": "恒铭达:北京市中伦律师事务所关于苏州恒铭达电子科技股份有限公司第二期员工持股计划(草案)的法律意见书",
+        "noticeDate": "2026-11-10",
+        "displayTime": "2026-11-09 17:39:04:296",
+        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
+        "category": "法律意见书",
+        "url": "https://data.eastmoney.com/notices/detail/002947/AN202611091831555891.html",
+        "observedAt": "2026-11-10T15:34:44.770Z",
+        "bodyRead": false,
+        "readState": "index_only",
+        "source": "东方财富公开公告索引"
+      },
+      {
+        "id": "AN202611091831555890",
+        "symbol": "002947.SZ",
+        "title": "恒铭达:关于2026年员工持股计划预留份额非交易过户完成的公告",
+        "noticeDate": "2026-11-10",
+        "displayTime": "2026-11-09 17:39:04:296",
+        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
+        "category": "员工持股计划",
+        "url": "https://data.eastmoney.com/notices/detail/002947/AN202611091831555890.html",
+        "observedAt": "2026-11-10T15:34:44.770Z",
+        "bodyRead": false,
+        "readState": "index_only",
+        "source": "东方财富公开公告索引"
+      }
+    ],
     "scope": {
-      "from": "2026-10-30",
-      "through": "2026-11-05",
-      "beginDate": "2026-10-30",
-      "endDate": "2026-11-05",
+      "from": "2026-11-04",
+      "through": "2026-11-10",
+      "beginDate": "2026-11-04",
+      "endDate": "2026-11-10",
       "complete": false,
-      "totalHits": 13131,
-      "totalPages": 132,
-      "returnedPages": 11,
+      "totalHits": 6369,
+      "totalPages": 64,
+      "returnedPages": 20,
       "pageCap": 20,
       "truncated": true,
       "noticeTimePrecision": "day",
       "displayTimeTimezoneVerified": false
     },
-    "message": "本窗口未取得匹配公告索引；不等于没有公告或风险。"
+    "message": "公告索引未读正文，事件不是价格确认。"
   },
-  "bundleId": "002947.SZ:2026-11-05T15:27:52.131Z",
-  "fetchedAt": "2026-11-05T15:27:52.131Z",
-  "asOf": "2026-11-05T15:27:52.131Z",
-  "requestedAt": "2026-11-05T15:26:37.127Z",
-  "codeSourceCommit": "5f4a7f504d9dd83784b637bff0341abc516391b6"
+  "bundleId": "002947.SZ:2026-11-10T15:35:05.441Z",
+  "fetchedAt": "2026-11-10T15:35:05.441Z",
+  "asOf": "2026-11-10T15:35:05.441Z",
+  "requestedAt": "2026-11-10T15:34:27.193Z",
+  "codeSourceCommit": "3a29cceae8b91691a3d2a2b85930e36024babaa1"
 }
