@@ -27,3 +27,8 @@ test('experiment record is a fresh-data development run with explicit temporary 
  assert.equal(audit.probabilitiesEnabled,false);assert.equal(audit.finalTestOpened,false);
  assert.equal(audit.artifact.temporary,true);assert.ok(audit.errata[0].includes('元数据'));
 });
+
+test('invalid baseline ranges, sample counts and missing purge counts fail closed',()=>{
+ for(const a of [{...audit,constantBrier:-1},{...audit,constantBrier:2},{...audit,counts:{...audit.counts,purged:null}},{...audit,coverage:{...audit.coverage,readableLabels:1}},{...audit,coverage:{...audit.coverage,benchmarkPairedLabels:999999}}])assert.match(renderTrainingReview(a),/data-state="unavailable"/);
+ assert.match(renderTrainingReview(audit),/仅用训练期上涨比例作常数预测，其开发集Brier/);
+});

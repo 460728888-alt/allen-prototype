@@ -11,13 +11,15 @@ concurrency:
 jobs:
   check:
     runs-on: ubuntu-24.04
+    permissions:
+      contents: write
     timeout-minutes: 12
     env:
       DATABASE_URL: ''
     steps:
       - uses: actions/checkout@v5
         with:
-          persist-credentials: false
+          persist-credentials: true
       - uses: actions/setup-node@v5
         with:
           node-version: '22'
@@ -27,6 +29,12 @@ jobs:
           mkdir -p test-logs
           node --check personal-app.js
           node --test *.test.js 2>&1 | tee test-logs/unit.log
+      - name: Refresh public prices while preserving explicit failure status
+        id: market
+        continue-on-error: true
+        run: |
+          set -euo pipefail
+          node scripts/refresh-market.mjs 2>&1 | tee test-logs/market.log
       - name: Install browser
         run: |
           npm install --no-save --ignore-scripts --no-audit --no-fund playwright@1.64.0
@@ -38,6 +46,22 @@ jobs:
           node scripts/browser-check.mjs 2>&1 | tee test-logs/browser.log
       - name: Read-only diagnostic of current price adjustments
         run: node scripts/diagnose-live-price.mjs | tee test-logs/price-diagnostic.log
+      - name: Preserve public data on this isolated branch only
+        if: github.ref == 'refs/heads/upgrade/training-review-v1'
+        run: |
+          set -euo pipefail
+          branch_tip="$(git ls-remote origin "refs/heads/$GITHUB_REF_NAME" | cut -f1)"
+          test "$branch_tip" = "$GITHUB_SHA"
+          git diff --exit-code -- . ':!data'
+          git add -- data
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m "Preserve latest public prices and explicit coverage"
+          git push origin "HEAD:refs/heads/$GITHUB_REF_NAME"
+      - name: Report failed acquisition separately from interface verification
+        if: steps.market.outcome != 'success'
+        run: echo "Public prices could not be refreshed; inspect the retained failed status, never treat it as no opportunities." >> "$GITHUB_STEP_SUMMARY"
       - name: Retain interface and diagnostic evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -46,4 +70,5 @@ jobs:
           path: |
             test-logs/
             test-results/
+            data/status.json
           retention-days: 30
