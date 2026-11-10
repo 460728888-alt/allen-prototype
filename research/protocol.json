@@ -1,0 +1,200 @@
+{
+  "id": "allen-five-session-development-training-20261110-v1",
+  "version": 1,
+  "approved": false,
+  "probabilitiesEnabled": false,
+  "provenance": "reconstructed",
+  "requestFrom": "2024-01-01",
+  "requestThrough": "2025-12-31",
+  "sealedTestFrom": "2026-01-01",
+  "trainEnd": "2024-08-30",
+  "calibrationFrom": "2024-09-09",
+  "calibrationThrough": "2024-12-31",
+  "developmentFrom": "2025-01-09",
+  "developmentThrough": "2025-12-31",
+  "historySessions": 61,
+  "horizonSessions": 5,
+  "target": "next_open_to_fifth_close_gross_up",
+  "entryRule": "next_session_open",
+  "exitRule": "fifth_session_close",
+  "selectionThreshold": 0.6,
+  "costScenarioBps": [
+    0,
+    30,
+    60
+  ],
+  "seed": 20261110,
+  "benchmark": "000001.SS",
+  "universe": [
+    {
+      "symbol": "000001.SZ",
+      "name": "平安银行"
+    },
+    {
+      "symbol": "000333.SZ",
+      "name": "美的集团"
+    },
+    {
+      "symbol": "000651.SZ",
+      "name": "格力电器"
+    },
+    {
+      "symbol": "000725.SZ",
+      "name": "京东方A"
+    },
+    {
+      "symbol": "000823.SZ",
+      "name": "超声电子"
+    },
+    {
+      "symbol": "000858.SZ",
+      "name": "五粮液"
+    },
+    {
+      "symbol": "000977.SZ",
+      "name": "浪潮信息"
+    },
+    {
+      "symbol": "002230.SZ",
+      "name": "科大讯飞"
+    },
+    {
+      "symbol": "002463.SZ",
+      "name": "沪电股份"
+    },
+    {
+      "symbol": "002475.SZ",
+      "name": "立讯精密"
+    },
+    {
+      "symbol": "002594.SZ",
+      "name": "比亚迪"
+    },
+    {
+      "symbol": "300059.SZ",
+      "name": "东方财富"
+    },
+    {
+      "symbol": "300308.SZ",
+      "name": "中际旭创"
+    },
+    {
+      "symbol": "300750.SZ",
+      "name": "宁德时代"
+    },
+    {
+      "symbol": "600030.SS",
+      "name": "中信证券"
+    },
+    {
+      "symbol": "600036.SS",
+      "name": "招商银行"
+    },
+    {
+      "symbol": "600276.SS",
+      "name": "恒瑞医药"
+    },
+    {
+      "symbol": "600519.SS",
+      "name": "贵州茅台"
+    },
+    {
+      "symbol": "600667.SS",
+      "name": "太极实业"
+    },
+    {
+      "symbol": "600887.SS",
+      "name": "伊利股份"
+    },
+    {
+      "symbol": "600900.SS",
+      "name": "长江电力"
+    },
+    {
+      "symbol": "601012.SS",
+      "name": "隆基绿能"
+    },
+    {
+      "symbol": "601088.SS",
+      "name": "中国神华"
+    },
+    {
+      "symbol": "601138.SS",
+      "name": "工业富联"
+    },
+    {
+      "symbol": "601166.SS",
+      "name": "兴业银行"
+    },
+    {
+      "symbol": "601318.SS",
+      "name": "中国平安"
+    },
+    {
+      "symbol": "601899.SS",
+      "name": "紫金矿业"
+    },
+    {
+      "symbol": "603083.SS",
+      "name": "剑桥科技"
+    },
+    {
+      "symbol": "603986.SS",
+      "name": "兆易创新"
+    },
+    {
+      "symbol": "688008.SS",
+      "name": "澜起科技"
+    },
+    {
+      "symbol": "688041.SS",
+      "name": "海光信息"
+    },
+    {
+      "symbol": "688981.SS",
+      "name": "中芯国际"
+    }
+  ],
+  "universeBasis": "fixed_current_survivors_not_point_in_time",
+  "featureNames": [
+    "ret5",
+    "ret20",
+    "ret60",
+    "aboveMa20",
+    "aboveMa60",
+    "ma20Slope5",
+    "drawdown20",
+    "range5vs20",
+    "volume5vs20",
+    "realizedVol20"
+  ],
+  "featureDefinitions": {
+    "ret5": "C[t]/C[t-5]-1",
+    "ret20": "C[t]/C[t-20]-1",
+    "ret60": "C[t]/C[t-60]-1; needs 61 complete sessions",
+    "aboveMa20": "C[t]/mean(C[t-19:t])-1",
+    "aboveMa60": "C[t]/mean(C[t-59:t])-1",
+    "ma20Slope5": "mean(C[t-19:t])/mean(C[t-24:t-5])-1",
+    "drawdown20": "C[t]/max(H[t-19:t])-1",
+    "range5vs20": "((max(H5)-min(L5))/mean(C5))/((max(H20)-min(L20))/mean(C20)); zero denominator excluded",
+    "volume5vs20": "mean(V[t-4:t])/mean(V[t-19:t])",
+    "realizedVol20": "population std of last 20 one-session simple returns; no annualization"
+  },
+  "priceBasis": "provider_quote_features_adjusted_to_decision_day_anchor; independently_unverified",
+  "models": {
+    "constant": "date-weighted training positive fraction",
+    "simpleTrend": "C > MA20 > MA60; rule, no probability",
+    "logistic": "StandardScaler trained on train only; LogisticRegression C=1 max_iter=1000",
+    "lightgbm": "80 trees; num_leaves=7; max_depth=3; min_child_samples=100; learning_rate=.05; deterministic seed",
+    "catboost": "80 iterations; depth=3; l2_leaf_reg=10; learning_rate=.05; no early stopping"
+  },
+  "calibration": "sigmoid of raw logit on 2024 calibration only; never refit using 2025",
+  "winner": null,
+  "limitations": [
+    "2025 already used for research and is development only; 2026 sealed",
+    "no point-in-time universe or independently verified historical quote scale",
+    "overlapping five-session labels are not independent",
+    "cost scenarios do not prove executable trade returns or portfolio drawdown",
+    "no live strategy, model or probability replacement; no paid services"
+  ]
+}

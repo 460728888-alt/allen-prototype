@@ -1,0 +1,64 @@
+name: Isolated five-session model development
+on:
+  push:
+    branches: [research/five-session-development-v1]
+    paths: ['research/**', '.github/workflows/five-session-development.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: five-session-development-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  experiment:
+    if: github.ref == 'refs/heads/research/five-session-development-v1'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      DATABASE_URL: ''
+      AI_API_KEY: ''
+      FORECAST_API_URL: ''
+      OMP_NUM_THREADS: '2'
+      PYTHONHASHSEED: '20261110'
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install fixed research dependencies
+        run: python -m pip install -r research/requirements.txt
+      - name: Test sealed dates, missing data, labels and train isolation
+        run: |
+          set -euo pipefail
+          mkdir -p experiment-logs
+          node --test research/dataset.test.mjs 2>&1 | tee experiment-logs/dataset-tests.log
+          python -m unittest discover -s research -p 'test_*.py' -v 2>&1 | tee experiment-logs/training-tests.log
+      - name: Acquire and archive frozen-window historical data
+        run: |
+          set -euo pipefail
+          node research/fetch-history.mjs experiment-out 2>&1 | tee experiment-logs/history.log
+      - name: Train fixed candidates and evaluate development only
+        run: |
+          set -euo pipefail
+          python research/train_five_day.py experiment-out/dataset.json experiment-out/training 2>&1 | tee experiment-logs/training.log
+      - name: Hash all artifacts and print honest summary
+        if: always()
+        run: |
+          python -m pip freeze > experiment-logs/pip-freeze.txt
+          node research/archive.mjs experiment-out
+      - name: Retain raw data, models, all predictions and failure evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Allen-five-session-development-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            experiment-out/
+            experiment-logs/
+            research/
+          if-no-files-found: error
+          retention-days: 90
