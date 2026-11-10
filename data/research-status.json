@@ -1,26 +1,26 @@
 {
   "schema": 1,
   "state": "partial",
-  "generatedAt": "2026-11-09T08:45:20.190Z",
-  "attemptedAt": "2026-11-09T08:44:28.270Z",
-  "fetchedAt": "2026-11-09T08:45:20.190Z",
-  "asOf": "2026-11-09T08:45:20.190Z",
-  "priceDataThrough": "2026-11-09",
-  "codeSourceCommit": "9cc92f69ead99db48b03c512cddaf739cdb138ae",
+  "generatedAt": "2026-11-09T17:27:45.133Z",
+  "attemptedAt": "2026-11-09T17:27:12.658Z",
+  "fetchedAt": "2026-11-09T17:27:45.133Z",
+  "asOf": "2026-11-09T17:27:45.133Z",
+  "priceDataThrough": "2026-11-06",
+  "codeSourceCommit": "4cb1a28e6ac1959235a6553d577a1405e240cff9",
   "coverage": {
     "poolSize": 1200,
     "company": {
-      "requested": 125,
-      "returned": 111,
-      "requestFailures": 16,
+      "requested": 169,
+      "returned": 169,
+      "requestFailures": 4,
       "skipped": 0,
       "notRequested": 0,
-      "ok": 109,
-      "cached": 1075,
-      "failed": 16,
+      "ok": 165,
+      "cached": 1031,
+      "failed": 4,
       "stale": 0,
       "insufficient": 0,
-      "usable": 1184,
+      "usable": 1196,
       "priority": "original_public_sample_then_symbol_not_recommendation"
     },
     "financial": {
@@ -52,14 +52,14 @@
       "complete": false
     },
     "announcements": {
-      "withItems": 304,
-      "withoutItems": 896,
-      "beginDate": "2026-11-03",
-      "endDate": "2026-11-09",
+      "withItems": 248,
+      "withoutItems": 952,
+      "beginDate": "2026-11-04",
+      "endDate": "2026-11-10",
       "requestedPages": 20,
       "returnedPages": 20,
-      "totalHits": 6165,
-      "totalPages": 62,
+      "totalHits": 6001,
+      "totalPages": 61,
       "pageCap": 20,
       "truncated": true,
       "rejectedItems": 0,
@@ -81,101 +81,29 @@
       "message": "公司资料返回证券身份不一致"
     },
     {
+      "symbol": "001399.SZ",
+      "source": "company",
+      "code": "request_error",
+      "message": "公司资料返回证券身份不一致"
+    },
+    {
       "symbol": "301689.SZ",
       "source": "company",
       "code": "request_error",
       "message": "公司资料返回证券身份不一致"
     },
     {
-      "symbol": "301363.SZ",
-      "source": "company",
-      "code": "timeout",
-      "message": "请求超时"
-    },
-    {
       "symbol": "301569.SZ",
       "source": "company",
-      "code": "timeout",
-      "message": "请求超时"
-    },
-    {
-      "symbol": "603939.SS",
-      "source": "company",
-      "code": "timeout",
-      "message": "请求超时"
-    },
-    {
-      "symbol": "688011.SS",
-      "source": "company",
-      "code": "timeout",
-      "message": "请求超时"
-    },
-    {
-      "symbol": "688368.SS",
-      "source": "company",
-      "code": "timeout",
-      "message": "请求超时"
-    },
-    {
-      "symbol": "688375.SS",
-      "source": "company",
-      "code": "timeout",
-      "message": "请求超时"
-    },
-    {
-      "symbol": "688485.SS",
-      "source": "company",
-      "code": "timeout",
-      "message": "请求超时"
-    },
-    {
-      "symbol": "688536.SS",
-      "source": "company",
-      "code": "timeout",
-      "message": "请求超时"
-    },
-    {
-      "symbol": "688545.SS",
-      "source": "company",
-      "code": "timeout",
-      "message": "请求超时"
-    },
-    {
-      "symbol": "688559.SS",
-      "source": "company",
-      "code": "timeout",
-      "message": "请求超时"
-    },
-    {
-      "symbol": "688617.SS",
-      "source": "company",
-      "code": "timeout",
-      "message": "请求超时"
-    },
-    {
-      "symbol": "688662.SS",
-      "source": "company",
-      "code": "timeout",
-      "message": "请求超时"
-    },
-    {
-      "symbol": "688702.SS",
-      "source": "company",
-      "code": "timeout",
-      "message": "请求超时"
-    },
-    {
-      "symbol": "688783.SS",
-      "source": "company",
-      "code": "timeout",
-      "message": "请求超时"
+      "code": "request_error",
+      "message": "公司资料返回证券身份不一致"
     }
   ],
   "message": "部分研究来源未完整覆盖，未取得的内容保持未知。",
   "preservedPrevious": false,
   "storedCounts": {
-    "companies": 1184,
+    "companies": 1196,
     "financial": 1200,
-    "announcementItems": 670
+    "announcementItems": 567
   }
 }
