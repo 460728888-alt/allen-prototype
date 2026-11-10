@@ -1,0 +1,130 @@
+{
+  "schema": 1,
+  "kind": "exploratory_development_only",
+  "protocolId": "allen-five-session-development-training-20261110-v1",
+  "approved": false,
+  "probabilitiesEnabled": false,
+  "winner": null,
+  "finalTestOpened": false,
+  "sourceCommit": "6d062d43ffedd8b6f1ecb72d2cef0f99f3a71d45",
+  "sourceRun": 42728013258,
+  "sourceRunUrl": "https://github.com/460728888-alt/allen-prototype/actions/runs/42728013258",
+  "completedAt": "2026-11-10T00:24:52Z",
+  "target": "next_open_to_fifth_close_gross_up",
+  "targetLabel": "次交易日开盘至第五交易日收盘的原始价格上涨（未扣费）",
+  "split": {
+    "trainEnd": "2024-08-30",
+    "calibrationFrom": "2024-09-09",
+    "calibrationThrough": "2024-12-31",
+    "developmentFrom": "2025-01-09",
+    "developmentThrough": "2025-12-31"
+  },
+  "coverage": {
+    "requestedStocks": 32,
+    "receivedStocks": 32,
+    "failedStocks": 0,
+    "eligibleStockDays": 15520,
+    "readableLabels": 11402,
+    "benchmarkPairedLabels": 11402
+  },
+  "counts": {
+    "train": 2055,
+    "calibration": 1950,
+    "development": 6944,
+    "purged": 223,
+    "embargo_or_outside": 230
+  },
+  "constantBrier": 0.25077349654539927,
+  "selectionThreshold": 0.6,
+  "models": {
+    "logistic": {
+      "status": "research_only",
+      "calibration": {
+        "rows": 1950,
+        "distinctDates": 70,
+        "state": "sigmoid_fit_only_on_2024_calibration"
+      },
+      "brier": 0.24898124548428663,
+      "logLoss": 0.6911206809856325,
+      "auc": 0.4900192717832595,
+      "signals": 0,
+      "cost30": {
+        "roundTripBps": 30,
+        "executable": false,
+        "dailyEqualWeightMeanAssumedPriceReturn": null,
+        "sameDateAllReadableSampleExcess": null,
+        "sameDateIndexScenarioExcess": null,
+        "indexComparableDates": 0,
+        "indexComparableStockDays": 0
+      }
+    },
+    "lightgbm": {
+      "status": "research_only",
+      "calibration": {
+        "rows": 1950,
+        "distinctDates": 70,
+        "state": "sigmoid_fit_only_on_2024_calibration"
+      },
+      "brier": 0.2490359842840493,
+      "logLoss": 0.6912318043281571,
+      "auc": 0.48934093289341174,
+      "signals": 0,
+      "cost30": {
+        "roundTripBps": 30,
+        "executable": false,
+        "dailyEqualWeightMeanAssumedPriceReturn": null,
+        "sameDateAllReadableSampleExcess": null,
+        "sameDateIndexScenarioExcess": null,
+        "indexComparableDates": 0,
+        "indexComparableStockDays": 0
+      }
+    },
+    "catboost": {
+      "status": "research_only",
+      "calibration": {
+        "rows": 1950,
+        "distinctDates": 70,
+        "state": "sigmoid_fit_only_on_2024_calibration"
+      },
+      "brier": 0.2486719489597363,
+      "logLoss": 0.6904948047197768,
+      "auc": 0.5106567897639545,
+      "signals": 0,
+      "cost30": {
+        "roundTripBps": 30,
+        "executable": false,
+        "dailyEqualWeightMeanAssumedPriceReturn": null,
+        "sameDateAllReadableSampleExcess": null,
+        "sameDateIndexScenarioExcess": null,
+        "indexComparableDates": 0,
+        "indexComparableStockDays": 0
+      }
+    }
+  },
+  "actualTradingReturn": null,
+  "portfolioMaxDrawdown": null,
+  "targetBeforeStop": null,
+  "artifact": {
+    "id": 13722733585,
+    "name": "Allen-five-session-development-42728013258-1",
+    "sizeBytes": 3813551,
+    "createdAt": "2026-11-10T00:24:49Z",
+    "expiresAt": "2027-02-08T00:24:08Z",
+    "digest": "sha256:a4673dc094b8ff9c5f49ca88276b0cd767f540cd5f13a593d41be87402fd154c",
+    "temporary": true
+  },
+  "evidenceSource": "GitHub Actions log TRAINING_SUMMARY and artifact metadata; full archive not downloaded in this environment",
+  "limitations": [
+    "这是重新下载的事后历史数据，不是原冻结研究丢失行数据的恢复；不能冒充历史当时预测",
+    "2025已做过研究，只能作开发验证；没有进行最终样本外考试",
+    "只使用固定当前32只股票，存在幸存者与名单选择偏差；历史报价尺度和复权未独立核验",
+    "三模型不按最高准确率或最高AUC选冠军；固定0.6仅为本实验阈值，不改变线上筛选条件",
+    "同一股票的五日窗口重叠，未提供聚类或日期块统计区间；不能把行数当独立样本数",
+    "成本是可成交性未验证的假设情景；无信号时为null，不当作零收益",
+    "实际交易收益、组合最大回撤、先止盈后止损未研究，不能据此通过上线验证",
+    "训练数据及模型artifact只临时保留至到期时间；未独立核验离线下载复算"
+  ],
+  "errata": [
+    "训练报告中“2026不读取”的精确含义是：未请求或使用2026日线作特征、标签或评估；历史接口附带的当前行情元数据仅取symbol，不参与计算。"
+  ]
+}
