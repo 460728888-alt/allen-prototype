@@ -1,0 +1,44 @@
+name: Verify frozen long-history evidence
+on:
+  push:
+    branches: [research/long-history-evidence-v2]
+    paths: ['evidence/**', '.github/workflows/verify-long-evidence.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    env:
+      OMP_NUM_THREADS: '2'
+      DATABASE_URL: ''
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install the fixed experiment environment
+        run: python -m pip install -r research/requirements.txt
+      - uses: actions/download-artifact@v4
+        with:
+          name: Allen-long-history-development-42733142406-1
+          run-id: 42733142406
+          github-token: ${{ github.token }}
+          path: frozen
+      - name: Verify hashes, replay saved inference, and inspect quarter results
+        run: |
+          set -euo pipefail
+          mkdir -p evidence-logs
+          python evidence/replay.py 2>&1 | tee evidence-logs/replay.log
+      - name: Preserve replay evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Allen-long-history-replay-${{ github.run_id }}
+          path: |
+            evidence-output/
+            evidence-logs/
+          retention-days: 90
