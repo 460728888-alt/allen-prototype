@@ -11,7 +11,7 @@ test('all nine core fits and three expanded results stay separate with risk and 
  assert.match(h,/暂不启用预测/);assert.match(h,/描述性配置比较/);assert.match(h,/核心32/);
 });
 test('missing evidence and unsafe links never become zero returns or no opportunities',()=>{
- for(const v of [null,{...a,summary:null},{...a,approved:true},{...a,sourceRunUrl:'javascript:bad()'},{...a,replay:null}]){
+ for(const v of [null,{...a,summary:null},{...a,approved:true},{...a,sourceRunUrl:'javascript:bad()'},{...a,replayRunUrl:'javascript:bad()'},{...a,replay:null}]){
   const h=renderLongReview(v);assert.match(h,/data-state="unavailable"/);assert.match(h,/不能显示成零收益或没有机会/);
   assert.equal((h.match(/data-long-core=/g)||[]).length,0);
  }
@@ -39,4 +39,28 @@ test('record keeps reproducibility evidence, temporary expiry and no live target
  const h=renderLongReview({...a,sourceCommit:'<img src=x onerror=bad()>'});
  assert.ok(!h.includes('<img'));assert.match(h,/&lt;img/);
  assert.match(h,/组合最大回撤、先止盈后止损：未研究/);
+});
+
+test('malformed collection shapes close the report instead of crashing the page',()=>{
+ const cases=[];
+ let b=copy();b.replay.replays='123456789';cases.push(b);
+ b=copy();b.summary.pairedCoreBrierDifferences='123456789';cases.push(b);
+ b=copy();b.replay.quarters.long_core.logistic.core_common.quarters='1234';cases.push(b);
+ b=copy();b.summary.pairedCoreBrierDifferences[0]=null;cases.push(b);
+ b=copy();b.replay.replays[0]=null;cases.push(b);
+ for(const v of cases){assert.doesNotThrow(()=>renderLongReview(v));assert.equal(validateLongReview(v),false);}
+});
+test('duplicate or changed planned Brier pairs cannot fabricate a nine-comparison result',()=>{
+ let b=copy();b.summary.pairedCoreBrierDifferences[0]=b.summary.pairedCoreBrierDifferences[1];
+ assert.equal(validateLongReview(b),false);
+ b=copy();b.summary.pairedCoreBrierDifferences[0].a='newly_picked/best';
+ assert.equal(validateLongReview(b),false);
+});
+
+test('replay cohort and temporary artifact metadata must match the frozen evidence',()=>{
+ let b=copy();b.replay.coreCohortHash='0'.repeat(64);assert.equal(validateLongReview(b),false);
+ b=copy();b.artifact.expiresAt=null;assert.equal(validateLongReview(b),false);
+ b=copy();b.artifact.digest='unknown';assert.equal(validateLongReview(b),false);
+ b=copy();b.summary.regimes.extra=null;b.summary.regimes.long_core.models.extra=null;
+ assert.doesNotThrow(()=>renderLongReview(b));assert.equal((renderLongReview(b).match(/data-long-core=/g)||[]).length,9);
 });
