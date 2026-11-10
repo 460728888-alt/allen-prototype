@@ -1,0 +1,49 @@
+name: Training review interface checks
+on:
+  push:
+    branches: [upgrade/training-review-v1]
+    paths: ['**/*.js', '**/*.mjs', '**/*.json', '**/*.html', '**/*.css', '.github/workflows/training-review-check.yml']
+permissions:
+  contents: read
+concurrency:
+  group: training-review-check-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    env:
+      DATABASE_URL: ''
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+      - name: Unit tests
+        run: |
+          set -euo pipefail
+          mkdir -p test-logs
+          node --check personal-app.js
+          node --test *.test.js 2>&1 | tee test-logs/unit.log
+      - name: Install browser
+        run: |
+          npm install --no-save --ignore-scripts --no-audit --no-fund playwright@1.64.0
+          npx playwright install --with-deps chromium
+          sudo apt-get install -y fonts-noto-cjk
+      - name: Browser checks including missing reports and retained failed data
+        run: |
+          set -euo pipefail
+          node scripts/browser-check.mjs 2>&1 | tee test-logs/browser.log
+      - name: Read-only diagnostic of current price adjustments
+        run: node scripts/diagnose-live-price.mjs | tee test-logs/price-diagnostic.log
+      - name: Retain interface and diagnostic evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: training-review-interface-evidence
+          path: |
+            test-logs/
+            test-results/
+          retention-days: 30

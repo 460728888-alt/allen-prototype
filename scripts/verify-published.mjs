@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import crypto from 'node:crypto';
 const base='https://460728888-alt.github.io/allen-prototype/';
-const files=['index.html','personal-app.js','personal-domain.js','personal-store.js','study-compare.js','study-panel.js','study-audit.json','research-domain.js','research-ui.js','research-review.js','data-health.js','personal.css'];
+const files=['index.html','personal-app.js','personal-domain.js','personal-store.js','study-compare.js','study-panel.js','study-audit.json','training-review.js','training-review.json','research-domain.js','research-ui.js','research-review.js','data-health.js','personal.css'];
 const hash=text=>crypto.createHash('sha256').update(text).digest('hex');
 const root=new URL('..',import.meta.url);
 let finalError;
