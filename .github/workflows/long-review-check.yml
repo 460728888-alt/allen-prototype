@@ -1,0 +1,48 @@
+name: Long-history review interface checks
+on:
+  push:
+    branches: [upgrade/long-review-v2]
+    paths: ['**/*.js', '**/*.mjs', '**/*.json', '**/*.html', '**/*.css', '.github/workflows/long-review-check.yml']
+permissions:
+  contents: read
+concurrency:
+  group: long-review-check-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    env:
+      DATABASE_URL: ''
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+      - name: Unit tests and browser-module syntax
+        run: |
+          set -euo pipefail
+          mkdir -p test-logs
+          node --check personal-app.js
+          node --check long-training-review.js
+          node --test *.test.js 2>&1 | tee test-logs/unit.log
+      - name: Install browser
+        run: |
+          npm install --no-save --ignore-scripts --no-audit --no-fund playwright@1.64.0
+          npx playwright install --with-deps chromium
+          sudo apt-get install -y fonts-noto-cjk
+      - name: Browser interactions, missing reports and retained source states
+        run: |
+          set -euo pipefail
+          node scripts/browser-check.mjs 2>&1 | tee test-logs/browser.log
+      - name: Retain real test evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: long-review-interface-evidence
+          path: |
+            test-logs/
+            test-results/
+          retention-days: 30
