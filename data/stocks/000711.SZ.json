@@ -2,32 +2,32 @@
   "symbol": "000711.SZ",
   "code": "000711",
   "name": "京蓝科技",
-  "price": 3.4800000190734863,
-  "changePct": 0,
+  "price": 3.640000104904175,
+  "changePct": 2.824862828495678,
   "currency": "CNY",
   "exchange": "SHZ",
   "industry": null,
-  "dataThrough": "2026-11-09",
+  "dataThrough": "2026-11-11",
   "data": {
     "version": "daily-contract-1",
     "state": "insufficient",
     "reasons": [
       "成交量为零，停牌或交易状态待核验，暂停量能判断"
     ],
-    "dataThrough": "2026-11-09",
-    "fetchedAt": "2026-11-10T00:46:25.966Z",
-    "expectedThrough": "2026-11-09",
+    "dataThrough": "2026-11-11",
+    "fetchedAt": "2026-11-11T15:08:29.578Z",
+    "expectedThrough": "2026-11-11",
     "corporateActions": [],
     "historyStart": "2026-03-16",
     "unfinishedBars": 0,
     "calendarSource": "SSE/SZSE official annual holiday notices, 2024-2026",
     "calendarVersion": "cn-equities-2024-2026-v1",
     "calendarValidThrough": "2026-12-31",
-    "sessionState": "not_completed",
+    "sessionState": "completed",
     "priceBasis": "judgment_day_raw",
     "anchorFactor": 1,
     "volumeBasis": "source_volume",
-    "judgmentAsOf": "2026-11-10T00:46:08.345Z",
+    "judgmentAsOf": "2026-11-11T15:08:03.417Z",
     "complete": false
   },
   "levels": {
@@ -37,17 +37,17 @@
     "planType": "breakout",
     "priceBasis": "judgment_day_raw",
     "tick": 0.01,
-    "dataThrough": "2026-11-09",
-    "entry": 4.54,
+    "dataThrough": "2026-11-11",
+    "entry": 4.41,
     "stop": 3.16,
-    "target1": 5.86,
-    "target2": 7.21,
-    "rr1": 0.956521739130435,
-    "rr2": 1.9347826086956523,
-    "upper": 4.519999980926514,
+    "target1": 5.6,
+    "target2": 6.82,
+    "rr1": 0.9519999999999996,
+    "rr2": 1.9280000000000002,
+    "upper": 4.389999866485596,
     "lower": 3.1700000762939453,
-    "width": 1.3499999046325684,
-    "breakout": 4.54,
+    "width": 1.2199997901916504,
+    "breakout": 4.41,
     "invalidation": 3.16,
     "rounding": "入场向上；止损及目标向下；仅展示时四舍五入比值"
   },
@@ -68,20 +68,6 @@
   "probability": null,
   "detailPath": "data/stocks/000711.SZ.json",
   "miniHistory": [
-    {
-      "date": "2026-10-13",
-      "close": 4.349999904632568,
-      "volume": 105601300,
-      "complete": true,
-      "missingSession": false
-    },
-    {
-      "date": "2026-10-14",
-      "close": 4.210000038146973,
-      "volume": 56813100,
-      "complete": true,
-      "missingSession": false
-    },
     {
       "date": "2026-10-15",
       "close": 3.950000047683716,
@@ -207,11 +193,25 @@
       "volume": 82257655,
       "complete": true,
       "missingSession": false
+    },
+    {
+      "date": "2026-11-10",
+      "close": 3.5399999618530273,
+      "volume": 79132157,
+      "complete": true,
+      "missingSession": false
+    },
+    {
+      "date": "2026-11-11",
+      "close": 3.640000104904175,
+      "volume": 95889996,
+      "complete": true,
+      "missingSession": false
     }
   ],
   "source": {
-    "provider": "Yahoo Finance / query2.finance.yahoo.com",
-    "fetchedAt": "2026-11-10T00:46:25.966Z",
+    "provider": "Yahoo Finance / query1.finance.yahoo.com",
+    "fetchedAt": "2026-11-11T15:08:29.578Z",
     "quoteBasis": "provider_daily_quote_anchored_at_judgment_day",
     "historicalQuoteScaleVerified": false,
     "note": "提供方可能修订历史报价；严格历史报价尺度未独立核验",
@@ -219,52 +219,30 @@
       {
         "host": "query1.finance.yahoo.com",
         "requested": true,
-        "checkedAt": "2026-11-10T00:46:25.908Z",
-        "state": "request_failed",
-        "code": "http_502",
-        "message": "公开数据源返回 HTTP 502"
+        "checkedAt": "2026-11-11T15:08:29.580Z",
+        "state": "insufficient",
+        "dataThrough": "2026-11-11",
+        "reasons": [
+          "成交量为零，停牌或交易状态待核验，暂停量能判断"
+        ]
       },
       {
         "host": "query2.finance.yahoo.com",
         "requested": true,
-        "checkedAt": "2026-11-10T00:46:25.967Z",
+        "checkedAt": "2026-11-11T15:08:29.673Z",
         "state": "insufficient",
-        "dataThrough": "2026-11-09",
+        "dataThrough": "2026-11-11",
         "reasons": [
           "成交量为零，停牌或交易状态待核验，暂停量能判断"
         ]
       }
     ],
-    "selectedHost": "query2.finance.yahoo.com",
-    "usedSecondary": true,
+    "selectedHost": "query1.finance.yahoo.com",
+    "usedSecondary": false,
     "independentConfirmation": false,
     "retrySkipped": null
   },
   "history": [
-    {
-      "time": 1778808600,
-      "date": "2026-05-15",
-      "complete": true,
-      "open": 5.920000076293945,
-      "high": 5.920000076293945,
-      "low": 5.920000076293945,
-      "close": 5.920000076293945,
-      "volume": 16388000,
-      "adjustmentFactor": 1,
-      "scaleFactor": 1
-    },
-    {
-      "time": 1779067800,
-      "date": "2026-05-18",
-      "complete": true,
-      "open": 5.619999885559082,
-      "high": 6.21999979019165,
-      "low": 5.619999885559082,
-      "close": 6.21999979019165,
-      "volume": 146780187,
-      "adjustmentFactor": 1,
-      "scaleFactor": 1
-    },
     {
       "time": 1779154200,
       "date": "2026-05-19",
@@ -1680,6 +1658,30 @@
       "volume": 82257655,
       "adjustmentFactor": 1,
       "scaleFactor": 1
+    },
+    {
+      "time": 1794274200,
+      "date": "2026-11-10",
+      "complete": true,
+      "open": 3.5399999618530273,
+      "high": 3.5799999237060547,
+      "low": 3.4800000190734863,
+      "close": 3.5399999618530273,
+      "volume": 79132157,
+      "adjustmentFactor": 1,
+      "scaleFactor": 1
+    },
+    {
+      "time": 1794360600,
+      "date": "2026-11-11",
+      "complete": true,
+      "open": 3.559999942779541,
+      "high": 3.6500000953674316,
+      "low": 3.4800000190734863,
+      "close": 3.640000104904175,
+      "volume": 95889996,
+      "adjustmentFactor": 1,
+      "scaleFactor": 1
     }
   ],
   "company": {
@@ -1696,5 +1698,5 @@
     "items": [],
     "message": "尚未自动采集公告正文；事件不等于价格确认"
   },
-  "generatedAt": "2026-11-10T00:46:26.526Z"
+  "generatedAt": "2026-11-11T15:08:41.153Z"
 }

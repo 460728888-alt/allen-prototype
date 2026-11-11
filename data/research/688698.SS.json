@@ -3,7 +3,7 @@
   "symbol": "688698.SS",
   "company": {
     "state": "ok",
-    "cacheHit": false,
+    "cacheHit": true,
     "symbol": "688698.SS",
     "fetchedAt": "2026-11-10T15:34:55.465Z",
     "observedAt": "2026-11-10T15:34:55.465Z",
@@ -23,7 +23,8 @@
       "fetchedAt": "2026-11-10T15:34:55.465Z",
       "url": "https://emweb.securities.eastmoney.com/PC_HSF10/CompanySurvey/CompanySurveyAjax?code=SH688698"
     },
-    "historicalAvailability": "current_profile_not_point_in_time"
+    "historicalAvailability": "current_profile_not_point_in_time",
+    "message": "复用7日内公开资料，原获取与观察时间保留。"
   },
   "financial": {
     "state": "partial",
@@ -32,7 +33,7 @@
         "reportDate": "2026-09-30",
         "noticeDate": "2026-10-30",
         "updateDate": "2026-10-30",
-        "observedAt": "2026-11-10T15:34:33.786Z",
+        "observedAt": "2026-11-11T15:08:48.265Z",
         "periodBasis": "year_to_date",
         "currency": null,
         "amountUnit": "source_yuan",
@@ -53,8 +54,38 @@
         },
         "source": {
           "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
-          "fetchedAt": "2026-11-10T15:34:33.786Z",
+          "fetchedAt": "2026-11-11T15:08:48.265Z",
           "url": "https://data.eastmoney.com/bbsj/202609/yjbb.html"
+        },
+        "historicalAvailability": "provider_current_revision_not_point_in_time"
+      },
+      {
+        "reportDate": "2026-06-30",
+        "noticeDate": "2026-08-26",
+        "updateDate": "2026-08-26",
+        "observedAt": "2026-11-11T15:09:05.339Z",
+        "periodBasis": "year_to_date",
+        "currency": null,
+        "amountUnit": "source_yuan",
+        "unitNote": "来源页面金额单位为元，币种未注明；不默认CNY，不作汇率换算。",
+        "percentageUnit": "percent",
+        "reportName": "2026年 半年报",
+        "industry": null,
+        "metrics": {
+          "revenue": 1066439112.31,
+          "netProfit": 110251144.35,
+          "revenueGrowth": 18.8398169262,
+          "profitGrowth": -21.76,
+          "roe": 4.59,
+          "grossMargin": 32.4987874141,
+          "eps": 0.52,
+          "bps": 11.204743183673,
+          "operatingCashPerShare": -0.70205346948
+        },
+        "source": {
+          "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
+          "fetchedAt": "2026-11-11T15:09:05.339Z",
+          "url": "https://data.eastmoney.com/bbsj/202606/yjbb.html"
         },
         "historicalAvailability": "provider_current_revision_not_point_in_time"
       }
@@ -71,26 +102,41 @@
   },
   "announcements": {
     "state": "partial",
-    "items": [],
+    "items": [
+      {
+        "id": "AN202611111831619860",
+        "symbol": "688698.SS",
+        "title": "伟创电气:投资者关系活动记录表(2026年第三季度业绩说明会)",
+        "noticeDate": "2026-11-11",
+        "displayTime": "2026-11-11 15:33:54:853",
+        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
+        "category": "调研活动",
+        "url": "https://data.eastmoney.com/notices/detail/688698/AN202611111831619860.html",
+        "observedAt": "2026-11-11T15:08:47.873Z",
+        "bodyRead": false,
+        "readState": "index_only",
+        "source": "东方财富公开公告索引"
+      }
+    ],
     "scope": {
-      "from": "2026-11-04",
-      "through": "2026-11-10",
-      "beginDate": "2026-11-04",
-      "endDate": "2026-11-10",
+      "from": "2026-11-05",
+      "through": "2026-11-11",
+      "beginDate": "2026-11-05",
+      "endDate": "2026-11-11",
       "complete": false,
-      "totalHits": 6369,
-      "totalPages": 64,
+      "totalHits": 6566,
+      "totalPages": 66,
       "returnedPages": 20,
       "pageCap": 20,
       "truncated": true,
       "noticeTimePrecision": "day",
       "displayTimeTimezoneVerified": false
     },
-    "message": "本窗口未取得匹配公告索引；不等于没有公告或风险。"
+    "message": "公告索引未读正文，事件不是价格确认。"
   },
-  "bundleId": "688698.SS:2026-11-10T15:35:05.441Z",
-  "fetchedAt": "2026-11-10T15:35:05.441Z",
-  "asOf": "2026-11-10T15:35:05.441Z",
-  "requestedAt": "2026-11-10T15:34:27.193Z",
-  "codeSourceCommit": "3a29cceae8b91691a3d2a2b85930e36024babaa1"
+  "bundleId": "688698.SS:2026-11-11T15:09:16.551Z",
+  "fetchedAt": "2026-11-11T15:09:16.551Z",
+  "asOf": "2026-11-11T15:09:16.551Z",
+  "requestedAt": "2026-11-11T15:08:42.388Z",
+  "codeSourceCommit": "2f455d445dfa23caf3c2dc1fac8cc039707b5a11"
 }

@@ -3,20 +3,20 @@
   "code": "002922",
   "name": "伊戈尔",
   "price": 22.030000686645508,
-  "changePct": 1.3339508674356626,
+  "changePct": 0,
   "currency": "CNY",
   "exchange": "SHZ",
   "industry": null,
-  "dataThrough": "2026-11-10",
+  "dataThrough": "2026-11-11",
   "data": {
     "version": "daily-contract-1",
     "state": "insufficient",
     "reasons": [
       "日线价格关系异常"
     ],
-    "dataThrough": "2026-11-10",
-    "fetchedAt": "2026-11-10T15:34:21.386Z",
-    "expectedThrough": "2026-11-10",
+    "dataThrough": "2026-11-11",
+    "fetchedAt": "2026-11-11T15:08:26.517Z",
+    "expectedThrough": "2026-11-11",
     "corporateActions": [
       {
         "type": "dividends",
@@ -32,7 +32,7 @@
     "priceBasis": "judgment_day_raw",
     "anchorFactor": 1,
     "volumeBasis": "source_volume",
-    "judgmentAsOf": "2026-11-10T15:33:47.857Z",
+    "judgmentAsOf": "2026-11-11T15:08:03.417Z",
     "complete": false
   },
   "levels": {
@@ -42,7 +42,7 @@
     "planType": "breakout",
     "priceBasis": "judgment_day_raw",
     "tick": 0.01,
-    "dataThrough": "2026-11-10",
+    "dataThrough": "2026-11-11",
     "entry": null,
     "stop": null,
     "target1": null,
@@ -67,13 +67,6 @@
   "probability": null,
   "detailPath": "data/stocks/002922.SZ.json",
   "miniHistory": [
-    {
-      "date": "2026-10-14",
-      "close": 19.510000228881836,
-      "volume": 8364000,
-      "complete": true,
-      "missingSession": false
-    },
     {
       "date": "2026-10-15",
       "close": 18.65999984741211,
@@ -206,11 +199,18 @@
       "volume": 14957229,
       "complete": true,
       "missingSession": false
+    },
+    {
+      "date": "2026-11-11",
+      "close": 22.030000686645508,
+      "volume": 18404497,
+      "complete": true,
+      "missingSession": false
     }
   ],
   "source": {
     "provider": "Yahoo Finance / query1.finance.yahoo.com",
-    "fetchedAt": "2026-11-10T15:34:21.386Z",
+    "fetchedAt": "2026-11-11T15:08:26.517Z",
     "quoteBasis": "provider_daily_quote_anchored_at_judgment_day",
     "historicalQuoteScaleVerified": false,
     "note": "提供方可能修订历史报价；严格历史报价尺度未独立核验",
@@ -218,9 +218,9 @@
       {
         "host": "query1.finance.yahoo.com",
         "requested": true,
-        "checkedAt": "2026-11-10T15:34:21.387Z",
+        "checkedAt": "2026-11-11T15:08:26.519Z",
         "state": "insufficient",
-        "dataThrough": "2026-11-10",
+        "dataThrough": "2026-11-11",
         "reasons": [
           "日线价格关系异常"
         ]
@@ -228,9 +228,9 @@
       {
         "host": "query2.finance.yahoo.com",
         "requested": true,
-        "checkedAt": "2026-11-10T15:34:21.569Z",
+        "checkedAt": "2026-11-11T15:08:26.618Z",
         "state": "insufficient",
-        "dataThrough": "2026-11-10",
+        "dataThrough": "2026-11-11",
         "reasons": [
           "日线价格关系异常"
         ]
@@ -242,18 +242,6 @@
     "retrySkipped": null
   },
   "history": [
-    {
-      "time": 1779067800,
-      "date": "2026-05-18",
-      "complete": true,
-      "open": 41.67407294243479,
-      "high": 43.70355845675849,
-      "low": 41.465156320528116,
-      "close": 42.609230041503906,
-      "volume": 26541704,
-      "adjustmentFactor": 0.9948453938801678,
-      "scaleFactor": 0.9948453938801678
-    },
     {
       "time": 1779154200,
       "date": "2026-05-19",
@@ -1674,11 +1662,23 @@
       "time": 1794274200,
       "date": "2026-11-10",
       "complete": true,
-      "open": 22.5,
+      "open": 22.149999618530273,
       "high": 22.200000762939453,
       "low": 21.75,
       "close": 22.030000686645508,
       "volume": 14957229,
+      "adjustmentFactor": 1,
+      "scaleFactor": 1
+    },
+    {
+      "time": 1794360600,
+      "date": "2026-11-11",
+      "complete": true,
+      "open": 22.5,
+      "high": 22.260000228881836,
+      "low": 21.43000030517578,
+      "close": 22.030000686645508,
+      "volume": 18404497,
       "adjustmentFactor": 1,
       "scaleFactor": 1
     }
@@ -1697,5 +1697,5 @@
     "items": [],
     "message": "尚未自动采集公告正文；事件不等于价格确认"
   },
-  "generatedAt": "2026-11-10T15:34:26.332Z"
+  "generatedAt": "2026-11-11T15:08:41.153Z"
 }

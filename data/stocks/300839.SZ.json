@@ -3,20 +3,20 @@
   "code": "300839",
   "name": "博汇股份",
   "price": 14.619999885559082,
-  "changePct": -1.2162182625407358,
+  "changePct": 0,
   "currency": "CNY",
   "exchange": "SHZ",
   "industry": null,
-  "dataThrough": "2026-11-10",
+  "dataThrough": "2026-11-11",
   "data": {
     "version": "daily-contract-1",
     "state": "insufficient",
     "reasons": [
       "日线价格关系异常"
     ],
-    "dataThrough": "2026-11-10",
-    "fetchedAt": "2026-11-10T15:34:23.706Z",
-    "expectedThrough": "2026-11-10",
+    "dataThrough": "2026-11-11",
+    "fetchedAt": "2026-11-11T15:08:36.882Z",
+    "expectedThrough": "2026-11-11",
     "corporateActions": [],
     "historyStart": "2026-03-16",
     "unfinishedBars": 0,
@@ -27,7 +27,7 @@
     "priceBasis": "judgment_day_raw",
     "anchorFactor": 1,
     "volumeBasis": "source_volume",
-    "judgmentAsOf": "2026-11-10T15:33:47.857Z",
+    "judgmentAsOf": "2026-11-11T15:08:03.417Z",
     "complete": false
   },
   "levels": {
@@ -37,7 +37,7 @@
     "planType": "breakout",
     "priceBasis": "judgment_day_raw",
     "tick": 0.01,
-    "dataThrough": "2026-11-10",
+    "dataThrough": "2026-11-11",
     "entry": null,
     "stop": null,
     "target1": null,
@@ -62,13 +62,6 @@
   "probability": null,
   "detailPath": "data/stocks/300839.SZ.json",
   "miniHistory": [
-    {
-      "date": "2026-10-14",
-      "close": 12.59000015258789,
-      "volume": 8574000,
-      "complete": true,
-      "missingSession": false
-    },
     {
       "date": "2026-10-15",
       "close": 12.140000343322754,
@@ -201,11 +194,18 @@
       "volume": 20931900,
       "complete": true,
       "missingSession": false
+    },
+    {
+      "date": "2026-11-11",
+      "close": 14.619999885559082,
+      "volume": 16844676,
+      "complete": true,
+      "missingSession": false
     }
   ],
   "source": {
     "provider": "Yahoo Finance / query1.finance.yahoo.com",
-    "fetchedAt": "2026-11-10T15:34:23.706Z",
+    "fetchedAt": "2026-11-11T15:08:36.882Z",
     "quoteBasis": "provider_daily_quote_anchored_at_judgment_day",
     "historicalQuoteScaleVerified": false,
     "note": "提供方可能修订历史报价；严格历史报价尺度未独立核验",
@@ -213,9 +213,9 @@
       {
         "host": "query1.finance.yahoo.com",
         "requested": true,
-        "checkedAt": "2026-11-10T15:34:23.707Z",
+        "checkedAt": "2026-11-11T15:08:36.884Z",
         "state": "insufficient",
-        "dataThrough": "2026-11-10",
+        "dataThrough": "2026-11-11",
         "reasons": [
           "日线价格关系异常"
         ]
@@ -223,9 +223,9 @@
       {
         "host": "query2.finance.yahoo.com",
         "requested": true,
-        "checkedAt": "2026-11-10T15:34:23.812Z",
+        "checkedAt": "2026-11-11T15:08:36.980Z",
         "state": "insufficient",
-        "dataThrough": "2026-11-10",
+        "dataThrough": "2026-11-11",
         "reasons": [
           "日线价格关系异常"
         ]
@@ -237,18 +237,6 @@
     "retrySkipped": null
   },
   "history": [
-    {
-      "time": 1779067800,
-      "date": "2026-05-18",
-      "complete": true,
-      "open": 19.09000015258789,
-      "high": 19.700000762939453,
-      "low": 18.34000015258789,
-      "close": 19.549999237060547,
-      "volume": 16360234,
-      "adjustmentFactor": 1,
-      "scaleFactor": 1
-    },
     {
       "time": 1779154200,
       "date": "2026-05-19",
@@ -1669,11 +1657,23 @@
       "time": 1794274200,
       "date": "2026-11-10",
       "complete": true,
-      "open": 14.100000381469727,
+      "open": 14.600000381469727,
       "high": 14.989999771118164,
       "low": 14.449999809265137,
       "close": 14.619999885559082,
       "volume": 20931900,
+      "adjustmentFactor": 1,
+      "scaleFactor": 1
+    },
+    {
+      "time": 1794360600,
+      "date": "2026-11-11",
+      "complete": true,
+      "open": 14.100000381469727,
+      "high": 14.770000457763672,
+      "low": 14.119999885559082,
+      "close": 14.619999885559082,
+      "volume": 16844676,
       "adjustmentFactor": 1,
       "scaleFactor": 1
     }
@@ -1692,5 +1692,5 @@
     "items": [],
     "message": "尚未自动采集公告正文；事件不等于价格确认"
   },
-  "generatedAt": "2026-11-10T15:34:26.332Z"
+  "generatedAt": "2026-11-11T15:08:41.153Z"
 }

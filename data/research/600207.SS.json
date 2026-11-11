@@ -3,7 +3,7 @@
   "symbol": "600207.SS",
   "company": {
     "state": "ok",
-    "cacheHit": false,
+    "cacheHit": true,
     "symbol": "600207.SS",
     "fetchedAt": "2026-11-10T15:34:40.818Z",
     "observedAt": "2026-11-10T15:34:40.818Z",
@@ -23,7 +23,8 @@
       "fetchedAt": "2026-11-10T15:34:40.818Z",
       "url": "https://emweb.securities.eastmoney.com/PC_HSF10/CompanySurvey/CompanySurveyAjax?code=SH600207"
     },
-    "historicalAvailability": "current_profile_not_point_in_time"
+    "historicalAvailability": "current_profile_not_point_in_time",
+    "message": "复用7日内公开资料，原获取与观察时间保留。"
   },
   "financial": {
     "state": "partial",
@@ -32,7 +33,7 @@
         "reportDate": "2026-09-30",
         "noticeDate": "2026-10-30",
         "updateDate": "2026-10-30",
-        "observedAt": "2026-11-10T15:34:35.966Z",
+        "observedAt": "2026-11-11T15:08:49.873Z",
         "periodBasis": "year_to_date",
         "currency": null,
         "amountUnit": "source_yuan",
@@ -53,8 +54,38 @@
         },
         "source": {
           "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
-          "fetchedAt": "2026-11-10T15:34:35.966Z",
+          "fetchedAt": "2026-11-11T15:08:49.873Z",
           "url": "https://data.eastmoney.com/bbsj/202609/yjbb.html"
+        },
+        "historicalAvailability": "provider_current_revision_not_point_in_time"
+      },
+      {
+        "reportDate": "2026-06-30",
+        "noticeDate": "2026-08-26",
+        "updateDate": "2026-08-26",
+        "observedAt": "2026-11-11T15:09:07.580Z",
+        "periodBasis": "year_to_date",
+        "currency": null,
+        "amountUnit": "source_yuan",
+        "unitNote": "来源页面金额单位为元，币种未注明；不默认CNY，不作汇率换算。",
+        "percentageUnit": "percent",
+        "reportName": "2026年 半年报",
+        "industry": null,
+        "metrics": {
+          "revenue": 1077051875.93,
+          "netProfit": -327718655.01,
+          "revenueGrowth": -38.1681195926,
+          "profitGrowth": -52.0839483921,
+          "roe": -17.6,
+          "grossMargin": -14.5689064869,
+          "eps": -0.3008,
+          "bps": 1.558811434207,
+          "operatingCashPerShare": -0.212497207702
+        },
+        "source": {
+          "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
+          "fetchedAt": "2026-11-11T15:09:07.580Z",
+          "url": "https://data.eastmoney.com/bbsj/202606/yjbb.html"
         },
         "historicalAvailability": "provider_current_revision_not_point_in_time"
       }
@@ -71,41 +102,26 @@
   },
   "announcements": {
     "state": "partial",
-    "items": [
-      {
-        "id": "AN202611091831555883",
-        "symbol": "600207.SS",
-        "title": "安彩高科:安彩高科股票交易异常波动公告",
-        "noticeDate": "2026-11-10",
-        "displayTime": "2026-11-09 17:38:35:487",
-        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "股票交易异常波动",
-        "url": "https://data.eastmoney.com/notices/detail/600207/AN202611091831555883.html",
-        "observedAt": "2026-11-10T15:34:44.770Z",
-        "bodyRead": false,
-        "readState": "index_only",
-        "source": "东方财富公开公告索引"
-      }
-    ],
+    "items": [],
     "scope": {
-      "from": "2026-11-04",
-      "through": "2026-11-10",
-      "beginDate": "2026-11-04",
-      "endDate": "2026-11-10",
+      "from": "2026-11-05",
+      "through": "2026-11-11",
+      "beginDate": "2026-11-05",
+      "endDate": "2026-11-11",
       "complete": false,
-      "totalHits": 6369,
-      "totalPages": 64,
+      "totalHits": 6566,
+      "totalPages": 66,
       "returnedPages": 20,
       "pageCap": 20,
       "truncated": true,
       "noticeTimePrecision": "day",
       "displayTimeTimezoneVerified": false
     },
-    "message": "公告索引未读正文，事件不是价格确认。"
+    "message": "本窗口未取得匹配公告索引；不等于没有公告或风险。"
   },
-  "bundleId": "600207.SS:2026-11-10T15:35:05.441Z",
-  "fetchedAt": "2026-11-10T15:35:05.441Z",
-  "asOf": "2026-11-10T15:35:05.441Z",
-  "requestedAt": "2026-11-10T15:34:27.193Z",
-  "codeSourceCommit": "3a29cceae8b91691a3d2a2b85930e36024babaa1"
+  "bundleId": "600207.SS:2026-11-11T15:09:16.551Z",
+  "fetchedAt": "2026-11-11T15:09:16.551Z",
+  "asOf": "2026-11-11T15:09:16.551Z",
+  "requestedAt": "2026-11-11T15:08:42.388Z",
+  "codeSourceCommit": "2f455d445dfa23caf3c2dc1fac8cc039707b5a11"
 }

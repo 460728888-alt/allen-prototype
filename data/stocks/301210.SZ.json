@@ -2,21 +2,21 @@
   "symbol": "301210.SZ",
   "code": "301210",
   "name": "金杨精密",
-  "price": 34.2599983215332,
-  "changePct": 7.263612237582073,
+  "price": 34.880001068115234,
+  "changePct": 1.809698706822016,
   "currency": "CNY",
   "exchange": "SHZ",
   "industry": null,
-  "dataThrough": "2026-11-10",
+  "dataThrough": "2026-11-11",
   "data": {
     "version": "daily-contract-1",
     "state": "insufficient",
     "reasons": [
       "日线价格关系异常"
     ],
-    "dataThrough": "2026-11-10",
-    "fetchedAt": "2026-11-10T15:34:16.155Z",
-    "expectedThrough": "2026-11-10",
+    "dataThrough": "2026-11-11",
+    "fetchedAt": "2026-11-11T15:08:24.761Z",
+    "expectedThrough": "2026-11-11",
     "corporateActions": [
       {
         "type": "dividends",
@@ -36,7 +36,7 @@
     "priceBasis": "judgment_day_raw",
     "anchorFactor": 1,
     "volumeBasis": "source_volume_split_check",
-    "judgmentAsOf": "2026-11-10T15:33:47.857Z",
+    "judgmentAsOf": "2026-11-11T15:08:03.417Z",
     "complete": false
   },
   "levels": {
@@ -46,7 +46,7 @@
     "planType": "breakout",
     "priceBasis": "judgment_day_raw",
     "tick": 0.01,
-    "dataThrough": "2026-11-10",
+    "dataThrough": "2026-11-11",
     "entry": null,
     "stop": null,
     "target1": null,
@@ -71,13 +71,6 @@
   "probability": null,
   "detailPath": "data/stocks/301210.SZ.json",
   "miniHistory": [
-    {
-      "date": "2026-10-14",
-      "close": 30.059999465942383,
-      "volume": 5480667,
-      "complete": true,
-      "missingSession": false
-    },
     {
       "date": "2026-10-15",
       "close": 29.389999389648438,
@@ -210,11 +203,18 @@
       "volume": 12963646,
       "complete": true,
       "missingSession": false
+    },
+    {
+      "date": "2026-11-11",
+      "close": 34.880001068115234,
+      "volume": 12908923,
+      "complete": true,
+      "missingSession": false
     }
   ],
   "source": {
     "provider": "Yahoo Finance / query1.finance.yahoo.com",
-    "fetchedAt": "2026-11-10T15:34:16.155Z",
+    "fetchedAt": "2026-11-11T15:08:24.761Z",
     "quoteBasis": "provider_daily_quote_anchored_at_judgment_day",
     "historicalQuoteScaleVerified": false,
     "note": "提供方可能修订历史报价；严格历史报价尺度未独立核验",
@@ -222,9 +222,9 @@
       {
         "host": "query1.finance.yahoo.com",
         "requested": true,
-        "checkedAt": "2026-11-10T15:34:16.156Z",
+        "checkedAt": "2026-11-11T15:08:24.763Z",
         "state": "insufficient",
-        "dataThrough": "2026-11-10",
+        "dataThrough": "2026-11-11",
         "reasons": [
           "日线价格关系异常"
         ]
@@ -232,9 +232,9 @@
       {
         "host": "query2.finance.yahoo.com",
         "requested": true,
-        "checkedAt": "2026-11-10T15:34:16.267Z",
+        "checkedAt": "2026-11-11T15:08:24.870Z",
         "state": "insufficient",
-        "dataThrough": "2026-11-10",
+        "dataThrough": "2026-11-11",
         "reasons": [
           "日线价格关系异常"
         ]
@@ -246,18 +246,6 @@
     "retrySkipped": null
   },
   "history": [
-    {
-      "time": 1779067800,
-      "date": "2026-05-18",
-      "complete": true,
-      "open": 30.04398494043364,
-      "high": 31.599821091267696,
-      "low": 30.04398494043364,
-      "close": 31.287233352661133,
-      "volume": 7172582,
-      "adjustmentFactor": 0.9945987297819956,
-      "scaleFactor": 0.9945987297819956
-    },
     {
       "time": 1779154200,
       "date": "2026-05-19",
@@ -1678,11 +1666,23 @@
       "time": 1794274200,
       "date": "2026-11-10",
       "complete": true,
-      "open": 30.739999771118164,
+      "open": 32.58000183105469,
       "high": 34.88999938964844,
       "low": 32.040000915527344,
       "close": 34.2599983215332,
       "volume": 12963646,
+      "adjustmentFactor": 1,
+      "scaleFactor": 1
+    },
+    {
+      "time": 1794360600,
+      "date": "2026-11-11",
+      "complete": true,
+      "open": 30.739999771118164,
+      "high": 35.939998626708984,
+      "low": 34.459999084472656,
+      "close": 34.880001068115234,
+      "volume": 12908923,
       "adjustmentFactor": 1,
       "scaleFactor": 1
     }
@@ -1701,5 +1701,5 @@
     "items": [],
     "message": "尚未自动采集公告正文；事件不等于价格确认"
   },
-  "generatedAt": "2026-11-10T15:34:26.332Z"
+  "generatedAt": "2026-11-11T15:08:41.153Z"
 }

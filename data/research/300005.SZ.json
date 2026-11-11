@@ -3,7 +3,7 @@
   "symbol": "300005.SZ",
   "company": {
     "state": "ok",
-    "cacheHit": false,
+    "cacheHit": true,
     "symbol": "300005.SZ",
     "fetchedAt": "2026-11-10T15:34:34.469Z",
     "observedAt": "2026-11-10T15:34:34.469Z",
@@ -23,7 +23,8 @@
       "fetchedAt": "2026-11-10T15:34:34.469Z",
       "url": "https://emweb.securities.eastmoney.com/PC_HSF10/CompanySurvey/CompanySurveyAjax?code=SZ300005"
     },
-    "historicalAvailability": "current_profile_not_point_in_time"
+    "historicalAvailability": "current_profile_not_point_in_time",
+    "message": "复用7日内公开资料，原获取与观察时间保留。"
   },
   "financial": {
     "state": "partial",
@@ -32,7 +33,7 @@
         "reportDate": "2026-09-30",
         "noticeDate": "2026-10-24",
         "updateDate": "2026-10-24",
-        "observedAt": "2026-11-10T15:34:59.587Z",
+        "observedAt": "2026-11-11T15:09:09.084Z",
         "periodBasis": "year_to_date",
         "currency": null,
         "amountUnit": "source_yuan",
@@ -53,8 +54,38 @@
         },
         "source": {
           "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
-          "fetchedAt": "2026-11-10T15:34:59.587Z",
+          "fetchedAt": "2026-11-11T15:09:09.084Z",
           "url": "https://data.eastmoney.com/bbsj/202609/yjbb.html"
+        },
+        "historicalAvailability": "provider_current_revision_not_point_in_time"
+      },
+      {
+        "reportDate": "2026-06-30",
+        "noticeDate": "2026-08-22",
+        "updateDate": "2026-08-22",
+        "observedAt": "2026-11-11T15:09:16.547Z",
+        "periodBasis": "year_to_date",
+        "currency": null,
+        "amountUnit": "source_yuan",
+        "unitNote": "来源页面金额单位为元，币种未注明；不默认CNY，不作汇率换算。",
+        "percentageUnit": "percent",
+        "reportName": "2026年 半年报",
+        "industry": null,
+        "metrics": {
+          "revenue": 929480283.76,
+          "netProfit": 51253054.27,
+          "revenueGrowth": 42.3379638098,
+          "profitGrowth": 155.06,
+          "roe": 2.54,
+          "grossMargin": 45.2536574427,
+          "eps": 0.0607,
+          "bps": 2.429819798239,
+          "operatingCashPerShare": -0.048994919845
+        },
+        "source": {
+          "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
+          "fetchedAt": "2026-11-11T15:09:16.547Z",
+          "url": "https://data.eastmoney.com/bbsj/202606/yjbb.html"
         },
         "historicalAvailability": "provider_current_revision_not_point_in_time"
       }
@@ -71,69 +102,26 @@
   },
   "announcements": {
     "state": "partial",
-    "items": [
-      {
-        "id": "AN202611091831557566",
-        "symbol": "300005.SZ",
-        "title": "探路者:2026年第四次临时股东会决议公告",
-        "noticeDate": "2026-11-09",
-        "displayTime": "2026-11-09 18:33:05:578",
-        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "股东大会决议公告",
-        "url": "https://data.eastmoney.com/notices/detail/300005/AN202611091831557566.html",
-        "observedAt": "2026-11-10T15:34:52.848Z",
-        "bodyRead": false,
-        "readState": "index_only",
-        "source": "东方财富公开公告索引"
-      },
-      {
-        "id": "AN202611091831557564",
-        "symbol": "300005.SZ",
-        "title": "探路者:关于回购注销部分限制性股票减少注册资本暨通知债权人的公告",
-        "noticeDate": "2026-11-09",
-        "displayTime": "2026-11-09 18:33:05:401",
-        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "公司注册资本变更 / 通知债权人公告",
-        "url": "https://data.eastmoney.com/notices/detail/300005/AN202611091831557564.html",
-        "observedAt": "2026-11-10T15:34:54.156Z",
-        "bodyRead": false,
-        "readState": "index_only",
-        "source": "东方财富公开公告索引"
-      },
-      {
-        "id": "AN202611091831557560",
-        "symbol": "300005.SZ",
-        "title": "探路者:北京市天元律师事务所关于探路者控股集团股份有限公司2026年第四次临时股东会的法律意见",
-        "noticeDate": "2026-11-09",
-        "displayTime": "2026-11-09 18:33:05:417",
-        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "法律意见书",
-        "url": "https://data.eastmoney.com/notices/detail/300005/AN202611091831557560.html",
-        "observedAt": "2026-11-10T15:34:54.156Z",
-        "bodyRead": false,
-        "readState": "index_only",
-        "source": "东方财富公开公告索引"
-      }
-    ],
+    "items": [],
     "scope": {
-      "from": "2026-11-04",
-      "through": "2026-11-10",
-      "beginDate": "2026-11-04",
-      "endDate": "2026-11-10",
+      "from": "2026-11-05",
+      "through": "2026-11-11",
+      "beginDate": "2026-11-05",
+      "endDate": "2026-11-11",
       "complete": false,
-      "totalHits": 6369,
-      "totalPages": 64,
+      "totalHits": 6566,
+      "totalPages": 66,
       "returnedPages": 20,
       "pageCap": 20,
       "truncated": true,
       "noticeTimePrecision": "day",
       "displayTimeTimezoneVerified": false
     },
-    "message": "公告索引未读正文，事件不是价格确认。"
+    "message": "本窗口未取得匹配公告索引；不等于没有公告或风险。"
   },
-  "bundleId": "300005.SZ:2026-11-10T15:35:05.441Z",
-  "fetchedAt": "2026-11-10T15:35:05.441Z",
-  "asOf": "2026-11-10T15:35:05.441Z",
-  "requestedAt": "2026-11-10T15:34:27.193Z",
-  "codeSourceCommit": "3a29cceae8b91691a3d2a2b85930e36024babaa1"
+  "bundleId": "300005.SZ:2026-11-11T15:09:16.551Z",
+  "fetchedAt": "2026-11-11T15:09:16.551Z",
+  "asOf": "2026-11-11T15:09:16.551Z",
+  "requestedAt": "2026-11-11T15:08:42.388Z",
+  "codeSourceCommit": "2f455d445dfa23caf3c2dc1fac8cc039707b5a11"
 }

@@ -3,7 +3,7 @@
   "symbol": "000423.SZ",
   "company": {
     "state": "ok",
-    "cacheHit": false,
+    "cacheHit": true,
     "symbol": "000423.SZ",
     "fetchedAt": "2026-11-05T15:26:38.639Z",
     "observedAt": "2026-11-05T15:26:38.639Z",
@@ -23,11 +23,43 @@
       "fetchedAt": "2026-11-05T15:26:38.639Z",
       "url": "https://emweb.securities.eastmoney.com/PC_HSF10/CompanySurvey/CompanySurveyAjax?code=SZ000423"
     },
-    "historicalAvailability": "current_profile_not_point_in_time"
+    "historicalAvailability": "current_profile_not_point_in_time",
+    "message": "复用7日内公开资料，原获取与观察时间保留。"
   },
   "financial": {
-    "state": "unavailable",
-    "reports": [],
+    "state": "partial",
+    "reports": [
+      {
+        "reportDate": "2026-09-30",
+        "noticeDate": "2026-10-24",
+        "updateDate": "2026-10-24",
+        "observedAt": "2026-11-11T15:09:09.084Z",
+        "periodBasis": "year_to_date",
+        "currency": null,
+        "amountUnit": "source_yuan",
+        "unitNote": "来源页面金额单位为元，币种未注明；不默认CNY，不作汇率换算。",
+        "percentageUnit": "percent",
+        "reportName": "2026年 三季报",
+        "industry": null,
+        "metrics": {
+          "revenue": 4940247391.34,
+          "netProfit": 1329723256.33,
+          "revenueGrowth": 3.6479904906,
+          "profitGrowth": 4.39,
+          "roe": 12.73,
+          "grossMargin": 74.8822923693,
+          "eps": 2.0685,
+          "bps": 15.269170774153,
+          "operatingCashPerShare": 0.624697772784
+        },
+        "source": {
+          "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
+          "fetchedAt": "2026-11-11T15:09:09.084Z",
+          "url": "https://data.eastmoney.com/bbsj/202609/yjbb.html"
+        },
+        "historicalAvailability": "provider_current_revision_not_point_in_time"
+      }
+    ],
     "scope": {
       "periods": [
         "2026-09-30",
@@ -36,30 +68,87 @@
       "complete": false,
       "pageCapPerPeriod": 16
     },
-    "message": "未取得可核验的已披露报告，不代表公司没有财报。"
+    "message": "仅展示已取得且日期可核验的累计报告；当前修订版不能冒充历史当时数据。"
   },
   "announcements": {
     "state": "partial",
-    "items": [],
+    "items": [
+      {
+        "id": "AN202611091831559796",
+        "symbol": "000423.SZ",
+        "title": "东阿阿胶:北京金诚同达律师事务所关于东阿阿胶股份有限公司2026年第二次临时股东会的法律意见书",
+        "noticeDate": "2026-11-10",
+        "displayTime": "2026-11-09 20:17:07:236",
+        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
+        "category": "法律意见书",
+        "url": "https://data.eastmoney.com/notices/detail/000423/AN202611091831559796.html",
+        "observedAt": "2026-11-11T15:09:11.807Z",
+        "bodyRead": false,
+        "readState": "index_only",
+        "source": "东方财富公开公告索引"
+      },
+      {
+        "id": "AN202611091831559795",
+        "symbol": "000423.SZ",
+        "title": "东阿阿胶:2026年第二次临时股东会决议公告",
+        "noticeDate": "2026-11-10",
+        "displayTime": "2026-11-09 20:17:07:202",
+        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
+        "category": "股东大会决议公告 / 高管人员任职变动",
+        "url": "https://data.eastmoney.com/notices/detail/000423/AN202611091831559795.html",
+        "observedAt": "2026-11-11T15:09:11.807Z",
+        "bodyRead": false,
+        "readState": "index_only",
+        "source": "东方财富公开公告索引"
+      },
+      {
+        "id": "AN202611091831559794",
+        "symbol": "000423.SZ",
+        "title": "东阿阿胶:公司章程",
+        "noticeDate": "2026-11-10",
+        "displayTime": "2026-11-09 20:17:07:253",
+        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
+        "category": "公司章程",
+        "url": "https://data.eastmoney.com/notices/detail/000423/AN202611091831559794.html",
+        "observedAt": "2026-11-11T15:09:11.807Z",
+        "bodyRead": false,
+        "readState": "index_only",
+        "source": "东方财富公开公告索引"
+      },
+      {
+        "id": "AN202611091831559793",
+        "symbol": "000423.SZ",
+        "title": "东阿阿胶:关于注销回购股份并减少注册资本暨通知债权人的公告",
+        "noticeDate": "2026-11-10",
+        "displayTime": "2026-11-09 20:17:07:234",
+        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
+        "category": "公司注册资本变更 / 通知债权人公告",
+        "url": "https://data.eastmoney.com/notices/detail/000423/AN202611091831559793.html",
+        "observedAt": "2026-11-11T15:09:11.807Z",
+        "bodyRead": false,
+        "readState": "index_only",
+        "source": "东方财富公开公告索引"
+      }
+    ],
     "scope": {
-      "from": "2026-10-30",
-      "through": "2026-11-05",
-      "beginDate": "2026-10-30",
-      "endDate": "2026-11-05",
+      "from": "2026-11-05",
+      "through": "2026-11-11",
+      "beginDate": "2026-11-05",
+      "endDate": "2026-11-11",
       "complete": false,
-      "totalHits": 13131,
-      "totalPages": 132,
-      "returnedPages": 11,
+      "totalHits": 6566,
+      "totalPages": 66,
+      "returnedPages": 20,
       "pageCap": 20,
       "truncated": true,
       "noticeTimePrecision": "day",
       "displayTimeTimezoneVerified": false
     },
-    "message": "本窗口未取得匹配公告索引；不等于没有公告或风险。"
+    "message": "公告索引未读正文，事件不是价格确认。"
   },
-  "bundleId": "000423.SZ:2026-11-05T15:27:52.131Z",
-  "fetchedAt": "2026-11-05T15:27:52.131Z",
-  "asOf": "2026-11-05T15:27:52.131Z",
-  "requestedAt": "2026-11-05T15:26:37.127Z",
-  "codeSourceCommit": "5f4a7f504d9dd83784b637bff0341abc516391b6"
+  "bundleId": "000423.SZ:2026-11-11T15:09:16.551Z",
+  "fetchedAt": "2026-11-11T15:09:16.551Z",
+  "asOf": "2026-11-11T15:09:16.551Z",
+  "requestedAt": "2026-11-11T15:08:42.388Z",
+  "codeSourceCommit": "2f455d445dfa23caf3c2dc1fac8cc039707b5a11"
 }
