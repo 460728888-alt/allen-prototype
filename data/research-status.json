@@ -1,26 +1,26 @@
 {
   "schema": 1,
   "state": "partial",
-  "generatedAt": "2026-11-11T15:09:16.551Z",
-  "attemptedAt": "2026-11-11T15:08:42.388Z",
-  "fetchedAt": "2026-11-11T15:09:16.551Z",
-  "asOf": "2026-11-11T15:09:16.551Z",
-  "priceDataThrough": "2026-11-11",
-  "codeSourceCommit": "2f455d445dfa23caf3c2dc1fac8cc039707b5a11",
+  "generatedAt": "2026-11-12T15:58:54.995Z",
+  "attemptedAt": "2026-11-12T15:57:39.984Z",
+  "fetchedAt": "2026-11-12T15:58:54.995Z",
+  "asOf": "2026-11-12T15:58:54.995Z",
+  "priceDataThrough": "2026-11-12",
+  "codeSourceCommit": "7cfee9f42b3a826fa9b386e7edacdf5992b2fc81",
   "coverage": {
     "poolSize": 1200,
     "company": {
-      "requested": 169,
-      "returned": 169,
-      "requestFailures": 0,
-      "skipped": 0,
-      "notRequested": 0,
-      "ok": 169,
-      "cached": 1031,
-      "failed": 0,
-      "stale": 0,
+      "requested": 372,
+      "returned": 366,
+      "requestFailures": 7,
+      "skipped": 298,
+      "notRequested": 31,
+      "ok": 365,
+      "cached": 530,
+      "failed": 7,
+      "stale": 267,
       "insufficient": 0,
-      "usable": 1200,
+      "usable": 895,
       "priority": "original_public_sample_then_symbol_not_recommendation"
     },
     "financial": {
@@ -36,7 +36,7 @@
           "returnedPages": 12,
           "totalPages": 12,
           "truncated": false,
-          "complete": true
+          "complete": false
         },
         {
           "period": "2026-06-30",
@@ -47,19 +47,19 @@
           "complete": false
         }
       ],
-      "rejectedRows": 0,
+      "rejectedRows": 1,
       "conflicts": 0,
       "complete": false
     },
     "announcements": {
-      "withItems": 227,
-      "withoutItems": 973,
-      "beginDate": "2026-11-05",
-      "endDate": "2026-11-11",
+      "withItems": 264,
+      "withoutItems": 936,
+      "beginDate": "2026-11-06",
+      "endDate": "2026-11-12",
       "requestedPages": 20,
       "returnedPages": 20,
-      "totalHits": 6566,
-      "totalPages": 66,
+      "totalHits": 6850,
+      "totalPages": 69,
       "pageCap": 20,
       "truncated": true,
       "rejectedItems": 0,
@@ -73,12 +73,61 @@
     "announcements": "东方财富公告索引",
     "notice": "公开来源可能修订或缺失；首次观察时间来自本次实际获取，不回溯为披露日。"
   },
-  "failures": [],
+  "failures": [
+    {
+      "symbol": "688981.SS",
+      "source": "financial",
+      "code": "request_error",
+      "message": "报告期、披露日或修订日期缺失/未来，暂停使用"
+    },
+    {
+      "symbol": "001399.SZ",
+      "source": "company",
+      "code": "request_error",
+      "message": "公司资料返回证券身份不一致"
+    },
+    {
+      "symbol": "300296.SZ",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "300315.SZ",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "300236.SZ",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "300244.SZ",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "300274.SZ",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "300307.SZ",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    }
+  ],
   "message": "部分研究来源未完整覆盖，未取得的内容保持未知。",
   "preservedPrevious": false,
   "storedCounts": {
-    "companies": 1200,
+    "companies": 895,
     "financial": 1200,
-    "announcementItems": 413
+    "announcementItems": 461
   }
 }

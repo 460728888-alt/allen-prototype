@@ -2,21 +2,21 @@
   "symbol": "300033.SZ",
   "code": "300033",
   "name": "同花顺",
-  "price": 201.58999633789062,
-  "changePct": -0.1980341325783952,
+  "price": 199.07000732421875,
+  "changePct": -1.2500565799148378,
   "currency": "CNY",
   "exchange": "SHZ",
   "industry": null,
-  "dataThrough": "2026-11-11",
+  "dataThrough": "2026-11-12",
   "data": {
     "version": "daily-contract-1",
     "state": "insufficient",
     "reasons": [
       "日线价格关系异常"
     ],
-    "dataThrough": "2026-11-11",
-    "fetchedAt": "2026-11-11T15:08:12.181Z",
-    "expectedThrough": "2026-11-11",
+    "dataThrough": "2026-11-12",
+    "fetchedAt": "2026-11-12T15:57:17.987Z",
+    "expectedThrough": "2026-11-12",
     "corporateActions": [
       {
         "type": "dividends",
@@ -31,7 +31,7 @@
         "date": "2026-04-10"
       }
     ],
-    "historyStart": "2026-03-16",
+    "historyStart": "2026-03-17",
     "unfinishedBars": 0,
     "calendarSource": "SSE/SZSE official annual holiday notices, 2024-2026",
     "calendarVersion": "cn-equities-2024-2026-v1",
@@ -40,7 +40,7 @@
     "priceBasis": "judgment_day_raw",
     "anchorFactor": 1,
     "volumeBasis": "source_volume_split_check",
-    "judgmentAsOf": "2026-11-11T15:08:03.417Z",
+    "judgmentAsOf": "2026-11-12T15:57:09.299Z",
     "complete": false
   },
   "levels": {
@@ -50,7 +50,7 @@
     "planType": "breakout",
     "priceBasis": "judgment_day_raw",
     "tick": 0.01,
-    "dataThrough": "2026-11-11",
+    "dataThrough": "2026-11-12",
     "entry": null,
     "stop": null,
     "target1": null,
@@ -75,13 +75,6 @@
   "probability": null,
   "detailPath": "data/stocks/300033.SZ.json",
   "miniHistory": [
-    {
-      "date": "2026-10-15",
-      "close": 201.4499969482422,
-      "volume": 11033077,
-      "complete": true,
-      "missingSession": false
-    },
     {
       "date": "2026-10-16",
       "close": 202.3699951171875,
@@ -214,11 +207,18 @@
       "volume": 7133889,
       "complete": true,
       "missingSession": false
+    },
+    {
+      "date": "2026-11-12",
+      "close": 199.07000732421875,
+      "volume": 8748266,
+      "complete": true,
+      "missingSession": false
     }
   ],
   "source": {
     "provider": "Yahoo Finance / query1.finance.yahoo.com",
-    "fetchedAt": "2026-11-11T15:08:12.181Z",
+    "fetchedAt": "2026-11-12T15:57:17.987Z",
     "quoteBasis": "provider_daily_quote_anchored_at_judgment_day",
     "historicalQuoteScaleVerified": false,
     "note": "提供方可能修订历史报价；严格历史报价尺度未独立核验",
@@ -226,9 +226,9 @@
       {
         "host": "query1.finance.yahoo.com",
         "requested": true,
-        "checkedAt": "2026-11-11T15:08:12.184Z",
+        "checkedAt": "2026-11-12T15:57:17.988Z",
         "state": "insufficient",
-        "dataThrough": "2026-11-11",
+        "dataThrough": "2026-11-12",
         "reasons": [
           "日线价格关系异常"
         ]
@@ -236,9 +236,9 @@
       {
         "host": "query2.finance.yahoo.com",
         "requested": true,
-        "checkedAt": "2026-11-11T15:08:12.292Z",
+        "checkedAt": "2026-11-12T15:57:18.062Z",
         "state": "insufficient",
-        "dataThrough": "2026-11-11",
+        "dataThrough": "2026-11-12",
         "reasons": [
           "日线价格关系异常"
         ]
@@ -250,18 +250,6 @@
     "retrySkipped": null
   },
   "history": [
-    {
-      "time": 1779154200,
-      "date": "2026-05-19",
-      "complete": true,
-      "open": 228.7723129930811,
-      "high": 229.76136207961554,
-      "low": 221.23947246104805,
-      "close": 227.86317443847656,
-      "volume": 13589272,
-      "adjustmentFactor": 0.9990493362379981,
-      "scaleFactor": 0.9990493362379981
-    },
     {
       "time": 1779240600,
       "date": "2026-05-20",
@@ -1682,11 +1670,23 @@
       "time": 1794360600,
       "date": "2026-11-11",
       "complete": true,
-      "open": 204.60000610351562,
+      "open": 200.3800048828125,
       "high": 203.22999572753906,
       "low": 199,
       "close": 201.58999633789062,
       "volume": 7133889,
+      "adjustmentFactor": 1,
+      "scaleFactor": 1
+    },
+    {
+      "time": 1794447000,
+      "date": "2026-11-12",
+      "complete": true,
+      "open": 204.60000610351562,
+      "high": 203.5500030517578,
+      "low": 199.0399932861328,
+      "close": 199.07000732421875,
+      "volume": 8748266,
       "adjustmentFactor": 1,
       "scaleFactor": 1
     }
@@ -1705,5 +1705,5 @@
     "items": [],
     "message": "尚未自动采集公告正文；事件不等于价格确认"
   },
-  "generatedAt": "2026-11-11T15:08:41.153Z"
+  "generatedAt": "2026-11-12T15:57:39.019Z"
 }

@@ -2,26 +2,26 @@
   "symbol": "688772.SS",
   "code": "688772",
   "name": "珠海冠宇",
-  "price": 16.450000762939453,
-  "changePct": -7.58426141564279,
+  "price": 16.260000228881836,
+  "changePct": -1.1550183905503109,
   "currency": "CNY",
   "exchange": "SHH",
   "industry": null,
-  "dataThrough": "2026-11-11",
+  "dataThrough": "2026-11-12",
   "data": {
     "version": "daily-contract-1",
     "state": "ok",
     "reasons": [],
-    "dataThrough": "2026-11-11",
-    "fetchedAt": "2026-11-11T15:08:17.040Z",
-    "expectedThrough": "2026-11-11",
+    "dataThrough": "2026-11-12",
+    "fetchedAt": "2026-11-12T15:57:29.249Z",
+    "expectedThrough": "2026-11-12",
     "corporateActions": [
       {
         "type": "dividends",
         "date": "2026-05-28"
       }
     ],
-    "historyStart": "2026-03-16",
+    "historyStart": "2026-03-17",
     "unfinishedBars": 0,
     "calendarSource": "SSE/SZSE official annual holiday notices, 2024-2026",
     "calendarVersion": "cn-equities-2024-2026-v1",
@@ -30,7 +30,7 @@
     "priceBasis": "judgment_day_raw",
     "anchorFactor": 1,
     "volumeBasis": "source_volume",
-    "judgmentAsOf": "2026-11-11T15:08:03.417Z",
+    "judgmentAsOf": "2026-11-12T15:57:09.299Z",
     "complete": true
   },
   "levels": {
@@ -40,7 +40,7 @@
     "planType": "breakout",
     "priceBasis": "judgment_day_raw",
     "tick": 0.01,
-    "dataThrough": "2026-11-11",
+    "dataThrough": "2026-11-12",
     "entry": 18.08,
     "stop": 12.4,
     "target1": 23.6,
@@ -55,10 +55,10 @@
     "rounding": "入场向上；止损及目标向下；仅展示时四舍五入比值"
   },
   "structure": {
-    "stage": "区间震荡",
-    "tone": "yellow",
-    "action": "继续等待",
-    "summary": "价格仍在结构区间内，当前没有足够量能证明方向。",
+    "stage": "突破后回踩",
+    "tone": "green",
+    "action": "观察回踩确认",
+    "summary": "此前曾出现放量突破，目前缩量回踩；守住突破区域才属于有效确认。",
     "levels": {
       "version": "range20-1",
       "state": "ok",
@@ -66,7 +66,7 @@
       "planType": "breakout",
       "priceBasis": "judgment_day_raw",
       "tick": 0.01,
-      "dataThrough": "2026-11-11",
+      "dataThrough": "2026-11-12",
       "entry": 18.08,
       "stop": 12.4,
       "target1": 23.6,
@@ -89,7 +89,7 @@
       "t2Enabled": false,
       "reason": "风险收益筛选配置不兼容：T1与1.5门槛冲突；正式策略待定，合格候选未判定"
     },
-    "currentPrice": 16.45,
+    "currentPrice": 16.26,
     "windowDays": 20,
     "range": {
       "lower": 12.44,
@@ -104,11 +104,11 @@
       "target2": 29.18
     },
     "volume": {
-      "current": 50113268,
-      "average20": 31362395,
-      "ratio": 1.6,
-      "recentRatio": 1.41,
-      "label": "明显放量"
+      "current": 34724511,
+      "average20": 33239709,
+      "ratio": 1.04,
+      "recentRatio": 1.22,
+      "label": "量能平稳"
     },
     "evidence": {
       "compression": false,
@@ -117,8 +117,8 @@
       "nearUpper": false,
       "nearLower": false,
       "aboveMa20": true,
-      "ma5": 16.91,
-      "ma20": 15.09,
+      "ma5": 16.81,
+      "ma20": 15.24,
       "position": "区间上半部"
     },
     "riskReward": 0.9718309859154939,
@@ -135,7 +135,7 @@
       "planType": "breakout",
       "priceBasis": "judgment_day_raw",
       "tick": 0.01,
-      "dataThrough": "2026-11-11",
+      "dataThrough": "2026-11-12",
       "entry": 18.08,
       "stop": 12.4,
       "target1": 23.6,
@@ -159,9 +159,9 @@
       "reason": "风险收益筛选配置不兼容：T1与1.5门槛冲突；正式策略待定，合格候选未判定"
     },
     "priorHigh": 16.15,
-    "pullbackPct": -23,
+    "pullbackPct": -19.6,
     "usefulPullback": true,
-    "volumeDryRatio": 1.71,
+    "volumeDryRatio": 1.47,
     "volumeDriedUp": false,
     "priceTight": false,
     "lowsStoppedFalling": true,
@@ -177,19 +177,12 @@
     "t2Enabled": false,
     "reason": "风险收益筛选配置不兼容：T1与1.5门槛冲突；正式策略待定，合格候选未判定"
   },
-  "stage": "区间震荡",
+  "stage": "突破后回踩",
   "observation": false,
   "qualified": null,
   "probability": null,
   "detailPath": "data/stocks/688772.SS.json",
   "miniHistory": [
-    {
-      "date": "2026-10-15",
-      "close": 13.40999984741211,
-      "volume": 29000995,
-      "complete": true,
-      "missingSession": false
-    },
     {
       "date": "2026-10-16",
       "close": 13.100000381469727,
@@ -322,11 +315,18 @@
       "volume": 50113268,
       "complete": true,
       "missingSession": false
+    },
+    {
+      "date": "2026-11-12",
+      "close": 16.260000228881836,
+      "volume": 34724511,
+      "complete": true,
+      "missingSession": false
     }
   ],
   "source": {
     "provider": "Yahoo Finance / query1.finance.yahoo.com",
-    "fetchedAt": "2026-11-11T15:08:17.040Z",
+    "fetchedAt": "2026-11-12T15:57:29.249Z",
     "quoteBasis": "provider_daily_quote_anchored_at_judgment_day",
     "historicalQuoteScaleVerified": false,
     "note": "提供方可能修订历史报价；严格历史报价尺度未独立核验",
@@ -334,9 +334,9 @@
       {
         "host": "query1.finance.yahoo.com",
         "requested": true,
-        "checkedAt": "2026-11-11T15:08:17.042Z",
+        "checkedAt": "2026-11-12T15:57:29.251Z",
         "state": "ok",
-        "dataThrough": "2026-11-11",
+        "dataThrough": "2026-11-12",
         "reasons": []
       }
     ],
@@ -346,18 +346,6 @@
     "retrySkipped": null
   },
   "history": [
-    {
-      "time": 1779154200,
-      "date": "2026-05-19",
-      "complete": true,
-      "open": 15.815044061581915,
-      "high": 16.404424946369414,
-      "low": 15.520353619188166,
-      "close": 15.942742347717285,
-      "volume": 40372813,
-      "adjustmentFactor": 0.9823008501157688,
-      "scaleFactor": 0.9823008501157688
-    },
     {
       "time": 1779240600,
       "date": "2026-05-20",
@@ -1785,6 +1773,18 @@
       "volume": 50113268,
       "adjustmentFactor": 1,
       "scaleFactor": 1
+    },
+    {
+      "time": 1794447000,
+      "date": "2026-11-12",
+      "complete": true,
+      "open": 16.5,
+      "high": 16.979999542236328,
+      "low": 16.170000076293945,
+      "close": 16.260000228881836,
+      "volume": 34724511,
+      "adjustmentFactor": 1,
+      "scaleFactor": 1
     }
   ],
   "company": {
@@ -1801,5 +1801,5 @@
     "items": [],
     "message": "尚未自动采集公告正文；事件不等于价格确认"
   },
-  "generatedAt": "2026-11-11T15:08:41.153Z"
+  "generatedAt": "2026-11-12T15:57:39.019Z"
 }
