@@ -2,11 +2,9 @@
   "schema": 1,
   "symbol": "300620.SZ",
   "company": {
-    "state": "stale",
-    "fetchedAt": "2026-11-05T15:27:08.357Z",
-    "observedAt": "2026-11-05T15:27:08.357Z",
-    "requestState": "not_requested",
-    "message": "旧公司资料超过缓存期限，本次预算未覆盖，暂停使用。"
+    "state": "failed",
+    "previousFetchedAt": "2026-11-05T15:27:08.357Z",
+    "message": "请求超时"
   },
   "financial": {
     "state": "partial",
@@ -15,7 +13,7 @@
         "reportDate": "2026-09-30",
         "noticeDate": "2026-10-23",
         "updateDate": "2026-10-23",
-        "observedAt": "2026-11-12T15:58:09.128Z",
+        "observedAt": "2026-11-13T15:21:29.115Z",
         "periodBasis": "year_to_date",
         "currency": null,
         "amountUnit": "source_yuan",
@@ -36,7 +34,7 @@
         },
         "source": {
           "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
-          "fetchedAt": "2026-11-12T15:58:09.128Z",
+          "fetchedAt": "2026-11-13T15:21:29.115Z",
           "url": "https://data.eastmoney.com/bbsj/202609/yjbb.html"
         },
         "historicalAvailability": "provider_current_revision_not_point_in_time"
@@ -54,26 +52,55 @@
   },
   "announcements": {
     "state": "partial",
-    "items": [],
+    "items": [
+      {
+        "id": "AN202611131831691548",
+        "symbol": "300620.SZ",
+        "title": "光库科技:关于收到中国证券监督管理委员会《关于同意珠海光库科技股份有限公司发行股份、可转换公司债券购买资产并募集配套资金注册的批复》的公告",
+        "noticeDate": "2026-11-13",
+        "displayTime": "2026-11-13 16:14:03:291",
+        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
+        "category": "其他",
+        "url": "https://data.eastmoney.com/notices/detail/300620/AN202611131831691548.html",
+        "observedAt": "2026-11-13T15:21:11.064Z",
+        "bodyRead": false,
+        "readState": "index_only",
+        "source": "东方财富公开公告索引"
+      },
+      {
+        "id": "AN202611131831688881",
+        "symbol": "300620.SZ",
+        "title": "关于同意光库科技重大资产重组注册的批复",
+        "noticeDate": "2026-11-13",
+        "displayTime": "2026-11-13 15:03:24:756",
+        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
+        "category": "创业板并购重组审核注册结果通知",
+        "url": "https://data.eastmoney.com/notices/detail/300620/AN202611131831688881.html",
+        "observedAt": "2026-11-13T15:21:11.064Z",
+        "bodyRead": false,
+        "readState": "index_only",
+        "source": "东方财富公开公告索引"
+      }
+    ],
     "scope": {
-      "from": "2026-11-06",
-      "through": "2026-11-12",
-      "beginDate": "2026-11-06",
-      "endDate": "2026-11-12",
+      "from": "2026-11-07",
+      "through": "2026-11-13",
+      "beginDate": "2026-11-07",
+      "endDate": "2026-11-13",
       "complete": false,
-      "totalHits": 6850,
-      "totalPages": 69,
+      "totalHits": 7186,
+      "totalPages": 72,
       "returnedPages": 20,
       "pageCap": 20,
       "truncated": true,
       "noticeTimePrecision": "day",
       "displayTimeTimezoneVerified": false
     },
-    "message": "本窗口未取得匹配公告索引；不等于没有公告或风险。"
+    "message": "公告索引未读正文，事件不是价格确认。"
   },
-  "bundleId": "300620.SZ:2026-11-12T15:58:54.995Z",
-  "fetchedAt": "2026-11-12T15:58:54.995Z",
-  "asOf": "2026-11-12T15:58:54.995Z",
-  "requestedAt": "2026-11-12T15:57:39.984Z",
-  "codeSourceCommit": "7cfee9f42b3a826fa9b386e7edacdf5992b2fc81"
+  "bundleId": "300620.SZ:2026-11-13T15:22:19.558Z",
+  "fetchedAt": "2026-11-13T15:22:19.558Z",
+  "asOf": "2026-11-13T15:22:19.558Z",
+  "requestedAt": "2026-11-13T15:21:04.551Z",
+  "codeSourceCommit": "dbfd54e5fc839d8ac31f7bc4a92f341a7c785b67"
 }

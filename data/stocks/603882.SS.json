@@ -2,21 +2,21 @@
   "symbol": "603882.SS",
   "code": "603882",
   "name": "金域医学",
-  "price": 27.31999969482422,
-  "changePct": -3.2577906648386556,
+  "price": 26.200000762939453,
+  "changePct": -4.099556897494949,
   "currency": "CNY",
   "exchange": "SHH",
   "industry": null,
-  "dataThrough": "2026-11-12",
+  "dataThrough": "2026-11-13",
   "data": {
     "version": "daily-contract-1",
     "state": "ok",
     "reasons": [],
-    "dataThrough": "2026-11-12",
-    "fetchedAt": "2026-11-12T15:57:36.630Z",
-    "expectedThrough": "2026-11-12",
+    "dataThrough": "2026-11-13",
+    "fetchedAt": "2026-11-13T15:21:00.833Z",
+    "expectedThrough": "2026-11-13",
     "corporateActions": [],
-    "historyStart": "2026-03-17",
+    "historyStart": "2026-03-18",
     "unfinishedBars": 0,
     "calendarSource": "SSE/SZSE official annual holiday notices, 2024-2026",
     "calendarVersion": "cn-equities-2024-2026-v1",
@@ -25,7 +25,7 @@
     "priceBasis": "judgment_day_raw",
     "anchorFactor": 1,
     "volumeBasis": "source_volume",
-    "judgmentAsOf": "2026-11-12T15:57:09.299Z",
+    "judgmentAsOf": "2026-11-13T15:20:40.175Z",
     "complete": true
   },
   "levels": {
@@ -35,7 +35,7 @@
     "planType": "breakout",
     "priceBasis": "judgment_day_raw",
     "tick": 0.01,
-    "dataThrough": "2026-11-12",
+    "dataThrough": "2026-11-13",
     "entry": 32.65,
     "stop": 26.41,
     "target1": 38.6,
@@ -50,10 +50,10 @@
     "rounding": "入场向上；止损及目标向下；仅展示时四舍五入比值"
   },
   "structure": {
-    "stage": "回调观察",
-    "tone": "orange",
-    "action": "等待止跌",
-    "summary": "价格处于结构下部或短期均价仍弱，尚未形成向上确认。",
+    "stage": "结构失效",
+    "tone": "red",
+    "action": "暂停考虑",
+    "summary": "收盘触及近20日结构失效价，原蓄势假设暂时失效。",
     "levels": {
       "version": "range20-1",
       "state": "ok",
@@ -61,7 +61,7 @@
       "planType": "breakout",
       "priceBasis": "judgment_day_raw",
       "tick": 0.01,
-      "dataThrough": "2026-11-12",
+      "dataThrough": "2026-11-13",
       "entry": 32.65,
       "stop": 26.41,
       "target1": 38.6,
@@ -84,7 +84,7 @@
       "t2Enabled": false,
       "reason": "风险收益筛选配置不兼容：T1与1.5门槛冲突；正式策略待定，合格候选未判定"
     },
-    "currentPrice": 27.32,
+    "currentPrice": 26.2,
     "windowDays": 20,
     "range": {
       "lower": 26.49,
@@ -99,10 +99,10 @@
       "target2": 44.66
     },
     "volume": {
-      "current": 13369785,
-      "average20": 15103654,
-      "ratio": 0.89,
-      "recentRatio": 0.67,
+      "current": 13017086,
+      "average20": 15022353,
+      "ratio": 0.87,
+      "recentRatio": 0.69,
       "label": "持续缩量"
     },
     "evidence": {
@@ -110,11 +110,11 @@
       "lowsRising": false,
       "highsTightening": true,
       "nearUpper": false,
-      "nearLower": false,
+      "nearLower": true,
       "aboveMa20": false,
-      "ma5": 28.1,
-      "ma20": 29.31,
-      "position": "区间下半部"
+      "ma5": 27.62,
+      "ma20": 29.19,
+      "position": "下方"
     },
     "riskReward": 0.9535256410256417,
     "riskReward2": 1.9246794871794874,
@@ -130,7 +130,7 @@
       "planType": "breakout",
       "priceBasis": "judgment_day_raw",
       "tick": 0.01,
-      "dataThrough": "2026-11-12",
+      "dataThrough": "2026-11-13",
       "entry": 32.65,
       "stop": 26.41,
       "target1": 38.6,
@@ -154,9 +154,9 @@
       "reason": "风险收益筛选配置不兼容：T1与1.5门槛冲突；正式策略待定，合格候选未判定"
     },
     "priorHigh": 32.32,
-    "pullbackPct": -18,
+    "pullbackPct": -19.3,
     "usefulPullback": true,
-    "volumeDryRatio": 0.66,
+    "volumeDryRatio": 0.67,
     "volumeDriedUp": true,
     "priceTight": false,
     "lowsStoppedFalling": false,
@@ -172,19 +172,12 @@
     "t2Enabled": false,
     "reason": "风险收益筛选配置不兼容：T1与1.5门槛冲突；正式策略待定，合格候选未判定"
   },
-  "stage": "回调观察",
+  "stage": "结构失效",
   "observation": false,
   "qualified": null,
   "probability": null,
   "detailPath": "data/stocks/603882.SS.json",
   "miniHistory": [
-    {
-      "date": "2026-10-16",
-      "close": 28.600000381469727,
-      "volume": 17086319,
-      "complete": true,
-      "missingSession": false
-    },
     {
       "date": "2026-10-19",
       "close": 29.200000762939453,
@@ -317,11 +310,18 @@
       "volume": 13369785,
       "complete": true,
       "missingSession": false
+    },
+    {
+      "date": "2026-11-13",
+      "close": 26.200000762939453,
+      "volume": 13017086,
+      "complete": true,
+      "missingSession": false
     }
   ],
   "source": {
     "provider": "Yahoo Finance / query1.finance.yahoo.com",
-    "fetchedAt": "2026-11-12T15:57:36.630Z",
+    "fetchedAt": "2026-11-13T15:21:00.833Z",
     "quoteBasis": "provider_daily_quote_anchored_at_judgment_day",
     "historicalQuoteScaleVerified": false,
     "note": "提供方可能修订历史报价；严格历史报价尺度未独立核验",
@@ -329,9 +329,9 @@
       {
         "host": "query1.finance.yahoo.com",
         "requested": true,
-        "checkedAt": "2026-11-12T15:57:36.631Z",
+        "checkedAt": "2026-11-13T15:21:00.835Z",
         "state": "ok",
-        "dataThrough": "2026-11-12",
+        "dataThrough": "2026-11-13",
         "reasons": []
       }
     ],
@@ -341,18 +341,6 @@
     "retrySkipped": null
   },
   "history": [
-    {
-      "time": 1779240600,
-      "date": "2026-05-20",
-      "complete": true,
-      "open": 26.200000762939453,
-      "high": 26.299999237060547,
-      "low": 25.799999237060547,
-      "close": 25.93000030517578,
-      "volume": 3218434,
-      "adjustmentFactor": 1,
-      "scaleFactor": 1
-    },
     {
       "time": 1779327000,
       "date": "2026-05-21",
@@ -1780,6 +1768,18 @@
       "volume": 13369785,
       "adjustmentFactor": 1,
       "scaleFactor": 1
+    },
+    {
+      "time": 1794533400,
+      "date": "2026-11-13",
+      "complete": true,
+      "open": 27.100000381469727,
+      "high": 27.360000610351562,
+      "low": 26.09000015258789,
+      "close": 26.200000762939453,
+      "volume": 13017086,
+      "adjustmentFactor": 1,
+      "scaleFactor": 1
     }
   ],
   "company": {
@@ -1796,5 +1796,5 @@
     "items": [],
     "message": "尚未自动采集公告正文；事件不等于价格确认"
   },
-  "generatedAt": "2026-11-12T15:57:39.019Z"
+  "generatedAt": "2026-11-13T15:21:03.647Z"
 }

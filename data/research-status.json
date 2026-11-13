@@ -1,31 +1,31 @@
 {
   "schema": 1,
   "state": "partial",
-  "generatedAt": "2026-11-12T15:58:54.995Z",
-  "attemptedAt": "2026-11-12T15:57:39.984Z",
-  "fetchedAt": "2026-11-12T15:58:54.995Z",
-  "asOf": "2026-11-12T15:58:54.995Z",
-  "priceDataThrough": "2026-11-12",
-  "codeSourceCommit": "7cfee9f42b3a826fa9b386e7edacdf5992b2fc81",
+  "generatedAt": "2026-11-13T15:22:19.558Z",
+  "attemptedAt": "2026-11-13T15:21:04.551Z",
+  "fetchedAt": "2026-11-13T15:22:19.558Z",
+  "asOf": "2026-11-13T15:22:19.558Z",
+  "priceDataThrough": "2026-11-13",
+  "codeSourceCommit": "dbfd54e5fc839d8ac31f7bc4a92f341a7c785b67",
   "coverage": {
     "poolSize": 1200,
     "company": {
-      "requested": 372,
-      "returned": 366,
-      "requestFailures": 7,
-      "skipped": 298,
-      "notRequested": 31,
-      "ok": 365,
-      "cached": 530,
-      "failed": 7,
-      "stale": 267,
+      "requested": 171,
+      "returned": 145,
+      "requestFailures": 26,
+      "skipped": 454,
+      "notRequested": 48,
+      "ok": 145,
+      "cached": 575,
+      "failed": 26,
+      "stale": 406,
       "insufficient": 0,
-      "usable": 895,
+      "usable": 720,
       "priority": "original_public_sample_then_symbol_not_recommendation"
     },
     "financial": {
-      "withReports": 1200,
-      "withoutReports": 0,
+      "withReports": 1199,
+      "withoutReports": 1,
       "requestedPages": 28,
       "returnedPages": 28,
       "pageCapPerPeriod": 16,
@@ -47,19 +47,19 @@
           "complete": false
         }
       ],
-      "rejectedRows": 1,
+      "rejectedRows": 2,
       "conflicts": 0,
       "complete": false
     },
     "announcements": {
-      "withItems": 264,
-      "withoutItems": 936,
-      "beginDate": "2026-11-06",
-      "endDate": "2026-11-12",
+      "withItems": 259,
+      "withoutItems": 941,
+      "beginDate": "2026-11-07",
+      "endDate": "2026-11-13",
       "requestedPages": 20,
       "returnedPages": 20,
-      "totalHits": 6850,
-      "totalPages": 69,
+      "totalHits": 7186,
+      "totalPages": 72,
       "pageCap": 20,
       "truncated": true,
       "rejectedItems": 0,
@@ -75,49 +75,169 @@
   },
   "failures": [
     {
-      "symbol": "688981.SS",
+      "symbol": "688662.SS",
       "source": "financial",
       "code": "request_error",
       "message": "报告期、披露日或修订日期缺失/未来，暂停使用"
     },
     {
+      "symbol": "688662.SS",
+      "source": "financial",
+      "code": "request_error",
+      "message": "报告期、披露日或修订日期缺失/未来，暂停使用"
+    },
+    {
+      "symbol": "000062.SZ",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "000151.SZ",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "001393.SZ",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
       "symbol": "001399.SZ",
       "source": "company",
-      "code": "request_error",
-      "message": "公司资料返回证券身份不一致"
+      "code": "timeout",
+      "message": "请求超时"
     },
     {
-      "symbol": "300296.SZ",
+      "symbol": "002187.SZ",
       "source": "company",
       "code": "timeout",
       "message": "请求超时"
     },
     {
-      "symbol": "300315.SZ",
+      "symbol": "002277.SZ",
       "source": "company",
       "code": "timeout",
       "message": "请求超时"
     },
     {
-      "symbol": "300236.SZ",
+      "symbol": "002488.SZ",
       "source": "company",
       "code": "timeout",
       "message": "请求超时"
     },
     {
-      "symbol": "300244.SZ",
+      "symbol": "002889.SZ",
       "source": "company",
       "code": "timeout",
       "message": "请求超时"
     },
     {
-      "symbol": "300274.SZ",
+      "symbol": "002947.SZ",
       "source": "company",
       "code": "timeout",
       "message": "请求超时"
     },
     {
-      "symbol": "300307.SZ",
+      "symbol": "003033.SZ",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "300420.SZ",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "300493.SZ",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "300620.SZ",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "300657.SZ",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "300661.SZ",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "300666.SZ",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "300720.SZ",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "300724.SZ",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "300738.SZ",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "300748.SZ",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "300782.SZ",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "300788.SZ",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "300827.SZ",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "300829.SZ",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "300773.SZ",
+      "source": "company",
+      "code": "timeout",
+      "message": "请求超时"
+    },
+    {
+      "symbol": "300825.SZ",
       "source": "company",
       "code": "timeout",
       "message": "请求超时"
@@ -126,8 +246,8 @@
   "message": "部分研究来源未完整覆盖，未取得的内容保持未知。",
   "preservedPrevious": false,
   "storedCounts": {
-    "companies": 895,
-    "financial": 1200,
-    "announcementItems": 461
+    "companies": 720,
+    "financial": 1199,
+    "announcementItems": 552
   }
 }
