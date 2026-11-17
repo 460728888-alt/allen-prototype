@@ -1,22 +1,22 @@
 {
   "schema": 1,
   "state": "partial",
-  "generatedAt": "2026-11-16T16:59:47.112Z",
-  "attemptedAt": "2026-11-16T16:58:38.873Z",
-  "fetchedAt": "2026-11-16T16:59:47.112Z",
-  "asOf": "2026-11-16T16:59:47.112Z",
+  "generatedAt": "2026-11-17T16:52:49.382Z",
+  "attemptedAt": "2026-11-17T16:52:06.684Z",
+  "fetchedAt": "2026-11-17T16:52:49.382Z",
+  "asOf": "2026-11-17T16:52:49.382Z",
   "priceDataThrough": "2026-11-13",
-  "codeSourceCommit": "dd3d55b34b064568a71f65631516ef2032071d46",
+  "codeSourceCommit": "394172736b926f15f5399afa6965f081480678ae",
   "coverage": {
     "poolSize": 1200,
     "company": {
-      "requested": 480,
-      "returned": 480,
+      "requested": 206,
+      "returned": 206,
       "requestFailures": 3,
       "skipped": 0,
       "notRequested": 0,
-      "ok": 477,
-      "cached": 720,
+      "ok": 203,
+      "cached": 994,
       "failed": 3,
       "stale": 0,
       "insufficient": 0,
@@ -52,14 +52,14 @@
       "complete": false
     },
     "announcements": {
-      "withItems": 226,
-      "withoutItems": 974,
-      "beginDate": "2026-11-11",
-      "endDate": "2026-11-17",
-      "requestedPages": 20,
-      "returnedPages": 20,
-      "totalHits": 7397,
-      "totalPages": 74,
+      "withItems": 41,
+      "withoutItems": 1159,
+      "beginDate": "2026-11-12",
+      "endDate": "2026-11-18",
+      "requestedPages": 5,
+      "returnedPages": 4,
+      "totalHits": 7596,
+      "totalPages": 76,
       "pageCap": 20,
       "truncated": true,
       "rejectedItems": 0,
@@ -91,6 +91,11 @@
       "source": "company",
       "code": "request_error",
       "message": "公司资料返回证券身份不一致"
+    },
+    {
+      "source": "announcements",
+      "code": "timeout",
+      "message": "请求超时"
     }
   ],
   "message": "部分研究来源未完整覆盖，未取得的内容保持未知。",
@@ -98,6 +103,6 @@
   "storedCounts": {
     "companies": 1197,
     "financial": 1200,
-    "announcementItems": 493
+    "announcementItems": 130
   }
 }
