@@ -27,39 +27,8 @@
     "message": "复用7日内公开资料，原获取与观察时间保留。"
   },
   "financial": {
-    "state": "partial",
-    "reports": [
-      {
-        "reportDate": "2026-09-30",
-        "noticeDate": "2026-10-20",
-        "updateDate": "2026-10-20",
-        "observedAt": "2026-11-17T16:52:35.970Z",
-        "periodBasis": "year_to_date",
-        "currency": null,
-        "amountUnit": "source_yuan",
-        "unitNote": "来源页面金额单位为元，币种未注明；不默认CNY，不作汇率换算。",
-        "percentageUnit": "percent",
-        "reportName": "2026年 三季报",
-        "industry": null,
-        "metrics": {
-          "revenue": 17487391621.67,
-          "netProfit": 638121722.5,
-          "revenueGrowth": 23.4254640971,
-          "profitGrowth": 85.28,
-          "roe": 8.79,
-          "grossMargin": 30.6182679326,
-          "eps": 0.8457,
-          "bps": 9.937369309069,
-          "operatingCashPerShare": -5.006853584777
-        },
-        "source": {
-          "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
-          "fetchedAt": "2026-11-17T16:52:35.970Z",
-          "url": "https://data.eastmoney.com/bbsj/202609/yjbb.html"
-        },
-        "historicalAvailability": "provider_current_revision_not_point_in_time"
-      }
-    ],
+    "state": "unavailable",
+    "reports": [],
     "scope": {
       "periods": [
         "2026-09-30",
@@ -68,30 +37,87 @@
       "complete": false,
       "pageCapPerPeriod": 16
     },
-    "message": "仅展示已取得且日期可核验的累计报告；当前修订版不能冒充历史当时数据。"
+    "message": "未取得可核验的已披露报告，不代表公司没有财报。"
   },
   "announcements": {
     "state": "partial",
-    "items": [],
+    "items": [
+      {
+        "id": "AN202611181831832724",
+        "symbol": "002396.SZ",
+        "title": "星网锐捷:关于非独立董事辞职及补选公司第七届董事会非独立董事的公告",
+        "noticeDate": "2026-11-19",
+        "displayTime": "2026-11-18 18:34:06:323",
+        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
+        "category": "高管人员任职变动",
+        "url": "https://data.eastmoney.com/notices/detail/002396/AN202611181831832724.html",
+        "observedAt": "2026-11-18T16:25:42.062Z",
+        "bodyRead": false,
+        "readState": "index_only",
+        "source": "东方财富公开公告索引"
+      },
+      {
+        "id": "AN202611181831832722",
+        "symbol": "002396.SZ",
+        "title": "星网锐捷:第七届董事会第二十六次会议决议公告",
+        "noticeDate": "2026-11-19",
+        "displayTime": "2026-11-18 18:34:06:341",
+        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
+        "category": "高管人员任职变动 / 董事会决议公告",
+        "url": "https://data.eastmoney.com/notices/detail/002396/AN202611181831832722.html",
+        "observedAt": "2026-11-18T16:25:42.062Z",
+        "bodyRead": false,
+        "readState": "index_only",
+        "source": "东方财富公开公告索引"
+      },
+      {
+        "id": "AN202611181831832719",
+        "symbol": "002396.SZ",
+        "title": "星网锐捷:关于召开2026年第二次临时股东会的通知",
+        "noticeDate": "2026-11-19",
+        "displayTime": "2026-11-18 18:34:06:351",
+        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
+        "category": "召开股东大会通知",
+        "url": "https://data.eastmoney.com/notices/detail/002396/AN202611181831832719.html",
+        "observedAt": "2026-11-18T16:25:42.062Z",
+        "bodyRead": false,
+        "readState": "index_only",
+        "source": "东方财富公开公告索引"
+      },
+      {
+        "id": "AN202611181831832716",
+        "symbol": "002396.SZ",
+        "title": "星网锐捷:关于控股子公司对外投资设立产业基金暨关联交易的公告",
+        "noticeDate": "2026-11-19",
+        "displayTime": "2026-11-18 18:34:06:345",
+        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
+        "category": "关联交易",
+        "url": "https://data.eastmoney.com/notices/detail/002396/AN202611181831832716.html",
+        "observedAt": "2026-11-18T16:25:42.062Z",
+        "bodyRead": false,
+        "readState": "index_only",
+        "source": "东方财富公开公告索引"
+      }
+    ],
     "scope": {
-      "from": "2026-11-12",
-      "through": "2026-11-18",
-      "beginDate": "2026-11-12",
-      "endDate": "2026-11-18",
+      "from": "2026-11-13",
+      "through": "2026-11-19",
+      "beginDate": "2026-11-13",
+      "endDate": "2026-11-19",
       "complete": false,
-      "totalHits": 7596,
+      "totalHits": 7561,
       "totalPages": 76,
-      "returnedPages": 4,
+      "returnedPages": 20,
       "pageCap": 20,
       "truncated": true,
       "noticeTimePrecision": "day",
       "displayTimeTimezoneVerified": false
     },
-    "message": "本窗口未取得匹配公告索引；不等于没有公告或风险。"
+    "message": "公告索引未读正文，事件不是价格确认。"
   },
-  "bundleId": "002396.SZ:2026-11-17T16:52:49.382Z",
-  "fetchedAt": "2026-11-17T16:52:49.382Z",
-  "asOf": "2026-11-17T16:52:49.382Z",
-  "requestedAt": "2026-11-17T16:52:06.684Z",
-  "codeSourceCommit": "394172736b926f15f5399afa6965f081480678ae"
+  "bundleId": "002396.SZ:2026-11-18T16:26:26.899Z",
+  "fetchedAt": "2026-11-18T16:26:26.899Z",
+  "asOf": "2026-11-18T16:26:26.899Z",
+  "requestedAt": "2026-11-18T16:25:38.020Z",
+  "codeSourceCommit": "ee256812bf16d7413da5b8fee9644b5bfdd57b28"
 }
