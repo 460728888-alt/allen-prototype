@@ -1,22 +1,22 @@
 {
   "schema": 1,
   "state": "partial",
-  "generatedAt": "2026-11-18T16:26:26.899Z",
-  "attemptedAt": "2026-11-18T16:25:38.020Z",
-  "fetchedAt": "2026-11-18T16:26:26.899Z",
-  "asOf": "2026-11-18T16:26:26.899Z",
+  "generatedAt": "2026-11-19T16:32:47.008Z",
+  "attemptedAt": "2026-11-19T16:32:03.637Z",
+  "fetchedAt": "2026-11-19T16:32:47.008Z",
+  "asOf": "2026-11-19T16:32:47.008Z",
   "priceDataThrough": "2026-11-13",
-  "codeSourceCommit": "ee256812bf16d7413da5b8fee9644b5bfdd57b28",
+  "codeSourceCommit": "c1080f0df243b875b2c60ebd951ed27a4c878ae8",
   "coverage": {
     "poolSize": 1200,
     "company": {
-      "requested": 42,
-      "returned": 42,
+      "requested": 336,
+      "returned": 336,
       "requestFailures": 3,
       "skipped": 0,
       "notRequested": 0,
-      "ok": 39,
-      "cached": 1158,
+      "ok": 333,
+      "cached": 864,
       "failed": 3,
       "stale": 0,
       "insufficient": 0,
@@ -24,19 +24,19 @@
       "priority": "original_public_sample_then_symbol_not_recommendation"
     },
     "financial": {
-      "withReports": 1092,
-      "withoutReports": 108,
-      "requestedPages": 27,
-      "returnedPages": 26,
+      "withReports": 1200,
+      "withoutReports": 0,
+      "requestedPages": 28,
+      "returnedPages": 28,
       "pageCapPerPeriod": 16,
       "periods": [
         {
           "period": "2026-09-30",
-          "requestedPages": 11,
-          "returnedPages": 10,
+          "requestedPages": 12,
+          "returnedPages": 12,
           "totalPages": 12,
           "truncated": false,
-          "complete": false
+          "complete": true
         },
         {
           "period": "2026-06-30",
@@ -52,14 +52,14 @@
       "complete": false
     },
     "announcements": {
-      "withItems": 264,
-      "withoutItems": 936,
-      "beginDate": "2026-11-13",
-      "endDate": "2026-11-19",
+      "withItems": 269,
+      "withoutItems": 931,
+      "beginDate": "2026-11-14",
+      "endDate": "2026-11-20",
       "requestedPages": 20,
       "returnedPages": 20,
-      "totalHits": 7561,
-      "totalPages": 76,
+      "totalHits": 7111,
+      "totalPages": 72,
       "pageCap": 20,
       "truncated": true,
       "rejectedItems": 0,
@@ -81,29 +81,23 @@
       "message": "公司资料返回证券身份不一致"
     },
     {
-      "symbol": "301689.SZ",
-      "source": "company",
-      "code": "request_error",
-      "message": "公司资料返回证券身份不一致"
-    },
-    {
       "symbol": "301569.SZ",
       "source": "company",
       "code": "request_error",
       "message": "公司资料返回证券身份不一致"
     },
     {
-      "source": "financial",
-      "period": "2026-09-30",
-      "code": "timeout",
-      "message": "请求超时"
+      "symbol": "301689.SZ",
+      "source": "company",
+      "code": "request_error",
+      "message": "公司资料返回证券身份不一致"
     }
   ],
   "message": "部分研究来源未完整覆盖，未取得的内容保持未知。",
   "preservedPrevious": false,
   "storedCounts": {
     "companies": 1197,
-    "financial": 1092,
-    "announcementItems": 551
+    "financial": 1200,
+    "announcementItems": 506
   }
 }

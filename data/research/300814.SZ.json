@@ -27,8 +27,39 @@
     "message": "复用7日内公开资料，原获取与观察时间保留。"
   },
   "financial": {
-    "state": "unavailable",
-    "reports": [],
+    "state": "partial",
+    "reports": [
+      {
+        "reportDate": "2026-09-30",
+        "noticeDate": "2026-10-23",
+        "updateDate": "2026-10-23",
+        "observedAt": "2026-11-19T16:32:29.127Z",
+        "periodBasis": "year_to_date",
+        "currency": null,
+        "amountUnit": "source_yuan",
+        "unitNote": "来源页面金额单位为元，币种未注明；不默认CNY，不作汇率换算。",
+        "percentageUnit": "percent",
+        "reportName": "2026年 三季报",
+        "industry": null,
+        "metrics": {
+          "revenue": 2009650749.29,
+          "netProfit": 118156002.12,
+          "revenueGrowth": 48.3351098029,
+          "profitGrowth": 324.2,
+          "roe": 6.9,
+          "grossMargin": 22.5963132241,
+          "eps": 0.62,
+          "bps": 9.212345316201,
+          "operatingCashPerShare": -0.118920568367
+        },
+        "source": {
+          "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
+          "fetchedAt": "2026-11-19T16:32:29.127Z",
+          "url": "https://data.eastmoney.com/bbsj/202609/yjbb.html"
+        },
+        "historicalAvailability": "provider_current_revision_not_point_in_time"
+      }
+    ],
     "scope": {
       "periods": [
         "2026-09-30",
@@ -37,157 +68,30 @@
       "complete": false,
       "pageCapPerPeriod": 16
     },
-    "message": "未取得可核验的已披露报告，不代表公司没有财报。"
+    "message": "仅展示已取得且日期可核验的累计报告；当前修订版不能冒充历史当时数据。"
   },
   "announcements": {
     "state": "partial",
-    "items": [
-      {
-        "id": "AN202611181831832218",
-        "symbol": "300814.SZ",
-        "title": "中富电路:关于向特定对象发行股票预案(二次修订稿)及相关文件披露的提示性公告",
-        "noticeDate": "2026-11-18",
-        "displayTime": "2026-11-18 18:09:05:517",
-        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "增发提示性公告",
-        "url": "https://data.eastmoney.com/notices/detail/300814/AN202611181831832218.html",
-        "observedAt": "2026-11-18T16:25:51.983Z",
-        "bodyRead": false,
-        "readState": "index_only",
-        "source": "东方财富公开公告索引"
-      },
-      {
-        "id": "AN202611181831832217",
-        "symbol": "300814.SZ",
-        "title": "中富电路:深圳中富电路股份有限公司关于向特定对象发行股票摊薄即期回报情况、采取填补措施及相关主体承诺(二次修订稿)的公告",
-        "noticeDate": "2026-11-18",
-        "displayTime": "2026-11-18 18:09:05:465",
-        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "其他",
-        "url": "https://data.eastmoney.com/notices/detail/300814/AN202611181831832217.html",
-        "observedAt": "2026-11-18T16:25:51.983Z",
-        "bodyRead": false,
-        "readState": "index_only",
-        "source": "东方财富公开公告索引"
-      },
-      {
-        "id": "AN202611181831832216",
-        "symbol": "300814.SZ",
-        "title": "中富电路:深圳中富电路股份有限公司向特定对象发行股票的论证分析报告(二次修订稿)",
-        "noticeDate": "2026-11-18",
-        "displayTime": "2026-11-18 18:09:05:517",
-        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "其他",
-        "url": "https://data.eastmoney.com/notices/detail/300814/AN202611181831832216.html",
-        "observedAt": "2026-11-18T16:25:51.983Z",
-        "bodyRead": false,
-        "readState": "index_only",
-        "source": "东方财富公开公告索引"
-      },
-      {
-        "id": "AN202611181831832215",
-        "symbol": "300814.SZ",
-        "title": "中富电路:深圳中富电路股份有限公司关于调整向特定对象发行股票方案的公告",
-        "noticeDate": "2026-11-18",
-        "displayTime": "2026-11-18 18:09:05:465",
-        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "增发方案修订",
-        "url": "https://data.eastmoney.com/notices/detail/300814/AN202611181831832215.html",
-        "observedAt": "2026-11-18T16:25:51.983Z",
-        "bodyRead": false,
-        "readState": "index_only",
-        "source": "东方财富公开公告索引"
-      },
-      {
-        "id": "AN202611181831832214",
-        "symbol": "300814.SZ",
-        "title": "中富电路:深圳中富电路股份有限公司向特定对象发行股票募集资金使用的可行性分析报告(二次修订稿)",
-        "noticeDate": "2026-11-18",
-        "displayTime": "2026-11-18 18:09:05:465",
-        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "其他",
-        "url": "https://data.eastmoney.com/notices/detail/300814/AN202611181831832214.html",
-        "observedAt": "2026-11-18T16:25:51.983Z",
-        "bodyRead": false,
-        "readState": "index_only",
-        "source": "东方财富公开公告索引"
-      },
-      {
-        "id": "AN202611181831832213",
-        "symbol": "300814.SZ",
-        "title": "中富电路:第三届董事会第十次会议决议公告",
-        "noticeDate": "2026-11-18",
-        "displayTime": "2026-11-18 18:09:05:657",
-        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "增发预案 / 董事会决议公告",
-        "url": "https://data.eastmoney.com/notices/detail/300814/AN202611181831832213.html",
-        "observedAt": "2026-11-18T16:25:50.833Z",
-        "bodyRead": false,
-        "readState": "index_only",
-        "source": "东方财富公开公告索引"
-      },
-      {
-        "id": "AN202611181831832212",
-        "symbol": "300814.SZ",
-        "title": "中富电路:第三届董事会独立董事专门会议第五次会议决议",
-        "noticeDate": "2026-11-18",
-        "displayTime": "2026-11-18 18:09:05:509",
-        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "增发预案 / 董事会决议公告",
-        "url": "https://data.eastmoney.com/notices/detail/300814/AN202611181831832212.html",
-        "observedAt": "2026-11-18T16:25:51.983Z",
-        "bodyRead": false,
-        "readState": "index_only",
-        "source": "东方财富公开公告索引"
-      },
-      {
-        "id": "AN202611181831832211",
-        "symbol": "300814.SZ",
-        "title": "中富电路:深圳中富电路股份有限公司向特定对象发行股票预案(二次修订稿)",
-        "noticeDate": "2026-11-18",
-        "displayTime": "2026-11-18 18:09:05:509",
-        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "增发方案修订",
-        "url": "https://data.eastmoney.com/notices/detail/300814/AN202611181831832211.html",
-        "observedAt": "2026-11-18T16:25:51.983Z",
-        "bodyRead": false,
-        "readState": "index_only",
-        "source": "东方财富公开公告索引"
-      },
-      {
-        "id": "AN202611181831832210",
-        "symbol": "300814.SZ",
-        "title": "中富电路:深圳中富电路股份有限公司关于向特定对象发行股票预案(二次修订稿)及相关文件修订情况说明的公告",
-        "noticeDate": "2026-11-18",
-        "displayTime": "2026-11-18 18:09:05:515",
-        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "增发方案修订",
-        "url": "https://data.eastmoney.com/notices/detail/300814/AN202611181831832210.html",
-        "observedAt": "2026-11-18T16:25:51.983Z",
-        "bodyRead": false,
-        "readState": "index_only",
-        "source": "东方财富公开公告索引"
-      }
-    ],
+    "items": [],
     "scope": {
-      "from": "2026-11-13",
-      "through": "2026-11-19",
-      "beginDate": "2026-11-13",
-      "endDate": "2026-11-19",
+      "from": "2026-11-14",
+      "through": "2026-11-20",
+      "beginDate": "2026-11-14",
+      "endDate": "2026-11-20",
       "complete": false,
-      "totalHits": 7561,
-      "totalPages": 76,
+      "totalHits": 7111,
+      "totalPages": 72,
       "returnedPages": 20,
       "pageCap": 20,
       "truncated": true,
       "noticeTimePrecision": "day",
       "displayTimeTimezoneVerified": false
     },
-    "message": "公告索引未读正文，事件不是价格确认。"
+    "message": "本窗口未取得匹配公告索引；不等于没有公告或风险。"
   },
-  "bundleId": "300814.SZ:2026-11-18T16:26:26.899Z",
-  "fetchedAt": "2026-11-18T16:26:26.899Z",
-  "asOf": "2026-11-18T16:26:26.899Z",
-  "requestedAt": "2026-11-18T16:25:38.020Z",
-  "codeSourceCommit": "ee256812bf16d7413da5b8fee9644b5bfdd57b28"
+  "bundleId": "300814.SZ:2026-11-19T16:32:47.008Z",
+  "fetchedAt": "2026-11-19T16:32:47.008Z",
+  "asOf": "2026-11-19T16:32:47.008Z",
+  "requestedAt": "2026-11-19T16:32:03.637Z",
+  "codeSourceCommit": "c1080f0df243b875b2c60ebd951ed27a4c878ae8"
 }
