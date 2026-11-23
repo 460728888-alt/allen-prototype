@@ -3,7 +3,7 @@
   "symbol": "300806.SZ",
   "company": {
     "state": "ok",
-    "cacheHit": false,
+    "cacheHit": true,
     "symbol": "300806.SZ",
     "fetchedAt": "2026-11-20T16:07:19.425Z",
     "observedAt": "2026-11-20T16:07:19.425Z",
@@ -23,16 +23,47 @@
       "fetchedAt": "2026-11-20T16:07:19.425Z",
       "url": "https://emweb.securities.eastmoney.com/PC_HSF10/CompanySurvey/CompanySurveyAjax?code=SZ300806"
     },
-    "historicalAvailability": "current_profile_not_point_in_time"
+    "historicalAvailability": "current_profile_not_point_in_time",
+    "message": "复用7日内公开资料，原获取与观察时间保留。"
   },
   "financial": {
     "state": "partial",
     "reports": [
       {
+        "reportDate": "2026-09-30",
+        "noticeDate": "2026-10-29",
+        "updateDate": "2026-10-29",
+        "observedAt": "2026-11-23T19:13:05.695Z",
+        "periodBasis": "year_to_date",
+        "currency": null,
+        "amountUnit": "source_yuan",
+        "unitNote": "来源页面金额单位为元，币种未注明；不默认CNY，不作汇率换算。",
+        "percentageUnit": "percent",
+        "reportName": "2026年 三季报",
+        "industry": null,
+        "metrics": {
+          "revenue": 2482691849.55,
+          "netProfit": 66937816.48,
+          "revenueGrowth": 10.895944015,
+          "profitGrowth": 47.86,
+          "roe": 2.73,
+          "grossMargin": 23.7593439152,
+          "eps": 0.11,
+          "bps": 3.786448961041,
+          "operatingCashPerShare": -0.118092459948
+        },
+        "source": {
+          "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
+          "fetchedAt": "2026-11-23T19:13:05.695Z",
+          "url": "https://data.eastmoney.com/bbsj/202609/yjbb.html"
+        },
+        "historicalAvailability": "provider_current_revision_not_point_in_time"
+      },
+      {
         "reportDate": "2026-06-30",
         "noticeDate": "2026-08-27",
         "updateDate": "2026-08-27",
-        "observedAt": "2026-11-20T16:07:28.686Z",
+        "observedAt": "2026-11-23T19:13:07.435Z",
         "periodBasis": "year_to_date",
         "currency": null,
         "amountUnit": "source_yuan",
@@ -53,7 +84,7 @@
         },
         "source": {
           "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
-          "fetchedAt": "2026-11-20T16:07:28.686Z",
+          "fetchedAt": "2026-11-23T19:13:07.435Z",
           "url": "https://data.eastmoney.com/bbsj/202606/yjbb.html"
         },
         "historicalAvailability": "provider_current_revision_not_point_in_time"
@@ -71,41 +102,26 @@
   },
   "announcements": {
     "state": "partial",
-    "items": [
-      {
-        "id": "AN202611201831898895",
-        "symbol": "300806.SZ",
-        "title": "斯迪克:关于董事会换届选举的提示性公告",
-        "noticeDate": "2026-11-20",
-        "displayTime": "2026-11-20 17:17:06:295",
-        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "高管人员任职变动",
-        "url": "https://data.eastmoney.com/notices/detail/300806/AN202611201831898895.html",
-        "observedAt": "2026-11-20T16:07:24.644Z",
-        "bodyRead": false,
-        "readState": "index_only",
-        "source": "东方财富公开公告索引"
-      }
-    ],
+    "items": [],
     "scope": {
-      "from": "2026-11-15",
-      "through": "2026-11-21",
-      "beginDate": "2026-11-15",
-      "endDate": "2026-11-21",
+      "from": "2026-11-18",
+      "through": "2026-11-24",
+      "beginDate": "2026-11-18",
+      "endDate": "2026-11-24",
       "complete": false,
-      "totalHits": 7644,
-      "totalPages": 77,
+      "totalHits": 7178,
+      "totalPages": 72,
       "returnedPages": 20,
       "pageCap": 20,
       "truncated": true,
       "noticeTimePrecision": "day",
       "displayTimeTimezoneVerified": false
     },
-    "message": "公告索引未读正文，事件不是价格确认。"
+    "message": "本窗口未取得匹配公告索引；不等于没有公告或风险。"
   },
-  "bundleId": "300806.SZ:2026-11-20T16:07:59.151Z",
-  "fetchedAt": "2026-11-20T16:07:59.151Z",
-  "asOf": "2026-11-20T16:07:59.151Z",
-  "requestedAt": "2026-11-20T16:06:58.827Z",
-  "codeSourceCommit": "1997c281dd97724b7b64118c6c26a1cc23d2aef4"
+  "bundleId": "300806.SZ:2026-11-23T19:14:09.627Z",
+  "fetchedAt": "2026-11-23T19:14:09.627Z",
+  "asOf": "2026-11-23T19:14:09.627Z",
+  "requestedAt": "2026-11-23T19:12:54.622Z",
+  "codeSourceCommit": "9a950ff49413cb40db686b7a2279aae6219a012c"
 }

@@ -3,7 +3,7 @@
   "symbol": "002130.SZ",
   "company": {
     "state": "ok",
-    "cacheHit": false,
+    "cacheHit": true,
     "symbol": "002130.SZ",
     "fetchedAt": "2026-11-20T16:07:03.101Z",
     "observedAt": "2026-11-20T16:07:03.101Z",
@@ -23,11 +23,73 @@
       "fetchedAt": "2026-11-20T16:07:03.101Z",
       "url": "https://emweb.securities.eastmoney.com/PC_HSF10/CompanySurvey/CompanySurveyAjax?code=SZ002130"
     },
-    "historicalAvailability": "current_profile_not_point_in_time"
+    "historicalAvailability": "current_profile_not_point_in_time",
+    "message": "复用7日内公开资料，原获取与观察时间保留。"
   },
   "financial": {
-    "state": "unavailable",
-    "reports": [],
+    "state": "partial",
+    "reports": [
+      {
+        "reportDate": "2026-09-30",
+        "noticeDate": "2026-10-28",
+        "updateDate": "2026-10-28",
+        "observedAt": "2026-11-23T19:13:08.974Z",
+        "periodBasis": "year_to_date",
+        "currency": null,
+        "amountUnit": "source_yuan",
+        "unitNote": "来源页面金额单位为元，币种未注明；不默认CNY，不作汇率换算。",
+        "percentageUnit": "percent",
+        "reportName": "2026年 三季报",
+        "industry": null,
+        "metrics": {
+          "revenue": 7440897266,
+          "netProfit": 877497436.97,
+          "revenueGrowth": 22.3395530028,
+          "profitGrowth": 6.77,
+          "roe": 9.66,
+          "grossMargin": 28.8770837473,
+          "eps": 0.6406,
+          "bps": 6.807886848056,
+          "operatingCashPerShare": 0.531966495487
+        },
+        "source": {
+          "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
+          "fetchedAt": "2026-11-23T19:13:08.974Z",
+          "url": "https://data.eastmoney.com/bbsj/202609/yjbb.html"
+        },
+        "historicalAvailability": "provider_current_revision_not_point_in_time"
+      },
+      {
+        "reportDate": "2026-06-30",
+        "noticeDate": "2026-08-25",
+        "updateDate": "2026-08-25",
+        "observedAt": "2026-11-23T19:13:21.879Z",
+        "periodBasis": "year_to_date",
+        "currency": null,
+        "amountUnit": "source_yuan",
+        "unitNote": "来源页面金额单位为元，币种未注明；不默认CNY，不作汇率换算。",
+        "percentageUnit": "percent",
+        "reportName": "2026年 半年报",
+        "industry": null,
+        "metrics": {
+          "revenue": 4653091807.21,
+          "netProfit": 566683920.66,
+          "revenueGrowth": 17.941061205,
+          "profitGrowth": 1.54,
+          "roe": 6.32,
+          "grossMargin": 29.4118888267,
+          "eps": 0.42,
+          "bps": 6.566941124603,
+          "operatingCashPerShare": 0.337252177236
+        },
+        "source": {
+          "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
+          "fetchedAt": "2026-11-23T19:13:21.879Z",
+          "url": "https://data.eastmoney.com/bbsj/202606/yjbb.html"
+        },
+        "historicalAvailability": "provider_current_revision_not_point_in_time"
+      }
+    ],
     "scope": {
       "periods": [
         "2026-09-30",
@@ -36,48 +98,48 @@
       "complete": false,
       "pageCapPerPeriod": 16
     },
-    "message": "未取得可核验的已披露报告，不代表公司没有财报。"
+    "message": "仅展示已取得且日期可核验的累计报告；当前修订版不能冒充历史当时数据。"
   },
   "announcements": {
     "state": "partial",
     "items": [
       {
-        "id": "AN202611201831905819",
+        "id": "AN202611231831962132",
         "symbol": "002130.SZ",
         "title": "沃尔核材:H股公告:翌日披露报表",
-        "noticeDate": "2026-11-21",
-        "displayTime": "2026-11-20 19:10:06:682",
+        "noticeDate": "2026-11-24",
+        "displayTime": "2026-11-23 18:53:24:499",
         "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
         "category": "其他",
-        "url": "https://data.eastmoney.com/notices/detail/002130/AN202611201831905819.html",
-        "observedAt": "2026-11-20T16:07:03.233Z",
+        "url": "https://data.eastmoney.com/notices/detail/002130/AN202611231831962132.html",
+        "observedAt": "2026-11-23T19:12:58.737Z",
         "bodyRead": false,
         "readState": "index_only",
         "source": "东方财富公开公告索引"
       },
       {
-        "id": "AN202611191831867056",
+        "id": "AN202611231831958106",
         "symbol": "002130.SZ",
-        "title": "沃尔核材:H股公告:翌日披露报表",
-        "noticeDate": "2026-11-20",
-        "displayTime": "2026-11-19 19:13:03:682",
+        "title": "沃尔核材:关于参加2026年度深圳辖区上市公司投资者网上集体接待日的公告",
+        "noticeDate": "2026-11-24",
+        "displayTime": "2026-11-23 17:34:39:476",
         "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "其他",
-        "url": "https://data.eastmoney.com/notices/detail/002130/AN202611191831867056.html",
-        "observedAt": "2026-11-20T16:07:27.626Z",
+        "category": "调研活动",
+        "url": "https://data.eastmoney.com/notices/detail/002130/AN202611231831958106.html",
+        "observedAt": "2026-11-23T19:13:02.045Z",
         "bodyRead": false,
         "readState": "index_only",
         "source": "东方财富公开公告索引"
       }
     ],
     "scope": {
-      "from": "2026-11-15",
-      "through": "2026-11-21",
-      "beginDate": "2026-11-15",
-      "endDate": "2026-11-21",
+      "from": "2026-11-18",
+      "through": "2026-11-24",
+      "beginDate": "2026-11-18",
+      "endDate": "2026-11-24",
       "complete": false,
-      "totalHits": 7644,
-      "totalPages": 77,
+      "totalHits": 7178,
+      "totalPages": 72,
       "returnedPages": 20,
       "pageCap": 20,
       "truncated": true,
@@ -86,9 +148,9 @@
     },
     "message": "公告索引未读正文，事件不是价格确认。"
   },
-  "bundleId": "002130.SZ:2026-11-20T16:07:59.151Z",
-  "fetchedAt": "2026-11-20T16:07:59.151Z",
-  "asOf": "2026-11-20T16:07:59.151Z",
-  "requestedAt": "2026-11-20T16:06:58.827Z",
-  "codeSourceCommit": "1997c281dd97724b7b64118c6c26a1cc23d2aef4"
+  "bundleId": "002130.SZ:2026-11-23T19:14:09.627Z",
+  "fetchedAt": "2026-11-23T19:14:09.627Z",
+  "asOf": "2026-11-23T19:14:09.627Z",
+  "requestedAt": "2026-11-23T19:12:54.622Z",
+  "codeSourceCommit": "9a950ff49413cb40db686b7a2279aae6219a012c"
 }

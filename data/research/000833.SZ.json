@@ -3,7 +3,7 @@
   "symbol": "000833.SZ",
   "company": {
     "state": "ok",
-    "cacheHit": false,
+    "cacheHit": true,
     "symbol": "000833.SZ",
     "fetchedAt": "2026-11-20T16:07:01.646Z",
     "observedAt": "2026-11-20T16:07:01.646Z",
@@ -23,11 +23,73 @@
       "fetchedAt": "2026-11-20T16:07:01.646Z",
       "url": "https://emweb.securities.eastmoney.com/PC_HSF10/CompanySurvey/CompanySurveyAjax?code=SZ000833"
     },
-    "historicalAvailability": "current_profile_not_point_in_time"
+    "historicalAvailability": "current_profile_not_point_in_time",
+    "message": "复用7日内公开资料，原获取与观察时间保留。"
   },
   "financial": {
-    "state": "unavailable",
-    "reports": [],
+    "state": "partial",
+    "reports": [
+      {
+        "reportDate": "2026-09-30",
+        "noticeDate": "2026-10-28",
+        "updateDate": "2026-10-28",
+        "observedAt": "2026-11-23T19:13:10.928Z",
+        "periodBasis": "year_to_date",
+        "currency": null,
+        "amountUnit": "source_yuan",
+        "unitNote": "来源页面金额单位为元，币种未注明；不默认CNY，不作汇率换算。",
+        "percentageUnit": "percent",
+        "reportName": "2026年 三季报",
+        "industry": null,
+        "metrics": {
+          "revenue": 3943377185.2,
+          "netProfit": 1160782957.42,
+          "revenueGrowth": 83.9648965384,
+          "profitGrowth": 161.53,
+          "roe": 25.49,
+          "grossMargin": 44.1522784847,
+          "eps": 1.4367,
+          "bps": 6.841026422574,
+          "operatingCashPerShare": 1.048492004219
+        },
+        "source": {
+          "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
+          "fetchedAt": "2026-11-23T19:13:10.928Z",
+          "url": "https://data.eastmoney.com/bbsj/202609/yjbb.html"
+        },
+        "historicalAvailability": "provider_current_revision_not_point_in_time"
+      },
+      {
+        "reportDate": "2026-06-30",
+        "noticeDate": "2026-08-24",
+        "updateDate": "2026-08-24",
+        "observedAt": "2026-11-23T19:13:24.032Z",
+        "periodBasis": "year_to_date",
+        "currency": null,
+        "amountUnit": "source_yuan",
+        "unitNote": "来源页面金额单位为元，币种未注明；不默认CNY，不作汇率换算。",
+        "percentageUnit": "percent",
+        "reportName": "2026年 半年报",
+        "industry": null,
+        "metrics": {
+          "revenue": 2342706476.62,
+          "netProfit": 662784006.79,
+          "revenueGrowth": 72.365613943,
+          "profitGrowth": 182.76,
+          "roe": 15.79,
+          "grossMargin": 43.5404554126,
+          "eps": 0.8263,
+          "bps": 5.559418309323,
+          "operatingCashPerShare": -0.040748478391
+        },
+        "source": {
+          "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
+          "fetchedAt": "2026-11-23T19:13:24.032Z",
+          "url": "https://data.eastmoney.com/bbsj/202606/yjbb.html"
+        },
+        "historicalAvailability": "provider_current_revision_not_point_in_time"
+      }
+    ],
     "scope": {
       "periods": [
         "2026-09-30",
@@ -36,30 +98,101 @@
       "complete": false,
       "pageCapPerPeriod": 16
     },
-    "message": "未取得可核验的已披露报告，不代表公司没有财报。"
+    "message": "仅展示已取得且日期可核验的累计报告；当前修订版不能冒充历史当时数据。"
   },
   "announcements": {
     "state": "partial",
-    "items": [],
+    "items": [
+      {
+        "id": "AN202611231831962772",
+        "symbol": "000833.SZ",
+        "title": "粤桂股份:第十届董事会第八次会议决议公告",
+        "noticeDate": "2026-11-24",
+        "displayTime": "2026-11-23 19:02:05:489",
+        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
+        "category": "高管人员任职变动 / 董事会决议公告",
+        "url": "https://data.eastmoney.com/notices/detail/000833/AN202611231831962772.html",
+        "observedAt": "2026-11-23T19:12:57.946Z",
+        "bodyRead": false,
+        "readState": "index_only",
+        "source": "东方财富公开公告索引"
+      },
+      {
+        "id": "AN202611231831962768",
+        "symbol": "000833.SZ",
+        "title": "粤桂股份:关于聘任公司副总经理的公告",
+        "noticeDate": "2026-11-24",
+        "displayTime": "2026-11-23 19:02:05:441",
+        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
+        "category": "高管人员任职变动",
+        "url": "https://data.eastmoney.com/notices/detail/000833/AN202611231831962768.html",
+        "observedAt": "2026-11-23T19:12:57.946Z",
+        "bodyRead": false,
+        "readState": "index_only",
+        "source": "东方财富公开公告索引"
+      },
+      {
+        "id": "AN202611231831962747",
+        "symbol": "000833.SZ",
+        "title": "粤桂股份:广西粤桂广业控股股份有限公司资产减值准备财务核销工作管理办法",
+        "noticeDate": "2026-11-24",
+        "displayTime": "2026-11-23 19:02:05:447",
+        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
+        "category": "管理办法/制度",
+        "url": "https://data.eastmoney.com/notices/detail/000833/AN202611231831962747.html",
+        "observedAt": "2026-11-23T19:12:57.946Z",
+        "bodyRead": false,
+        "readState": "index_only",
+        "source": "东方财富公开公告索引"
+      },
+      {
+        "id": "AN202611231831962722",
+        "symbol": "000833.SZ",
+        "title": "粤桂股份:关于公司副总经理辞职的公告",
+        "noticeDate": "2026-11-24",
+        "displayTime": "2026-11-23 19:01:06:339",
+        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
+        "category": "高管人员任职变动",
+        "url": "https://data.eastmoney.com/notices/detail/000833/AN202611231831962722.html",
+        "observedAt": "2026-11-23T19:12:58.737Z",
+        "bodyRead": false,
+        "readState": "index_only",
+        "source": "东方财富公开公告索引"
+      },
+      {
+        "id": "AN202611231831962713",
+        "symbol": "000833.SZ",
+        "title": "粤桂股份:广西粤桂广业控股股份有限公司关于召开2026年第四次临时股东会的通知",
+        "noticeDate": "2026-11-24",
+        "displayTime": "2026-11-23 19:01:06:370",
+        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
+        "category": "召开股东大会通知",
+        "url": "https://data.eastmoney.com/notices/detail/000833/AN202611231831962713.html",
+        "observedAt": "2026-11-23T19:12:58.737Z",
+        "bodyRead": false,
+        "readState": "index_only",
+        "source": "东方财富公开公告索引"
+      }
+    ],
     "scope": {
-      "from": "2026-11-15",
-      "through": "2026-11-21",
-      "beginDate": "2026-11-15",
-      "endDate": "2026-11-21",
+      "from": "2026-11-18",
+      "through": "2026-11-24",
+      "beginDate": "2026-11-18",
+      "endDate": "2026-11-24",
       "complete": false,
-      "totalHits": 7644,
-      "totalPages": 77,
+      "totalHits": 7178,
+      "totalPages": 72,
       "returnedPages": 20,
       "pageCap": 20,
       "truncated": true,
       "noticeTimePrecision": "day",
       "displayTimeTimezoneVerified": false
     },
-    "message": "本窗口未取得匹配公告索引；不等于没有公告或风险。"
+    "message": "公告索引未读正文，事件不是价格确认。"
   },
-  "bundleId": "000833.SZ:2026-11-20T16:07:59.151Z",
-  "fetchedAt": "2026-11-20T16:07:59.151Z",
-  "asOf": "2026-11-20T16:07:59.151Z",
-  "requestedAt": "2026-11-20T16:06:58.827Z",
-  "codeSourceCommit": "1997c281dd97724b7b64118c6c26a1cc23d2aef4"
+  "bundleId": "000833.SZ:2026-11-23T19:14:09.627Z",
+  "fetchedAt": "2026-11-23T19:14:09.627Z",
+  "asOf": "2026-11-23T19:14:09.627Z",
+  "requestedAt": "2026-11-23T19:12:54.622Z",
+  "codeSourceCommit": "9a950ff49413cb40db686b7a2279aae6219a012c"
 }
