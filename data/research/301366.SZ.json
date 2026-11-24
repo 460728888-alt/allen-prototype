@@ -2,11 +2,9 @@
   "schema": 1,
   "symbol": "301366.SZ",
   "company": {
-    "state": "stale",
-    "fetchedAt": "2026-11-16T16:58:52.312Z",
-    "observedAt": "2026-11-16T16:58:52.312Z",
-    "requestState": "not_requested",
-    "message": "旧公司资料超过缓存期限，本次预算未覆盖，暂停使用。"
+    "state": "failed",
+    "previousFetchedAt": "2026-11-16T16:58:52.312Z",
+    "message": "请求超时"
   },
   "financial": {
     "state": "partial",
@@ -15,7 +13,7 @@
         "reportDate": "2026-09-30",
         "noticeDate": "2026-10-29",
         "updateDate": "2026-10-29",
-        "observedAt": "2026-11-23T19:13:05.695Z",
+        "observedAt": "2026-11-24T18:52:24.278Z",
         "periodBasis": "year_to_date",
         "currency": null,
         "amountUnit": "source_yuan",
@@ -36,7 +34,7 @@
         },
         "source": {
           "provider": "东方财富公开业绩报表 RPT_LICO_FN_CPD",
-          "fetchedAt": "2026-11-23T19:13:05.695Z",
+          "fetchedAt": "2026-11-24T18:52:24.278Z",
           "url": "https://data.eastmoney.com/bbsj/202609/yjbb.html"
         },
         "historicalAvailability": "provider_current_revision_not_point_in_time"
@@ -54,29 +52,14 @@
   },
   "announcements": {
     "state": "partial",
-    "items": [
-      {
-        "id": "AN202611231831966947",
-        "symbol": "301366.SZ",
-        "title": "一博科技投资者关系活动记录表-2026年11月23日",
-        "noticeDate": "2026-11-23",
-        "displayTime": "2026-11-23 22:36:00:592",
-        "displayTimeNote": "来源展示时间的时区与首次发布时刻未核验，不用于证明盘中已知。",
-        "category": "调研活动",
-        "url": "https://data.eastmoney.com/notices/detail/301366/AN202611231831966947.html",
-        "observedAt": "2026-11-23T19:13:06.102Z",
-        "bodyRead": false,
-        "readState": "index_only",
-        "source": "东方财富公开公告索引"
-      }
-    ],
+    "items": [],
     "scope": {
-      "from": "2026-11-18",
-      "through": "2026-11-24",
-      "beginDate": "2026-11-18",
-      "endDate": "2026-11-24",
+      "from": "2026-11-19",
+      "through": "2026-11-25",
+      "beginDate": "2026-11-19",
+      "endDate": "2026-11-25",
       "complete": false,
-      "totalHits": 7178,
+      "totalHits": 7172,
       "totalPages": 72,
       "returnedPages": 20,
       "pageCap": 20,
@@ -84,11 +67,11 @@
       "noticeTimePrecision": "day",
       "displayTimeTimezoneVerified": false
     },
-    "message": "公告索引未读正文，事件不是价格确认。"
+    "message": "本窗口未取得匹配公告索引；不等于没有公告或风险。"
   },
-  "bundleId": "301366.SZ:2026-11-23T19:14:09.627Z",
-  "fetchedAt": "2026-11-23T19:14:09.627Z",
-  "asOf": "2026-11-23T19:14:09.627Z",
-  "requestedAt": "2026-11-23T19:12:54.622Z",
-  "codeSourceCommit": "9a950ff49413cb40db686b7a2279aae6219a012c"
+  "bundleId": "301366.SZ:2026-11-24T18:53:27.653Z",
+  "fetchedAt": "2026-11-24T18:53:27.653Z",
+  "asOf": "2026-11-24T18:53:27.653Z",
+  "requestedAt": "2026-11-24T18:52:12.650Z",
+  "codeSourceCommit": "311971d3e5cbfffe412a82c5712ee3ea4cb20d21"
 }
